@@ -4,15 +4,18 @@ import Home from './components/Home'
 import NoPage from './components/NoPage'
 import Contact from './components/Contact'
 import NavBar from './components/NavBar'
+import Gamblin from './components/Gamblin'
+import Sports from './components/Sports'
 
 const App = () => {
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/*" element={<NoPage />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/gamblin' element={<Gamblin />} />
+        <Route path='/sports' element={<Sports />} />
+        <Route path='/*' element={<NoPage />} />
       </Routes>
     </>
   )
