@@ -10,7 +10,7 @@ const app = express()
 
 let conferenceRatingsFile = './csvs/ND_vs_WAKE.csv'
 
-app.get('/api', async (req, res) => {
+app.get('/cfb/:team1/:team2', async (req, res) => {
   try {
     let result = await csv()
       .fromFile(conferenceRatingsFile)
