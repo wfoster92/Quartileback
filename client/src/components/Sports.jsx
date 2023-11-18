@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import csv from 'csvtojson'
 import Spread from './Spread'
+import OverUnder from './OverUnder'
 import CasinoIcon from '@mui/icons-material/Casino'
 
 const Sports = () => {
@@ -39,6 +40,10 @@ const Sports = () => {
         <div style={{ textAlign: 'center', marginTop: '64px' }}>Spread</div>
         <div style={{ textAlign: 'center' }}>
           <Spread data={currentSpread} />
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '64px' }}>Over Under</div>
+        <div style={{ textAlign: 'center' }}>
+          <OverUnder data={currentOverUnder} />
         </div>
       </div>
     </>
