@@ -1,12 +1,30 @@
 import { useState, useEffect, useRef } from 'react'
 import * as d3 from 'd3'
 import styled from '@emotion/styled'
-import csv from 'csvtojson'
+import { Unstable_NumberInput as NumberInput } from '@mui/base/Unstable_NumberInput'
 
-import CasinoIcon from '@mui/icons-material/Casino'
+// https://d3-graph-gallery.com/graph/barplot_basic.html
 
 const Spread = (props) => {
   const { data } = props
+
+  const [spread, setSpread] = useState(24)
+
+  const keys = Object.keys(data)
+    .map((elem) => Number(elem))
+    .sort((a, b) => a - b)
+  const minScore = keys[0]
+  const maxScore = [...keys].pop()
+  const maxProb = Math.max(...keys.map((k) => data[k]))
+  console.log(minScore, maxScore)
+
+  let dataArr = keys.map((k) => {
+    return {
+      score: Number(k),
+      probability: data[k],
+    }
+  })
+
   const ref = useRef()
   useEffect(() => {
     // set the dimensions and margins of the graph
@@ -22,21 +40,6 @@ const Spread = (props) => {
       .attr('height', h + margin.top + margin.bottom)
       .append('g')
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-
-    const keys = Object.keys(data)
-      .map((elem) => Number(elem))
-      .sort((a, b) => a - b)
-    const minScore = keys[0]
-    const maxScore = [...keys].pop()
-    const maxProb = Math.max(...keys.map((k) => data[k]))
-    console.log(minScore, maxScore)
-
-    let dataArr = keys.map((k) => {
-      return {
-        score: Number(k),
-        probability: data[k],
-      }
-    })
 
     // x axis
     const xAxis = d3.scaleLinear().range([0, w]).domain([minScore, maxScore])
@@ -59,11 +62,41 @@ const Spread = (props) => {
       .attr('y', (d) => yAxis(d.probability))
       .attr('width', w / (maxScore - minScore + 1)) // Calculate the width of each bar
       .attr('height', (d) => h - yAxis(d.probability))
-      .attr('fill', '#5f0f40')
-  }, [data])
+      .attr('fill', (d) => (d.score > spread + 0.5 ? '#800' : '#e00'))
+  }, [data, spread])
+
+  const overSpreadProb =
+    dataArr
+      .filter((elem) => elem.score > spread + 0.5)
+      .map((elem) => elem.probability)
+      .reduce((acc, currentValue) => {
+        return acc + currentValue
+      }, 0) * 100
+
+  const underSpreadProb =
+    dataArr
+      .filter((elem) => elem.score < spread + 0.5)
+      .map((elem) => elem.probability)
+      .reduce((acc, currentValue) => {
+        return acc + currentValue
+      }, 0) * 100
 
   return (
     <>
+      <NumberInput
+        aria-label='Demo number input'
+        placeholder='Type a number…'
+        value={spread}
+        onChange={(event, val) => setSpread(val)}
+      />
+      <div>
+        Odds of over {spread + 0.5} are:
+        {overSpreadProb.toFixed(1)}%
+      </div>
+      <div>
+        Odds of under {spread + 0.5} are:
+        {underSpreadProb.toFixed(1)}%
+      </div>
       <svg width={1000} height={600} id='spreadBarChart' ref={ref} />
     </>
   )
