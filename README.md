@@ -1,2 +1,3 @@
-# nba-deepdive
-An app for viewing information about nba teams
+# degeneracy
+
+An app for gambling and sports analytics
