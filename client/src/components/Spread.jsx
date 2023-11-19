@@ -9,7 +9,8 @@ import { Unstable_NumberInput as NumberInput } from '@mui/base/Unstable_NumberIn
 
 const Spread = (props) => {
   const { data } = props
-  const { viewportWidth, spread, setSpread } = useContext(CFBContext)
+  const { viewportWidth, spread, setSpread, spreadIsInt } =
+    useContext(CFBContext)
 
   const keys = Object.keys(data)
     .map((elem) => Number(elem))
@@ -66,11 +67,11 @@ const Spread = (props) => {
       .attr('width', w / (maxScore - minScore + 1)) // Calculate the width of each bar
       .attr('height', (d) => h - yAxis(d.probability))
       .attr('fill', (d) => (d.score > spread + 0.5 ? '#800' : '#e00'))
-  }, [data, spread])
+  }, [data, spread, spreadIsInt])
 
   const overSpreadProb =
     dataArr
-      .filter((elem) => elem.score > spread + 0.5)
+      .filter((elem) => (elem.score > spread + spreadIsInt ? 0 : 0.5))
       .map((elem) => elem.probability)
       .reduce((acc, currentValue) => {
         return acc + currentValue
@@ -78,7 +79,7 @@ const Spread = (props) => {
 
   const underSpreadProb =
     dataArr
-      .filter((elem) => elem.score < spread + 0.5)
+      .filter((elem) => (elem.score < spread + spreadIsInt ? 0 : 0.5))
       .map((elem) => elem.probability)
       .reduce((acc, currentValue) => {
         return acc + currentValue
@@ -94,11 +95,11 @@ const Spread = (props) => {
           onChange={(event, val) => setSpread(val)}
         />
         <div>
-          Odds of over {spread + 0.5} are:
+          Odds of over {spread + spreadIsInt ? 0 : 0.5} are:
           {overSpreadProb.toFixed(1)}%
         </div>
         <div>
-          Odds of under {spread + 0.5} are:
+          Odds of under {spread + spreadIsInt ? 0 : 0.5} are:
           {underSpreadProb.toFixed(1)}%
         </div>
       </div>

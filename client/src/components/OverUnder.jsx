@@ -2,11 +2,27 @@ import { useState, useEffect, useRef, useContext } from 'react'
 import { CFBContext } from '../contexts/cfbContext'
 import * as d3 from 'd3'
 import { Unstable_NumberInput as NumberInput } from '@mui/base/Unstable_NumberInput'
+import {
+  Button,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  FormControlLabel,
+  Switch,
+} from '@mui/material'
 
 // https://d3-graph-gallery.com/graph/barplot_basic.html
 
 const Spread = (props) => {
-  const { viewportWidth, OU, setOU } = useContext(CFBContext)
+  const {
+    viewportWidth,
+    OU,
+    setOU,
+    ouIsInt,
+    setOuIsInt,
+    fractionalOU,
+    setFractionalOU,
+  } = useContext(CFBContext)
   console.log(`viewportWidth ${viewportWidth}`)
   const { data } = props
 
@@ -63,12 +79,18 @@ const Spread = (props) => {
       .attr('y', (d) => yAxis(d.probability))
       .attr('width', w / (maxScore - minScore + 1)) // Calculate the width of each bar
       .attr('height', (d) => h - yAxis(d.probability))
-      .attr('fill', (d) => (d.score > OU + 0.5 ? '#080' : '#0e0'))
-  }, [data, OU])
+      .attr('fill', (d) =>
+        d.score === OU && !fractionalOU
+          ? '#000'
+          : d.score > (ouIsInt && !fractionalOU ? OU : OU + 0.5)
+          ? '#080'
+          : '#0e0'
+      )
+  }, [data, OU, ouIsInt, fractionalOU])
 
   const overProb =
     dataArr
-      .filter((elem) => elem.score > OU + 0.5)
+      .filter((elem) => elem.score > (ouIsInt && !fractionalOU ? OU : OU + 0.5))
       .map((elem) => elem.probability)
       .reduce((acc, currentValue) => {
         return acc + currentValue
@@ -76,7 +98,7 @@ const Spread = (props) => {
 
   const underProb =
     dataArr
-      .filter((elem) => elem.score < OU + 0.5)
+      .filter((elem) => elem.score < (ouIsInt && !fractionalOU ? OU : OU + 0.5))
       .map((elem) => elem.probability)
       .reduce((acc, currentValue) => {
         return acc + currentValue
@@ -85,18 +107,49 @@ const Spread = (props) => {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <NumberInput
-          aria-label='Demo number input'
-          placeholder='Type a number…'
-          value={OU}
-          onChange={(event, val) => setOU(val)}
-        />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <NumberInput
+              aria-label='Demo number input'
+              placeholder='Type a number…'
+              value={Math.floor(OU)}
+              onChange={(event, val) => {
+                setOU(val)
+                setOuIsInt(true)
+              }}
+            />
+          </div>
+          <div
+            style={{
+              display: 'inline-block',
+              verticalAlign: 'center',
+              marginLeft: '16px',
+            }}
+          >
+            <FormControl component='fieldset' variant='standard'>
+              {/* <FormLabel component='legend'>Fractional OU</FormLabel> */}
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={fractionalOU}
+                      onChange={() => setFractionalOU(!fractionalOU)}
+                      // name='gilad'
+                    />
+                  }
+                  label='Fractional OU'
+                />
+              </FormGroup>
+            </FormControl>
+          </div>
+        </div>
+
         <div>
-          Odds of over {OU + 0.5} are:
+          Odds of over {ouIsInt && !fractionalOU ? OU : OU + 0.5} are:
           {overProb.toFixed(1)}%
         </div>
         <div>
-          Odds of under {OU + 0.5} are:
+          Odds of under {ouIsInt && !fractionalOU ? OU : OU + 0.5} are:
           {underProb.toFixed(1)}%
         </div>
       </div>

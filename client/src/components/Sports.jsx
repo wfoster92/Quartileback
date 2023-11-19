@@ -31,6 +31,9 @@ const Sports = () => {
     setViewportWidth,
     setOU,
     setSpread,
+    setOuIsInt,
+    setSpreadIsInt,
+    setFractionalOU,
   } = useContext(CFBContext)
 
   const Title = styled.div`
@@ -56,8 +59,22 @@ const Sports = () => {
         const tempGameInfo = await response2.json()
         setCurrentGameInfo(tempGameInfo)
         console.log(`tempGameInfo.overUnder ${tempGameInfo.overUnder}`)
-        setOU(Number(tempGameInfo.overUnder))
-        setSpread(Number(tempGameInfo.gameLine))
+        let tempOU = Number(tempGameInfo.overUnder)
+        let tempSpread = Number(tempGameInfo.gameLine)
+        if (Number.isInteger(tempOU)) {
+          setOuIsInt(true)
+          setFractionalOU(false)
+        } else {
+          setOuIsInt(false)
+          setFractionalOU(true)
+        }
+        if (Number.isInteger(tempSpread)) {
+          setSpreadIsInt(true)
+        } else {
+          setSpreadIsInt(false)
+        }
+        setOU(Math.floor(tempOU))
+        setSpread(Math.floor(tempSpread))
       } catch (error) {
         setError(error)
       } finally {
@@ -82,6 +99,7 @@ const Sports = () => {
 
   useEffect(() => {
     fetchSingleGameData()
+    setFractionalOU(false)
   }, [currentGame])
 
   useEffect(() => {

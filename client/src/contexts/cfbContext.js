@@ -14,6 +14,9 @@ const CFBProvider = ({ children }) => {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
   const [spread, setSpread] = useState(0)
   const [OU, setOU] = useState(0)
+  const [ouIsInt, setOuIsInt] = useState(true)
+  const [spreadIsInt, setSpreadIsInt] = useState(true)
+  const [fractionalOU, setFractionalOU] = useState(false)
 
   const state = {
     currentSpread,
@@ -36,6 +39,12 @@ const CFBProvider = ({ children }) => {
     setSpread,
     OU,
     setOU,
+    ouIsInt,
+    setOuIsInt,
+    spreadIsInt,
+    setSpreadIsInt,
+    fractionalOU,
+    setFractionalOU,
   }
 
   return <CFBContext.Provider value={state}>{children}</CFBContext.Provider>
