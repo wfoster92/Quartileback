@@ -24,6 +24,8 @@ const Spread = (props) => {
   })
   const ref = useRef()
   useEffect(() => {
+    d3.select(ref.current).selectAll('*').remove()
+
     // set the dimensions and margins of the graph
     const margin = { top: 30, right: 30, bottom: 70, left: 60 }
     const w = 1000 - margin.left - margin.right
@@ -80,19 +82,21 @@ const Spread = (props) => {
 
   return (
     <>
-      <NumberInput
-        aria-label='Demo number input'
-        placeholder='Type a number…'
-        value={OU}
-        onChange={(event, val) => setOU(val)}
-      />
-      <div>
-        Odds of over {OU + 0.5} are:
-        {overProb.toFixed(1)}%
-      </div>
-      <div>
-        Odds of under {OU + 0.5} are:
-        {underProb.toFixed(1)}%
+      <div style={{ textAlign: 'center' }}>
+        <NumberInput
+          aria-label='Demo number input'
+          placeholder='Type a number…'
+          value={OU}
+          onChange={(event, val) => setOU(val)}
+        />
+        <div>
+          Odds of over {OU + 0.5} are:
+          {overProb.toFixed(1)}%
+        </div>
+        <div>
+          Odds of under {OU + 0.5} are:
+          {underProb.toFixed(1)}%
+        </div>
       </div>
       <svg width={1000} height={600} id='overUnderBarChart' ref={ref} />
     </>
