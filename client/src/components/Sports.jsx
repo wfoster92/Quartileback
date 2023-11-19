@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { CFBContext } from '../contexts/cfbContext'
 import styled from '@emotion/styled'
 import csv from 'csvtojson'
 import Spread from './Spread'
@@ -9,25 +10,54 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { Grid } from '@mui/material'
-const Sports = () => {
-  const [currentSpread, setCurrentSpread] = useState({})
-  const [currentOverUnder, setCurrentOverUnder] = useState({})
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  const [allGames, setAllGames] = useState([])
-  const [currentGame, setCurrentGame] = useState('')
 
+const Sports = () => {
+  const {
+    currentSpread,
+    setCurrentSpread,
+    currentOverUnder,
+    setCurrentOverUnder,
+    currentGameInfo,
+    setCurrentGameInfo,
+    loading,
+    setLoading,
+    error,
+    setError,
+    allGames,
+    setAllGames,
+    currentGame,
+    setCurrentGame,
+    viewportWidth,
+    setViewportWidth,
+    setOU,
+    setSpread,
+  } = useContext(CFBContext)
+
+  const Title = styled.div`
+    font-size: 48px;
+    margin-bottom: 32px;
+    text-align: center;
+  `
   const fetchSingleGameData = async () => {
     if (currentGame.length > 0) {
       const [team1, team2] = currentGame.split(' vs ')
       try {
-        const response = await fetch(
-          `http://localhost:3001/cfb/${team1}/${team2}`
+        const response1 = await fetch(
+          `http://localhost:3001/cfb/ouspread/${team1}/${team2}`
         )
-        const result = await response.json()
+        const result = await response1.json()
         const { spread, overUnder } = result
         setCurrentOverUnder(overUnder)
         setCurrentSpread(spread)
+
+        const response2 = await fetch(
+          `http://localhost:3001/cfb/bets/${team1}/${team2}`
+        )
+        const tempGameInfo = await response2.json()
+        setCurrentGameInfo(tempGameInfo)
+        console.log(`tempGameInfo.overUnder ${tempGameInfo.overUnder}`)
+        setOU(Number(tempGameInfo.overUnder))
+        setSpread(Number(tempGameInfo.gameLine))
       } catch (error) {
         setError(error)
       } finally {
@@ -56,6 +86,19 @@ const Sports = () => {
 
   useEffect(() => {
     getAllGames()
+  }, [])
+
+  const handleResize = () => {
+    const newWidth = window.innerWidth
+    console.log('New Viewport Width:', newWidth)
+    setViewportWidth(newWidth)
+  }
+
+  useEffect(() => {
+    console.log('hello')
+    window.addEventListener('resize', handleResize, false)
+    // handleResize()
+    return window.removeEventListener('resize', handleResize, false)
   }, [])
 
   const handleGameChange = (event) => {
@@ -87,20 +130,35 @@ const Sports = () => {
             </Select>
           </FormControl>
         </Box>
-        <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <div style={{ textAlign: 'center', marginTop: '64px' }}>Spread</div>
-            <Spread data={currentSpread} />
+        {currentGame ? (
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <div style={{ textAlign: 'center', marginTop: '64px' }}>
+                Spread
+              </div>
+              <Spread data={currentSpread} />
+            </Grid>
+            <Grid item xs={6}>
+              <div style={{ textAlign: 'center', marginTop: '64px' }}>
+                Over Under
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <OverUnder data={currentOverUnder} />
+              </div>
+            </Grid>
+            <Grid item xs={12}>
+              {/* {JSON.stringify(currentGameInfo, null, 2)} */}
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <div style={{ textAlign: 'center', marginTop: '64px' }}>
-              Over Under
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <OverUnder data={currentOverUnder} />
-            </div>
-          </Grid>
-        </Grid>
+        ) : (
+          <>
+            <Title>Please select a game.</Title>
+            <img
+              style={{ borderRadius: '16px', margin: 'auto', display: 'block' }}
+              src={process.env.PUBLIC_URL + '/big_lebowski.jpeg'}
+            ></img>
+          </>
+        )}
       </div>
     </>
   )

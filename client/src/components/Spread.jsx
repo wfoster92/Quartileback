@@ -1,5 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useContext } from 'react'
 import * as d3 from 'd3'
+import { CFBContext } from '../contexts/cfbContext'
+
 import styled from '@emotion/styled'
 import { Unstable_NumberInput as NumberInput } from '@mui/base/Unstable_NumberInput'
 
@@ -7,8 +9,7 @@ import { Unstable_NumberInput as NumberInput } from '@mui/base/Unstable_NumberIn
 
 const Spread = (props) => {
   const { data } = props
-
-  const [spread, setSpread] = useState(24)
+  const { viewportWidth, spread, setSpread } = useContext(CFBContext)
 
   const keys = Object.keys(data)
     .map((elem) => Number(elem))
@@ -31,7 +32,7 @@ const Spread = (props) => {
 
     // set the dimensions and margins of the graph
     const margin = { top: 30, right: 30, bottom: 70, left: 60 }
-    const w = 1000 - margin.left - margin.right
+    const w = viewportWidth * 0.48 - margin.left - margin.right
     const h = 600 - margin.top - margin.bottom
 
     // append the svg object to the body of the page

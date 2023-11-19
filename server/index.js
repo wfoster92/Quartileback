@@ -9,9 +9,7 @@ const PORT = process.env.PORT || 3001
 
 const app = express()
 
-// let conferenceRatingsFile = './csvs/ND_vs_WAKE.csv'
-
-app.get('/cfb/:team1/:team2', async (req, res) => {
+app.get('/cfb/ouspread/:team1/:team2', async (req, res) => {
   try {
     const { team1, team2 } = req.params
 
@@ -28,9 +26,9 @@ app.get('/cfb/:team1/:team2', async (req, res) => {
     try {
       if (fs.existsSync(fname)) {
         let result = await csv().fromFile(fname)
-        console.log('CSV data:', result)
+        // console.log('CSV data:', result)
         // get the home and away team from the filename
-        const [away, home] = fname.split('/').pop().split('.')[0].split('_vs_')
+        const [home, away] = fname.split('/').pop().split('.')[0].split('_vs_')
         console.log(away, home)
         let overUnder = {}
         let spread = {}
@@ -51,6 +49,50 @@ app.get('/cfb/:team1/:team2', async (req, res) => {
           }
         })
         res.json({ spread, overUnder }) // Send the JSON data as the response
+      } else {
+        throw new Error(`CSV file not found: ${fname}`)
+      }
+    } catch (error) {
+      console.error('Error reading CSV file:', error)
+      res.status(404).json({ error: 'CSV file not found' })
+      return
+    }
+  } catch (error) {
+    console.error('Error:', error)
+    res.status(500).json({ error: 'Internal Server Error' })
+  }
+})
+
+// fetch the current bets for the game in question
+app.get('/cfb/bets/:team1/:team2', async (req, res) => {
+  try {
+    const { team1, team2 } = req.params
+
+    // Print the current working directory
+    console.log('Current working directory:', process.cwd())
+
+    // Print the contents of the ./csvs/ directory
+    const gamesDir = path.join(process.cwd(), 'csvs', 'bets')
+
+    let fname = path.join(gamesDir, `betbets.csv`)
+    console.log('Attempting to read:', fname)
+
+    try {
+      if (fs.existsSync(fname)) {
+        console.log('hello')
+        let result = await csv().fromFile(fname)
+        let row = result.filter((row) => {
+          console.log(row.homeTeamAbbrev, row.awayTeamAbbrev, team1, team2)
+          return (
+            [team1, team2].includes(row.homeTeamAbbrev) &&
+            [team1, team2].includes(row.awayTeamAbbrev)
+          )
+        })
+        if (row.length === 1) {
+          row = row[0]
+        }
+        console.log(row)
+        res.json(row) // Send the JSON data as the response
       } else {
         throw new Error(`CSV file not found: ${fname}`)
       }
