@@ -17,6 +17,7 @@ const CFBProvider = ({ children }) => {
   const [ouIsInt, setOuIsInt] = useState(true)
   const [spreadIsInt, setSpreadIsInt] = useState(true)
   const [fractionalOU, setFractionalOU] = useState(false)
+  const [fractionalSpread, setFractionalSpread] = useState(false)
 
   const state = {
     currentSpread,
@@ -45,17 +46,11 @@ const CFBProvider = ({ children }) => {
     setSpreadIsInt,
     fractionalOU,
     setFractionalOU,
+    fractionalSpread,
+    setFractionalSpread,
   }
 
   return <CFBContext.Provider value={state}>{children}</CFBContext.Provider>
 }
-
-// const useCFB = () => {
-//   const context = useContext(CFBContext)
-//   if (!context) {
-//     throw new Error('useCFB must be used within a CFBProvider')
-//   }
-//   return context
-// }
 
 export { CFBProvider, CFBContext }

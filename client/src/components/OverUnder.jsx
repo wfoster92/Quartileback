@@ -23,7 +23,6 @@ const Spread = (props) => {
     fractionalOU,
     setFractionalOU,
   } = useContext(CFBContext)
-  console.log(`viewportWidth ${viewportWidth}`)
   const { data } = props
 
   const keys = Object.keys(data)
@@ -46,7 +45,7 @@ const Spread = (props) => {
 
     // set the dimensions and margins of the graph
     const margin = { top: 30, right: 30, bottom: 70, left: 60 }
-    const w = viewportWidth * 0.48 - margin.left - margin.right
+    const w = viewportWidth * 0.45 - margin.left - margin.right
     const h = 600 - margin.top - margin.bottom
 
     // append the svg object to the body of the page
@@ -86,7 +85,7 @@ const Spread = (props) => {
           ? '#080'
           : '#0e0'
       )
-  }, [data, OU, ouIsInt, fractionalOU])
+  }, [data, OU, ouIsInt, fractionalOU, viewportWidth])
 
   const overProb =
     dataArr
@@ -108,7 +107,13 @@ const Spread = (props) => {
     <>
       <div style={{ textAlign: 'center' }}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
             <NumberInput
               aria-label='Demo number input'
               placeholder='Type a number…'
@@ -127,17 +132,19 @@ const Spread = (props) => {
             }}
           >
             <FormControl component='fieldset' variant='standard'>
-              {/* <FormLabel component='legend'>Fractional OU</FormLabel> */}
               <FormGroup>
                 <FormControlLabel
                   control={
                     <Switch
                       checked={fractionalOU}
-                      onChange={() => setFractionalOU(!fractionalOU)}
+                      onChange={() => {
+                        setFractionalOU(!fractionalOU)
+                        setOuIsInt(true)
+                      }}
                       // name='gilad'
                     />
                   }
-                  label='Fractional OU'
+                  label='Fractional Over Under'
                 />
               </FormGroup>
             </FormControl>

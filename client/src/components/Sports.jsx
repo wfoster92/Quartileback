@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect, useContext, useCallback } from 'react'
 import { CFBContext } from '../contexts/cfbContext'
 import styled from '@emotion/styled'
 import csv from 'csvtojson'
@@ -34,6 +34,7 @@ const Sports = () => {
     setOuIsInt,
     setSpreadIsInt,
     setFractionalOU,
+    setFractionalSpread,
   } = useContext(CFBContext)
 
   const Title = styled.div`
@@ -70,8 +71,10 @@ const Sports = () => {
         }
         if (Number.isInteger(tempSpread)) {
           setSpreadIsInt(true)
+          setFractionalSpread(false)
         } else {
           setSpreadIsInt(false)
+          setFractionalSpread(true)
         }
         setOU(Math.floor(tempOU))
         setSpread(Math.floor(tempSpread))
@@ -106,18 +109,17 @@ const Sports = () => {
     getAllGames()
   }, [])
 
-  const handleResize = () => {
+  const handleResize = useCallback(() => {
     const newWidth = window.innerWidth
     console.log('New Viewport Width:', newWidth)
     setViewportWidth(newWidth)
-  }
+  }, [])
 
   useEffect(() => {
     console.log('hello')
     window.addEventListener('resize', handleResize, false)
-    // handleResize()
-    return window.removeEventListener('resize', handleResize, false)
-  }, [])
+    return () => window.removeEventListener('resize', handleResize, false)
+  }, [handleResize])
 
   const handleGameChange = (event) => {
     setCurrentGame(event.target.value)
@@ -132,49 +134,88 @@ const Sports = () => {
   return (
     <>
       <div>
-        <Box sx={{ width: 210, margin: 4 }}>
-          <FormControl fullWidth>
-            <InputLabel id='demo-simple-select-label'>Game</InputLabel>
-            <Select
-              labelId='demo-simple-select-label'
-              id='demo-simple-select'
-              value={currentGame}
-              label='Game'
-              onChange={handleGameChange}
-            >
-              {allGames.map((game) => {
-                return <MenuItem value={game}>{game}</MenuItem>
-              })}
-            </Select>
-          </FormControl>
-        </Box>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <Box sx={{ width: 210, margin: 4 }}>
+            <FormControl fullWidth>
+              <InputLabel id='demo-simple-select-label'>Game</InputLabel>
+              <Select
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
+                value={currentGame}
+                label='Game'
+                onChange={handleGameChange}
+              >
+                {allGames.map((game) => {
+                  return <MenuItem value={game}>{game}</MenuItem>
+                })}
+              </Select>
+            </FormControl>
+          </Box>
+          <h1
+            style={{
+              position: 'absolute',
+              textAlign: 'center',
+              fontSize: '64px',
+              top: '96px',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          >
+            {currentGame}
+          </h1>
+        </div>
+
         {currentGame ? (
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <div style={{ textAlign: 'center', marginTop: '64px' }}>
-                Spread
-              </div>
-              <Spread data={currentSpread} />
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid container spacing={1}>
+              <Grid
+                item
+                xs={11}
+                md={5.5}
+                style={{
+                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                  margin: '2vw',
+                }}
+              >
+                <h1 style={{ textAlign: 'center', marginTop: '64px' }}>
+                  Spread
+                </h1>
+                <Spread data={currentSpread} />
+              </Grid>
+              <Grid
+                item
+                xs={11}
+                md={5.5}
+                style={{
+                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                  margin: '2vw',
+                }}
+              >
+                <h1 style={{ textAlign: 'center', marginTop: '64px' }}>
+                  Over Under
+                </h1>
+                <div style={{ textAlign: 'center' }}>
+                  <OverUnder data={currentOverUnder} />
+                </div>
+              </Grid>
+              <Grid item xs={12}>
+                {/* {JSON.stringify(currentGameInfo, null, 2)} */}
+              </Grid>
             </Grid>
-            <Grid item xs={6}>
-              <div style={{ textAlign: 'center', marginTop: '64px' }}>
-                Over Under
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <OverUnder data={currentOverUnder} />
-              </div>
-            </Grid>
-            <Grid item xs={12}>
-              {/* {JSON.stringify(currentGameInfo, null, 2)} */}
-            </Grid>
-          </Grid>
+          </div>
         ) : (
           <>
             <Title>Please select a game.</Title>
-            <img
+            {/* <img
               style={{ borderRadius: '16px', margin: 'auto', display: 'block' }}
               src={process.env.PUBLIC_URL + '/big_lebowski.jpeg'}
-            ></img>
+            ></img> */}
           </>
         )}
       </div>
