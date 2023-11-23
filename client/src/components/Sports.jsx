@@ -23,8 +23,10 @@ const Sports = () => {
     setLoading,
     error,
     setError,
-    allGames,
-    setAllGames,
+    allFutureGames,
+    allPastGames,
+    setAllPastGames,
+    setAllFutureGames,
     currentGame,
     setCurrentGame,
     viewportWidth,
@@ -89,10 +91,9 @@ const Sports = () => {
   const getAllGames = async () => {
     try {
       const response = await fetch(`http://localhost:3001/cfb/getAllGames`)
-      const games = await response.json()
-      console.log(games)
-      // games = games.map((f) => {})
-      setAllGames(games)
+      const [pastGames, futureGames] = await response.json()
+      setAllPastGames(pastGames)
+      setAllFutureGames(futureGames)
     } catch (error) {
       setError(error)
     } finally {
@@ -122,6 +123,7 @@ const Sports = () => {
   }, [handleResize])
 
   const handleGameChange = (event) => {
+    console.log(event.target.value)
     setCurrentGame(event.target.value)
   }
 
@@ -143,15 +145,33 @@ const Sports = () => {
         >
           <Box sx={{ width: 210, margin: 4 }}>
             <FormControl fullWidth>
-              <InputLabel id='demo-simple-select-label'>Game</InputLabel>
+              <InputLabel id='demo-simple-select-label'>Future Game</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={currentGame}
-                label='Game'
+                value={
+                  allFutureGames.includes(currentGame) ? currentGame : null
+                }
+                label='Future Game'
                 onChange={handleGameChange}
               >
-                {allGames.map((game) => {
+                {allFutureGames.map((game) => {
+                  return <MenuItem value={game}>{game}</MenuItem>
+                })}
+              </Select>
+            </FormControl>
+          </Box>
+          <Box sx={{ width: 210, margin: 4 }}>
+            <FormControl fullWidth>
+              <InputLabel id='demo-simple-select-label'>Past Game</InputLabel>
+              <Select
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
+                value={allPastGames.includes(currentGame) ? currentGame : null}
+                label='Past Game'
+                onChange={handleGameChange}
+              >
+                {allPastGames.map((game) => {
                   return <MenuItem value={game}>{game}</MenuItem>
                 })}
               </Select>
@@ -212,10 +232,11 @@ const Sports = () => {
         ) : (
           <>
             <Title>Please select a game.</Title>
-            {/* <img
+            <img
               style={{ borderRadius: '16px', margin: 'auto', display: 'block' }}
-              src={process.env.PUBLIC_URL + '/big_lebowski.jpeg'}
-            ></img> */}
+              src={process.env.PUBLIC_URL + '/big_lebowski_dude.webp'}
+              // src={process.env.PUBLIC_URL + '/big_lebowski_nam.jpeg'}
+            ></img>
           </>
         )}
       </div>

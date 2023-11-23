@@ -9,7 +9,8 @@ const CFBProvider = ({ children }) => {
   const [currentGameInfo, setCurrentGameInfo] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [allGames, setAllGames] = useState([])
+  const [allPastGames, setAllPastGames] = useState([])
+  const [allFutureGames, setAllFutureGames] = useState([])
   const [currentGame, setCurrentGame] = useState('')
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
   const [spread, setSpread] = useState(0)
@@ -30,8 +31,10 @@ const CFBProvider = ({ children }) => {
     setLoading,
     error,
     setError,
-    allGames,
-    setAllGames,
+    allPastGames,
+    setAllPastGames,
+    allFutureGames,
+    setAllFutureGames,
     currentGame,
     setCurrentGame,
     viewportWidth,

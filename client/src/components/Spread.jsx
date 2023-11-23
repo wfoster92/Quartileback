@@ -163,7 +163,7 @@ const Spread = (props) => {
           {overSpreadProb.toFixed(1)}%
         </div>
         <div>
-          Odds of over{' '}
+          Odds of under{' '}
           {spreadIsInt && !fractionalSpread ? spread : spread + 0.5} are:
           {underSpreadProb.toFixed(1)}%
         </div>

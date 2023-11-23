@@ -3,6 +3,15 @@ import styled from '@emotion/styled'
 
 import CasinoIcon from '@mui/icons-material/Casino'
 import { Button } from '@mui/material'
+
+const CenterDiv = styled.div`
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
 const Gamblin = () => {
   const [d1, setD1] = useState(Math.floor(Math.random() * 6 + 1))
   const [d2, setD2] = useState(Math.floor(Math.random() * 6 + 1))
@@ -48,17 +57,23 @@ const Gamblin = () => {
   }, [money, overall])
 
   return (
-    <>
-      <div>Roll that dice brother</div>
-      <CasinoIcon onClick={rollsDice} />
-      <CasinoIcon onClick={rollsDice} />
-      <div>
+    <CenterDiv>
+      <h1>Roll that dice brother</h1>
+      <CasinoIcon
+        style={{ height: '64px', width: '64px' }}
+        onClick={rollsDice}
+      />
+      <CasinoIcon
+        style={{ height: '64px', width: '64px' }}
+        onClick={rollsDice}
+      />
+      <h2>
         {d1} + {d2} = {d1 + d2} {message}
-      </div>
+      </h2>
 
-      <div>On table ${money}</div>
-      <div>High Score: ${highScore}</div>
-      <div>Bank ${overall}</div>
+      <h2>On table ${money}</h2>
+      <h2>High Score: ${highScore}</h2>
+      <h2>Bank ${overall}</h2>
 
       <div style={{ display: 'inline-block' }}>
         <Button onClick={reset}>Fresh Bet</Button>
@@ -66,7 +81,7 @@ const Gamblin = () => {
       <div style={{ display: 'inline-block' }}>
         <Button onClick={cashOut}>Cash Out</Button>
       </div>
-    </>
+    </CenterDiv>
   )
 }
 
