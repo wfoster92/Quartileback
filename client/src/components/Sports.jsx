@@ -145,14 +145,16 @@ const Sports = () => {
         >
           <Box sx={{ width: 210, margin: 4 }}>
             <FormControl fullWidth>
-              <InputLabel id='demo-simple-select-label'>Future Game</InputLabel>
+              <InputLabel id='demo-simple-select-label'>
+                Future Games
+              </InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
                 value={
                   allFutureGames.includes(currentGame) ? currentGame : null
                 }
-                label='Future Game'
+                label='Future Games'
                 onChange={handleGameChange}
               >
                 {allFutureGames.map((game) => {
@@ -163,12 +165,12 @@ const Sports = () => {
           </Box>
           <Box sx={{ width: 210, margin: 4 }}>
             <FormControl fullWidth>
-              <InputLabel id='demo-simple-select-label'>Past Game</InputLabel>
+              <InputLabel id='demo-simple-select-label'>Past Games</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
                 value={allPastGames.includes(currentGame) ? currentGame : null}
-                label='Past Game'
+                label='Past Games'
                 onChange={handleGameChange}
               >
                 {allPastGames.map((game) => {

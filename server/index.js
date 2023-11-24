@@ -4,10 +4,59 @@ const express = require('express')
 const fs = require('fs')
 const csv = require('csvtojson')
 const path = require('path')
+const bodyParser = require('body-parser')
+const cookieSession = require('cookie-session')
+const cors = require('cors')
 
 const PORT = process.env.PORT || 3001
 
 const app = express()
+
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+  })
+)
+
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.static('public'))
+
+// Enable session cookies
+app.use(
+  cookieSession({
+    name: 'session',
+    keys: ['your-secret-key'], // Change this to a secret key for security
+    maxAge: 24 * 60 * 60 * 1000, // Session duration (24 hours in milliseconds)
+  })
+)
+
+// Sample user data (replace with database in production)
+const users = [
+  { username: 'ws', password: 'nc' },
+  // { username: 'nc', password: 'nc' },
+]
+
+// Middleware to check authentication
+const authenticate = (req, res, next) => {
+  const { username, password } = req.body
+  const user = users.find(
+    (u) => u.username === username && u.password === password
+  )
+
+  if (user) {
+    req.session.user = user // Store user information in the session
+
+    next()
+  } else {
+    res.status(401).send('Unauthorized')
+  }
+}
+
+// Login route
+app.post('/login', authenticate, (req, res) => {
+  res.send('Login successful!')
+})
 
 app.get('/cfb/ouspread/:team1/:team2/', async (req, res) => {
   try {
@@ -38,17 +87,19 @@ app.get('/cfb/ouspread/:team1/:team2/', async (req, res) => {
     try {
       if (fs.existsSync(fname)) {
         let result = await csv().fromFile(fname)
-        // console.log('CSV data:', result)
+
         // get the home and away team from the filename
         const [home, away] = fname.split('/').pop().split('.')[0].split('_vs_')
         console.log(away, home)
+        // initialize dictionaries for overUnder and spread
         let overUnder = {}
         let spread = {}
+        // for each row in the csv take the sum for the over under and the diff for the spread
+        // -> add them to their respective dictionaries
         result.forEach((row) => {
-          // console.log(JSON.stringify(row))
           let diff = Number(row[home]) - Number(row[away])
           let sum = Number(row[home]) + Number(row[away])
-          // console.log(diff, sum)
+          // if the key exists  in the dictionary, add the probability to its current value, else create a new key value pair
           if (spread[diff]) {
             spread[diff] += Number(row.probability)
           } else {
@@ -60,6 +111,7 @@ app.get('/cfb/ouspread/:team1/:team2/', async (req, res) => {
             overUnder[sum] = Number(row.probability)
           }
         })
+        console.log(`Spread\n${JSON.stringify(spread, null, 2)}`)
         res.json({ spread, overUnder }) // Send the JSON data as the response
       } else {
         throw new Error(`CSV file not found: ${fname}`)

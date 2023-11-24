@@ -1,31 +1,50 @@
 import React, { useState } from 'react'
-import { AppBar, Toolbar, Typography, IconButton } from '@mui/material'
+import { AppBar, Toolbar, IconButton } from '@mui/material'
+import { useAuth } from '../contexts/AuthContext'
 import { Link } from 'react-router-dom'
 
 import MenuIcon from '@mui/icons-material/Menu'
 
 export default function NavBar() {
-  // const classes = useStyles()
+  const { authenticated, logout } = useAuth() // Get authentication state and logout function
 
   return (
     <React.Fragment>
       <AppBar color={'success'}>
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
+          <IconButton edge='start' color='inherit' aria-label='menu'>
             <MenuIcon />
           </IconButton>
-          <IconButton color="inherit" href="/">
+          <IconButton color='inherit' component={Link} to='/'>
             Home
           </IconButton>
-          <IconButton color="inherit" href="/gamblin">
+          <IconButton color='inherit' component={Link} to='/gamblin'>
             Gamblin'
           </IconButton>
-          <IconButton color="inherit">Winnin'</IconButton>
-          <IconButton color="inherit">Losin'</IconButton>
-          <IconButton color="inherit">Bettin'</IconButton>
-          <IconButton color="inherit" href="/sports">
+          <IconButton color='inherit'>Winnin'</IconButton>
+          <IconButton color='inherit'>Losin'</IconButton>
+          <IconButton color='inherit'>Bettin'</IconButton>
+          {/* Conditionally render based on authentication state */}
+          {authenticated ? (
+            <>
+              <IconButton color='inherit' component={Link} to='/sports'>
+                Sports!
+              </IconButton>
+              <IconButton color='inherit' onClick={logout}>
+                Logout
+              </IconButton>
+            </>
+          ) : (
+            <>
+              <IconButton color='inherit' component={Link} to='/'>
+                Login'
+              </IconButton>
+              {/* You can add more links for registration, etc. */}
+            </>
+          )}
+          {/* <IconButton color='inherit' href='/sports'>
             Sports!
-          </IconButton>
+          </IconButton> */}
         </Toolbar>
       </AppBar>
       <Toolbar />
