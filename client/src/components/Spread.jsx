@@ -4,13 +4,28 @@ import { CFBContext } from '../contexts/cfbContext'
 
 import styled from '@emotion/styled'
 import { Unstable_NumberInput as NumberInput } from '@mui/base/Unstable_NumberInput'
+import {
+  Button,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  FormControlLabel,
+  Switch,
+} from '@mui/material'
 
 // https://d3-graph-gallery.com/graph/barplot_basic.html
 
 const Spread = (props) => {
   const { data } = props
-  const { viewportWidth, spread, setSpread, spreadIsInt } =
-    useContext(CFBContext)
+  const {
+    viewportWidth,
+    spread,
+    setSpread,
+    spreadIsInt,
+    setSpreadIsInt,
+    fractionalSpread,
+    setFractionalSpread,
+  } = useContext(CFBContext)
 
   const keys = Object.keys(data)
     .map((elem) => Number(elem))
@@ -33,7 +48,7 @@ const Spread = (props) => {
 
     // set the dimensions and margins of the graph
     const margin = { top: 30, right: 30, bottom: 70, left: 60 }
-    const w = viewportWidth * 0.48 - margin.left - margin.right
+    const w = viewportWidth * 0.45 - margin.left - margin.right
     const h = 600 - margin.top - margin.bottom
 
     // append the svg object to the body of the page
@@ -66,12 +81,22 @@ const Spread = (props) => {
       .attr('y', (d) => yAxis(d.probability))
       .attr('width', w / (maxScore - minScore + 1)) // Calculate the width of each bar
       .attr('height', (d) => h - yAxis(d.probability))
-      .attr('fill', (d) => (d.score > spread + 0.5 ? '#800' : '#e00'))
-  }, [data, spread, spreadIsInt])
+      .attr('fill', (d) =>
+        d.score === spread && !fractionalSpread
+          ? '#000'
+          : d.score > (spreadIsInt && !fractionalSpread ? spread : spread + 0.5)
+          ? '#800'
+          : '#e00'
+      )
+  }, [data, spread, spreadIsInt, fractionalSpread, viewportWidth])
 
   const overSpreadProb =
     dataArr
-      .filter((elem) => (elem.score > spread + spreadIsInt ? 0 : 0.5))
+      .filter(
+        (elem) =>
+          elem.score >
+          (spreadIsInt && !fractionalSpread ? spread : spread + 0.5)
+      )
       .map((elem) => elem.probability)
       .reduce((acc, currentValue) => {
         return acc + currentValue
@@ -79,7 +104,11 @@ const Spread = (props) => {
 
   const underSpreadProb =
     dataArr
-      .filter((elem) => (elem.score < spread + spreadIsInt ? 0 : 0.5))
+      .filter(
+        (elem) =>
+          elem.score <
+          (spreadIsInt && !fractionalSpread ? spread : spread + 0.5)
+      )
       .map((elem) => elem.probability)
       .reduce((acc, currentValue) => {
         return acc + currentValue
@@ -88,18 +117,54 @@ const Spread = (props) => {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <NumberInput
-          aria-label='Demo number input'
-          placeholder='Type a number…'
-          value={spread}
-          onChange={(event, val) => setSpread(val)}
-        />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <NumberInput
+              aria-label='Demo number input'
+              placeholder='Type a number…'
+              value={spread}
+              onChange={(event, val) => setSpread(val)}
+            />
+          </div>
+          <div
+            style={{
+              display: 'inline-block',
+              verticalAlign: 'center',
+              marginLeft: '16px',
+            }}
+          >
+            <FormControl component='fieldset' variant='standard'>
+              <FormGroup>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={fractionalSpread}
+                      onChange={() => {
+                        setFractionalSpread(!fractionalSpread)
+                        setSpreadIsInt(true)
+                      }}
+                    />
+                  }
+                  label='Fractional Spread'
+                />
+              </FormGroup>
+            </FormControl>
+          </div>
+        </div>
         <div>
-          Odds of over {spread + spreadIsInt ? 0 : 0.5} are:
+          Odds of over{' '}
+          {spreadIsInt && !fractionalSpread ? spread : spread + 0.5} are:
           {overSpreadProb.toFixed(1)}%
         </div>
         <div>
-          Odds of under {spread + spreadIsInt ? 0 : 0.5} are:
+          Odds of under{' '}
+          {spreadIsInt && !fractionalSpread ? spread : spread + 0.5} are:
           {underSpreadProb.toFixed(1)}%
         </div>
       </div>

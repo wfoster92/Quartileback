@@ -9,15 +9,27 @@ const PORT = process.env.PORT || 3001
 
 const app = express()
 
-app.get('/cfb/ouspread/:team1/:team2', async (req, res) => {
+app.get('/cfb/ouspread/:team1/:team2/', async (req, res) => {
   try {
     const { team1, team2 } = req.params
 
     // Print the current working directory
     console.log('Current working directory:', process.cwd())
 
+    const futureGamesDir = path.join(process.cwd(), 'csvs', 'games', 'future')
     // Print the contents of the ./csvs/ directory
-    const gamesDir = path.join(process.cwd(), 'csvs', 'games')
+    const gamesDir = path.join(
+      process.cwd(),
+      'csvs',
+      'games',
+      fs.readdirSync(futureGamesDir).includes(`${team1}_vs_${team2}.csv`)
+        ? 'future'
+        : 'past'
+    )
+
+    console.log(`futureGamesDir ${futureGamesDir}`)
+    console.log(path.join(futureGamesDir, `${team1}_vs_${team2}.csv`))
+
     console.log('Contents of ./csvs/ directory:', fs.readdirSync(gamesDir))
 
     let fname = path.join(gamesDir, `${team1}_vs_${team2}.csv`)
@@ -74,7 +86,7 @@ app.get('/cfb/bets/:team1/:team2', async (req, res) => {
     // Print the contents of the ./csvs/ directory
     const gamesDir = path.join(process.cwd(), 'csvs', 'bets')
 
-    let fname = path.join(gamesDir, `betbets.csv`)
+    let fname = path.join(gamesDir, `betoddsCurrent.csv`)
     console.log('Attempting to read:', fname)
 
     try {
@@ -108,14 +120,18 @@ app.get('/cfb/bets/:team1/:team2', async (req, res) => {
 })
 
 app.get('/cfb/getAllGames', async (req, res) => {
-  const gamesDir = path.join(process.cwd(), 'csvs', 'games')
+  const pastGamesDir = path.join(process.cwd(), 'csvs', 'games', 'past')
+  const futureGamesDir = path.join(process.cwd(), 'csvs', 'games', 'future')
   // console.log('Contents of ./csvs/ directory:', fs.readdirSync(gamesDir))
-  const gameFiles = fs.readdirSync(gamesDir)
-  const games = gameFiles.map((game) => {
+  const pastGameFiles = fs.readdirSync(pastGamesDir)
+  const futureGameFiles = fs.readdirSync(futureGamesDir)
+  const pastGames = pastGameFiles.map((game) => {
     return game.split('.')[0].replace('_vs_', ' vs ')
   })
-  // console.log(games)
-  res.json(games)
+  const futureGames = futureGameFiles.map((game) => {
+    return game.split('.')[0].replace('_vs_', ' vs ')
+  })
+  res.json([pastGames, futureGames])
 })
 
 app.listen(PORT, () => {
