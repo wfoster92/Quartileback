@@ -6,10 +6,18 @@ const csv = require('csvtojson')
 const path = require('path')
 const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session')
+const cors = require('cors')
 
 const PORT = process.env.PORT || 3001
 
 const app = express()
+
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+  })
+)
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
@@ -25,8 +33,8 @@ app.use(
 
 // Sample user data (replace with database in production)
 const users = [
-  { username: 'ws', password: 'ws' },
-  { username: 'nc', password: 'nc' },
+  { username: 'ws', password: 'nc' },
+  // { username: 'nc', password: 'nc' },
 ]
 
 // Middleware to check authentication

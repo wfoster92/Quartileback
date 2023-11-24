@@ -18,6 +18,11 @@ const App = () => {
       <NavBar />
 
       <Routes>
+        {authenticated ? (
+          <Route path='/' element={<Home />} />
+        ) : (
+          <Route path='/' element={<LoginForm />} />
+        )}
         <Route path='/' element={<LoginForm />} />
         <Route path='/gamblin' element={<Gamblin />} />
         {authenticated ? (
