@@ -6,25 +6,33 @@ import Contact from './components/Contact'
 import NavBar from './components/NavBar'
 import Gamblin from './components/Gamblin'
 import Sports from './components/Sports'
+import LoginForm from './components/LoginForm'
 import { CFBProvider } from './contexts/cfbContext'
+import { useAuth } from './contexts/AuthContext'
 
 const App = () => {
+  const { authenticated } = useAuth()
+
   return (
     <>
       <NavBar />
+
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<LoginForm />} />
         <Route path='/gamblin' element={<Gamblin />} />
+        {authenticated ? (
+          <Route
+            path='/sports'
+            element={
+              <CFBProvider>
+                <Sports />
+              </CFBProvider>
+            }
+          />
+        ) : null}
 
-        <Route
-          path='/sports'
-          element={
-            <CFBProvider>
-              <Sports />
-            </CFBProvider>
-          }
-        />
-
+        {/* Add a route for the login page */}
+        {/* <Route path='/login' element={<LoginForm />} /> */}
         <Route path='/*' element={<NoPage />} />
       </Routes>
     </>
