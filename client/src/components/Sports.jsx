@@ -63,7 +63,7 @@ const Sports = () => {
         )
         const tempGameInfo = await response2.json()
         setCurrentGameInfo(tempGameInfo)
-        console.log(`tempGameInfo.overUnder ${tempGameInfo.overUnder}`)
+        // console.log(`tempGameInfo.overUnder ${tempGameInfo.overUnder}`)
         let tempOU = Number(tempGameInfo.overUnder)
         let tempSpread = Number(tempGameInfo.gameLine)
         if (Number.isInteger(tempOU)) {
