@@ -49,7 +49,8 @@ const Sports = () => {
       const [team1, team2] = currentGame.split(' vs ')
       try {
         const response1 = await fetch(
-          `http://localhost:3001/cfb/ouspread/${team1}/${team2}`
+          `/cfb/ouspread/${team1}/${team2}`
+          // `http://localhost:3001/cfb/ouspread/${team1}/${team2}`
         )
         const result = await response1.json()
         const { spread, overUnder } = result
@@ -57,7 +58,8 @@ const Sports = () => {
         setCurrentSpread(spread)
 
         const response2 = await fetch(
-          `http://localhost:3001/cfb/bets/${team1}/${team2}`
+          `/cfb/bets/${team1}/${team2}`
+          // `http://localhost:3001/cfb/bets/${team1}/${team2}`
         )
         const tempGameInfo = await response2.json()
         setCurrentGameInfo(tempGameInfo)
@@ -90,7 +92,8 @@ const Sports = () => {
 
   const getAllGames = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/cfb/getAllGames`)
+      const response = await fetch(`/cfb/getAllGames`)
+      // const response = await fetch(`http://localhost:3001/cfb/getAllGames`)
       const [pastGames, futureGames] = await response.json()
       setAllPastGames(pastGames)
       setAllFutureGames(futureGames)
