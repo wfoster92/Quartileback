@@ -20,6 +20,11 @@ const CFBProvider = ({ children }) => {
   const [fractionalOU, setFractionalOU] = useState(false)
   const [fractionalSpread, setFractionalSpread] = useState(false)
 
+  const [allCFBGames, setAllCFBGames] = useState([])
+  const [allNBAGames, setAllNBAGames] = useState([])
+  const [allNFLGames, setAllNFLGames] = useState([])
+  const [gamesObj, setGamesObj] = useState(null)
+
   const state = {
     currentSpread,
     setCurrentSpread,
@@ -51,6 +56,14 @@ const CFBProvider = ({ children }) => {
     setFractionalOU,
     fractionalSpread,
     setFractionalSpread,
+    allCFBGames,
+    setAllCFBGames,
+    allNBAGames,
+    setAllNBAGames,
+    allNFLGames,
+    setAllNFLGames,
+    gamesObj,
+    setGamesObj,
   }
 
   return <CFBContext.Provider value={state}>{children}</CFBContext.Provider>
