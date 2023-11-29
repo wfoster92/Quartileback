@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3001
 
 const app = express()
 
+app.use(express.static('../client/build'))
 app.use(
   cors({
     origin: 'http://localhost:3000',
