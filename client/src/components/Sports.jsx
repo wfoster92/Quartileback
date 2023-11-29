@@ -37,6 +37,16 @@ const Sports = () => {
     setSpreadIsInt,
     setFractionalOU,
     setFractionalSpread,
+    allCFBGames,
+    setAllCFBGames,
+    allNBAGames,
+    setAllNBAGames,
+    allNFLGames,
+    setAllNFLGames,
+    allNCAABGames,
+    setAllNCAABGames,
+    gamesObj,
+    setGamesObj,
   } = useContext(CFBContext)
 
   const Title = styled.div`
@@ -46,22 +56,10 @@ const Sports = () => {
   `
   const fetchSingleGameData = async () => {
     if (currentGame.length > 0) {
-      const [team1, team2] = currentGame.split(' vs ')
+      const [away, home] = currentGame.split(' ')
       try {
-        const response1 = await fetch(
-          `/cfb/ouspread/${team1}/${team2}`
-          // `http://localhost:3001/cfb/ouspread/${team1}/${team2}`
-        )
-        const result = await response1.json()
-        const { spread, overUnder } = result
-        setCurrentOverUnder(overUnder)
-        setCurrentSpread(spread)
-
-        const response2 = await fetch(
-          `/cfb/bets/${team1}/${team2}`
-          // `http://localhost:3001/cfb/bets/${team1}/${team2}`
-        )
-        const tempGameInfo = await response2.json()
+        const response = await fetch(`/cfb/bets/${away}/${home}`)
+        const tempGameInfo = await response.json()
         setCurrentGameInfo(tempGameInfo)
         // console.log(`tempGameInfo.overUnder ${tempGameInfo.overUnder}`)
         let tempOU = Number(tempGameInfo.overUnder)
@@ -104,13 +102,32 @@ const Sports = () => {
     }
   }
 
+  const getAllGameData = async () => {
+    try {
+      const response = await fetch(`/games/getAllDatasets`)
+      const [gameData, cfbGames, ncaabGames, nbaGames, nflGames] =
+        await response.json()
+      console.log(`ncaab games ${ncaabGames}`)
+      setAllCFBGames(cfbGames)
+      setAllNCAABGames(ncaabGames)
+      setAllNBAGames(nbaGames)
+      setAllNFLGames(nflGames)
+      setGamesObj(gameData)
+    } catch (error) {
+      setError(error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   useEffect(() => {
     fetchSingleGameData()
     setFractionalOU(false)
   }, [currentGame])
 
   useEffect(() => {
-    getAllGames()
+    // getAllGames()
+    getAllGameData()
   }, [])
 
   const handleResize = useCallback(() => {
@@ -125,9 +142,48 @@ const Sports = () => {
     return () => window.removeEventListener('resize', handleResize, false)
   }, [handleResize])
 
-  const handleGameChange = (event) => {
-    console.log(event.target.value)
-    setCurrentGame(event.target.value)
+  const handleGameChangeCFB = (event) => {
+    let newGame = event.target.value
+    let [away, home] = newGame.split(' ')
+    let k = `${away}_${home}_CFB`
+    console.log(`new cfb game ${newGame}`)
+    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
+    setCurrentGame(newGame)
+    setCurrentOverUnder(gamesObj[k].ou)
+    setCurrentSpread(gamesObj[k].spread)
+  }
+
+  const handleGameChangeNBA = (event) => {
+    let newGame = event.target.value
+    let [away, home] = newGame.split(' ')
+    let k = `${away}_${home}_NBA`
+    console.log(`new nba game ${newGame}`)
+    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
+    setCurrentGame(newGame)
+    setCurrentOverUnder(gamesObj[k].ou)
+    setCurrentSpread(gamesObj[k].spread)
+  }
+
+  const handleGameChangeNCAAB = (event) => {
+    let newGame = event.target.value
+    let [away, home] = newGame.split(' ')
+    let k = `${away}_${home}_NCAAB`
+    console.log(`new ncaab game ${newGame}`)
+    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
+    setCurrentGame(newGame)
+    setCurrentOverUnder(gamesObj[k].ou)
+    setCurrentSpread(gamesObj[k].spread)
+  }
+
+  const handleGameChangeNFL = (event) => {
+    let newGame = event.target.value
+    let [away, home] = newGame.split(' ')
+    let k = `${away}_${home}_NFL`
+    console.log(`new nfl game ${newGame}`)
+    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
+    setCurrentGame(newGame)
+    setCurrentOverUnder(gamesObj[k].ou)
+    setCurrentSpread(gamesObj[k].spread)
   }
 
   if (loading) {
@@ -148,19 +204,15 @@ const Sports = () => {
         >
           <Box sx={{ width: 210, margin: 4 }}>
             <FormControl fullWidth>
-              <InputLabel id='demo-simple-select-label'>
-                Future Games
-              </InputLabel>
+              <InputLabel id='demo-simple-select-label'>NCAAB Games</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={
-                  allFutureGames.includes(currentGame) ? currentGame : null
-                }
-                label='Future Games'
-                onChange={handleGameChange}
+                value={allNCAABGames.includes(currentGame) ? currentGame : null}
+                label='NCAAB Games'
+                onChange={handleGameChangeNCAAB}
               >
-                {allFutureGames.map((game) => {
+                {allNCAABGames.map((game) => {
                   return <MenuItem value={game}>{game}</MenuItem>
                 })}
               </Select>
@@ -168,34 +220,61 @@ const Sports = () => {
           </Box>
           <Box sx={{ width: 210, margin: 4 }}>
             <FormControl fullWidth>
-              <InputLabel id='demo-simple-select-label'>Past Games</InputLabel>
+              <InputLabel id='demo-simple-select-label'>CFB Games</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={allPastGames.includes(currentGame) ? currentGame : null}
-                label='Past Games'
-                onChange={handleGameChange}
+                value={allCFBGames.includes(currentGame) ? currentGame : null}
+                label='CFB Games'
+                onChange={handleGameChangeCFB}
               >
-                {allPastGames.map((game) => {
+                {allCFBGames.map((game) => {
                   return <MenuItem value={game}>{game}</MenuItem>
                 })}
               </Select>
             </FormControl>
           </Box>
-          <h1
-            style={{
-              position: 'absolute',
-              textAlign: 'center',
-              fontSize: '64px',
-              top: '96px',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-            }}
-          >
-            {currentGame}
-          </h1>
+          <Box sx={{ width: 210, margin: 4 }}>
+            <FormControl fullWidth>
+              <InputLabel id='demo-simple-select-label'>NBA Games</InputLabel>
+              <Select
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
+                value={allNBAGames.includes(currentGame) ? currentGame : null}
+                label='NBA Games'
+                onChange={handleGameChangeNBA}
+              >
+                {allNBAGames.map((game) => {
+                  return <MenuItem value={game}>{game}</MenuItem>
+                })}
+              </Select>
+            </FormControl>
+          </Box>
+          <Box sx={{ width: 210, margin: 4 }}>
+            <FormControl fullWidth>
+              <InputLabel id='demo-simple-select-label'>NFL Games</InputLabel>
+              <Select
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
+                value={allNFLGames.includes(currentGame) ? currentGame : null}
+                label='NBA Games'
+                onChange={handleGameChangeNFL}
+              >
+                {allNFLGames.map((game) => {
+                  return <MenuItem value={game}>{game}</MenuItem>
+                })}
+              </Select>
+            </FormControl>
+          </Box>
         </div>
-
+        <div
+          style={{
+            textAlign: 'center',
+            fontSize: '64px',
+          }}
+        >
+          {currentGame}
+        </div>
         {currentGame ? (
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Grid container spacing={1}>

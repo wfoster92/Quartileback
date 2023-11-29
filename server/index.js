@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3001
 
 const app = express()
 
+app.use(express.static('../client/build'))
 app.use(
   cors({
     origin: 'http://localhost:3000',
@@ -128,9 +129,9 @@ app.get('/cfb/ouspread/:team1/:team2/', async (req, res) => {
 })
 
 // fetch the current bets for the game in question
-app.get('/cfb/bets/:team1/:team2', async (req, res) => {
+app.get('/cfb/bets/:away/:home', async (req, res) => {
   try {
-    const { team1, team2 } = req.params
+    const { away, home } = req.params
 
     // Print the current working directory
     console.log('Current working directory:', process.cwd())
@@ -138,18 +139,18 @@ app.get('/cfb/bets/:team1/:team2', async (req, res) => {
     // Print the contents of the ./csvs/ directory
     const gamesDir = path.join(process.cwd(), 'csvs', 'bets')
 
-    let fname = path.join(gamesDir, `betoddsCurrent.csv`)
+    let fname = path.join(gamesDir, `betodds_11_28_2023.csv`)
     console.log('Attempting to read:', fname)
 
     try {
       if (fs.existsSync(fname)) {
-        console.log('hello')
+        // console.log('hello')
         let result = await csv().fromFile(fname)
         let row = result.filter((row) => {
-          console.log(row.homeTeamAbbrev, row.awayTeamAbbrev, team1, team2)
+          console.log(row.homeTeamAbbrev, row.awayTeamAbbrev, away, home)
           return (
-            [team1, team2].includes(row.homeTeamAbbrev) &&
-            [team1, team2].includes(row.awayTeamAbbrev)
+            [away, home].includes(row.homeTeamAbbrev) &&
+            [away, home].includes(row.awayTeamAbbrev)
           )
         })
         if (row.length === 1) {
@@ -184,6 +185,78 @@ app.get('/cfb/getAllGames', async (req, res) => {
     return game.split('.')[0].replace('_vs_', ' vs ')
   })
   res.json([pastGames, futureGames])
+})
+
+app.get('/games/getAllDatasets', async (req, res) => {
+  const futureGamesDir = path.join(process.cwd(), 'csvs', 'games', 'future')
+  let fname = path.join(futureGamesDir, `score_summaries_11_28_2023.csv`)
+  try {
+    if (fs.existsSync(fname)) {
+      let result = await csv().fromFile(fname)
+      let cfbGames = []
+      let ncaabGames = []
+      let nbaGames = []
+      let nflGames = []
+      // initialize dictionaries for overUnder and spread
+      let output = {}
+      // for each row in the csv take the sum for the over under and the diff for the spread
+      // -> add them to their respective dictionaries
+      result.forEach((row) => {
+        // if (idx % 20000 === 1) {
+        //   console.log(idx)
+        //   // console.log(JSON.stringify(output, null, 2))
+        // }
+        let { awayScore, homeScore, probability, awayTeam, homeTeam, sport } =
+          row
+        let k = `${awayTeam}_${homeTeam}_${sport}`
+        awayScore = Number(awayScore)
+        homeScore = Number(homeScore)
+
+        probability = Number(probability)
+        let diff = homeScore - awayScore
+        let sum = homeScore + awayScore
+        if (Object.keys(output).includes(k)) {
+          let tempObj = output[k]
+
+          if (tempObj.spread[`${diff}`]) {
+            tempObj.spread[`${diff}`] += probability
+          } else {
+            tempObj.spread[`${diff}`] = probability
+          }
+          if (tempObj.ou[`${sum}`]) {
+            tempObj.ou[`${sum}`] += probability
+          } else {
+            tempObj.ou[`${sum}`] = probability
+          }
+        } else {
+          let tempObj = {
+            spread: {},
+            ou: {},
+          }
+          tempObj.spread[`${diff}`] = probability
+          tempObj.ou[`${sum}`] = probability
+          output[k] = tempObj
+          if (sport === 'NFL') {
+            nflGames.push(`${awayTeam} ${homeTeam}`)
+          } else if (sport === 'NBA') {
+            nbaGames.push(`${awayTeam} ${homeTeam}`)
+          } else if (sport === 'CFB') {
+            cfbGames.push(`${awayTeam} ${homeTeam}`)
+          } else if (sport === 'NCAAB') {
+            ncaabGames.push(`${awayTeam} ${homeTeam}`)
+          }
+        }
+      })
+      console.log(`Output\n${JSON.stringify(ncaabGames, null, 2)}`)
+      res.json([output, cfbGames, ncaabGames, nbaGames, nflGames]) // Send the JSON data as the response
+    } else {
+      throw new Error(`CSV file not found: ${fname}`)
+    }
+  } catch (error) {
+    console.error('Error reading CSV file:', error)
+    res.status(404).json({ error: 'CSV file not found' })
+    return
+  }
 })
 
 app.listen(PORT, () => {
