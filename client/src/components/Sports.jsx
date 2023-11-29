@@ -43,6 +43,8 @@ const Sports = () => {
     setAllNBAGames,
     allNFLGames,
     setAllNFLGames,
+    allNCAABGames,
+    setAllNCAABGames,
     gamesObj,
     setGamesObj,
   } = useContext(CFBContext)
@@ -103,8 +105,11 @@ const Sports = () => {
   const getAllGameData = async () => {
     try {
       const response = await fetch(`/games/getAllDatasets`)
-      const [gameData, cfbGames, nbaGames, nflGames] = await response.json()
+      const [gameData, cfbGames, ncaabGames, nbaGames, nflGames] =
+        await response.json()
+      console.log(`ncaab games ${ncaabGames}`)
       setAllCFBGames(cfbGames)
+      setAllNCAABGames(ncaabGames)
       setAllNBAGames(nbaGames)
       setAllNFLGames(nflGames)
       setGamesObj(gameData)
@@ -138,8 +143,14 @@ const Sports = () => {
   }, [handleResize])
 
   const handleGameChangeCFB = (event) => {
-    console.log(event.target.value)
-    setCurrentGame(event.target.value)
+    let newGame = event.target.value
+    let [away, home] = newGame.split(' ')
+    let k = `${away}_${home}_CFB`
+    console.log(`new cfb game ${newGame}`)
+    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
+    setCurrentGame(newGame)
+    setCurrentOverUnder(gamesObj[k].ou)
+    setCurrentSpread(gamesObj[k].spread)
   }
 
   const handleGameChangeNBA = (event) => {
@@ -153,11 +164,22 @@ const Sports = () => {
     setCurrentSpread(gamesObj[k].spread)
   }
 
+  const handleGameChangeNCAAB = (event) => {
+    let newGame = event.target.value
+    let [away, home] = newGame.split(' ')
+    let k = `${away}_${home}_NCAAB`
+    console.log(`new ncaab game ${newGame}`)
+    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
+    setCurrentGame(newGame)
+    setCurrentOverUnder(gamesObj[k].ou)
+    setCurrentSpread(gamesObj[k].spread)
+  }
+
   const handleGameChangeNFL = (event) => {
     let newGame = event.target.value
     let [away, home] = newGame.split(' ')
     let k = `${away}_${home}_NFL`
-    console.log(`new nba game ${newGame}`)
+    console.log(`new nfl game ${newGame}`)
     console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
     setCurrentGame(newGame)
     setCurrentOverUnder(gamesObj[k].ou)
@@ -182,12 +204,28 @@ const Sports = () => {
         >
           <Box sx={{ width: 210, margin: 4 }}>
             <FormControl fullWidth>
+              <InputLabel id='demo-simple-select-label'>NCAAB Games</InputLabel>
+              <Select
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
+                value={allNCAABGames.includes(currentGame) ? currentGame : null}
+                label='NCAAB Games'
+                onChange={handleGameChangeNCAAB}
+              >
+                {allNCAABGames.map((game) => {
+                  return <MenuItem value={game}>{game}</MenuItem>
+                })}
+              </Select>
+            </FormControl>
+          </Box>
+          <Box sx={{ width: 210, margin: 4 }}>
+            <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>CFB Games</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
                 value={allCFBGames.includes(currentGame) ? currentGame : null}
-                label='NBA Games'
+                label='CFB Games'
                 onChange={handleGameChangeCFB}
               >
                 {allCFBGames.map((game) => {

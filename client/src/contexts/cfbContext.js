@@ -23,6 +23,7 @@ const CFBProvider = ({ children }) => {
   const [allCFBGames, setAllCFBGames] = useState([])
   const [allNBAGames, setAllNBAGames] = useState([])
   const [allNFLGames, setAllNFLGames] = useState([])
+  const [allNCAABGames, setAllNCAABGames] = useState([])
   const [gamesObj, setGamesObj] = useState(null)
 
   const state = {
@@ -62,6 +63,8 @@ const CFBProvider = ({ children }) => {
     setAllNBAGames,
     allNFLGames,
     setAllNFLGames,
+    allNCAABGames,
+    setAllNCAABGames,
     gamesObj,
     setGamesObj,
   }
