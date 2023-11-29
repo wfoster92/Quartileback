@@ -64,7 +64,7 @@ app.get('/cfb/ouspread/:team1/:team2/', async (req, res) => {
     const { team1, team2 } = req.params
 
     // Print the current working directory
-    console.log('Current working directory:', process.cwd())
+    // console.log('Current working directory:', process.cwd())
 
     const futureGamesDir = path.join(process.cwd(), 'csvs', 'games', 'future')
     // Print the contents of the ./csvs/ directory
