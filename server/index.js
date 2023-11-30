@@ -139,7 +139,7 @@ app.get('/cfb/bets/:away/:home', async (req, res) => {
     // Print the contents of the ./csvs/ directory
     const gamesDir = path.join(process.cwd(), 'csvs', 'bets')
 
-    let fname = path.join(gamesDir, `betodds_11_28_2023.csv`)
+    let fname = path.join(gamesDir, `betodds_11_30_2023.csv`)
     console.log('Attempting to read:', fname)
 
     try {
@@ -189,7 +189,7 @@ app.get('/cfb/getAllGames', async (req, res) => {
 
 app.get('/games/getAllDatasets', async (req, res) => {
   const futureGamesDir = path.join(process.cwd(), 'csvs', 'games', 'future')
-  let fname = path.join(futureGamesDir, `score_summaries_11_28_2023.csv`)
+  let fname = path.join(futureGamesDir, `score_summaries_11_30_2023.csv`)
   try {
     if (fs.existsSync(fname)) {
       let result = await csv().fromFile(fname)
