@@ -1,11 +1,11 @@
-// CFBContext.js
+// GamesContext.js
 import React, { createContext, useContext, useState } from 'react'
 
-const CFBContext = createContext()
+const GamesContext = createContext()
 
-const CFBProvider = ({ children }) => {
-  const [currentSpread, setCurrentSpread] = useState({})
-  const [currentOverUnder, setCurrentOverUnder] = useState({})
+const GamesProvider = ({ children }) => {
+  const [currentSpread, setCurrentSpread] = useState(null)
+  const [currentOverUnder, setCurrentOverUnder] = useState(null)
   const [currentGameInfo, setCurrentGameInfo] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -69,7 +69,7 @@ const CFBProvider = ({ children }) => {
     setGamesObj,
   }
 
-  return <CFBContext.Provider value={state}>{children}</CFBContext.Provider>
+  return <GamesContext.Provider value={state}>{children}</GamesContext.Provider>
 }
 
-export { CFBProvider, CFBContext }
+export { GamesProvider, GamesContext }

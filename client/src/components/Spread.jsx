@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useContext } from 'react'
 import * as d3 from 'd3'
-import { CFBContext } from '../contexts/cfbContext'
+import { GamesContext } from '../contexts/GamesContext'
 
 import styled from '@emotion/styled'
 import { Unstable_NumberInput as NumberInput } from '@mui/base/Unstable_NumberInput'
@@ -15,8 +15,8 @@ import {
 
 // https://d3-graph-gallery.com/graph/barplot_basic.html
 
-const Spread = (props) => {
-  const { data } = props
+const Spread = () => {
+  // const { data } = props
   const {
     viewportWidth,
     spread,
@@ -25,20 +25,21 @@ const Spread = (props) => {
     setSpreadIsInt,
     fractionalSpread,
     setFractionalSpread,
-  } = useContext(CFBContext)
+    currentSpread,
+  } = useContext(GamesContext)
 
-  const keys = Object.keys(data)
+  const keys = Object.keys(currentSpread)
     .map((elem) => Number(elem))
     .sort((a, b) => a - b)
   const minScore = keys[0]
   const maxScore = [...keys].pop()
-  const maxProb = Math.max(...keys.map((k) => data[k]))
+  const maxProb = Math.max(...keys.map((k) => currentSpread[k]))
   console.log(minScore, maxScore)
 
   let dataArr = keys.map((k) => {
     return {
       score: Number(k),
-      probability: data[k],
+      probability: currentSpread[k],
     }
   })
 
@@ -88,7 +89,7 @@ const Spread = (props) => {
           ? '#800'
           : '#e00'
       )
-  }, [data, spread, spreadIsInt, fractionalSpread, viewportWidth])
+  }, [currentSpread, spread, spreadIsInt, fractionalSpread, viewportWidth])
 
   const overSpreadProb =
     dataArr

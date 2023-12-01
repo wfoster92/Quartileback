@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useContext } from 'react'
-import { CFBContext } from '../contexts/cfbContext'
+import { GamesContext } from '../contexts/GamesContext'
 import * as d3 from 'd3'
 import { Unstable_NumberInput as NumberInput } from '@mui/base/Unstable_NumberInput'
 import {
@@ -13,7 +13,7 @@ import {
 
 // https://d3-graph-gallery.com/graph/barplot_basic.html
 
-const Spread = (props) => {
+const Spread = () => {
   const {
     viewportWidth,
     OU,
@@ -22,21 +22,22 @@ const Spread = (props) => {
     setOuIsInt,
     fractionalOU,
     setFractionalOU,
-  } = useContext(CFBContext)
-  const { data } = props
+    currentOverUnder,
+  } = useContext(GamesContext)
+  // const { data } = props
 
-  const keys = Object.keys(data)
+  const keys = Object.keys(currentOverUnder)
     .map((elem) => Number(elem))
     .sort((a, b) => a - b)
   const minScore = keys[0]
   const maxScore = [...keys].pop()
-  const maxProb = Math.max(...keys.map((k) => data[k]))
+  const maxProb = Math.max(...keys.map((k) => currentOverUnder[k]))
   console.log(minScore, maxScore)
 
   let dataArr = keys.map((k) => {
     return {
       score: Number(k),
-      probability: data[k],
+      probability: currentOverUnder[k],
     }
   })
   const ref = useRef()
@@ -85,7 +86,7 @@ const Spread = (props) => {
           ? '#080'
           : '#0e0'
       )
-  }, [data, OU, ouIsInt, fractionalOU, viewportWidth])
+  }, [currentOverUnder, OU, ouIsInt, fractionalOU, viewportWidth])
 
   const overProb =
     dataArr

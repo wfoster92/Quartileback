@@ -2,12 +2,11 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import NoPage from './components/NoPage'
-import Contact from './components/Contact'
 import NavBar from './components/NavBar'
 import Gamblin from './components/Gamblin'
 import Sports from './components/Sports'
 import LoginForm from './components/LoginForm'
-import { CFBProvider } from './contexts/cfbContext'
+import { GamesProvider } from './contexts/GamesContext'
 import { useAuth } from './contexts/AuthContext'
 
 const App = () => {
@@ -29,9 +28,9 @@ const App = () => {
           <Route
             path='/sports'
             element={
-              <CFBProvider>
+              <GamesProvider>
                 <Sports />
-              </CFBProvider>
+              </GamesProvider>
             }
           />
         ) : null}
