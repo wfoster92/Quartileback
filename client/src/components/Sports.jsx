@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext, useCallback } from 'react'
-import { CFBContext } from '../contexts/cfbContext'
+import { GamesContext } from '../contexts/GamesContext'
 import styled from '@emotion/styled'
 import csv from 'csvtojson'
 import Spread from './Spread'
@@ -47,7 +47,7 @@ const Sports = () => {
     setAllNCAABGames,
     gamesObj,
     setGamesObj,
-  } = useContext(CFBContext)
+  } = useContext(GamesContext)
 
   const Title = styled.div`
     font-size: 48px;
@@ -58,7 +58,7 @@ const Sports = () => {
     if (currentGame.length > 0) {
       const [away, home] = currentGame.split(' ')
       try {
-        const response = await fetch(`/cfb/bets/${away}/${home}`)
+        const response = await fetch(`/sports/bets/${away}/${home}`)
         const tempGameInfo = await response.json()
         setCurrentGameInfo(tempGameInfo)
         // console.log(`tempGameInfo.overUnder ${tempGameInfo.overUnder}`)
@@ -88,23 +88,9 @@ const Sports = () => {
     }
   }
 
-  const getAllGames = async () => {
-    try {
-      const response = await fetch(`/cfb/getAllGames`)
-      // const response = await fetch(`http://localhost:3001/cfb/getAllGames`)
-      const [pastGames, futureGames] = await response.json()
-      setAllPastGames(pastGames)
-      setAllFutureGames(futureGames)
-    } catch (error) {
-      setError(error)
-    } finally {
-      setLoading(false)
-    }
-  }
-
   const getAllGameData = async () => {
     try {
-      const response = await fetch(`/games/getAllDatasets`)
+      const response = await fetch(`/sports/getAllDatasets`)
       const [gameData, cfbGames, ncaabGames, nbaGames, nflGames] =
         await response.json()
       console.log(`ncaab games ${ncaabGames}`)
@@ -290,7 +276,7 @@ const Sports = () => {
                 <h1 style={{ textAlign: 'center', marginTop: '64px' }}>
                   Spread
                 </h1>
-                <Spread data={currentSpread} />
+                <Spread />
               </Grid>
               <Grid
                 item
@@ -305,7 +291,7 @@ const Sports = () => {
                   Over Under
                 </h1>
                 <div style={{ textAlign: 'center' }}>
-                  <OverUnder data={currentOverUnder} />
+                  <OverUnder />
                 </div>
               </Grid>
               <Grid item xs={12}>
