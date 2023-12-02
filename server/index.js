@@ -234,7 +234,7 @@ app.get('/sports/getAllDatasets', async (req, res) => {
             nflGames.push(`${awayTeam} ${homeTeam}`)
           } else if (sport === 'NBA') {
             nbaGames.push(`${awayTeam} ${homeTeam}`)
-          } else if (sport === 'CFB') {
+          } else if (sport === 'NCAAF') {
             cfbGames.push(`${awayTeam} ${homeTeam}`)
           } else if (sport === 'NCAAB') {
             ncaabGames.push(`${awayTeam} ${homeTeam}`)

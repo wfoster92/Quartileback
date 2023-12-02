@@ -131,7 +131,7 @@ const Sports = () => {
   const handleGameChangeCFB = (event) => {
     let newGame = event.target.value
     let [away, home] = newGame.split(' ')
-    let k = `${away}_${home}_CFB`
+    let k = `${away}_${home}_NCAAF`
     console.log(`new cfb game ${newGame}`)
     console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
     setCurrentGame(newGame)
