@@ -1,63 +1,4 @@
-// import React, { useState } from 'react'
-// import { GamesContext } from '../../contexts/GamesContext'
-
-// const BestBetsTable = () => {
-//   let columnArr = [
-//     {
-//       id: 'inPortfoliio',
-//       label: 'in Portfolio',
-//       dataType: 'boolean',
-//       align: 'center',
-//     },
-//     {
-//       id: 'index',
-//       label: 'Details',
-//       dataType: 'string',
-//       align: 'left',
-//     },
-//     {
-//       id: 'probability',
-//       label: 'Probability',
-//       dataType: 'percent',
-//       align: 'right',
-//     },
-//     {
-//       id: 'odds',
-//       label: 'Odds',
-//       dataType: 'int',
-//       align: 'right',
-//     },
-//     {
-//       id: 'kelly',
-//       label: 'Kelly',
-//       dataType: 'string',
-//       align: 'right',
-//     },
-//     {
-//       id: 'unitPercent',
-//       label: 'Unit Percent',
-//       dataType: 'float',
-//       align: 'right',
-//     },
-//     {
-//       id: 'unitReturn',
-//       label: 'Unit Return',
-//       dataType: 'float',
-//       align: 'right',
-//     },
-//     {
-//       id: 'legs',
-//       label: 'Num Legs',
-//       dataType: 'int',
-//       align: 'right',
-//     },
-//   ]
-
-// }
-
-// export default BestBetsTable
-
-import * as React from 'react'
+import { useState, useMemo, useEffect, useContext, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { alpha } from '@mui/material/styles'
 import Box from '@mui/material/Box'
@@ -80,100 +21,120 @@ import Switch from '@mui/material/Switch'
 import DeleteIcon from '@mui/icons-material/Delete'
 import FilterListIcon from '@mui/icons-material/FilterList'
 import { visuallyHidden } from '@mui/utils'
+import { GamesContext } from '../../contexts/GamesContext'
 
-function createData(id, name, calories, fat, carbs, protein) {
-  return {
-    id,
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-  }
-}
-
-const rows = [
-  createData(1, 'Cupcake', 305, 3.7, 67, 4.3),
-  createData(2, 'Donut', 452, 25.0, 51, 4.9),
-  createData(3, 'Eclair', 262, 16.0, 24, 6.0),
-  createData(4, 'Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData(5, 'Gingerbread', 356, 16.0, 49, 3.9),
-  createData(6, 'Honeycomb', 408, 3.2, 87, 6.5),
-  createData(7, 'Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData(8, 'Jelly Bean', 375, 0.0, 94, 0.0),
-  createData(9, 'KitKat', 518, 26.0, 65, 7.0),
-  createData(10, 'Lollipop', 392, 0.2, 98, 0.0),
-  createData(11, 'Marshmallow', 318, 0, 81, 2.0),
-  createData(12, 'Nougat', 360, 19.0, 9, 37.0),
-  createData(13, 'Oreo', 437, 18.0, 63, 4.0),
-]
-
-function descendingComparator(a, b, orderBy) {
-  if (b[orderBy] < a[orderBy]) {
-    return -1
-  }
-  if (b[orderBy] > a[orderBy]) {
-    return 1
-  }
-  return 0
-}
-
-function getComparator(order, orderBy) {
-  return order === 'desc'
-    ? (a, b) => descendingComparator(a, b, orderBy)
-    : (a, b) => -descendingComparator(a, b, orderBy)
-}
-
-// Since 2020 all major browsers ensure sort stability with Array.prototype.sort().
-// stableSort() brings sort stability to non-modern browsers (notably IE11). If you
-// only support modern browsers you can replace stableSort(exampleArray, exampleComparator)
-// with exampleArray.slice().sort(exampleComparator)
-function stableSort(array, comparator) {
-  const stabilizedThis = array.map((el, index) => [el, index])
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0])
-    if (order !== 0) {
-      return order
-    }
-    return a[1] - b[1]
-  })
-  return stabilizedThis.map((el) => el[0])
-}
-
-const headCells = [
+let columnArr = [
   {
-    id: 'name',
-    numeric: false,
+    id: 'inPortfolio',
+    label: 'In Portfolio',
     disablePadding: true,
-    label: 'Dessert (100g serving)',
+    dataType: 'boolean',
+    align: 'center',
   },
   {
-    id: 'calories',
-    numeric: true,
+    id: 'index',
+    label: 'Details',
     disablePadding: false,
-    label: 'Calories',
+    dataType: 'string',
+    align: 'left',
   },
   {
-    id: 'fat',
-    numeric: true,
+    id: 'probability',
+    label: 'Probability',
     disablePadding: false,
-    label: 'Fat (g)',
+    dataType: 'percent',
+    align: 'right',
   },
   {
-    id: 'carbs',
-    numeric: true,
+    id: 'odds',
+    label: 'Odds',
     disablePadding: false,
-    label: 'Carbs (g)',
+    dataType: 'int',
+    align: 'right',
   },
   {
-    id: 'protein',
-    numeric: true,
+    id: 'kelly',
+    label: 'Kelly',
     disablePadding: false,
-    label: 'Protein (g)',
+    dataType: 'string',
+    align: 'right',
+  },
+  {
+    id: 'unitPercent',
+    label: 'Unit Percent',
+    disablePadding: false,
+    dataType: 'float',
+    align: 'right',
+  },
+  {
+    id: 'unitReturn',
+    label: 'Unit Return',
+    disablePadding: false,
+    dataType: 'float',
+    align: 'right',
+  },
+  {
+    id: 'legs',
+    label: 'Num Legs',
+    disablePadding: false,
+    dataType: 'int',
+    align: 'right',
   },
 ]
 
-function EnhancedTableHead(props) {
+// const descendingComparator = (a, b, orderBy) => {
+//   if (b[orderBy] < a[orderBy]) {
+//     return -1
+//   }
+
+//   if (b[orderBy] > a[orderBy]) {
+//     return 1
+//   }
+//   return 0
+// }
+
+// const getComparator = (order, orderBy) => {
+//   return order === 'desc'
+//     ? (a, b) => descendingComparator(a, b, orderBy)
+//     : (a, b) => -descendingComparator(a, b, orderBy)
+// }
+
+const comparator = (a, b, order, orderBy) => {
+  if (a === b) {
+    return 0 // Return 0 for equal values
+  }
+
+  // Get the datatype that we are sorting by
+  let dataType = columnArr
+    .filter((elem) => elem.id === orderBy)
+    .map((elem) => elem.dataType)[0]
+
+  let output = 0
+
+  if (['int', 'float', 'percent'].includes(dataType)) {
+    output = a - b
+  } else if (['boolean'].includes(dataType)) {
+    output = Boolean(a) - Boolean(b)
+  } else if (['string'].includes(dataType)) {
+    output = a.localeCompare(b)
+  }
+
+  return order === 'desc' ? output : -output
+}
+
+// const stableSort = (array, comparator) => {
+//   const stabilizedThis = array.map((el, index) => [el, index])
+//   stabilizedThis.sort((a, b) => {
+//     const order = comparator(a[0], b[0])
+//     if (order !== 0) {
+//       return order
+//     }
+//     return a[1] - b[1]
+//   })
+//   return stabilizedThis.map((el) => el[0])
+// }
+
+const EnhancedTableHead = (props) => {
   const {
     onSelectAllClick,
     order,
@@ -189,38 +150,50 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding='checkbox'>
-          <Checkbox
-            color='primary'
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-            inputProps={{
-              'aria-label': 'select all desserts',
-            }}
-          />
-        </TableCell>
-        {headCells.map((headCell) => (
-          <TableCell
-            key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
-            padding={headCell.disablePadding ? 'none' : 'normal'}
-            sortDirection={orderBy === headCell.id ? order : false}
-          >
-            <TableSortLabel
-              active={orderBy === headCell.id}
-              direction={orderBy === headCell.id ? order : 'asc'}
-              onClick={createSortHandler(headCell.id)}
+        {columnArr.map((col) =>
+          col.id === 'inPortfolio' ? (
+            <TableCell
+              key={col.id}
+              align={col.align}
+              padding={col.disablePadding ? 'none' : 'normal'}
+              sortDirection={orderBy === col.id ? order : false}
             >
-              {headCell.label}
-              {orderBy === headCell.id ? (
-                <Box component='span' sx={visuallyHidden}>
-                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                </Box>
-              ) : null}
-            </TableSortLabel>
-          </TableCell>
-        ))}
+              <Checkbox
+                color='primary'
+                style={{ display: 'inline-block' }}
+                indeterminate={numSelected > 0 && numSelected < rowCount}
+                checked={rowCount > 0 && numSelected === rowCount}
+                onChange={onSelectAllClick}
+                inputProps={{
+                  'aria-label': 'select all desserts',
+                }}
+              />
+              {col.label}
+            </TableCell>
+          ) : (
+            <TableCell
+              key={col.id}
+              align={col.align}
+              padding={col.disablePadding ? 'none' : 'normal'}
+              sortDirection={orderBy === col.id ? order : false}
+            >
+              <TableSortLabel
+                active={orderBy === col.id}
+                direction={orderBy === col.id ? order : 'asc'}
+                onClick={createSortHandler(col.id)}
+              >
+                {col.label}
+                {orderBy === col.id ? (
+                  <Box component='span' sx={visuallyHidden}>
+                    {order === 'desc'
+                      ? 'sorted descending'
+                      : 'sorted ascending'}
+                  </Box>
+                ) : null}
+              </TableSortLabel>
+            </TableCell>
+          )
+        )}
       </TableRow>
     </TableHead>
   )
@@ -235,7 +208,7 @@ EnhancedTableHead.propTypes = {
   rowCount: PropTypes.number.isRequired,
 }
 
-function EnhancedTableToolbar(props) {
+const EnhancedTableToolbar = (props) => {
   const { numSelected } = props
 
   return (
@@ -259,7 +232,7 @@ function EnhancedTableToolbar(props) {
           variant='subtitle1'
           component='div'
         >
-          {numSelected} selected
+          Best Bets {numSelected} bet{numSelected === 1 ? '' : 's'} selected
         </Typography>
       ) : (
         <Typography
@@ -268,10 +241,10 @@ function EnhancedTableToolbar(props) {
           id='tableTitle'
           component='div'
         >
-          Nutrition
+          Best Bets
         </Typography>
       )}
-
+      {/* 
       {numSelected > 0 ? (
         <Tooltip title='Delete'>
           <IconButton>
@@ -284,7 +257,7 @@ function EnhancedTableToolbar(props) {
             <FilterListIcon />
           </IconButton>
         </Tooltip>
-      )}
+      )} */}
     </Toolbar>
   )
 }
@@ -294,12 +267,14 @@ EnhancedTableToolbar.propTypes = {
 }
 
 const BestBetsTable = () => {
-  const [order, setOrder] = React.useState('asc')
-  const [orderBy, setOrderBy] = React.useState('calories')
-  const [selected, setSelected] = React.useState([])
-  const [page, setPage] = React.useState(0)
-  const [dense, setDense] = React.useState(false)
-  const [rowsPerPage, setRowsPerPage] = React.useState(10)
+  const [order, setOrder] = useState('asc')
+  const [orderBy, setOrderBy] = useState('unitReturn')
+  const [selected, setSelected] = useState([])
+  const [page, setPage] = useState(0)
+  const [dense, setDense] = useState(false)
+  const [rowsPerPage, setRowsPerPage] = useState(10)
+
+  const { bestBetsTable, setBestBetsTable } = useContext(GamesContext)
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc'
@@ -309,7 +284,7 @@ const BestBetsTable = () => {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.id)
+      const newSelected = bestBetsTable.map((n) => n.index)
       setSelected(newSelected)
       return
     }
@@ -352,16 +327,16 @@ const BestBetsTable = () => {
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - bestBetsTable.length) : 0
 
-  const visibleRows = React.useMemo(
-    () =>
-      stableSort(rows, getComparator(order, orderBy)).slice(
-        page * rowsPerPage,
-        page * rowsPerPage + rowsPerPage
-      ),
-    [order, orderBy, page, rowsPerPage]
-  )
+  // const visibleRows = useMemo(
+  //   () =>
+  //     stableSort(bestBetsTable, getComparator(order, orderBy)).slice(
+  //       page * rowsPerPage,
+  //       page * rowsPerPage + rowsPerPage
+  //     ),
+  //   [order, orderBy, page, rowsPerPage]
+  // )
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -379,48 +354,80 @@ const BestBetsTable = () => {
               orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={rows.length}
+              rowCount={bestBetsTable.length}
             />
             <TableBody>
-              {visibleRows.map((row, index) => {
-                const isItemSelected = isSelected(row.id)
-                const labelId = `enhanced-table-checkbox-${index}`
+              {bestBetsTable
+                .sort((a, b) => {
+                  return comparator(a[orderBy], b[orderBy], order, orderBy)
+                })
+                .map((row, rowIdx) => {
+                  const isItemSelected = isSelected(row.index)
+                  const labelId = `enhanced-table-checkbox-${rowIdx}`
 
-                return (
-                  <TableRow
-                    hover
-                    onClick={(event) => handleClick(event, row.id)}
-                    role='checkbox'
-                    aria-checked={isItemSelected}
-                    tabIndex={-1}
-                    key={row.id}
-                    selected={isItemSelected}
-                    sx={{ cursor: 'pointer' }}
-                  >
-                    <TableCell padding='checkbox'>
-                      <Checkbox
-                        color='primary'
-                        checked={isItemSelected}
-                        inputProps={{
-                          'aria-labelledby': labelId,
-                        }}
-                      />
-                    </TableCell>
-                    <TableCell
-                      component='th'
-                      id={labelId}
-                      scope='row'
-                      padding='none'
+                  return (
+                    <TableRow
+                      hover
+                      onClick={(event) => handleClick(event, row.index)}
+                      role='checkbox'
+                      aria-checked={isItemSelected}
+                      tabIndex={-1}
+                      // key={row.id}
+                      selected={isItemSelected}
+                      sx={{ cursor: 'pointer' }}
                     >
-                      {row.name}
-                    </TableCell>
-                    <TableCell align='right'>{row.calories}</TableCell>
-                    <TableCell align='right'>{row.fat}</TableCell>
-                    <TableCell align='right'>{row.carbs}</TableCell>
-                    <TableCell align='right'>{row.protein}</TableCell>
-                  </TableRow>
-                )
-              })}
+                      {/* <TableCell></TableCell>
+                      <TableCell padding='checkbox'>
+                        <Checkbox
+                          color='primary'
+                          checked={isItemSelected}
+                          inputProps={{
+                            'aria-labelledby': labelId,
+                          }}
+                        />
+                      </TableCell> */}
+
+                      {columnArr.map((currentCol, colIdx) => {
+                        return currentCol.id === 'inPortfolio' ? (
+                          <TableCell padding='checkbox'>
+                            <Checkbox
+                              color='primary'
+                              checked={row.inPortfolio}
+                              onChange={() => {
+                                let tempBestBetsTable = bestBetsTable.map(
+                                  (elem) => {
+                                    if (elem.index === row.index) {
+                                      let tempElem = { ...elem }
+                                      tempElem.inPortfolio =
+                                        !tempElem.inPortfolio
+                                      return tempElem
+                                    } else {
+                                      return elem
+                                    }
+                                  }
+                                )
+                                setBestBetsTable(tempBestBetsTable)
+                              }}
+                              inputProps={{
+                                'aria-labelledby': labelId,
+                              }}
+                            />
+                          </TableCell>
+                        ) : currentCol.id === 'index' ? (
+                          <TableCell style={{ textAlign: currentCol.align }}>
+                            {row[currentCol.id].split(' | ').map((line) => {
+                              return <div>{line}</div>
+                            })}
+                          </TableCell>
+                        ) : (
+                          <TableCell style={{ textAlign: currentCol.align }}>
+                            {row[currentCol.id]}
+                          </TableCell>
+                        )
+                      })}
+                    </TableRow>
+                  )
+                })}
               {emptyRows > 0 && (
                 <TableRow
                   style={{
@@ -436,7 +443,7 @@ const BestBetsTable = () => {
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component='div'
-          count={rows.length}
+          count={bestBetsTable.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

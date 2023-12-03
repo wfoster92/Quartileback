@@ -120,8 +120,8 @@ app.get('/sports/getBestBetsTable', async (req, res) => {
         row = { ...row, inPortfolio: false }
         return row
       })
-
-      res.json(output) // Send the JSON data as the response
+      console.log(JSON.stringify(output, null, 2))
+      res.json([output]) // Send the JSON data as the response
     } else {
       throw new Error(`CSV file not found: ${fname}`)
     }

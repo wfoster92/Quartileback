@@ -25,7 +25,7 @@ const GamesProvider = ({ children }) => {
   const [allNFLGames, setAllNFLGames] = useState([])
   const [allNCAABGames, setAllNCAABGames] = useState([])
   const [gamesObj, setGamesObj] = useState(null)
-  const [bestBetsTable, setBestBetsTable] = useState(null)
+  const [bestBetsTable, setBestBetsTable] = useState([])
 
   const state = {
     currentSpread,
