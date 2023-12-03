@@ -47,6 +47,7 @@ const GameView = () => {
     setAllNCAABGames,
     gamesObj,
     setGamesObj,
+    setBestBetsTable,
   } = useContext(GamesContext)
 
   const Title = styled.div`
@@ -106,6 +107,18 @@ const GameView = () => {
     }
   }
 
+  const getBestBetsTable = async () => {
+    try {
+      const response = await fetch(`/sports/getBestBetsTable`)
+      const [tempBestBetsTable] = await response.json()
+      setBestBetsTable(tempBestBetsTable)
+    } catch (error) {
+      setError(error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   useEffect(() => {
     fetchSingleGameData()
     setFractionalOU(false)
@@ -113,6 +126,7 @@ const GameView = () => {
 
   useEffect(() => {
     getAllGameData()
+    getBestBetsTable()
   }, [])
 
   const handleResize = useCallback(() => {

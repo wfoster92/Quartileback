@@ -68,85 +68,15 @@ app.post('/login', authenticate, (req, res) => {
   res.send('Login successful!')
 })
 
-// app.get('/cfb/ouspread/:team1/:team2/', async (req, res) => {
-//   try {
-//     const { team1, team2 } = req.params
-
-//     // Print the current working directory
-//     // console.log('Current working directory:', process.cwd())
-
-//     const futureGamesDir = path.join(process.cwd(), 'csvs', 'games', 'future')
-//     // Print the contents of the ./csvs/ directory
-//     const gamesDir = path.join(
-//       process.cwd(),
-//       'csvs',
-//       'games',
-//       fs.readdirSync(futureGamesDir).includes(`${team1}_vs_${team2}.csv`)
-//         ? 'future'
-//         : 'past'
-//     )
-
-//     console.log(`futureGamesDir ${futureGamesDir}`)
-//     console.log(path.join(futureGamesDir, `${team1}_vs_${team2}.csv`))
-
-//     console.log('Contents of ./csvs/ directory:', fs.readdirSync(gamesDir))
-
-//     let fname = path.join(gamesDir, `${team1}_vs_${team2}.csv`)
-//     console.log('Attempting to read:', fname)
-
-//     try {
-//       if (fs.existsSync(fname)) {
-//         let result = await csv().fromFile(fname)
-
-//         // get the home and away team from the filename
-//         const [home, away] = fname.split('/').pop().split('.')[0].split('_vs_')
-//         console.log(away, home)
-//         // initialize dictionaries for overUnder and spread
-//         let overUnder = {}
-//         let spread = {}
-//         // for each row in the csv take the sum for the over under and the diff for the spread
-//         // -> add them to their respective dictionaries
-//         result.forEach((row) => {
-//           let diff = Number(row[home]) - Number(row[away])
-//           let sum = Number(row[home]) + Number(row[away])
-//           // if the key exists  in the dictionary, add the probability to its current value, else create a new key value pair
-//           if (spread[diff]) {
-//             spread[diff] += Number(row.probability)
-//           } else {
-//             spread[diff] = Number(row.probability)
-//           }
-//           if (overUnder[sum]) {
-//             overUnder[sum] += Number(row.probability)
-//           } else {
-//             overUnder[sum] = Number(row.probability)
-//           }
-//         })
-//         console.log(`Spread\n${JSON.stringify(spread, null, 2)}`)
-//         res.json({ spread, overUnder }) // Send the JSON data as the response
-//       } else {
-//         throw new Error(`CSV file not found: ${fname}`)
-//       }
-//     } catch (error) {
-//       console.error('Error reading CSV file:', error)
-//       res.status(404).json({ error: 'CSV file not found' })
-//       return
-//     }
-//   } catch (error) {
-//     console.error('Error:', error)
-//     res.status(500).json({ error: 'Internal Server Error' })
-//   }
-// })
-
 // fetch the current bets for the game in question
 app.get('/sports/bets/:away/:home', async (req, res) => {
   try {
     const { away, home } = req.params
 
     // Print the current working directory
-    console.log('Current working directory:', process.cwd())
 
     // Print the contents of the ./csvs/ directory
-    const gamesDir = path.join(process.cwd(), 'csvs', 'bets')
+    const gamesDir = path.join(process.cwd(), 'csvs', 'bet_odds')
 
     let fname = path.join(gamesDir, `betodds_${dateStr}.csv`)
     console.log('Attempting to read:', fname)
@@ -156,7 +86,7 @@ app.get('/sports/bets/:away/:home', async (req, res) => {
         // console.log('hello')
         let result = await csv().fromFile(fname)
         let row = result.filter((row) => {
-          console.log(row.homeTeamAbbrev, row.awayTeamAbbrev, away, home)
+          // console.log(row.homeTeamAbbrev, row.awayTeamAbbrev, away, home)
           return (
             [away, home].includes(row.homeTeamAbbrev) &&
             [away, home].includes(row.awayTeamAbbrev)
@@ -165,7 +95,6 @@ app.get('/sports/bets/:away/:home', async (req, res) => {
         if (row.length === 1) {
           row = row[0]
         }
-        console.log(row)
         res.json(row) // Send the JSON data as the response
       } else {
         throw new Error(`CSV file not found: ${fname}`)
@@ -181,13 +110,35 @@ app.get('/sports/bets/:away/:home', async (req, res) => {
   }
 })
 
+app.get('/sports/getBestBetsTable', async (req, res) => {
+  const scoreSummariesDir = path.join(process.cwd(), 'csvs', 'best_bets')
+  let fname = path.join(scoreSummariesDir, `bestbets_${dateStr}.csv`)
+  try {
+    if (fs.existsSync(fname)) {
+      let result = await csv().fromFile(fname)
+      let output = result.map((row) => {
+        row = { ...row, inPortfolio: false }
+        return row
+      })
+      console.log(JSON.stringify(output, null, 2))
+      res.json([output]) // Send the JSON data as the response
+    } else {
+      throw new Error(`CSV file not found: ${fname}`)
+    }
+  } catch (error) {
+    console.error('Error reading CSV file:', error)
+    res.status(404).json({ error: 'CSV file not found' })
+    return
+  }
+})
+
 app.get('/sports/getAllDatasets', async (req, res) => {
   const scoreSummariesDir = path.join(process.cwd(), 'csvs', 'score_summaries')
   let fname = path.join(scoreSummariesDir, `score_summaries_${dateStr}.csv`)
   try {
     if (fs.existsSync(fname)) {
       let result = await csv().fromFile(fname)
-      let cfbGames = []
+      let ncaafGames = []
       let ncaabGames = []
       let nbaGames = []
       let nflGames = []
@@ -196,10 +147,6 @@ app.get('/sports/getAllDatasets', async (req, res) => {
       // for each row in the csv take the sum for the over under and the diff for the spread
       // -> add them to their respective dictionaries
       result.forEach((row) => {
-        // if (idx % 20000 === 1) {
-        //   console.log(idx)
-        //   // console.log(JSON.stringify(output, null, 2))
-        // }
         let { awayScore, homeScore, probability, awayTeam, homeTeam, sport } =
           row
         let k = `${awayTeam}_${homeTeam}_${sport}`
@@ -235,14 +182,18 @@ app.get('/sports/getAllDatasets', async (req, res) => {
           } else if (sport === 'NBA') {
             nbaGames.push(`${awayTeam} ${homeTeam}`)
           } else if (sport === 'NCAAF') {
-            cfbGames.push(`${awayTeam} ${homeTeam}`)
+            ncaafGames.push(`${awayTeam} ${homeTeam}`)
           } else if (sport === 'NCAAB') {
             ncaabGames.push(`${awayTeam} ${homeTeam}`)
           }
         }
       })
-      console.log(`Output\n${JSON.stringify(ncaabGames, null, 2)}`)
-      res.json([output, cfbGames, ncaabGames, nbaGames, nflGames]) // Send the JSON data as the response
+      // console.log(`Output\n${JSON.stringify(ncaabGames, null, 2)}`)
+      ncaabGames.sort((a, b) => a.localeCompare(b))
+      ncaafGames.sort((a, b) => a.localeCompare(b))
+      nbaGames.sort((a, b) => a.localeCompare(b))
+      nflGames.sort((a, b) => a.localeCompare(b))
+      res.json([output, ncaafGames, ncaabGames, nbaGames, nflGames]) // Send the JSON data as the response
     } else {
       throw new Error(`CSV file not found: ${fname}`)
     }
