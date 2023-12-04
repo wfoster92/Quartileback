@@ -30,6 +30,7 @@ let columnArr = [
     disablePadding: true,
     dataType: 'boolean',
     align: 'center',
+    editable: false,
   },
   {
     id: 'index',
@@ -37,6 +38,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'string',
     align: 'left',
+    editable: false,
   },
   {
     id: 'probability',
@@ -44,6 +46,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'percent',
     align: 'right',
+    editable: false,
   },
   {
     id: 'odds',
@@ -51,6 +54,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'int',
     align: 'right',
+    editable: false,
   },
   {
     id: 'kelly',
@@ -58,6 +62,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'string',
     align: 'right',
+    editable: false,
   },
   {
     id: 'unitPercent',
@@ -65,6 +70,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'float',
     align: 'right',
+    editable: false,
   },
   {
     id: 'unitReturn',
@@ -72,6 +78,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'float',
     align: 'right',
+    editable: false,
   },
   {
     id: 'legs',
@@ -79,6 +86,15 @@ let columnArr = [
     disablePadding: false,
     dataType: 'int',
     align: 'right',
+    editable: false,
+  },
+  {
+    id: 'wager',
+    label: 'Wager',
+    disablePadding: false,
+    dataType: 'int',
+    align: 'right',
+    editable: true,
   },
 ]
 
@@ -147,7 +163,7 @@ const EnhancedTableHead = (props) => {
                   'aria-label': 'select all bets',
                 }}
               />
-              Add
+              Remove
             </TableCell>
           ) : (
             <TableCell
@@ -192,7 +208,7 @@ const EnhancedTableToolbar = () => {
         id='tableTitle'
         component='div'
       >
-        Best Bets
+        Portfolio
       </Typography>
     </Toolbar>
   )
@@ -223,13 +239,13 @@ const BestBetsTable = () => {
       // const newSelected = bestBetsTable.map((n) => n.index)
       // setSelected(newSelected)
       let tempBestBetsTable = bestBetsTable.map((elem) => {
-        return { ...elem, inPortfolio: true }
+        return { ...elem, inPortfolio: false }
       })
       setBestBetsTable(tempBestBetsTable)
       return
     }
     let tempBestBetsTable = bestBetsTable.map((elem) => {
-      return { ...elem, inPortfolio: true }
+      return { ...elem, inPortfolio: false }
     })
     setBestBetsTable(tempBestBetsTable)
   }
@@ -281,7 +297,7 @@ const BestBetsTable = () => {
             />
             <TableBody>
               {bestBetsTable
-                .filter((elem) => !elem.inPortfolio)
+                .filter((elem) => elem.inPortfolio)
                 .sort((a, b) => {
                   return comparator(a[orderBy], b[orderBy], order, orderBy)
                 })
@@ -319,7 +335,7 @@ const BestBetsTable = () => {
                           <TableCell padding='checkbox'>
                             <Checkbox
                               color='primary'
-                              checked={row.inPortfolio}
+                              checked={false}
                               onChange={() => {
                                 let tempBestBetsTable = bestBetsTable.map(
                                   (elem) => {
@@ -370,7 +386,7 @@ const BestBetsTable = () => {
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component='div'
-          count={bestBetsTable.filter((elem) => !elem.inPortfolio).length}
+          count={bestBetsTable.filter((elem) => elem.inPortfolio).length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
