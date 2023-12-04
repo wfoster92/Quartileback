@@ -19,7 +19,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-// dateStr = '11_30_2023'
+dateStr = '12_3_2023'
 
 app.use(express.static('../client/build'))
 app.use(
@@ -117,7 +117,7 @@ app.get('/sports/getBestBetsTable', async (req, res) => {
     if (fs.existsSync(fname)) {
       let result = await csv().fromFile(fname)
       let output = result.map((row) => {
-        row = { ...row, inPortfolio: false }
+        row = { ...row, inPortfolio: false, wager: 0, expectedReturn: 0 }
         return row
       })
       console.log(JSON.stringify(output, null, 2))
