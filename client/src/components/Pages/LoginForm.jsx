@@ -33,7 +33,7 @@ const LoginForm = () => {
         login()
 
         // Redirect or perform additional actions on successful login
-        navigate('/sports')
+        navigate('/portfolio')
       } else {
         console.error('Login failed.')
       }
