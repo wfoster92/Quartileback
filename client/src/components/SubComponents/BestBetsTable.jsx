@@ -56,7 +56,7 @@ let columnArr = [
     id: 'kelly',
     label: 'Kelly',
     disablePadding: false,
-    dataType: 'string',
+    dataType: 'kelly',
     align: 'right',
   },
   {
@@ -348,7 +348,17 @@ const BestBetsTable = () => {
                           </TableCell>
                         ) : (
                           <TableCell style={{ textAlign: currentCol.align }}>
-                            {row[currentCol.id]}
+                            {['float', 'percent'].includes(currentCol.dataType)
+                              ? Number(row[currentCol.id]).toFixed(4)
+                              : ['kelly'].includes(currentCol.dataType)
+                              ? `(${Number(
+                                  row[currentCol.id].split(', ')[0].slice(1)
+                                ).toFixed(4)}, ${Number(
+                                  row[currentCol.id]
+                                    .split(', ')[1]
+                                    .replace(')', '')
+                                ).toFixed(4)})`
+                              : row[currentCol.id]}
                           </TableCell>
                         )
                       })}
