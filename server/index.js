@@ -204,6 +204,11 @@ app.get('/sports/getAllDatasets', async (req, res) => {
   }
 })
 
+// Add the /portfolio route
+app.get('/portfolio', (req, res) => {
+  res.send('This is the portfolio page')
+})
+
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`)
 })
