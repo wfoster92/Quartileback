@@ -256,7 +256,7 @@ const EnhancedTableToolbar = () => {
 }
 
 const RankingsTable = () => {
-  const [order, setOrder] = useState('asc')
+  const [order, setOrder] = useState('desc')
   const [orderBy, setOrderBy] = useState('ovrRank')
   const [selected, setSelected] = useState([])
   const [page, setPage] = useState(0)
