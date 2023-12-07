@@ -27,6 +27,9 @@ export default function NavBar() {
           {/* Conditionally render based on authentication state */}
           {authenticated ? (
             <>
+              <IconButton color='inherit' component={Link} to='/rankings'>
+                Rankings!
+              </IconButton>
               <IconButton color='inherit' component={Link} to='/gameView'>
                 Games!
               </IconButton>

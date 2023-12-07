@@ -19,7 +19,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-dateStr = '12_5_2023'
+dateStr = '12_6_2023'
 
 app.use(express.static('../client/build'))
 app.use(
@@ -111,8 +111,8 @@ app.get('/sports/bets/:away/:home', async (req, res) => {
 })
 
 app.get('/sports/getBestBetsTable', async (req, res) => {
-  const scoreSummariesDir = path.join(process.cwd(), 'csvs', 'best_bets')
-  let fname = path.join(scoreSummariesDir, `bestbets_${dateStr}.csv`)
+  const bestBetsDir = path.join(process.cwd(), 'csvs', 'best_bets')
+  let fname = path.join(bestBetsDir, `bestbets_${dateStr}.csv`)
   try {
     if (fs.existsSync(fname)) {
       let result = await csv().fromFile(fname)
@@ -122,6 +122,23 @@ app.get('/sports/getBestBetsTable', async (req, res) => {
       })
       console.log(JSON.stringify(output, null, 2))
       res.json([output]) // Send the JSON data as the response
+    } else {
+      throw new Error(`CSV file not found: ${fname}`)
+    }
+  } catch (error) {
+    console.error('Error reading CSV file:', error)
+    res.status(404).json({ error: 'CSV file not found' })
+    return
+  }
+})
+
+app.get('/sports/getRankingsTable', async (req, res) => {
+  const rankingsDir = path.join(process.cwd(), 'csvs', 'comprehensive_rankings')
+  let fname = path.join(rankingsDir, `comprehensive_rankings_${dateStr}.csv`)
+  try {
+    if (fs.existsSync(fname)) {
+      let result = await csv().fromFile(fname)
+      res.json([result]) // Send the JSON data as the response
     } else {
       throw new Error(`CSV file not found: ${fname}`)
     }

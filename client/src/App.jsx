@@ -9,6 +9,7 @@ import Portfolio from './components/Pages/Portfolio'
 import LoginForm from './components/Pages/LoginForm'
 import { GamesProvider } from './contexts/GamesContext'
 import { useAuth } from './contexts/AuthContext'
+import Rankings from './components/Pages/Rankings'
 
 const App = () => {
   const { authenticated } = useAuth()
@@ -27,6 +28,14 @@ const App = () => {
         <Route path='/gamblin' element={<Gamblin />} />
         {authenticated ? (
           <>
+            <Route
+              path='/rankings'
+              element={
+                <GamesProvider>
+                  <Rankings />
+                </GamesProvider>
+              }
+            />
             <Route
               path='/gameView'
               element={
