@@ -26,6 +26,7 @@ const GamesProvider = ({ children }) => {
   const [allNCAABGames, setAllNCAABGames] = useState([])
   const [gamesObj, setGamesObj] = useState(null)
   const [bestBetsTable, setBestBetsTable] = useState([])
+  const [rankingsTable, setRankingsTable] = useState([])
 
   const state = {
     currentSpread,
@@ -70,6 +71,8 @@ const GamesProvider = ({ children }) => {
     setGamesObj,
     bestBetsTable,
     setBestBetsTable,
+    rankingsTable,
+    setRankingsTable,
   }
 
   return <GamesContext.Provider value={state}>{children}</GamesContext.Provider>
