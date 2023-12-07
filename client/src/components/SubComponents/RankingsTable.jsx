@@ -207,6 +207,7 @@ const EnhancedTableHead = (props) => {
                       position: 'sticky',
                       zIndex: '1',
                       left: 0,
+                      paddingLeft: '8px',
                       backgroundColor: 'white',
                       fontWeight: '600',
                     }
@@ -344,7 +345,7 @@ const RankingsTable = () => {
                                       left: 0,
                                       zIndex: '1',
                                       backgroundColor: 'white',
-                                      paddingLeft: '0px',
+                                      paddingLeft: '8px',
                                       paddingRight: '0px',
                                     }
                                   : {
