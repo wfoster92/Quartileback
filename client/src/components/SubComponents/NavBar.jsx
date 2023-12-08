@@ -16,20 +16,20 @@ export default function NavBar() {
             <MenuIcon />
           </IconButton>
           <IconButton color='inherit' component={Link} to='/'>
-            Home
+            Rankings
           </IconButton>
 
           {/* Conditionally render based on authentication state */}
           {authenticated ? (
             <>
-              <IconButton color='inherit' component={Link} to='/rankings'>
-                Rankings!
-              </IconButton>
               <IconButton color='inherit' component={Link} to='/gameView'>
                 Games!
               </IconButton>
               <IconButton color='inherit' component={Link} to='/portfolio'>
                 Portfolio!
+              </IconButton>
+              <IconButton color='inherit' component={Link} to='/gamblin'>
+                Gamblin'
               </IconButton>
               <IconButton color='inherit' onClick={logout}>
                 Logout
@@ -37,14 +37,11 @@ export default function NavBar() {
             </>
           ) : (
             <>
-              {/* <IconButton color='inherit' component={Link} to='/gamblin'>
+              <IconButton color='inherit' component={Link} to='/gamblin'>
                 Gamblin'
-              </IconButton> */}
-              <IconButton color='inherit'>Winnin'</IconButton>
-              <IconButton color='inherit'>Losin'</IconButton>
-              <IconButton color='inherit'>Bettin'</IconButton>
-              <IconButton color='inherit' component={Link} to='/'>
-                Login'
+              </IconButton>
+              <IconButton color='inherit' component={Link} to='/login'>
+                Login
               </IconButton>
               {/* You can add more links for registration, etc. */}
             </>
