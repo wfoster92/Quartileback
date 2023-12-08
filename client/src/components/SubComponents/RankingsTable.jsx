@@ -282,6 +282,8 @@ const EnhancedTableHead = (props) => {
                       paddingLeft: '8px',
                       fontWeight: '600',
                     }
+                  : idx === columnArr.filter((c) => !c.hidden).length - 1
+                  ? { fontWeight: '600', paddingRight: '8px' }
                   : { fontWeight: '600' }
               }
             >
@@ -420,6 +422,13 @@ const RankingsTable = () => {
                                       backgroundColor: 'white',
                                       paddingLeft: '8px',
                                       paddingRight: '0px',
+                                    }
+                                  : idx ===
+                                    columnArr.filter((c) => !c.hidden).length -
+                                      1
+                                  ? {
+                                      textAlign: currentCol.align,
+                                      paddingRight: '8px',
                                     }
                                   : {
                                       textAlign: currentCol.align,
