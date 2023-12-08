@@ -25,21 +25,21 @@ import { TextField } from '@mui/material'
 let columnArr = [
   {
     id: 'teamName',
+    label: 'Team Full Name',
+    disablePadding: true,
+    dataType: 'string',
+    align: 'left',
+    searchable: true,
+    hidden: true,
+  },
+  {
+    id: 'homeTeamAbbrev',
     label: 'Team',
     disablePadding: true,
     dataType: 'string',
     align: 'left',
     searchable: true,
     hidden: false,
-  },
-  {
-    id: 'homeTeamAbbrev',
-    label: 'Team Abbrev',
-    disablePadding: true,
-    dataType: 'string',
-    align: 'left',
-    searchable: true,
-    hidden: true,
   },
   {
     id: 'ovrRank',
@@ -436,7 +436,23 @@ const RankingsTable = () => {
         <TablePagination
           rowsPerPageOptions={[10, 25, 100]}
           component='div'
-          count={rankingsTable.length}
+          count={
+            rankingsTable.filter((row) => {
+              return searchStrRankings === ''
+                ? true
+                : columnArr
+                    .filter((col) => col.searchable)
+                    .map((col) =>
+                      !row[col.id]
+                        ? false
+                        : row[col.id]
+                            .toString()
+                            .toLowerCase()
+                            .includes(searchStrRankings.toLowerCase())
+                    )
+                    .some((elem) => elem)
+            }).length
+          }
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
