@@ -19,23 +19,23 @@ const App = () => {
       <NavBar />
 
       <Routes>
-        {authenticated ? (
+        {/* {authenticated ? (
           <Route path='/' element={<Home />} />
         ) : (
           <Route path='/' element={<LoginForm />} />
-        )}
-        <Route path='/' element={<LoginForm />} />
+        )} */}
+        <Route path='/login' element={<LoginForm />} />
+        <Route
+          path='/'
+          element={
+            <GamesProvider>
+              <Rankings />
+            </GamesProvider>
+          }
+        />
         <Route path='/gamblin' element={<Gamblin />} />
         {authenticated ? (
           <>
-            <Route
-              path='/rankings'
-              element={
-                <GamesProvider>
-                  <Rankings />
-                </GamesProvider>
-              }
-            />
             <Route
               path='/gameView'
               element={
