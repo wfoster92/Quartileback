@@ -71,7 +71,7 @@ const Rankings = () => {
           id='tableTitle'
           component='div'
         >
-          Comprehensive Rankings
+          {selectedRankingsTable.toUpperCase()} Rankings
         </Typography>
         <div style={{ display: 'inline-block' }}>
           <ToggleButtonGroup
