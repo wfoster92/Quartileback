@@ -28,6 +28,8 @@ const GamesProvider = ({ children }) => {
   const [bestBetsTable, setBestBetsTable] = useState([])
   const [rankingsTable, setRankingsTable] = useState([])
   const [searchStrRankings, setSearchStrRankings] = useState('')
+  const rankingsTables = ['nba', 'ncaab', 'ncaaf', 'nfl']
+  const [selectedRankingsTable, setSelectedRankingsTable] = useState('nfl')
 
   const state = {
     currentSpread,
@@ -76,6 +78,9 @@ const GamesProvider = ({ children }) => {
     setRankingsTable,
     searchStrRankings,
     setSearchStrRankings,
+    selectedRankingsTable,
+    setSelectedRankingsTable,
+    rankingsTables,
   }
 
   return <GamesContext.Provider value={state}>{children}</GamesContext.Provider>

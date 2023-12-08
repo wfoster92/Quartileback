@@ -252,41 +252,6 @@ const EnhancedTableHead = (props) => {
   )
 }
 
-const EnhancedTableToolbar = () => {
-  const { searchStrRankings, setSearchStrRankings } = useContext(GamesContext)
-
-  return (
-    <Toolbar
-      sx={{
-        pl: { sm: 2 },
-        pr: { xs: 1, sm: 1 },
-      }}
-    >
-      <Typography
-        sx={{ flex: '1 1 100%', fontWeight: '600', display: 'inline-block' }}
-        variant='h6'
-        id='tableTitle'
-        component='div'
-      >
-        Comprehensive Rankings
-      </Typography>
-      <div style={{ display: 'inline-block' }}>
-        <TextField
-          style={{ marginRight: '64px' }}
-          id='outlined-basic'
-          label='Search'
-          variant='outlined'
-          value={searchStrRankings}
-          onChange={(e) => setSearchStrRankings(e.target.value.toString())}
-          InputLabelProps={{
-            style: { zIndex: 0 },
-          }}
-        />
-      </div>
-    </Toolbar>
-  )
-}
-
 const RankingsTable = () => {
   const [order, setOrder] = useState('desc')
   const [orderBy, setOrderBy] = useState('ovrRank')
@@ -337,7 +302,7 @@ const RankingsTable = () => {
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar />
+        {/* <EnhancedTableToolbar /> */}
         <TableContainer sx={{ height: '80vh', overflowY: 'auto' }}>
           <Table
             sx={{ minWidth: 750 }}
