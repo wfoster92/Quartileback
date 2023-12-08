@@ -379,7 +379,7 @@ const RankingsTable = () => {
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <EnhancedTableToolbar />
-        <TableContainer sx={{ maxHeight: 1000 }}>
+        <TableContainer sx={{ height: '80vh', overflowY: 'auto' }}>
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby='tableTitle'
