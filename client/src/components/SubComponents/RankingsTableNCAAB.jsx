@@ -266,6 +266,7 @@ const RankingsTable = () => {
     const isAsc = orderBy === property && order === 'asc'
     setOrder(isAsc ? 'desc' : 'asc')
     setOrderBy(property)
+    setPage(0)
   }
 
   const handleChangePage = (event, newPage) => {

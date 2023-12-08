@@ -216,6 +216,7 @@ const BestBetsTable = () => {
     const isAsc = orderBy === property && order === 'asc'
     setOrder(isAsc ? 'desc' : 'asc')
     setOrderBy(property)
+    setPage(0)
   }
 
   const handleSelectAllClick = (event) => {
