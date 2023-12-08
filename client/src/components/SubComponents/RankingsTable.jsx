@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import Box from '@mui/material/Box'
 import Table from '@mui/material/Table'
@@ -112,7 +112,6 @@ let columnArr = [
     searchable: false,
     hidden: false,
   },
-  // homeTeamAbbrev,teamName,win,pointsForAvg,pointsAgainstAvg,movAvg,observedDominance,scheduleStrength,scheduleStrengthRank,winRank,movRank,dominanceRank,ovr,ovrRank
   {
     id: 'scheduleStrengthRank',
     label: 'Team Abbrev',
@@ -174,21 +173,92 @@ const comparator = (a, b, order, orderBy) => {
   return order === 'desc' ? output : -output
 }
 
+// const EnhancedTableHead = (props) => {
+//   const {
+//     onSelectAllClick,
+//     order,
+//     orderBy,
+//     // numSelected,
+//     rowCount,
+//     onRequestSort,
+//   } = props
+
+//   const { rankingsTable, setRankingsTable } = useContext(GamesContext)
+
+//   const createSortHandler = (property) => (event) => {
+//     onRequestSort(event, property)
+//   }
+
+//   return (
+//     <TableHead>
+//       <TableRow>
+//         {columnArr
+//           .filter((col) => !col.hidden)
+//           .map((col, idx) => (
+//             <TableCell
+//               key={col.id}
+//               align={col.align}
+//               padding={col.disablePadding ? 'none' : 'normal'}
+//               sortDirection={orderBy === col.id ? order : false}
+//               style={
+//                 idx === 0
+//                   ? {
+//                       position: 'sticky',
+//                       zIndex: '2',
+//                       left: 0,
+//                       paddingLeft: '8px',
+//                       backgroundColor: 'white',
+//                       fontWeight: '600',
+//                     }
+//                   : { fontWeight: '600' }
+//               }
+//             >
+//               <TableSortLabel
+//                 active={orderBy === col.id}
+//                 direction={orderBy === col.id ? order : 'asc'}
+//                 onClick={createSortHandler(col.id)}
+//               >
+//                 {col.label}
+//                 {orderBy === col.id ? (
+//                   <Box component='span' sx={visuallyHidden}>
+//                     {order === 'desc'
+//                       ? 'sorted descending'
+//                       : 'sorted ascending'}
+//                   </Box>
+//                 ) : null}
+//               </TableSortLabel>
+//             </TableCell>
+//           ))}
+//       </TableRow>
+//     </TableHead>
+//   )
+// }
 const EnhancedTableHead = (props) => {
-  const {
-    onSelectAllClick,
-    order,
-    orderBy,
-    // numSelected,
-    rowCount,
-    onRequestSort,
-  } = props
+  const { onSelectAllClick, order, orderBy, rowCount, onRequestSort } = props
 
   const { rankingsTable, setRankingsTable } = useContext(GamesContext)
+  const firstCellRef = useRef(null)
 
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property)
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollLeft =
+        window.pageXOffset || document.documentElement.scrollLeft
+
+      if (firstCellRef.current) {
+        firstCellRef.current.style.left = `${scrollLeft}px`
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <TableHead>
@@ -201,14 +271,15 @@ const EnhancedTableHead = (props) => {
               align={col.align}
               padding={col.disablePadding ? 'none' : 'normal'}
               sortDirection={orderBy === col.id ? order : false}
+              ref={idx === 0 ? firstCellRef : null}
               style={
                 idx === 0
                   ? {
                       position: 'sticky',
-                      zIndex: '1',
                       left: 0,
-                      paddingLeft: '8px',
+                      zIndex: '5',
                       backgroundColor: 'white',
+                      paddingLeft: '8px',
                       fontWeight: '600',
                     }
                   : { fontWeight: '600' }
@@ -306,11 +377,12 @@ const RankingsTable = () => {
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <EnhancedTableToolbar />
-        <TableContainer>
+        <TableContainer sx={{ maxHeight: 1000 }}>
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby='tableTitle'
             size={dense ? 'small' : 'medium'}
+            stickyHeader
           >
             <EnhancedTableHead
               order={order}
@@ -318,6 +390,7 @@ const RankingsTable = () => {
               onRequestSort={handleRequestSort}
               rowCount={rankingsTable.length}
             />
+
             <TableBody>
               {rankingsTable
                 .sort((a, b) => {
