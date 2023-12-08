@@ -221,10 +221,14 @@ app.get('/sports/getAllDatasets', async (req, res) => {
   }
 })
 
-// Add the /portfolio route
-app.get('/portfolio', (req, res) => {
-  res.send('This is the portfolio page')
-})
+// // Add a new route for serving the rankings page
+// app.get('/rankings', (req, res) => {
+//   // Assuming you have an HTML file for the rankings page
+//   const rankingsPagePath = path.join(__dirname, '../client/build/rankings.html')
+
+//   // Send the HTML file as the response
+//   res.sendFile(rankingsPagePath)
+// })
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`)

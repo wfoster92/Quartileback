@@ -20,6 +20,7 @@ import Switch from '@mui/material/Switch'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { visuallyHidden } from '@mui/utils'
 import { GamesContext } from '../../contexts/GamesContext'
+import { TextField } from '@mui/material'
 
 let columnArr = [
   {
@@ -176,66 +177,6 @@ const comparator = (a, b, order, orderBy) => {
   return order === 'desc' ? output : -output
 }
 
-// const EnhancedTableHead = (props) => {
-//   const {
-//     onSelectAllClick,
-//     order,
-//     orderBy,
-//     // numSelected,
-//     rowCount,
-//     onRequestSort,
-//   } = props
-
-//   const { rankingsTable, setRankingsTable } = useContext(GamesContext)
-
-//   const createSortHandler = (property) => (event) => {
-//     onRequestSort(event, property)
-//   }
-
-//   return (
-//     <TableHead>
-//       <TableRow>
-//         {columnArr
-//           .filter((col) => !col.hidden)
-//           .map((col, idx) => (
-//             <TableCell
-//               key={col.id}
-//               align={col.align}
-//               padding={col.disablePadding ? 'none' : 'normal'}
-//               sortDirection={orderBy === col.id ? order : false}
-//               style={
-//                 idx === 0
-//                   ? {
-//                       position: 'sticky',
-//                       zIndex: '2',
-//                       left: 0,
-//                       paddingLeft: '8px',
-//                       backgroundColor: 'white',
-//                       fontWeight: '600',
-//                     }
-//                   : { fontWeight: '600' }
-//               }
-//             >
-//               <TableSortLabel
-//                 active={orderBy === col.id}
-//                 direction={orderBy === col.id ? order : 'asc'}
-//                 onClick={createSortHandler(col.id)}
-//               >
-//                 {col.label}
-//                 {orderBy === col.id ? (
-//                   <Box component='span' sx={visuallyHidden}>
-//                     {order === 'desc'
-//                       ? 'sorted descending'
-//                       : 'sorted ascending'}
-//                   </Box>
-//                 ) : null}
-//               </TableSortLabel>
-//             </TableCell>
-//           ))}
-//       </TableRow>
-//     </TableHead>
-//   )
-// }
 const EnhancedTableHead = (props) => {
   const { onSelectAllClick, order, orderBy, rowCount, onRequestSort } = props
 
@@ -312,6 +253,8 @@ const EnhancedTableHead = (props) => {
 }
 
 const EnhancedTableToolbar = () => {
+  const { searchStrRankings, setSearchStrRankings } = useContext(GamesContext)
+
   return (
     <Toolbar
       sx={{
@@ -320,13 +263,26 @@ const EnhancedTableToolbar = () => {
       }}
     >
       <Typography
-        sx={{ flex: '1 1 100%', fontWeight: '600' }}
+        sx={{ flex: '1 1 100%', fontWeight: '600', display: 'inline-block' }}
         variant='h6'
         id='tableTitle'
         component='div'
       >
         Comprehensive Rankings
       </Typography>
+      <div style={{ display: 'inline-block' }}>
+        <TextField
+          style={{ marginRight: '64px' }}
+          id='outlined-basic'
+          label='Search'
+          variant='outlined'
+          value={searchStrRankings}
+          onChange={(e) => setSearchStrRankings(e.target.value.toString())}
+          InputLabelProps={{
+            style: { zIndex: 0 },
+          }}
+        />
+      </div>
     </Toolbar>
   )
 }
@@ -339,7 +295,7 @@ const RankingsTable = () => {
   const [dense, setDense] = useState(false)
   const [rowsPerPage, setRowsPerPage] = useState(25)
 
-  const { rankingsTable } = useContext(GamesContext)
+  const { rankingsTable, searchStrRankings } = useContext(GamesContext)
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc'
@@ -398,6 +354,21 @@ const RankingsTable = () => {
 
             <TableBody>
               {rankingsTable
+                .filter((row) => {
+                  return searchStrRankings === ''
+                    ? true
+                    : columnArr
+                        .filter((col) => col.searchable)
+                        .map((col) =>
+                          !row[col.id]
+                            ? false
+                            : row[col.id]
+                                .toString()
+                                .toLowerCase()
+                                .includes(searchStrRankings.toLowerCase())
+                        )
+                        .some((elem) => elem)
+                })
                 .sort((a, b) => {
                   return comparator(a[orderBy], b[orderBy], order, orderBy)
                 })
