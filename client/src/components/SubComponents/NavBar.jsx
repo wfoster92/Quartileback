@@ -37,9 +37,9 @@ export default function NavBar() {
             </>
           ) : (
             <>
-              <IconButton color='inherit' component={Link} to='/gamblin'>
+              {/* <IconButton color='inherit' component={Link} to='/gamblin'>
                 Gamblin'
-              </IconButton>
+              </IconButton> */}
               <IconButton color='inherit' component={Link} to='/login'>
                 Login
               </IconButton>
