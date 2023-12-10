@@ -167,7 +167,7 @@ const Rankings = () => {
 
         <div style={{ display: 'inline-block' }}>
           <TextField
-            style={{ marginLeft: '8px' }}
+            style={{ marginLeft: '8px', width: '112px' }}
             id='outlined-basic'
             label='Search'
             variant='outlined'

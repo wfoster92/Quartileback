@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "armchair.png",
+      "src": "armchair0_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "armchair.png",
+      "src": "armchair0_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
