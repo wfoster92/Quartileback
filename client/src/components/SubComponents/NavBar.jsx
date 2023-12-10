@@ -4,6 +4,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
 
 import MenuIcon from '@mui/icons-material/Menu'
+// import Favicon from '/favicon.ico'
 
 export default function NavBar() {
   const { authenticated, logout } = useAuth() // Get authentication state and logout function
@@ -12,8 +13,14 @@ export default function NavBar() {
     <React.Fragment>
       <AppBar color={'success'}>
         <Toolbar>
-          <IconButton edge='start' color='inherit' aria-label='menu'>
-            <MenuIcon />
+          <IconButton edge='start' color='inherit' component={Link} to='/'>
+            <img
+              src='/favicon.ico'
+              alt='Favicon'
+              height={'32px'}
+              width={'32px'}
+              style={{ borderRadius: '4px' }}
+            />
           </IconButton>
           <IconButton color='inherit' component={Link} to='/'>
             Rankings
