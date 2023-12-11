@@ -34,7 +34,7 @@ const Spread = () => {
   const minScore = keys[0]
   const maxScore = [...keys].pop()
   const maxProb = Math.max(...keys.map((k) => currentSpread[k]))
-  console.log(minScore, maxScore)
+  // console.log(minScore, maxScore)
 
   let dataArr = keys.map((k) => {
     return {

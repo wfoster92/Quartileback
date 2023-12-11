@@ -36,6 +36,7 @@ const App = () => {
         <Route path='/gamblin' element={<Gamblin />} />
         {authenticated ? (
           <>
+            {/* move this back to the authenticated when done developing */}
             <Route
               path='/gameView'
               element={
