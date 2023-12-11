@@ -229,7 +229,7 @@ const Heatmap = () => {
       .style('font-size', '14px')
       .style('fill', 'grey')
       .style('max-width', 400)
-      .text('A short description of the take-away message of this chart.')
+      .text('Heatmap')
   }, [heatmapType, heatmapData, viewportWidth])
 
   // const overSpreadProb =
