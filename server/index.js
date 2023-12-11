@@ -29,7 +29,8 @@ app.use(
   })
 )
 
-app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 app.use(express.static('public'))
 
 // Enable session cookies
@@ -228,14 +229,43 @@ app.get('/sports/getAllDatasets', async (req, res) => {
   }
 })
 
-// // Add a new route for serving the rankings page
-// app.get('/rankings', (req, res) => {
-//   // Assuming you have an HTML file for the rankings page
-//   const rankingsPagePath = path.join(__dirname, '../client/build/rankings.html')
+// fetch the current bets for the game in question
+app.post('/sports/heatmap/', async (req, res) => {
+  console.log('hello')
+  try {
+    const { away, home } = req.body
+    console.log('Request Body:', req.body)
 
-//   // Send the HTML file as the response
-//   res.sendFile(rankingsPagePath)
-// })
+    const scoreSummariesDir = path.join(
+      process.cwd(),
+      'csvs',
+      'score_summaries'
+    )
+    let fname = path.join(scoreSummariesDir, `score_summaries_${dateStr}.csv`)
+    console.log('Attempting to read:', fname)
+
+    if (fs.existsSync(fname)) {
+      let result = await csv().fromFile(fname)
+
+      // initialize dictionaries for overUnder and spread
+      // let output = {}
+      // for each row in the csv take the sum for the over under and the diff for the spread
+      // -> add them to their respective dictionaries
+      let output = result
+        .filter((row) => row.homeTeam === home && row.awayTeam === away)
+        .map((elem) => elem)
+
+      console.log(JSON.stringify(output, null, 2))
+      res.json([output]) // Send the JSON data as the response
+    } else {
+      throw new Error(`CSV file not found: ${fname}`)
+    }
+  } catch (error) {
+    console.error('Error reading CSV file:', error)
+    res.status(404).json({ error: 'CSV file not found' })
+    return
+  }
+})
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`)

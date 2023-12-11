@@ -25,13 +25,13 @@ export default function NavBar() {
           <IconButton color='inherit' component={Link} to='/'>
             Rankings
           </IconButton>
+          <IconButton color='inherit' component={Link} to='/gameView'>
+            Games!
+          </IconButton>
 
           {/* Conditionally render based on authentication state */}
           {authenticated ? (
             <>
-              <IconButton color='inherit' component={Link} to='/gameView'>
-                Games!
-              </IconButton>
               <IconButton color='inherit' component={Link} to='/portfolio'>
                 Portfolio!
               </IconButton>

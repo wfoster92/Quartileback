@@ -31,6 +31,10 @@ const GamesProvider = ({ children }) => {
   const rankingsTables = ['nba', 'ncaab', 'ncaaf', 'nfl']
   const [selectedRankingsTable, setSelectedRankingsTable] = useState('nfl')
 
+  const [heatmapData, setHeatmapData] = useState([])
+  const [heatmapType, setHeatmapType] = useState('overUnder')
+  const [selectedSport, setSelectedSport] = useState('')
+
   const state = {
     currentSpread,
     setCurrentSpread,
@@ -81,6 +85,10 @@ const GamesProvider = ({ children }) => {
     selectedRankingsTable,
     setSelectedRankingsTable,
     rankingsTables,
+    heatmapData,
+    setHeatmapData,
+    selectedSport,
+    setSelectedSport,
   }
 
   return <GamesContext.Provider value={state}>{children}</GamesContext.Provider>

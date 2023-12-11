@@ -10,6 +10,7 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { Grid } from '@mui/material'
+import Heatmap from '../SubComponents/Heatmap'
 
 const GameView = () => {
   const {
@@ -48,6 +49,9 @@ const GameView = () => {
     gamesObj,
     setGamesObj,
     setBestBetsTable,
+    setHeatmapData,
+    selectedSport,
+    setSelectedSport,
   } = useContext(GamesContext)
 
   const Title = styled.div`
@@ -89,6 +93,38 @@ const GameView = () => {
     }
   }
 
+  const fetchHeatmapData = async () => {
+    if (currentGame.length > 0) {
+      const [awayTeam, homeTeam] = currentGame.split(' ')
+      console.log(awayTeam, homeTeam)
+      try {
+        const response = await fetch('/sports/heatmap', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json', // Adjust the content type if necessary
+            // Add any other headers as needed
+          },
+          body: JSON.stringify({
+            away: awayTeam,
+            home: homeTeam,
+            // sport: sport,
+          }),
+        })
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch data. Status: ${response.status}`)
+        }
+
+        const [data] = await response.json()
+        setHeatmapData(data)
+      } catch (error) {
+        setError(error)
+      } finally {
+        setLoading(false)
+      }
+    }
+  }
+
   const getAllGameData = async () => {
     try {
       const response = await fetch(`/sports/getAllDatasets`)
@@ -113,7 +149,7 @@ const GameView = () => {
 
   useEffect(() => {
     fetchSingleGameData()
-    setFractionalOU(false)
+    fetchHeatmapData()
   }, [currentGame])
 
   const handleResize = useCallback(() => {
@@ -154,8 +190,8 @@ const GameView = () => {
     let newGame = event.target.value
     let [away, home] = newGame.split(' ')
     let k = `${away}_${home}_NCAAB`
-    console.log(`new ncaab game ${newGame}`)
-    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
+    // console.log(`new ncaab game ${newGame}`)
+    // console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
     setCurrentGame(newGame)
     setCurrentOverUnder(gamesObj[k].ou)
     setCurrentSpread(gamesObj[k].spread)
@@ -262,43 +298,60 @@ const GameView = () => {
           {currentGame}
         </div>
         {currentGame ? (
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Grid container spacing={1}>
-              <Grid
-                item
-                xs={11}
-                md={5.5}
-                style={{
-                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                  margin: '2vw',
-                }}
-              >
-                <h1 style={{ textAlign: 'center', marginTop: '64px' }}>
-                  Spread
-                </h1>
-                <Spread />
+          <>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <Grid container spacing={1}>
+                <Grid
+                  item
+                  xs={11}
+                  md={5.5}
+                  style={{
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    margin: '2vw',
+                  }}
+                >
+                  <Heatmap />
+                </Grid>
               </Grid>
-              <Grid
-                item
-                xs={11}
-                md={5.5}
-                style={{
-                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                  margin: '2vw',
-                }}
-              >
-                <h1 style={{ textAlign: 'center', marginTop: '64px' }}>
-                  Over Under
-                </h1>
-                <div style={{ textAlign: 'center' }}>
-                  <OverUnder />
-                </div>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <Grid container spacing={1}>
+                <Grid
+                  item
+                  xs={11}
+                  md={5.5}
+                  style={{
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    margin: '2vw',
+                  }}
+                >
+                  <h1 style={{ textAlign: 'center', marginTop: '64px' }}>
+                    Spread
+                  </h1>
+                  <Spread />
+                </Grid>
+                <Grid
+                  item
+                  xs={11}
+                  md={5.5}
+                  style={{
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    margin: '2vw',
+                  }}
+                >
+                  <h1 style={{ textAlign: 'center', marginTop: '64px' }}>
+                    Over Under
+                  </h1>
+                  <div style={{ textAlign: 'center' }}>
+                    <OverUnder />
+                  </div>
+                </Grid>
+                <Grid item xs={12}>
+                  {/* {JSON.stringify(currentGameInfo, null, 2)} */}
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                {/* {JSON.stringify(currentGameInfo, null, 2)} */}
-              </Grid>
-            </Grid>
-          </div>
+            </div>
+          </>
         ) : (
           <>
             <Title>Please select a game.</Title>
