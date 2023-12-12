@@ -131,13 +131,13 @@ const EnhancedTableHead = (props) => {
     onRequestSort,
   } = props
 
-  const { bestBetsTable, setBestBetsTable } = useContext(GamesContext)
+  const { betLegsTable, setBetLegsTable } = useContext(GamesContext)
 
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property)
   }
 
-  let numSelected = bestBetsTable.reduce(
+  let numSelected = betLegsTable.reduce(
     (acc, cur) => acc + (cur.inPortfolio ? 1 : 0),
     0
   )
@@ -218,7 +218,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 }
 
-const BestBetsTable = () => {
+const BetLegsTable = () => {
   const [order, setOrder] = useState('asc')
   const [orderBy, setOrderBy] = useState('unitReturn')
   const [selected, setSelected] = useState([])
@@ -226,7 +226,7 @@ const BestBetsTable = () => {
   const [dense, setDense] = useState(false)
   const [rowsPerPage, setRowsPerPage] = useState(10)
 
-  const { bestBetsTable, setBestBetsTable } = useContext(GamesContext)
+  const { betLegsTable, setBetLegsTable } = useContext(GamesContext)
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc'
@@ -237,18 +237,18 @@ const BestBetsTable = () => {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      // const newSelected = bestBetsTable.map((n) => n.index)
+      // const newSelected = betLegsTable.map((n) => n.index)
       // setSelected(newSelected)
-      let tempBestBetsTable = bestBetsTable.map((elem) => {
+      let tempBetLegsTable = betLegsTable.map((elem) => {
         return { ...elem, inPortfolio: false }
       })
-      setBestBetsTable(tempBestBetsTable)
+      setBetLegsTable(tempBetLegsTable)
       return
     }
-    let tempBestBetsTable = bestBetsTable.map((elem) => {
+    let tempBetLegsTable = betLegsTable.map((elem) => {
       return { ...elem, inPortfolio: false }
     })
-    setBestBetsTable(tempBestBetsTable)
+    setBetLegsTable(tempBetLegsTable)
   }
 
   const handleChangePage = (event, newPage) => {
@@ -268,13 +268,13 @@ const BestBetsTable = () => {
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - bestBetsTable.length) : 0
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - betLegsTable.length) : 0
 
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <EnhancedTableToolbar
-          numSelected={bestBetsTable.reduce(
+          numSelected={betLegsTable.reduce(
             (acc, cur) => (acc + cur.inPortfolio ? 1 : 0),
             0
           )}
@@ -286,7 +286,7 @@ const BestBetsTable = () => {
             size={dense ? 'small' : 'medium'}
           >
             <EnhancedTableHead
-              numSelected={bestBetsTable.reduce(
+              numSelected={betLegsTable.reduce(
                 (acc, cur) => (acc + cur.inPortfolio ? 1 : 0),
                 0
               )}
@@ -294,10 +294,10 @@ const BestBetsTable = () => {
               orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={bestBetsTable.length}
+              rowCount={betLegsTable.length}
             />
             <TableBody>
-              {bestBetsTable
+              {betLegsTable
                 .filter((elem) => elem.inPortfolio)
                 .sort((a, b) => {
                   return comparator(a[orderBy], b[orderBy], order, orderBy)
@@ -313,7 +313,7 @@ const BestBetsTable = () => {
                     <TableRow
                     // hover
                     // onClick={() => {
-                    //   let tempBestBetsTable = bestBetsTable.map((elem) => {
+                    //   let tempBetLegsTable = betLegsTable.map((elem) => {
                     //     if (elem.index === row.index) {
                     //       let tempElem = { ...elem }
                     //       tempElem.inPortfolio = !tempElem.inPortfolio
@@ -322,7 +322,7 @@ const BestBetsTable = () => {
                     //       return elem
                     //     }
                     //   })
-                    //   setBestBetsTable(tempBestBetsTable)
+                    //   setBetLegsTable(tempBetLegsTable)
                     // }}
                     // role='checkbox'
                     // aria-checked={row.inPortfolio}
@@ -338,7 +338,7 @@ const BestBetsTable = () => {
                               color='primary'
                               checked={false}
                               onChange={() => {
-                                let tempBestBetsTable = bestBetsTable.map(
+                                let tempBetLegsTable = betLegsTable.map(
                                   (elem) => {
                                     if (elem.index === row.index) {
                                       let tempElem = { ...elem }
@@ -350,7 +350,7 @@ const BestBetsTable = () => {
                                     }
                                   }
                                 )
-                                setBestBetsTable(tempBestBetsTable)
+                                setBetLegsTable(tempBetLegsTable)
                               }}
                               inputProps={{
                                 'aria-labelledby': labelId,
@@ -397,7 +397,7 @@ const BestBetsTable = () => {
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component='div'
-          count={bestBetsTable.filter((elem) => elem.inPortfolio).length}
+          count={betLegsTable.filter((elem) => elem.inPortfolio).length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
@@ -412,4 +412,4 @@ const BestBetsTable = () => {
   )
 }
 
-export default BestBetsTable
+export default BetLegsTable
