@@ -25,7 +25,7 @@ const GamesProvider = ({ children }) => {
   const [allNFLGames, setAllNFLGames] = useState([])
   const [allNCAABGames, setAllNCAABGames] = useState([])
   const [gamesObj, setGamesObj] = useState(null)
-  const [bestBetsTable, setBestBetsTable] = useState([])
+  const [betLegsTable, setBetLegsTable] = useState([])
   const [rankingsTable, setRankingsTable] = useState([])
   const [searchStrRankings, setSearchStrRankings] = useState('')
   const rankingsTables = ['nba', 'ncaab', 'ncaaf', 'nfl']
@@ -76,8 +76,8 @@ const GamesProvider = ({ children }) => {
     setAllNCAABGames,
     gamesObj,
     setGamesObj,
-    bestBetsTable,
-    setBestBetsTable,
+    betLegsTable,
+    setBetLegsTable,
     rankingsTable,
     setRankingsTable,
     searchStrRankings,

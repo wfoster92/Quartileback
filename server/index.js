@@ -19,7 +19,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-dateStr = '12_11_2023'
+dateStr = '12_12_2023'
 
 app.use(express.static('../client/build'))
 app.use(
@@ -111,9 +111,9 @@ app.get('/sports/bets/:away/:home', async (req, res) => {
   }
 })
 
-app.get('/sports/getBestBetsTable', async (req, res) => {
-  const bestBetsDir = path.join(process.cwd(), 'csvs', 'best_bets')
-  let fname = path.join(bestBetsDir, `bestbets_${dateStr}.csv`)
+app.get('/sports/getBetLegsTable', async (req, res) => {
+  const betLegsDir = path.join(process.cwd(), 'csvs', 'bet_legs')
+  let fname = path.join(betLegsDir, `betlegs_${dateStr}.csv`)
   try {
     if (fs.existsSync(fname)) {
       let result = await csv().fromFile(fname)
