@@ -45,8 +45,16 @@ const Spread = () => {
     d3.select(ref.current).selectAll('*').remove()
 
     // set the dimensions and margins of the graph
-    const margin = { top: 30, right: 30, bottom: 70, left: 60 }
-    const w = viewportWidth * 0.45 - margin.left - margin.right
+    const margin = {
+      top: viewportWidth * 0.05,
+      right: viewportWidth * 0.05,
+      bottom: viewportWidth * 0.08,
+      left: viewportWidth * 0.08,
+    }
+    const w =
+      viewportWidth <= 750
+        ? viewportWidth - margin.left - margin.right
+        : viewportWidth * 0.45 - margin.left - margin.right
     const h = 600 - margin.top - margin.bottom
 
     // append the svg object to the body of the page
@@ -161,7 +169,14 @@ const Spread = () => {
           {underProb.toFixed(1)}%
         </div>
       </div>
-      <svg width={1000} height={600} id='overUnderBarChart' ref={ref} />
+      <svg
+        width={
+          viewportWidth <= 750 ? viewportWidth * 0.9 : viewportWidth * 0.45
+        }
+        height={600}
+        id='overUnderBarChart'
+        ref={ref}
+      />
     </>
   )
 }

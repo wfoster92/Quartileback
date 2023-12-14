@@ -48,7 +48,6 @@ const GameView = () => {
     setAllNCAABGames,
     gamesObj,
     setGamesObj,
-    setBestBetsTable,
     setHeatmapData,
     selectedSport,
     setSelectedSport,
@@ -303,7 +302,7 @@ const GameView = () => {
               <Grid container spacing={1}>
                 <Grid
                   item
-                  xs={11}
+                  xs={12}
                   md={5.5}
                   style={{
                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -318,7 +317,7 @@ const GameView = () => {
               <Grid container spacing={1}>
                 <Grid
                   item
-                  xs={11}
+                  xs={12}
                   md={5.5}
                   style={{
                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -332,7 +331,7 @@ const GameView = () => {
                 </Grid>
                 <Grid
                   item
-                  xs={11}
+                  xs={12}
                   md={5.5}
                   style={{
                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -345,9 +344,6 @@ const GameView = () => {
                   <div style={{ textAlign: 'center' }}>
                     <OverUnder />
                   </div>
-                </Grid>
-                <Grid item xs={12}>
-                  {/* {JSON.stringify(currentGameInfo, null, 2)} */}
                 </Grid>
               </Grid>
             </div>
