@@ -124,7 +124,7 @@ const Heatmap = () => {
       .domain([lowestScore, highestScore])
     svg
       .append('g')
-      .style('font-size', 15)
+      .style('font-size', 12)
       .attr('transform', `translate(0, ${height})`)
       .call(d3.axisBottom(x).tickSize(0))
       .select('.domain')
@@ -138,7 +138,7 @@ const Heatmap = () => {
     // .padding(0.05)
     svg
       .append('g')
-      .style('font-size', 15)
+      .style('font-size', 12)
       .call(d3.axisLeft(y).tickSize(0))
       .select('.domain')
       .remove()
