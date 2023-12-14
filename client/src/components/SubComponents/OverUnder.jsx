@@ -47,15 +47,18 @@ const Spread = () => {
     // set the dimensions and margins of the graph
     const margin = {
       top: viewportWidth * 0.05,
-      right: viewportWidth * 0.05,
-      bottom: viewportWidth * 0.08,
-      left: viewportWidth * 0.08,
+      right: viewportWidth * 0.04,
+      bottom: viewportWidth * 0.05,
+      left: viewportWidth * 0.04,
     }
     const w =
       viewportWidth <= 750
         ? viewportWidth - margin.left - margin.right
         : viewportWidth * 0.45 - margin.left - margin.right
-    const h = 600 - margin.top - margin.bottom
+    const h =
+      viewportWidth <= 750
+        ? viewportWidth - margin.top - margin.bottom
+        : viewportWidth * 0.45 - margin.top - margin.bottom
 
     // append the svg object to the body of the page
     const svg = d3
@@ -173,7 +176,9 @@ const Spread = () => {
         width={
           viewportWidth <= 750 ? viewportWidth * 0.9 : viewportWidth * 0.45
         }
-        height={600}
+        height={
+          viewportWidth <= 750 ? viewportWidth * 0.9 : viewportWidth * 0.45
+        }
         id='overUnderBarChart'
         ref={ref}
       />

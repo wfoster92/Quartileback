@@ -85,9 +85,9 @@ const Heatmap = () => {
     // set the dimensions and margins of the graph
     const margin = {
       top: viewportWidth * 0.05,
-      right: viewportWidth * 0.05,
-      bottom: viewportWidth * 0.08,
-      left: viewportWidth * 0.08,
+      right: viewportWidth * 0.04,
+      bottom: viewportWidth * 0.05,
+      left: viewportWidth * 0.04,
     }
     const width =
       viewportWidth <= 750
@@ -252,7 +252,7 @@ const Heatmap = () => {
       .attr('y', -50)
       .attr('text-anchor', 'left')
       .style('font-size', '22px')
-      .text('A d3.js heatmap')
+      .text('Score Projection')
 
     // Add subtitle to graph
     svg
