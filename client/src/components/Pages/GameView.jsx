@@ -54,7 +54,7 @@ const GameView = () => {
   } = useContext(GamesContext)
 
   const Title = styled.div`
-    font-size: 48px;
+    font-size: 32px;
     margin-bottom: 32px;
     text-align: center;
   `
@@ -291,7 +291,7 @@ const GameView = () => {
         <div
           style={{
             textAlign: 'center',
-            fontSize: '64px',
+            fontSize: '32px',
           }}
         >
           {currentGame}
@@ -352,9 +352,14 @@ const GameView = () => {
           <>
             <Title>Please select a game.</Title>
             <img
-              style={{ borderRadius: '16px', margin: 'auto', display: 'block' }}
+              style={{
+                borderRadius: '16px',
+                margin: 'auto',
+                display: 'block',
+                width: `${viewportWidth * 0.5}px`,
+                height: `${viewportWidth * 0.5 * (5 / 7)}px`,
+              }}
               src={process.env.PUBLIC_URL + '/big_lebowski_dude.webp'}
-              // src={process.env.PUBLIC_URL + '/big_lebowski_nam.jpeg'}
             ></img>
           </>
         )}
