@@ -52,15 +52,15 @@ const Spread = () => {
       top: viewportWidth * 0.05,
       right: viewportWidth * 0.04,
       bottom: viewportWidth * 0.05,
-      left: viewportWidth * 0.04,
+      left: viewportWidth * 0.06,
     }
     const w =
       viewportWidth <= 750
-        ? viewportWidth - margin.left - margin.right
+        ? viewportWidth * 0.9 - margin.left - margin.right
         : viewportWidth * 0.45 - margin.left - margin.right
     const h =
       viewportWidth <= 750
-        ? viewportWidth - margin.top - margin.bottom
+        ? viewportWidth * 0.9 - margin.top - margin.bottom
         : viewportWidth * 0.45 - margin.top - margin.bottom
 
     // append the svg object to the body of the page
@@ -180,15 +180,14 @@ const Spread = () => {
           {underSpreadProb.toFixed(1)}%
         </div>
       </div>
-
-      <svg
-        width={
-          viewportWidth <= 750 ? viewportWidth * 0.9 : viewportWidth * 0.45
-        }
-        height={viewportWidth <= 750 ? viewportWidth : viewportWidth * 0.45}
-        id='spreadBarChart'
-        ref={ref}
-      />
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <svg
+          width={viewportWidth <= 750 ? viewportWidth : viewportWidth * 0.45}
+          height={viewportWidth <= 750 ? viewportWidth : viewportWidth * 0.45}
+          id='spreadBarChart'
+          ref={ref}
+        />
+      </div>
     </>
   )
 }
