@@ -20,78 +20,85 @@ import {
 const Heatmap = () => {
   const { viewportWidth, heatmapData, heatmapType } = useContext(GamesContext)
 
-  let highestScore = 0
-  let lowestScore = 10000
-  let maxProbability = 0
-  heatmapData.forEach((elem) => {
-    // parse the heatmapData obj and get the high and low scores
-    let { homeScore, awayScore, probability } = elem
-    homeScore = Number(homeScore)
-    awayScore = Number(awayScore)
-    probability = Number(probability)
-
-    let tempHigh = Math.max(awayScore, homeScore)
-    let tempLow = Math.min(awayScore, homeScore)
-    if (tempHigh > highestScore) {
-      highestScore = tempHigh
-    }
-    if (tempLow < lowestScore) {
-      lowestScore = tempLow
-    }
-    if (probability > maxProbability) {
-      maxProbability = probability
-    }
-  })
-
   const ref = useRef()
+
   useEffect(() => {
+    let highestScore = 0
+    let lowestScore = 10000
+    let maxProbability = 0
+    let minProbability = 1
+    heatmapData.forEach((elem) => {
+      // parse the heatmapData obj and get the high and low scores
+      let { homeScore, awayScore, probability } = elem
+      homeScore = Number(homeScore)
+      awayScore = Number(awayScore)
+      probability = Number(probability)
+
+      let tempHigh = Math.max(awayScore, homeScore)
+      let tempLow = Math.min(awayScore, homeScore)
+      if (tempHigh > highestScore) {
+        highestScore = tempHigh
+      }
+      if (tempLow < lowestScore) {
+        lowestScore = tempLow
+      }
+      if (probability > maxProbability) {
+        maxProbability = probability
+      }
+      if (probability < minProbability) {
+        minProbability = probability
+      }
+    })
+
+    // make a NxN base layer array for the heatmap
+    const numRange = (start, end, step) => {
+      return Array.from(
+        Array.from(Array(Math.ceil((end - start) / step)).keys()),
+        (x) => start + x * step
+      )
+    }
+    let baseLayer = []
+    if (lowestScore === 10000 && highestScore == 0) {
+      baseLayer = []
+    } else {
+      let baseRange = numRange(lowestScore, highestScore + 1, 1)
+      baseRange.forEach((x) =>
+        baseRange.forEach((y) => {
+          baseLayer.push({
+            awayScore: x,
+            homeScore: y,
+            probability: minProbability / 2,
+          })
+        })
+      )
+    }
+
+    // to give some padding to the chart
+    highestScore += 1
+    lowestScore -= 1
+    if (heatmapData.length === 0) {
+      return
+    }
     d3.select(ref.current).selectAll('*').remove()
 
-    // append the svg object to the body of the page
-    // const svg = d3
-    //   .select('#spreadBarChart')
-    //   .append('svg')
-    //   .attr('width', w + margin.left + margin.right)
-    //   .attr('height', h + margin.top + margin.bottom)
-    //   .append('g')
-    //   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-
-    // // x axis
-    // const xAxis = d3.scaleLinear().range([0, w]).domain([minScore, maxScore])
-
-    // svg
-    //   .append('g')
-    //   .attr('transform', `translate(0, ${h})`)
-    //   .call(d3.axisBottom(xAxis))
-
-    // // y axis
-    // const yAxis = d3.scaleLinear().domain([0, maxProb]).range([h, 0])
-    // svg.append('g').call(d3.axisLeft(yAxis))
-
-    // // Bars
-    // svg
-    //   .selectAll('mybar')
-    //   .data(dataArr)
-    //   .join('rect')
-    //   .attr('x', (d) => xAxis(d.score))
-    //   .attr('y', (d) => yAxis(d.probability))
-    //   .attr('width', w / (maxScore - minScore + 1)) // Calculate the width of each bar
-    //   .attr('height', (d) => h - yAxis(d.probability))
-    //   .attr('fill', (d) =>
-    //     d.score === spread && !fractionalSpread
-    //       ? '#000'
-    //       : d.score > (spreadIsInt && !fractionalSpread ? spread : spread + 0.5)
-    //       ? '#800'
-    //       : '#e00'
-    //   )
-
     // set the dimensions and margins of the graph
     // set the dimensions and margins of the graph
-    const margin = { top: 30, right: 30, bottom: 70, left: 60 }
-    const width = viewportWidth - margin.left - margin.right
-    const height = viewportWidth - margin.top - margin.bottom
-    let rectWidth = width / highestScore
-    let rectHeight = height / highestScore
+    const margin = {
+      top: viewportWidth * 0.05,
+      right: viewportWidth * 0.05,
+      bottom: viewportWidth * 0.08,
+      left: viewportWidth * 0.08,
+    }
+    const width =
+      viewportWidth <= 750
+        ? viewportWidth * 0.9 - margin.left - margin.right
+        : viewportWidth * 0.45 - margin.left - margin.right
+    const height =
+      viewportWidth <= 750
+        ? viewportWidth * 0.9 - margin.top - margin.bottom
+        : viewportWidth * 0.45 - margin.top - margin.bottom
+    let rectWidth = width / (highestScore - lowestScore)
+    let rectHeight = height / (highestScore - lowestScore)
 
     // append the svg object to the body of the page
     const svg = d3
@@ -157,7 +164,6 @@ const Heatmap = () => {
     const tooltip = d3
       .select('#heatmapChart')
       .append('div')
-      .style('opacity', 0)
       .attr('class', 'tooltip')
       .style('background-color', 'white')
       .style('border', 'solid')
@@ -177,14 +183,13 @@ const Heatmap = () => {
         .style('top', event.y / 2 + 'px')
     }
     const mouseleave = function (event, d) {
-      tooltip.style('opacity', 0)
       d3.select(this).style('stroke', 'none').style('opacity', 0.8)
     }
 
-    // add the squares
+    // add the baselayer of squares
     svg
       .selectAll()
-      .data(heatmapData)
+      .data(baseLayer)
       .join('rect')
       .attr('x', function (d) {
         return x(Number(d.homeScore))
@@ -203,7 +208,36 @@ const Heatmap = () => {
           Number(d.probability)
         )
       })
-      .style('stroke-width', 4)
+      // .style('stroke-width', 4)
+      .style('stroke', 'none')
+      .style('opacity', 0.8)
+      .on('mouseover', mouseover)
+      .on('mousemove', mousemove)
+      .on('mouseleave', mouseleave)
+
+    // add the squares
+    svg
+      .selectAll()
+      .data(heatmapData)
+      .join('rect')
+      .attr('x', function (d) {
+        return x(Number(d.homeScore))
+      })
+      .attr('y', function (d) {
+        return y(Number(d.awayScore))
+      })
+      .attr('rx', 1)
+      .attr('ry', 1)
+      .attr('width', rectWidth)
+      .attr('height', rectHeight)
+      .style('fill', function (d) {
+        return myColor(
+          Number(d.homeScore),
+          Number(d.awayScore),
+          Number(d.probability)
+        )
+      })
+      // .style('stroke-width', 4)
       .style('stroke', 'none')
       .style('opacity', 0.8)
       .on('mouseover', mouseover)
@@ -308,8 +342,12 @@ const Heatmap = () => {
       {/* <div>Odds of under</div> */}
 
       <svg
-        width={viewportWidth}
-        height={viewportWidth}
+        width={
+          viewportWidth <= 750 ? viewportWidth * 0.9 : viewportWidth * 0.45
+        }
+        height={
+          viewportWidth <= 750 ? viewportWidth * 0.9 : viewportWidth * 0.45
+        }
         id='heatmapChart'
         ref={ref}
       />
