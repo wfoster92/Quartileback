@@ -18,11 +18,14 @@ import {
 // https://d3-graph-gallery.com/graph/heatmap_style.html
 
 const Heatmap = () => {
-  const { viewportWidth, heatmapData, heatmapType } = useContext(GamesContext)
+  const { viewportWidth, heatmapData, heatmapType, currentGame } =
+    useContext(GamesContext)
 
   const ref = useRef()
 
   useEffect(() => {
+    // get home and away team names
+    const [homeTeam, awayTeam] = currentGame.split(' ')
     let highestScore = 0
     let lowestScore = 10000
     let maxProbability = 0
@@ -86,8 +89,8 @@ const Heatmap = () => {
     const margin = {
       top: viewportWidth * 0.05,
       right: viewportWidth * 0.04,
-      bottom: viewportWidth * 0.05,
-      left: viewportWidth * 0.04,
+      bottom: viewportWidth * 0.1,
+      left: viewportWidth * 0.1,
     }
     const width =
       viewportWidth <= 750
@@ -246,101 +249,50 @@ const Heatmap = () => {
     // )
 
     // Add title to graph
-    svg
-      .append('text')
-      .attr('x', 0)
-      .attr('y', -50)
-      .attr('text-anchor', 'left')
-      .style('font-size', '22px')
-      .text('Score Projection')
+    // svg
+    //   .append('text')
+    //   .attr('x', 0)
+    //   .attr('y', -50)
+    //   .attr('text-anchor', 'left')
+    //   .style('font-size', '22px')
+    //   .text('Score Projection')
 
     // Add subtitle to graph
     svg
       .append('text')
       .attr('x', 0)
-      .attr('y', -20)
+      .attr('y', -10)
       .attr('text-anchor', 'left')
       .style('font-size', '14px')
       .style('fill', 'grey')
       .style('max-width', 400)
-      .text('Heatmap')
+      .text('Score Projection')
+
+    // Add x-axis label
+    svg
+      .append('text')
+      .attr('class', 'x-axis-label')
+      .attr('x', width / 2)
+      .attr('y', height + margin.top + 20) // Adjust the position as needed
+      .style('text-anchor', 'middle')
+      .style('font-size', '16px')
+      .text(`${awayTeam}`)
+
+    // Add y-axis label
+    svg
+      .append('text')
+      .attr('class', 'y-axis-label')
+      .attr('transform', 'rotate(-90)')
+      .attr('x', 0 - height / 2)
+      .attr('y', 0 - margin.left / 1.05)
+      .attr('dy', '1em')
+      .style('text-anchor', 'middle')
+      .style('font-size', '16px')
+      .text(`${homeTeam}`)
   }, [heatmapType, heatmapData, viewportWidth])
-
-  // const overSpreadProb =
-  //   dataArr
-  //     .filter(
-  //       (elem) =>
-  //         elem.score >
-  //         (spreadIsInt && !fractionalSpread ? spread : spread + 0.5)
-  //     )
-  //     .map((elem) => elem.probability)
-  //     .reduce((acc, currentValue) => {
-  //       return acc + currentValue
-  //     }, 0) * 100
-
-  // const underSpreadProb =
-  //   dataArr
-  //     .filter(
-  //       (elem) =>
-  //         elem.score <
-  //         (spreadIsInt && !fractionalSpread ? spread : spread + 0.5)
-  //     )
-  //     .map((elem) => elem.probability)
-  //     .reduce((acc, currentValue) => {
-  //       return acc + currentValue
-  //     }, 0) * 100
 
   return (
     <>
-      {/* <div style={{ textAlign: 'center' }}>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <NumberInput
-              aria-label='Demo number input'
-              placeholder='Type a number…'
-              value={spread}
-              onChange={(event, val) => setSpread(val)}
-            />
-          </div>
-          <div
-            style={{
-              display: 'inline-block',
-              verticalAlign: 'center',
-              marginLeft: '16px',
-            }}
-          >
-            <FormControl component='fieldset' variant='standard'>
-              <FormGroup>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={fractionalSpread}
-                      onChange={() => {
-                        setFractionalSpread(!fractionalSpread)
-                        setSpreadIsInt(true)
-                      }}
-                    />
-                  }
-                  label='Fractional Spread'
-                />
-              </FormGroup>
-            </FormControl>
-          </div>
-        </div>
-        {/* <div>
-          Odds of over{' '}
-          {spreadIsInt && !fractionalSpread ? spread : spread + 0.5} are:
-          {overSpreadProb.toFixed(1)}%
-        </div>
-      {/* </div>  */}
-      {/* <div>Odds of under</div> */}
-
       <svg
         width={
           viewportWidth <= 750 ? viewportWidth * 0.9 : viewportWidth * 0.45
