@@ -226,12 +226,12 @@ const GameView = () => {
         >
           <Box sx={{ width: 210, margin: 0 }}>
             <FormControl fullWidth>
-              <InputLabel id='demo-simple-select-label'>NCAAB Games</InputLabel>
+              <InputLabel id='demo-simple-select-label'>NCAAB</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
                 value={allNCAABGames.includes(currentGame) ? currentGame : null}
-                label='NCAAB Games'
+                label='NCAAB'
                 onChange={handleGameChangeNCAAB}
               >
                 {allNCAABGames.map((game) => {
@@ -242,12 +242,12 @@ const GameView = () => {
           </Box>
           <Box sx={{ width: 210, margin: 0 }}>
             <FormControl fullWidth>
-              <InputLabel id='demo-simple-select-label'>CFB Games</InputLabel>
+              <InputLabel id='demo-simple-select-label'>CFB</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
                 value={allCFBGames.includes(currentGame) ? currentGame : null}
-                label='CFB Games'
+                label='CFB'
                 onChange={handleGameChangeCFB}
               >
                 {allCFBGames.map((game) => {
@@ -258,12 +258,12 @@ const GameView = () => {
           </Box>
           <Box sx={{ width: 210, margin: 0 }}>
             <FormControl fullWidth>
-              <InputLabel id='demo-simple-select-label'>NBA Games</InputLabel>
+              <InputLabel id='demo-simple-select-label'>NBA</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
                 value={allNBAGames.includes(currentGame) ? currentGame : null}
-                label='NBA Games'
+                label='NBA'
                 onChange={handleGameChangeNBA}
               >
                 {allNBAGames.map((game) => {
@@ -274,12 +274,12 @@ const GameView = () => {
           </Box>
           <Box sx={{ width: 210, margin: 0 }}>
             <FormControl fullWidth>
-              <InputLabel id='demo-simple-select-label'>NFL Games</InputLabel>
+              <InputLabel id='demo-simple-select-label'>NFL</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
                 value={allNFLGames.includes(currentGame) ? currentGame : null}
-                label='NFL Games'
+                label='NFL'
                 onChange={handleGameChangeNFL}
               >
                 {allNFLGames.map((game) => {
@@ -353,7 +353,7 @@ const GameView = () => {
         ) : (
           <>
             <div style={{ height: '2vh' }}></div>
-            <Title>Please select a game.</Title>
+            <Title style={{ fontSize: '3vh' }}>Please select a game.</Title>
             <img
               style={{
                 borderRadius: '16px',
