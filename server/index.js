@@ -19,7 +19,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-dateStr = '12_12_2023'
+dateStr = '12_15_2023'
 
 app.use(express.static('../client/build'))
 app.use(
@@ -44,7 +44,7 @@ app.use(
 
 // Sample user data (replace with database in production)
 const users = [
-  { username: 'ws', password: 'nc' },
+  { username: 'ws', password: 'WinstonSalem336!' },
   // { username: 'nc', password: 'nc' },
 ]
 

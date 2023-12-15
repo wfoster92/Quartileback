@@ -170,9 +170,9 @@ const Heatmap = () => {
       .attr('class', 'tooltip')
       .style('background-color', 'white')
       .style('border', 'solid')
-      .style('border-width', '2px')
-      .style('border-radius', '5px')
-      .style('padding', '5px')
+      .style('border-width', '.5vw')
+      .style('border-radius', '1.5vw')
+      .style('padding', '1.5vw')
 
     // Three function that change the tooltip when user hover / move / leave a cell
     const mouseover = function (event, d) {
@@ -248,25 +248,16 @@ const Heatmap = () => {
       .on('mouseleave', mouseleave)
     // )
 
-    // Add title to graph
-    // svg
-    //   .append('text')
-    //   .attr('x', 0)
-    //   .attr('y', -50)
-    //   .attr('text-anchor', 'left')
-    //   .style('font-size', '22px')
-    //   .text('Score Projection')
-
     // Add subtitle to graph
     svg
       .append('text')
       .attr('x', 0)
       .attr('y', -10)
       .attr('text-anchor', 'left')
-      .style('font-size', '14px')
-      .style('fill', 'grey')
+      .style('font-size', '2vh')
+      .style('fill', 'black')
       .style('max-width', 400)
-      .text('Score Projection')
+      .text('Heatmap: Score Projection')
 
     // Add x-axis label
     svg
@@ -275,7 +266,7 @@ const Heatmap = () => {
       .attr('x', width / 2)
       .attr('y', height + margin.top + 20) // Adjust the position as needed
       .style('text-anchor', 'middle')
-      .style('font-size', '16px')
+      .style('font-size', '3vh')
       .text(`${awayTeam}`)
 
     // Add y-axis label
@@ -284,10 +275,10 @@ const Heatmap = () => {
       .attr('class', 'y-axis-label')
       .attr('transform', 'rotate(-90)')
       .attr('x', 0 - height / 2)
-      .attr('y', 0 - margin.left / 1.05)
+      .attr('y', 0 - margin.left)
       .attr('dy', '1em')
       .style('text-anchor', 'middle')
-      .style('font-size', '16px')
+      .style('font-size', '3vh')
       .text(`${homeTeam}`)
   }, [heatmapType, heatmapData, viewportWidth])
 
