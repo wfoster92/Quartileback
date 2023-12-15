@@ -54,8 +54,8 @@ const GameView = () => {
   } = useContext(GamesContext)
 
   const Title = styled.div`
-    font-size: 32px;
-    margin-bottom: 32px;
+    font-size: '50px';
+    margin: '10vh 0';
     text-align: center;
   `
   const fetchSingleGameData = async () => {
@@ -216,6 +216,7 @@ const GameView = () => {
   return (
     <>
       <div>
+        <div style={{ height: '2vh' }}></div>
         <div
           style={{
             display: 'flex',
@@ -223,7 +224,7 @@ const GameView = () => {
             alignItems: 'center',
           }}
         >
-          <Box sx={{ width: 210, margin: 4 }}>
+          <Box sx={{ width: 210, margin: 0 }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>NCAAB Games</InputLabel>
               <Select
@@ -239,7 +240,7 @@ const GameView = () => {
               </Select>
             </FormControl>
           </Box>
-          <Box sx={{ width: 210, margin: 4 }}>
+          <Box sx={{ width: 210, margin: 0 }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>CFB Games</InputLabel>
               <Select
@@ -255,7 +256,7 @@ const GameView = () => {
               </Select>
             </FormControl>
           </Box>
-          <Box sx={{ width: 210, margin: 4 }}>
+          <Box sx={{ width: 210, margin: 0 }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>NBA Games</InputLabel>
               <Select
@@ -271,7 +272,7 @@ const GameView = () => {
               </Select>
             </FormControl>
           </Box>
-          <Box sx={{ width: 210, margin: 4 }}>
+          <Box sx={{ width: 210, margin: 0 }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>NFL Games</InputLabel>
               <Select
@@ -291,10 +292,11 @@ const GameView = () => {
         <div
           style={{
             textAlign: 'center',
-            fontSize: '32px',
+            marginTop: '2vh',
+            fontSize: '4vh',
           }}
         >
-          {currentGame}
+          {currentGame.replace(' ', ' vs. ')}
         </div>
         {currentGame ? (
           <>
@@ -350,11 +352,12 @@ const GameView = () => {
           </>
         ) : (
           <>
+            <div style={{ height: '2vh' }}></div>
             <Title>Please select a game.</Title>
             <img
               style={{
                 borderRadius: '16px',
-                margin: 'auto',
+                margin: '2vh auto',
                 display: 'block',
                 width: `${viewportWidth * 0.5}px`,
                 height: `${viewportWidth * 0.5 * (5 / 7)}px`,
