@@ -222,9 +222,10 @@ const GameView = () => {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
+            marginBottom: '2vw',
           }}
         >
-          <Box sx={{ width: 210, margin: 0 }}>
+          <Box style={{ width: '24vh', margin: '0' }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>NCAAB</InputLabel>
               <Select
@@ -240,7 +241,7 @@ const GameView = () => {
               </Select>
             </FormControl>
           </Box>
-          <Box sx={{ width: 210, margin: 0 }}>
+          <Box style={{ width: '24vh', margin: '0' }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>CFB</InputLabel>
               <Select
@@ -256,7 +257,7 @@ const GameView = () => {
               </Select>
             </FormControl>
           </Box>
-          <Box sx={{ width: 210, margin: 0 }}>
+          <Box style={{ width: '24vh', margin: '0' }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>NBA</InputLabel>
               <Select
@@ -272,7 +273,7 @@ const GameView = () => {
               </Select>
             </FormControl>
           </Box>
-          <Box sx={{ width: 210, margin: 0 }}>
+          <Box style={{ width: '24vh', margin: '0' }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>NFL</InputLabel>
               <Select

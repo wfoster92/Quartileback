@@ -104,8 +104,8 @@ const Spread = () => {
     // Add subtitle to graph
     svg
       .append('text')
-      .attr('x', 0)
-      .attr('y', -10)
+      .attr('x', 10)
+      .attr('y', 0)
       .attr('text-anchor', 'left')
       .style('font-size', '2vh')
       .style('font-weight', 600)
@@ -142,11 +142,11 @@ const Spread = () => {
     <>
       <div style={{ textAlign: 'center' }}>
         <span>
-          Over {spreadIsInt && !fractionalSpread ? spread : spread + 0.5} -
+          Over {spreadIsInt && !fractionalSpread ? spread : spread + 0.5}:{' '}
           {overSpreadProb.toFixed(1)}%{'  |  '}
         </span>
         <span>
-          Under {spreadIsInt && !fractionalSpread ? spread : spread + 0.5} -
+          Under {spreadIsInt && !fractionalSpread ? spread : spread + 0.5}:{' '}
           {underSpreadProb.toFixed(1)}%
         </span>
       </div>
