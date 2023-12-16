@@ -33,8 +33,32 @@ let columnArr = [
     editable: false,
   },
   {
+    id: 'homeTeamAbbrev',
+    label: 'Home',
+    disablePadding: false,
+    dataType: 'string',
+    align: 'left',
+    editable: false,
+  },
+  {
+    id: 'awayTeamAbbrev',
+    label: 'Away',
+    disablePadding: false,
+    dataType: 'string',
+    align: 'left',
+    editable: false,
+  },
+  {
     id: 'index',
-    label: 'Details',
+    label: 'Bet',
+    disablePadding: false,
+    dataType: 'string',
+    align: 'left',
+    editable: false,
+  },
+  {
+    id: 'sport',
+    label: 'Sport',
     disablePadding: false,
     dataType: 'string',
     align: 'left',
@@ -77,14 +101,6 @@ let columnArr = [
     label: 'Unit Return',
     disablePadding: false,
     dataType: 'float',
-    align: 'right',
-    editable: false,
-  },
-  {
-    id: 'legs',
-    label: 'Num Legs',
-    disablePadding: false,
-    dataType: 'int',
     align: 'right',
     editable: false,
   },
@@ -310,27 +326,7 @@ const BetLegsTable = () => {
                   const labelId = `enhanced-table-checkbox-${rowIdx}`
 
                   return (
-                    <TableRow
-                    // hover
-                    // onClick={() => {
-                    //   let tempBetLegsTable = betLegsTable.map((elem) => {
-                    //     if (elem.index === row.index) {
-                    //       let tempElem = { ...elem }
-                    //       tempElem.inPortfolio = !tempElem.inPortfolio
-                    //       return tempElem
-                    //     } else {
-                    //       return elem
-                    //     }
-                    //   })
-                    //   setBetLegsTable(tempBetLegsTable)
-                    // }}
-                    // role='checkbox'
-                    // aria-checked={row.inPortfolio}
-                    // tabIndex={-1}
-                    // // key={row.id}
-                    // selected={row.inPortfolio}
-                    // sx={{ cursor: 'pointer' }}
-                    >
+                    <TableRow>
                       {columnArr.map((currentCol, colIdx) => {
                         return currentCol.id === 'inPortfolio' ? (
                           <TableCell padding='checkbox'>
@@ -340,7 +336,7 @@ const BetLegsTable = () => {
                               onChange={() => {
                                 let tempBetLegsTable = betLegsTable.map(
                                   (elem) => {
-                                    if (elem.index === row.index) {
+                                    if (elem === row) {
                                       let tempElem = { ...elem }
                                       tempElem.inPortfolio =
                                         !tempElem.inPortfolio
@@ -375,6 +371,8 @@ const BetLegsTable = () => {
                                     .split(', ')[1]
                                     .replace(')', '')
                                 ).toFixed(4)})`
+                              : ['int'].includes(currentCol.dataType)
+                              ? Math.round(row[currentCol.id])
                               : row[currentCol.id]}
                           </TableCell>
                         )

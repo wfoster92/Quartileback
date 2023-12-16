@@ -30,13 +30,39 @@ let columnArr = [
     disablePadding: true,
     dataType: 'boolean',
     align: 'center',
+    editable: false,
   },
   {
-    id: 'index',
-    label: 'Details',
+    id: 'homeTeamAbbrev',
+    label: 'Home',
     disablePadding: false,
     dataType: 'string',
     align: 'left',
+    editable: false,
+  },
+  {
+    id: 'awayTeamAbbrev',
+    label: 'Away',
+    disablePadding: false,
+    dataType: 'string',
+    align: 'left',
+    editable: false,
+  },
+  {
+    id: 'index',
+    label: 'Bet',
+    disablePadding: false,
+    dataType: 'string',
+    align: 'left',
+    editable: false,
+  },
+  {
+    id: 'sport',
+    label: 'Sport',
+    disablePadding: false,
+    dataType: 'string',
+    align: 'left',
+    editable: false,
   },
   {
     id: 'probability',
@@ -44,6 +70,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'percent',
     align: 'right',
+    editable: false,
   },
   {
     id: 'odds',
@@ -51,6 +78,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'int',
     align: 'right',
+    editable: false,
   },
   {
     id: 'kelly',
@@ -58,6 +86,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'kelly',
     align: 'right',
+    editable: false,
   },
   {
     id: 'unitPercent',
@@ -65,6 +94,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'float',
     align: 'right',
+    editable: false,
   },
   {
     id: 'unitReturn',
@@ -72,13 +102,7 @@ let columnArr = [
     disablePadding: false,
     dataType: 'float',
     align: 'right',
-  },
-  {
-    id: 'legs',
-    label: 'Num Legs',
-    disablePadding: false,
-    dataType: 'int',
-    align: 'right',
+    editable: false,
   },
 ]
 
@@ -324,7 +348,7 @@ const BetLegsTable = () => {
                               onChange={() => {
                                 let tempBetLegsTable = betLegsTable.map(
                                   (elem) => {
-                                    if (elem.index === row.index) {
+                                    if (elem === row) {
                                       let tempElem = { ...elem }
                                       tempElem.inPortfolio =
                                         !tempElem.inPortfolio
@@ -359,6 +383,8 @@ const BetLegsTable = () => {
                                     .split(', ')[1]
                                     .replace(')', '')
                                 ).toFixed(4)})`
+                              : ['int'].includes(currentCol.dataType)
+                              ? Math.round(row[currentCol.id])
                               : row[currentCol.id]}
                           </TableCell>
                         )
