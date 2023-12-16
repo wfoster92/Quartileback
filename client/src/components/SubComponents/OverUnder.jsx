@@ -97,6 +97,18 @@ const Spread = () => {
           ? '#080'
           : '#0e0'
       )
+
+    // Add subtitle to graph
+    svg
+      .append('text')
+      .attr('x', 0)
+      .attr('y', -10)
+      .attr('text-anchor', 'left')
+      .style('font-size', '2vh')
+      .style('font-weight', 600)
+      .style('fill', 'black')
+      .style('max-width', 400)
+      .text('Over Under')
   }, [currentOverUnder, OU, ouIsInt, fractionalOU, viewportWidth])
 
   const overProb =
@@ -118,58 +130,57 @@ const Spread = () => {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <NumberInput
-              aria-label='Demo number input'
-              placeholder='Type a number…'
-              value={Math.floor(OU)}
-              onChange={(event, val) => {
-                setOU(val)
-                setOuIsInt(true)
-              }}
-            />
-          </div>
-          <div
-            style={{
-              display: 'inline-block',
-              verticalAlign: 'center',
-              marginLeft: '16px',
-            }}
-          >
-            <FormControl component='fieldset' variant='standard'>
-              <FormGroup>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={fractionalOU}
-                      onChange={() => {
-                        setFractionalOU(!fractionalOU)
-                        setOuIsInt(true)
-                      }}
-                      // name='gilad'
-                    />
-                  }
-                  label='Fractional Over Under'
-                />
-              </FormGroup>
-            </FormControl>
-          </div>
-        </div>
-
-        <div>
-          Odds of over {ouIsInt && !fractionalOU ? OU : OU + 0.5} are:
-          {overProb.toFixed(1)}%
-        </div>
-        <div>
-          Odds of under {ouIsInt && !fractionalOU ? OU : OU + 0.5} are:
+        <span>
+          Over {ouIsInt && !fractionalOU ? OU : OU + 0.5} -{overProb.toFixed(1)}
+          %{'  |  '}
+        </span>
+        <span>
+          Under {ouIsInt && !fractionalOU ? OU : OU + 0.5} -
           {underProb.toFixed(1)}%
+        </span>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <NumberInput
+            aria-label='Demo number input'
+            placeholder='Type a number…'
+            value={Math.floor(OU)}
+            onChange={(event, val) => {
+              setOU(val)
+              setOuIsInt(true)
+            }}
+          />
+        </div>
+        <div
+          style={{
+            display: 'inline-block',
+            verticalAlign: 'center',
+            marginLeft: '16px',
+          }}
+        >
+          <FormControl component='fieldset' variant='standard'>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={fractionalOU}
+                    onChange={() => {
+                      setFractionalOU(!fractionalOU)
+                      setOuIsInt(true)
+                    }}
+                    // name='gilad'
+                  />
+                }
+                label='Fractional Over Under'
+              />
+            </FormGroup>
+          </FormControl>
         </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>

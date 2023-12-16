@@ -10,7 +10,7 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { Grid } from '@mui/material'
-import Heatmap from '../SubComponents/Heatmap'
+import HeatmapContainer from '../SubComponents/HeatmapContainer'
 
 const GameView = () => {
   const {
@@ -311,7 +311,18 @@ const GameView = () => {
                     margin: '2vw',
                   }}
                 >
-                  <Heatmap />
+                  <HeatmapContainer />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  md={5.5}
+                  style={{
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    margin: '2vw',
+                  }}
+                >
+                  <Spread />
                 </Grid>
               </Grid>
             </div>
@@ -326,23 +337,6 @@ const GameView = () => {
                     margin: '2vw',
                   }}
                 >
-                  <h1 style={{ textAlign: 'center', marginTop: '64px' }}>
-                    Spread
-                  </h1>
-                  <Spread />
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  md={5.5}
-                  style={{
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                    margin: '2vw',
-                  }}
-                >
-                  <h1 style={{ textAlign: 'center', marginTop: '64px' }}>
-                    Over Under
-                  </h1>
                   <div style={{ textAlign: 'center' }}>
                     <OverUnder />
                   </div>

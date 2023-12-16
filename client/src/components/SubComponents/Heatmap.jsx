@@ -18,8 +18,17 @@ import {
 // https://d3-graph-gallery.com/graph/heatmap_style.html
 
 const Heatmap = () => {
-  const { viewportWidth, heatmapData, heatmapType, currentGame } =
-    useContext(GamesContext)
+  const {
+    viewportWidth,
+    heatmapData,
+    heatmapType,
+    currentGame,
+    selectedHeatmapType,
+    setSelectedHeatmapType,
+    allHeatmapTypes,
+    spread,
+    OU,
+  } = useContext(GamesContext)
 
   const ref = useRef()
 
@@ -148,19 +157,51 @@ const Heatmap = () => {
 
     // Build color scale
     const myColor = (home, away, prob) => {
-      const isTie = home === away
+      if (selectedHeatmapType === 'moneyLine') {
+        const isTie = home === away
 
-      // Choose color scale based on the condition
-      const colorScale = isTie
-        ? d3.scaleSequential().interpolator(d3.interpolateGreys)
-        : home > away
-        ? d3.scaleSequential().interpolator(d3.interpolateGreens)
-        : d3.scaleSequential().interpolator(d3.interpolateReds)
+        // Choose color scale based on the condition
+        const colorScale = isTie
+          ? d3.scaleSequential().interpolator(d3.interpolateGreys)
+          : home > away
+          ? d3.scaleSequential().interpolator(d3.interpolateGreens)
+          : d3.scaleSequential().interpolator(d3.interpolateReds)
 
-      // Set the domain based on the max probability
-      colorScale.domain([0, maxProbability])
+        // Set the domain based on the max probability
+        colorScale.domain([0, maxProbability])
 
-      return colorScale(prob)
+        return colorScale(prob)
+      } else if (selectedHeatmapType === 'spread') {
+        const isTie = home - away === spread
+        const isHome = home - away > spread
+        // Choose color scale based on the condition
+        const colorScale = isTie
+          ? d3.scaleSequential().interpolator(d3.interpolateGreys)
+          : isHome
+          ? d3.scaleSequential().interpolator(d3.interpolateBlues)
+          : d3.scaleSequential().interpolator(d3.interpolateReds)
+
+        // Set the domain based on the max probability
+        colorScale.domain([0, maxProbability])
+
+        return colorScale(prob)
+      } else if (selectedHeatmapType === 'overUnder') {
+        const combined = home + away
+        const isTie = combined === OU
+        const isOver = combined > OU
+        // console.log(combined, overUnder)
+        // Choose color scale based on the condition
+        const colorScale = isTie
+          ? d3.scaleSequential().interpolator(d3.interpolateGreys)
+          : isOver
+          ? d3.scaleSequential().interpolator(d3.interpolatePurples)
+          : d3.scaleSequential().interpolator(d3.interpolateOranges)
+
+        // Set the domain based on the max probability
+        colorScale.domain([0, maxProbability])
+
+        return colorScale(prob)
+      }
     }
 
     // create a tooltip
@@ -255,9 +296,10 @@ const Heatmap = () => {
       .attr('y', -10)
       .attr('text-anchor', 'left')
       .style('font-size', '2vh')
+      .style('font-weight', 600)
       .style('fill', 'black')
       .style('max-width', 400)
-      .text('Heatmap: Score Projection')
+      .text('Score Projection')
 
     // Add x-axis label
     svg
@@ -266,7 +308,7 @@ const Heatmap = () => {
       .attr('x', width / 2)
       .attr('y', height + margin.top + 20) // Adjust the position as needed
       .style('text-anchor', 'middle')
-      .style('font-size', '3vh')
+      .style('font-size', '1.5vh')
       .text(`${awayTeam}`)
 
     // Add y-axis label
@@ -278,9 +320,9 @@ const Heatmap = () => {
       .attr('y', 0 - margin.left)
       .attr('dy', '1em')
       .style('text-anchor', 'middle')
-      .style('font-size', '3vh')
+      .style('font-size', '1.5vh')
       .text(`${homeTeam}`)
-  }, [heatmapType, heatmapData, viewportWidth])
+  }, [heatmapType, heatmapData, viewportWidth, selectedHeatmapType])
 
   return (
     <>

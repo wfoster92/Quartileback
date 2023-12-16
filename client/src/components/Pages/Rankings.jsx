@@ -93,29 +93,6 @@ const Rankings = () => {
             Rankings
           </Typography>
         </div>
-
-        {/* <ToggleButtonGroup
-            value={selectedRankingsTable}
-            color='primary'
-            style={{ verticalAlign: 'middle' }}
-          >
-            {rankingsTables.map((elem) => {
-              return (
-                <ToggleButton
-                  onClick={(e) => setSelectedRankingsTable(elem)}
-                  value={elem}
-                  sx={{
-                    height: 28,
-                    width: 56,
-                    textTransform: 'none',
-                    fontSize: '16px',
-                  }}
-                >
-                  {elem}
-                </ToggleButton>
-              )
-            })}
-          </ToggleButtonGroup> */}
         <div style={{ display: 'inline-block' }}>
           <Stack>
             <ToggleButtonGroup
