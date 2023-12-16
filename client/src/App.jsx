@@ -25,26 +25,26 @@ const App = () => {
           <Route path='/' element={<LoginForm />} />
         )} */}
         <Route path='/login' element={<LoginForm />} />
-        {/* move this back to the authenticated when done developing */}
         <Route
-          path='/gameView'
+          path='/'
           element={
             <GamesProvider>
-              <GameView />
+              <Rankings />
             </GamesProvider>
           }
         />
-        <Route path='/gamblin' element={<Gamblin />} />
         {authenticated ? (
           <>
+            {/* move this back to the authenticated when done developing */}
             <Route
-              path='/'
+              path='/gameView'
               element={
                 <GamesProvider>
-                  <Rankings />
+                  <GameView />
                 </GamesProvider>
               }
             />
+            <Route path='/gamblin' element={<Gamblin />} />
             <Route
               path='/portfolio'
               element={
