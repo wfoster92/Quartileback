@@ -101,8 +101,8 @@ const Spread = () => {
     // Add subtitle to graph
     svg
       .append('text')
-      .attr('x', 0)
-      .attr('y', -10)
+      .attr('x', 10)
+      .attr('y', 0)
       .attr('text-anchor', 'left')
       .style('font-size', '2vh')
       .style('font-weight', 600)
@@ -131,11 +131,11 @@ const Spread = () => {
     <>
       <div style={{ textAlign: 'center' }}>
         <span>
-          Over {ouIsInt && !fractionalOU ? OU : OU + 0.5} -{overProb.toFixed(1)}
+          Over {ouIsInt && !fractionalOU ? OU : OU + 0.5}: {overProb.toFixed(1)}
           %{'  |  '}
         </span>
         <span>
-          Under {ouIsInt && !fractionalOU ? OU : OU + 0.5} -
+          Under {ouIsInt && !fractionalOU ? OU : OU + 0.5}:{' '}
           {underProb.toFixed(1)}%
         </span>
       </div>
@@ -174,7 +174,6 @@ const Spread = () => {
                       setFractionalOU(!fractionalOU)
                       setOuIsInt(true)
                     }}
-                    // name='gilad'
                   />
                 }
                 label='Fractional Over Under'
@@ -185,7 +184,9 @@ const Spread = () => {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <svg
-          width={viewportWidth <= 750 ? viewportWidth : viewportWidth * 0.45}
+          width={
+            viewportWidth <= 750 ? viewportWidth * 0.7 : viewportWidth * 0.45
+          }
           height={viewportWidth <= 750 ? viewportWidth : viewportWidth * 0.45}
           id='overUnderBarChart'
           ref={ref}

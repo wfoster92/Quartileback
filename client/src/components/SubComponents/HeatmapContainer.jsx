@@ -15,6 +15,7 @@ const HeatmapContainer = () => {
           display: 'flex',
           justifyContent: 'space-between',
           width: '100%',
+          marginBottom: '2vw',
         }}
       >
         <div style={{ display: 'inline-block' }}>
@@ -28,7 +29,7 @@ const HeatmapContainer = () => {
                 <ToggleButton
                   onClick={(e) => setSelectedHeatmapType(elem)}
                   value={elem}
-                  style={{ height: '56px', width: '10vw', fontSize: '1.5vw' }}
+                  style={{ height: '3vw', width: '10vw', fontSize: '1.5vw' }}
                   sx={{
                     // height: 56,
                     // width: 160,
