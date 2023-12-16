@@ -32,7 +32,8 @@ const GamesProvider = ({ children }) => {
   const [selectedRankingsTable, setSelectedRankingsTable] = useState('nfl')
 
   const [heatmapData, setHeatmapData] = useState([])
-  const [heatmapType, setHeatmapType] = useState('overUnder')
+  const [selectedHeatmapType, setSelectedHeatmapType] = useState('moneyLine')
+  const allHeatmapTypes = ['moneyLine', 'overUnder', 'spread']
   const [selectedSport, setSelectedSport] = useState('')
 
   const state = {
@@ -87,6 +88,9 @@ const GamesProvider = ({ children }) => {
     rankingsTables,
     heatmapData,
     setHeatmapData,
+    selectedHeatmapType,
+    setSelectedHeatmapType,
+    allHeatmapTypes,
     selectedSport,
     setSelectedSport,
   }

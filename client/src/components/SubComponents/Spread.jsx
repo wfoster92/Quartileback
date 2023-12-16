@@ -100,6 +100,18 @@ const Spread = () => {
           ? '#800'
           : '#e00'
       )
+
+    // Add subtitle to graph
+    svg
+      .append('text')
+      .attr('x', 0)
+      .attr('y', -10)
+      .attr('text-anchor', 'left')
+      .style('font-size', '2vh')
+      .style('font-weight', 600)
+      .style('fill', 'black')
+      .style('max-width', 400)
+      .text('Spread')
   }, [currentSpread, spread, spreadIsInt, fractionalSpread, viewportWidth])
 
   const overSpreadProb =
@@ -129,55 +141,53 @@ const Spread = () => {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <NumberInput
-              aria-label='Demo number input'
-              placeholder='Type a number…'
-              value={spread}
-              onChange={(event, val) => setSpread(val)}
-            />
-          </div>
-          <div
-            style={{
-              display: 'inline-block',
-              verticalAlign: 'center',
-              marginLeft: '16px',
-            }}
-          >
-            <FormControl component='fieldset' variant='standard'>
-              <FormGroup>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={fractionalSpread}
-                      onChange={() => {
-                        setFractionalSpread(!fractionalSpread)
-                        setSpreadIsInt(true)
-                      }}
-                    />
-                  }
-                  label='Fractional Spread'
-                />
-              </FormGroup>
-            </FormControl>
-          </div>
-        </div>
-        <div>
-          Odds of over{' '}
-          {spreadIsInt && !fractionalSpread ? spread : spread + 0.5} are:
-          {overSpreadProb.toFixed(1)}%
-        </div>
-        <div>
-          Odds of under{' '}
-          {spreadIsInt && !fractionalSpread ? spread : spread + 0.5} are:
+        <span>
+          Over {spreadIsInt && !fractionalSpread ? spread : spread + 0.5} -
+          {overSpreadProb.toFixed(1)}%{'  |  '}
+        </span>
+        <span>
+          Under {spreadIsInt && !fractionalSpread ? spread : spread + 0.5} -
           {underSpreadProb.toFixed(1)}%
+        </span>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <NumberInput
+            aria-label='Demo number input'
+            placeholder='Type a number…'
+            value={spread}
+            onChange={(event, val) => setSpread(val)}
+          />
+        </div>
+        <div
+          style={{
+            display: 'inline-block',
+            verticalAlign: 'center',
+            marginLeft: '16px',
+          }}
+        >
+          <FormControl component='fieldset' variant='standard'>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={fractionalSpread}
+                    onChange={() => {
+                      setFractionalSpread(!fractionalSpread)
+                      setSpreadIsInt(true)
+                    }}
+                  />
+                }
+                label='Fractional Spread'
+              />
+            </FormGroup>
+          </FormControl>
         </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
