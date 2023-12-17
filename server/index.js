@@ -19,7 +19,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-dateStr = '12_16_2023'
+dateStr = '12_17_2023'
 
 app.use(express.static('../client/build'))
 app.use(
@@ -133,6 +133,49 @@ app.get('/sports/getBetLegsTable', async (req, res) => {
   }
 })
 
+// app.get('/sports/getRankingsTable/:sport', async (req, res) => {
+//   const { sport } = req.params
+
+//   const rankingsDir = path.join(
+//     process.cwd(),
+//     'csvs',
+//     'comprehensive_rankings',
+//     sport,
+//     'current'
+//   )
+
+//   // Read the contents of the directory
+//   fs.readdir(rankingsDir, (err, files) => {
+//     if (err) {
+//       console.error('Error reading directory:', err)
+//       return
+//     }
+//     let fname = ''
+//     // Check if there are files in the directory
+//     if (files.length > 0) {
+//       // Get the name of the first file
+//       fname = files[0]
+//       console.log('Name of the first file:', fname)
+//     } else {
+//       console.log('No files found in the directory.')
+//     }
+//   })
+
+//   // let fname = path.join(rankingsDir, `comprehensive_rankings_${sport}.csv`)
+//   try {
+//     if (fs.existsSync(fname)) {
+//       let result = await csv().fromFile(fname)
+//       res.json([result]) // Send the JSON data as the response
+//     } else {
+//       throw new Error(`CSV file not found: ${fname}`)
+//     }
+//   } catch (error) {
+//     console.error('Error reading CSV file:', error)
+//     res.status(404).json({ error: 'CSV file not found' })
+//     return
+//   }
+// })
+
 app.get('/sports/getRankingsTable/:sport', async (req, res) => {
   const { sport } = req.params
 
@@ -140,21 +183,44 @@ app.get('/sports/getRankingsTable/:sport', async (req, res) => {
     process.cwd(),
     'csvs',
     'comprehensive_rankings',
-    sport
+    sport,
+    'current'
   )
-  let fname = path.join(rankingsDir, `comprehensive_rankings_${sport}.csv`)
-  try {
-    if (fs.existsSync(fname)) {
-      let result = await csv().fromFile(fname)
-      res.json([result]) // Send the JSON data as the response
-    } else {
-      throw new Error(`CSV file not found: ${fname}`)
+
+  // Read the contents of the directory
+  fs.readdir(rankingsDir, async (err, files) => {
+    if (err) {
+      console.error('Error reading directory:', err)
+      res.status(500).json({ error: 'Error reading directory' })
+      return
     }
-  } catch (error) {
-    console.error('Error reading CSV file:', error)
-    res.status(404).json({ error: 'CSV file not found' })
-    return
-  }
+
+    // Check if there are files in the directory
+    if (files.length > 0) {
+      // Get the name of the first file
+      let fname = path.join(rankingsDir, files[0])
+      // get the date of the file
+      let fNameDate = fname
+        .split(`comprehensive_rankings_${sport}_`)[1]
+        .split('.')[0]
+        .replaceAll('_', '/')
+
+      try {
+        if (fs.existsSync(fname)) {
+          const result = await csv().fromFile(fname)
+          res.json([result, fNameDate]) // Send the JSON data as the response
+        } else {
+          throw new Error(`CSV file not found: ${fname}`)
+        }
+      } catch (error) {
+        console.error('Error reading CSV file:', error)
+        res.status(404).json({ error: 'CSV file not found' })
+      }
+    } else {
+      console.log('No files found in the directory.')
+      res.status(404).json({ error: 'No files found in the directory' })
+    }
+  })
 })
 
 app.get('/sports/getAllDatasets', async (req, res) => {

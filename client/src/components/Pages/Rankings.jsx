@@ -21,6 +21,9 @@ const Rankings = () => {
     selectedRankingsTable,
     setSelectedRankingsTable,
     rankingsTables,
+    rankingsDate,
+    setRankingsDate,
+    viewportWidth,
   } = useContext(GamesContext)
 
   const getRankingsTable = async () => {
@@ -29,8 +32,9 @@ const Rankings = () => {
         `/sports/getRankingsTable/${selectedRankingsTable}`
       )
       // const response = await fetch(`/sports/getRankingsTable/${selectedRankingsTable}`)
-      const [tempRankingsTable] = await response.json()
+      const [tempRankingsTable, tempRankingsDate] = await response.json()
       setRankingsTable(tempRankingsTable)
+      setRankingsDate(tempRankingsDate)
     } catch (error) {
       setError(error)
     } finally {
@@ -73,8 +77,9 @@ const Rankings = () => {
               fontWeight: '600',
               display: 'inline-block',
               verticalAlign: 'middle',
+              fontSize: viewportWidth < 750 ? '12px' : '16px',
             }}
-            variant='h6'
+            // variant='h6'
             component='div'
           >
             {selectedRankingsTable.toUpperCase()}
@@ -86,13 +91,29 @@ const Rankings = () => {
               fontWeight: '600',
               display: 'inline-block',
               verticalAlign: 'middle',
+              fontSize: viewportWidth < 750 ? '12px' : '16px',
             }}
-            variant='h6'
+            // variant='h6'
             component='div'
           >
             Rankings
           </Typography>
+          <div></div>
+          <Typography
+            sx={{
+              flex: '1 1 100%',
+              fontWeight: '600',
+              display: 'inline-block',
+              verticalAlign: 'middle',
+              fontSize: viewportWidth < 750 ? '12px' : '16px',
+            }}
+            // variant='h6'
+            component='div'
+          >
+            {rankingsDate}
+          </Typography>
         </div>
+
         <div style={{ display: 'inline-block' }}>
           <Stack>
             <ToggleButtonGroup

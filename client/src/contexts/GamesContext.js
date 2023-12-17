@@ -35,6 +35,7 @@ const GamesProvider = ({ children }) => {
   const [selectedHeatmapType, setSelectedHeatmapType] = useState('moneyLine')
   const allHeatmapTypes = ['moneyLine', 'overUnder', 'spread']
   const [selectedSport, setSelectedSport] = useState('')
+  const [rankingsDate, setRankingsDate] = useState('')
 
   const state = {
     currentSpread,
@@ -93,6 +94,8 @@ const GamesProvider = ({ children }) => {
     allHeatmapTypes,
     selectedSport,
     setSelectedSport,
+    rankingsDate,
+    setRankingsDate,
   }
 
   return <GamesContext.Provider value={state}>{children}</GamesContext.Provider>
