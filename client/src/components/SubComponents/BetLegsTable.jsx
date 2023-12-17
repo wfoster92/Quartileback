@@ -318,27 +318,7 @@ const BetLegsTable = () => {
                   const labelId = `enhanced-table-checkbox-${rowIdx}`
 
                   return (
-                    <TableRow
-                    // hover
-                    // onClick={() => {
-                    //   let tempBetLegsTable = betLegsTable.map((elem) => {
-                    //     if (elem.index === row.index) {
-                    //       let tempElem = { ...elem }
-                    //       tempElem.inPortfolio = !tempElem.inPortfolio
-                    //       return tempElem
-                    //     } else {
-                    //       return elem
-                    //     }
-                    //   })
-                    //   setBetLegsTable(tempBetLegsTable)
-                    // }}
-                    // role='checkbox'
-                    // aria-checked={row.inPortfolio}
-                    // tabIndex={-1}
-                    // // key={row.id}
-                    // selected={row.inPortfolio}
-                    // sx={{ cursor: 'pointer' }}
-                    >
+                    <TableRow>
                       {columnArr.map((currentCol, colIdx) => {
                         return currentCol.id === 'inPortfolio' ? (
                           <TableCell padding='checkbox'>
@@ -405,7 +385,7 @@ const BetLegsTable = () => {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[10, 25, 100]}
           component='div'
           count={betLegsTable.filter((elem) => !elem.inPortfolio).length}
           rowsPerPage={rowsPerPage}
