@@ -393,7 +393,7 @@ const BetLegsTable = () => {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[10, 25, 100]}
           component='div'
           count={betLegsTable.filter((elem) => elem.inPortfolio).length}
           rowsPerPage={rowsPerPage}
