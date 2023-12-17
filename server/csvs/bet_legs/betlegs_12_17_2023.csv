@@ -1,4 +1,4 @@
-homeTeamAbbrev,awayTeamAbbrev,sport,,probability,odds,kelly,unitPercent,unitReturn
+homeTeamAbbrev,awayTeamAbbrev,sport,index,probability,odds,kelly,unitPercent,unitReturn
 BOS,ORL,NBA,homeCover,0.46997300000000003,-108.0,"(-0.10245615999999996, 0)",-0.10245615999999996,0.0
 BOS,ORL,NBA,awayCover,0.505872,-112.0,"(-0.04755136000000004, 0)",-0.04755136000000004,0.0
 BOS,ORL,NBA,over,0.268275,-108.0,"(-0.5219879999999999, 0)",-0.5219879999999999,0.0
