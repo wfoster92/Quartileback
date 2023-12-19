@@ -31,6 +31,7 @@ let columnArr = [
     dataType: 'boolean',
     align: 'center',
     editable: false,
+    searchable: false,
   },
   {
     id: 'homeTeamAbbrev',
@@ -39,6 +40,7 @@ let columnArr = [
     dataType: 'string',
     align: 'left',
     editable: false,
+    searchable: true,
   },
   {
     id: 'awayTeamAbbrev',
@@ -47,6 +49,7 @@ let columnArr = [
     dataType: 'string',
     align: 'left',
     editable: false,
+    searchable: true,
   },
   {
     id: 'index',
@@ -55,6 +58,7 @@ let columnArr = [
     dataType: 'string',
     align: 'left',
     editable: false,
+    searchable: true,
   },
   {
     id: 'sport',
@@ -63,6 +67,7 @@ let columnArr = [
     dataType: 'string',
     align: 'left',
     editable: false,
+    searchable: true,
   },
   {
     id: 'probability',
@@ -71,6 +76,7 @@ let columnArr = [
     dataType: 'percent',
     align: 'right',
     editable: false,
+    searchable: false,
   },
   {
     id: 'odds',
@@ -79,6 +85,7 @@ let columnArr = [
     dataType: 'int',
     align: 'right',
     editable: false,
+    searchable: false,
   },
   {
     id: 'kelly',
@@ -87,6 +94,7 @@ let columnArr = [
     dataType: 'kelly',
     align: 'right',
     editable: false,
+    searchable: false,
   },
   {
     id: 'unitPercent',
@@ -95,6 +103,7 @@ let columnArr = [
     dataType: 'float',
     align: 'right',
     editable: false,
+    searchable: false,
   },
   {
     id: 'unitReturn',
@@ -103,6 +112,7 @@ let columnArr = [
     dataType: 'float',
     align: 'right',
     editable: false,
+    searchable: false,
   },
   {
     id: 'wager',
@@ -111,6 +121,7 @@ let columnArr = [
     dataType: 'int',
     align: 'right',
     editable: true,
+    searchable: false,
   },
 ]
 
@@ -169,16 +180,6 @@ const EnhancedTableHead = (props) => {
               padding={col.disablePadding ? 'none' : 'normal'}
               sortDirection={orderBy === col.id ? order : false}
             >
-              <Checkbox
-                color='primary'
-                style={{ display: 'inline-block' }}
-                indeterminate={false}
-                checked={false}
-                onChange={onSelectAllClick}
-                inputProps={{
-                  'aria-label': 'select all bets',
-                }}
-              />
               Remove
             </TableCell>
           ) : (
@@ -210,31 +211,9 @@ const EnhancedTableHead = (props) => {
   )
 }
 
-const EnhancedTableToolbar = () => {
-  return (
-    <Toolbar
-      sx={{
-        pl: { sm: 2 },
-        pr: { xs: 1, sm: 1 },
-      }}
-    >
-      <Typography
-        sx={{ flex: '1 1 100%' }}
-        variant='h6'
-        id='tableTitle'
-        component='div'
-      >
-        Portfolio
-      </Typography>
-    </Toolbar>
-  )
-}
+const BetLegsTable = (props) => {
+  const { searchStr } = props
 
-EnhancedTableToolbar.propTypes = {
-  numSelected: PropTypes.number.isRequired,
-}
-
-const BetLegsTable = () => {
   const [order, setOrder] = useState('asc')
   const [orderBy, setOrderBy] = useState('unitReturn')
   const [selected, setSelected] = useState([])
@@ -251,21 +230,37 @@ const BetLegsTable = () => {
     setPage(0)
   }
 
-  const handleSelectAllClick = (event) => {
-    if (event.target.checked) {
-      // const newSelected = betLegsTable.map((n) => n.index)
-      // setSelected(newSelected)
-      let tempBetLegsTable = betLegsTable.map((elem) => {
-        return { ...elem, inPortfolio: false }
-      })
-      setBetLegsTable(tempBetLegsTable)
-      return
-    }
-    let tempBetLegsTable = betLegsTable.map((elem) => {
-      return { ...elem, inPortfolio: false }
-    })
-    setBetLegsTable(tempBetLegsTable)
-  }
+  // const handleSelectAllClick = (event) => {
+  //   if (event.target.checked) {
+  //     // select all that aren't filtered out
+  //     let tempBetLegsTable = betLegsTable.filter((row) => {
+  //       return searchStr === ''
+  //         ? { ...row, inPortfolio: false }
+  //         : columnArr
+  //             .filter((col) => col.searchable)
+  //             .map((col) =>
+  //               !row[col.id]
+  //                 ? false
+  //                 : row[col.id]
+  //                     .toString()
+  //                     .toLowerCase()
+  //                     .includes(searchStr.toLowerCase())
+  //             )
+  //             .some((elem) => elem)
+  //         ? { ...row, inPortfolio: false }
+  //         : row
+  //     })
+  //     // .map((elem) => {
+  //     //   return { ...elem, inPortfolio: false }
+  //     // })
+  //     setBetLegsTable(tempBetLegsTable)
+  //     return
+  //   }
+  //   let tempBetLegsTable = betLegsTable.map((elem) => {
+  //     return { ...elem, inPortfolio: false }
+  //   })
+  //   setBetLegsTable(tempBetLegsTable)
+  // }
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage)
@@ -289,12 +284,6 @@ const BetLegsTable = () => {
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar
-          numSelected={betLegsTable.reduce(
-            (acc, cur) => (acc + cur.inPortfolio ? 1 : 0),
-            0
-          )}
-        />
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
@@ -308,13 +297,28 @@ const BetLegsTable = () => {
               )}
               order={order}
               orderBy={orderBy}
-              onSelectAllClick={handleSelectAllClick}
+              // onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={betLegsTable.length}
             />
             <TableBody>
               {betLegsTable
                 .filter((elem) => elem.inPortfolio)
+                .filter((row) => {
+                  return searchStr === ''
+                    ? true
+                    : columnArr
+                        .filter((col) => col.searchable)
+                        .map((col) =>
+                          !row[col.id]
+                            ? false
+                            : row[col.id]
+                                .toString()
+                                .toLowerCase()
+                                .includes(searchStr.toLowerCase())
+                        )
+                        .some((elem) => elem)
+                })
                 .sort((a, b) => {
                   return comparator(a[orderBy], b[orderBy], order, orderBy)
                 })
@@ -395,7 +399,25 @@ const BetLegsTable = () => {
         <TablePagination
           rowsPerPageOptions={[10, 25, 100]}
           component='div'
-          count={betLegsTable.filter((elem) => elem.inPortfolio).length}
+          count={
+            betLegsTable
+              .filter((elem) => elem.inPortfolio)
+              .filter((row) => {
+                return searchStr === ''
+                  ? true
+                  : columnArr
+                      .filter((col) => col.searchable)
+                      .map((col) =>
+                        !row[col.id]
+                          ? false
+                          : row[col.id]
+                              .toString()
+                              .toLowerCase()
+                              .includes(searchStr.toLowerCase())
+                      )
+                      .some((elem) => elem)
+              }).length
+          }
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

@@ -35,9 +35,7 @@ export default function NavBar() {
               <IconButton color='inherit' component={Link} to='/portfolio'>
                 Portfolio!
               </IconButton>
-              <IconButton color='inherit' component={Link} to='/gamblin'>
-                Gamblin'
-              </IconButton>
+
               <IconButton color='inherit' onClick={logout}>
                 Logout
               </IconButton>

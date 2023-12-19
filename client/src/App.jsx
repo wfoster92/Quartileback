@@ -44,7 +44,6 @@ const App = () => {
                 </GamesProvider>
               }
             />
-            <Route path='/gamblin' element={<Gamblin />} />
             <Route
               path='/portfolio'
               element={

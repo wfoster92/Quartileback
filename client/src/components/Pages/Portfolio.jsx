@@ -1,5 +1,6 @@
 import BetLegsTable from '../SubComponents/BetLegsTable'
 import PortfolioTable from '../SubComponents/PortfolioTable'
+import TableContainer from '../SubComponents/TableContainer'
 import { useState, useEffect, useContext } from 'react'
 import { GamesContext } from '../../contexts/GamesContext'
 
@@ -28,8 +29,10 @@ const Portfolio = () => {
   }
   return (
     <>
-      <PortfolioTable />
-      <BetLegsTable />
+      <TableContainer TableComponent={PortfolioTable} title='Portfolio' />
+      <TableContainer TableComponent={BetLegsTable} title='Bet Legs' />
+      {/* <PortfolioTable /> */}
+      {/* <BetLegsTable /> */}
     </>
   )
 }
