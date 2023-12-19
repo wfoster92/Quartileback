@@ -33,27 +33,25 @@ const App = () => {
             </GamesProvider>
           }
         />
+        {/* move this back to the authenticated when done developing */}
+        <Route
+          path='/gameView'
+          element={
+            <GamesProvider>
+              <GameView />
+            </GamesProvider>
+          }
+        />
+        <Route
+          path='/portfolio'
+          element={
+            <GamesProvider>
+              <Portfolio />
+            </GamesProvider>
+          }
+        />
         {authenticated ? (
-          <>
-            {/* move this back to the authenticated when done developing */}
-            <Route
-              path='/gameView'
-              element={
-                <GamesProvider>
-                  <GameView />
-                </GamesProvider>
-              }
-            />
-            <Route path='/gamblin' element={<Gamblin />} />
-            <Route
-              path='/portfolio'
-              element={
-                <GamesProvider>
-                  <Portfolio />
-                </GamesProvider>
-              }
-            />
-          </>
+          <>{/* <Route path='/gamblin' element={<Gamblin />} /> */}</>
         ) : null}
 
         {/* Add a route for the login page */}
