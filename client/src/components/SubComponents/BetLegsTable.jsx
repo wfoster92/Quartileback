@@ -171,16 +171,6 @@ const EnhancedTableHead = (props) => {
               padding={col.disablePadding ? 'none' : 'normal'}
               sortDirection={orderBy === col.id ? order : false}
             >
-              <Checkbox
-                color='primary'
-                style={{ display: 'inline-block' }}
-                indeterminate={false}
-                checked={false}
-                onChange={onSelectAllClick}
-                inputProps={{
-                  'aria-label': 'select all bets',
-                }}
-              />
               Add
             </TableCell>
           ) : (
@@ -254,21 +244,37 @@ const BetLegsTable = (props) => {
     setPage(0)
   }
 
-  const handleSelectAllClick = (event) => {
-    if (event.target.checked) {
-      // const newSelected = betLegsTable.map((n) => n.index)
-      // setSelected(newSelected)
-      let tempbetLegsTable = betLegsTable.map((elem) => {
-        return { ...elem, inPortfolio: true }
-      })
-      setBetLegsTable(tempbetLegsTable)
-      return
-    }
-    let tempbetLegsTable = betLegsTable.map((elem) => {
-      return { ...elem, inPortfolio: true }
-    })
-    setBetLegsTable(tempbetLegsTable)
-  }
+  // const handleSelectAllClick = (event) => {
+  //   if (event.target.checked) {
+  //     // select all that aren't filtered out
+  //     let tempbetLegsTable = betLegsTable.map((row) => {
+  //       return searchStr === ''
+  //         ? { ...row, inPortfolio: true }
+  //         : columnArr
+  //             .filter((col) => col.searchable)
+  //             .map((col) =>
+  //               !row[col.id]
+  //                 ? false
+  //                 : row[col.id]
+  //                     .toString()
+  //                     .toLowerCase()
+  //                     .includes(searchStr.toLowerCase())
+  //             )
+  //             .some((elem) => elem)
+  //         ? { ...row, inPortfolio: true }
+  //         : row
+  //     })
+  //     // .map((elem) => {
+  //     //   return { ...elem, inPortfolio: true }
+  //     // })
+  //     setBetLegsTable(tempbetLegsTable)
+  //     return
+  //   }
+  //   let tempbetLegsTable = betLegsTable.map((elem) => {
+  //     return { ...elem, inPortfolio: true }
+  //   })
+  //   setBetLegsTable(tempbetLegsTable)
+  // }
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage)
@@ -311,7 +317,7 @@ const BetLegsTable = (props) => {
               )}
               order={order}
               orderBy={orderBy}
-              onSelectAllClick={handleSelectAllClick}
+              // onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={betLegsTable.length}
             />
