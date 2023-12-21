@@ -13,6 +13,7 @@ const GamesProvider = ({ children }) => {
   const [allFutureGames, setAllFutureGames] = useState([])
   const [currentGame, setCurrentGame] = useState('')
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight)
   const [spread, setSpread] = useState(0)
   const [OU, setOU] = useState(0)
   const [ouIsInt, setOuIsInt] = useState(true)
@@ -96,6 +97,8 @@ const GamesProvider = ({ children }) => {
     setSelectedSport,
     rankingsDate,
     setRankingsDate,
+    viewportHeight,
+    setViewportHeight,
   }
 
   return <GamesContext.Provider value={state}>{children}</GamesContext.Provider>

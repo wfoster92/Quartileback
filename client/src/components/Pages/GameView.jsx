@@ -32,6 +32,7 @@ const GameView = () => {
     setCurrentGame,
     viewportWidth,
     setViewportWidth,
+    setViewportHeight,
     setOU,
     setSpread,
     setOuIsInt,
@@ -153,8 +154,10 @@ const GameView = () => {
 
   const handleResize = useCallback(() => {
     const newWidth = window.innerWidth
-    console.log('New Viewport Width:', newWidth)
+    // console.log('New Viewport Width:', newWidth)
     setViewportWidth(newWidth)
+    const newHeight = window.innerHeight
+    setViewportHeight(newHeight)
   }, [])
 
   useEffect(() => {
