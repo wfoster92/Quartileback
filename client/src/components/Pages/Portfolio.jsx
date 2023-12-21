@@ -3,6 +3,7 @@ import PortfolioTable from '../SubComponents/PortfolioTable'
 import TableContainer from '../SubComponents/TableContainer'
 import { useState, useEffect, useContext } from 'react'
 import { GamesContext } from '../../contexts/GamesContext'
+import PortfolioScatterplot from '../SubComponents/PortfolioScatterplot'
 
 const Portfolio = () => {
   const { loading, setLoading, error, setError, setBetLegsTable } =
@@ -29,6 +30,7 @@ const Portfolio = () => {
   }
   return (
     <>
+      <PortfolioScatterplot />
       <TableContainer TableComponent={PortfolioTable} title='Portfolio' />
       <TableContainer TableComponent={BetLegsTable} title='Bet Legs' />
       {/* <PortfolioTable /> */}

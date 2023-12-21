@@ -118,7 +118,7 @@ let columnArr = [
     id: 'wager',
     label: 'Wager',
     disablePadding: false,
-    dataType: 'int',
+    dataType: 'float',
     align: 'right',
     editable: true,
     searchable: false,
@@ -229,38 +229,6 @@ const BetLegsTable = (props) => {
     setOrderBy(property)
     setPage(0)
   }
-
-  // const handleSelectAllClick = (event) => {
-  //   if (event.target.checked) {
-  //     // select all that aren't filtered out
-  //     let tempBetLegsTable = betLegsTable.filter((row) => {
-  //       return searchStr === ''
-  //         ? { ...row, inPortfolio: false }
-  //         : columnArr
-  //             .filter((col) => col.searchable)
-  //             .map((col) =>
-  //               !row[col.id]
-  //                 ? false
-  //                 : row[col.id]
-  //                     .toString()
-  //                     .toLowerCase()
-  //                     .includes(searchStr.toLowerCase())
-  //             )
-  //             .some((elem) => elem)
-  //         ? { ...row, inPortfolio: false }
-  //         : row
-  //     })
-  //     // .map((elem) => {
-  //     //   return { ...elem, inPortfolio: false }
-  //     // })
-  //     setBetLegsTable(tempBetLegsTable)
-  //     return
-  //   }
-  //   let tempBetLegsTable = betLegsTable.map((elem) => {
-  //     return { ...elem, inPortfolio: false }
-  //   })
-  //   setBetLegsTable(tempBetLegsTable)
-  // }
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage)

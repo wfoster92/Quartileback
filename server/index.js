@@ -118,7 +118,7 @@ app.get('/sports/getBetLegsTable', async (req, res) => {
     if (fs.existsSync(fname)) {
       let result = await csv().fromFile(fname)
       let output = result.map((row) => {
-        row = { ...row, inPortfolio: false, wager: 0, expectedReturn: 0 }
+        row = { ...row, inPortfolio: false, wager: 5, expectedReturn: 0 }
         return row
       })
       console.log(JSON.stringify(output, null, 2))
