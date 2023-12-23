@@ -28,6 +28,12 @@ export default function NavBar() {
           {/* Conditionally render based on authentication state */}
           {authenticated ? (
             <>
+              <IconButton color='inherit' component={Link} to='/gameSelect'>
+                Games!
+              </IconButton>
+              <IconButton color='inherit' component={Link} to='/portfolio'>
+                Portfolio!
+              </IconButton>
               <IconButton color='inherit' onClick={logout}>
                 Logout
               </IconButton>
@@ -37,13 +43,6 @@ export default function NavBar() {
               {/* <IconButton color='inherit' component={Link} to='/gamblin'>
                 Gamblin'
               </IconButton> */}
-
-              <IconButton color='inherit' component={Link} to='/gameSelect'>
-                Games!
-              </IconButton>
-              <IconButton color='inherit' component={Link} to='/portfolio'>
-                Portfolio!
-              </IconButton>
               <IconButton color='inherit' component={Link} to='/login'>
                 Login
               </IconButton>
