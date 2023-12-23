@@ -2,6 +2,11 @@ import React, { useEffect, useRef, useContext } from 'react'
 import * as d3 from 'd3'
 import { GamesContext } from '../../contexts/GamesContext'
 
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+})
+
 const PortfolioScatterplot = () => {
   const { betLegsTable, viewportWidth, viewportHeight } =
     useContext(GamesContext)
@@ -15,6 +20,40 @@ const PortfolioScatterplot = () => {
     let allBetTypes = [...new Set(betLegsTable.map((elem) => elem.index))]
     let allSports = [...new Set(betLegsTable.map((elem) => elem.sport))]
 
+    const tooltip = d3
+      .select('body')
+      .append('div')
+      .attr('class', 'tooltip')
+      .style('visibility', 'hidden')
+      .style('position', 'absolute')
+      .style('text-align', 'left')
+      .style('font-size', '16px')
+      .style('background-color', 'white')
+      .style('border', '1px solid gray')
+      .style('border-radius', '4px')
+      .style('padding', '5px')
+
+    const handleMouseOver = (event, d) => {
+      console.log('Mouse over:', d)
+
+      tooltip
+        .style('visibility', 'visible')
+        .style('left', `${event.pageX}px`)
+        .style('top', `${event.pageY}px`).html(`
+        <h4>Sport: ${d.sport}</h4>
+        <h4>Game: ${d.awayTeamAbbrev} at ${d.homeTeamAbbrev}</h4>
+        <h4>Bet: ${d.index}</h4>
+        <h4>Odds: ${Math.round(Number(d.odds))}</h4>
+        <h4>Probability: ${Number(d.probability).toFixed(3)}</h4>
+        <h4>Wager: ${formatter.format(d.wager)}</h4>
+        `)
+    }
+
+    const handleMouseOut = (event, d) => {
+      console.log('Mouse out:', d)
+
+      tooltip.style('visibility', 'hidden')
+    }
     // Create a sequential color scale using scaleSequential
     const colorScale = d3
       .scaleSequential()
@@ -45,7 +84,7 @@ const PortfolioScatterplot = () => {
     const wagerScale = d3
       .scaleLinear()
       .domain([0, d3.max(data.map((elem) => elem.wager))])
-      .range([5, 50]) //d3.max(data.map((elem) => elem.wager))])
+      .range([0.5, 5]) //d3.max(data.map((elem) => elem.wager))])
     // Define scales
     const xScale = d3.scaleLinear().domain([0, 1]).range([0, w])
 
@@ -55,12 +94,12 @@ const PortfolioScatterplot = () => {
         Math.min(
           -200,
           d3.min(data, (d) => Number(d.odds)) *
-            (d3.min(data, (d) => Number(d.odds)) > 0 ? 0.8 : 1.2)
+            (d3.min(data, (d) => Number(d.odds)) > 0 ? 0.7 : 1.4)
         ),
         Math.max(
           200,
           d3.max(data, (d) => Number(d.odds)) *
-            (d3.max(data, (d) => Number(d.odds)) > 0 ? 1.2 : 1.2)
+            (d3.max(data, (d) => Number(d.odds)) > 0 ? 1.4 : 1.4)
         ),
       ])
       .range([h, 0])
@@ -73,8 +112,31 @@ const PortfolioScatterplot = () => {
       .append('circle')
       .attr('cx', (d) => xScale(Number(d.probability)))
       .attr('cy', (d) => yScale(Number(d.odds)))
-      .attr('r', (d) => `${wagerScale(Number(d.wager))}px`)
+      .attr(
+        'r',
+        (d) =>
+          `${wagerScale(Number(d.wager))}${
+            viewportWidth > viewportHeight ? 'vw' : 'vh'
+          }`
+      )
       .attr('fill', (d) => colorScale(allSports.indexOf(d.sport)))
+      .attr('opacity', 0.8)
+      .attr('stroke', (d) => colorScale(allSports.indexOf(d.sport)))
+      .attr('stroke-opacity', 1)
+      .attr('stroke-width', 0.8)
+      .on('mousemove', handleMouseOver)
+      // .on('mouseover', handleMouseOver)
+      .on('mouseout', handleMouseOut)
+      .on('click', (event, d) => {
+        console.log(JSON.stringify(d))
+
+        const homeTeamParam = encodeURIComponent(d.homeTeamAbbrev)
+        const awayTeamParam = encodeURIComponent(d.awayTeamAbbrev)
+        const sportParam = encodeURIComponent(d.sport)
+
+        const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
+        window.open(url, '_blank')
+      })
 
     // Add axis if needed
     const xAxis = d3.axisBottom(xScale)
@@ -82,14 +144,14 @@ const PortfolioScatterplot = () => {
 
     svg
       .append('g')
-      .attr('transform', `translate(${margin.left}, ${yScale(0)})`) // Move the x-axis to the bottom
+      .attr('transform', `translate(${margin.left}, ${yScale(0)})`) // Move the x-axis to the 0 line
       .call(xAxis)
 
     svg
       .append('g')
       .attr('transform', `translate(${margin.left}, 0)`) // Move the x-axis to the bottom
       .call(yAxis)
-  }, [betLegsTable, viewportWidth, viewportHeight]) // Empty dependency array to run the effect only once
+  }, [betLegsTable, viewportWidth, viewportHeight])
 
   return <svg ref={svgRef}></svg>
 }

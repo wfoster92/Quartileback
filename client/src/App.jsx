@@ -10,6 +10,7 @@ import LoginForm from './components/Pages/LoginForm'
 import { GamesProvider } from './contexts/GamesContext'
 import { useAuth } from './contexts/AuthContext'
 import Rankings from './components/Pages/Rankings'
+import GameSelect from './components/Pages/GameSelect'
 
 const App = () => {
   const { authenticated } = useAuth()
@@ -33,6 +34,7 @@ const App = () => {
             </GamesProvider>
           }
         />
+
         {authenticated ? (
           <>
             {/* move this back to the authenticated when done developing */}
@@ -41,6 +43,14 @@ const App = () => {
               element={
                 <GamesProvider>
                   <GameView />
+                </GamesProvider>
+              }
+            />
+            <Route
+              path='/gameSelect'
+              element={
+                <GamesProvider>
+                  <GameSelect />
                 </GamesProvider>
               }
             />

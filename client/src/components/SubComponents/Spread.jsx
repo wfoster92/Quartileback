@@ -15,38 +15,43 @@ import {
 
 // https://d3-graph-gallery.com/graph/barplot_basic.html
 
-const Spread = () => {
-  // const { data } = props
-  const {
-    viewportWidth,
-    spread,
-    setSpread,
-    spreadIsInt,
-    setSpreadIsInt,
-    fractionalSpread,
-    setFractionalSpread,
-    currentSpread,
-  } = useContext(GamesContext)
+const Spread = (props) => {
+  const { spreadObj, setSpreadObj } = props
+  const { viewportWidth } = useContext(GamesContext)
 
-  const keys = Object.keys(currentSpread)
-    .map((elem) => Number(elem))
-    .sort((a, b) => a - b)
-  const minScore = keys[0]
-  const maxScore = [...keys].pop()
-  const maxProb = Math.max(...keys.map((k) => currentSpread[k]))
-  // console.log(minScore, maxScore)
-
-  let dataArr = keys.map((k) => {
-    return {
-      score: Number(k),
-      probability: currentSpread[k],
-    }
-  })
+  let { currentSpread, spread, spreadIsInt, fractionalSpread } = spreadObj
+  const [dataArr, setDataArr] = useState([])
+  console.log(currentSpread)
 
   const ref = useRef()
   useEffect(() => {
     d3.select(ref.current).selectAll('*').remove()
+    if (!currentSpread) {
+      console.warn('Spread data is not available.')
+      return
+    }
 
+    const keys = Object.keys(currentSpread)
+      .map((elem) => Number(elem))
+      .sort((a, b) => a - b)
+
+    if (keys.length === 0) {
+      console.warn('Spread data is empty.')
+      return
+    }
+
+    const minScore = keys[0]
+    const maxScore = keys[keys.length - 1]
+    const maxProb = Math.max(...keys.map((k) => currentSpread[k]))
+
+    setDataArr(
+      keys.map((k) => {
+        return {
+          score: Number(k),
+          probability: currentSpread[k],
+        }
+      })
+    )
     // set the dimensions and margins of the graph
     const margin = {
       top: viewportWidth * 0.05,
@@ -112,7 +117,7 @@ const Spread = () => {
       .style('fill', 'black')
       .style('max-width', 400)
       .text('Spread')
-  }, [currentSpread, spread, spreadIsInt, fractionalSpread, viewportWidth])
+  }, [spreadObj, viewportWidth])
 
   const overSpreadProb =
     dataArr
@@ -162,7 +167,15 @@ const Spread = () => {
             aria-label='Demo number input'
             placeholder='Type a number…'
             value={spread}
-            onChange={(event, val) => setSpread(val)}
+            onChange={(event, val) => {
+              // setSpread(val)}
+              setSpreadObj((prevState) => {
+                return {
+                  ...prevState,
+                  spread: val,
+                }
+              })
+            }}
           />
         </div>
         <div
@@ -179,8 +192,15 @@ const Spread = () => {
                   <Switch
                     checked={fractionalSpread}
                     onChange={() => {
-                      setFractionalSpread(!fractionalSpread)
-                      setSpreadIsInt(true)
+                      // setFractionalSpread(!fractionalSpread)
+                      // setSpreadIsInt(true)
+                      setSpreadObj((prevState) => {
+                        return {
+                          ...prevState,
+                          fractionalSpread: !prevState.fractionalSpread,
+                          spreadIsInt: true,
+                        }
+                      })
                     }}
                   />
                 }

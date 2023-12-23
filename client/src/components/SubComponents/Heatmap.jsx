@@ -17,28 +17,24 @@ import {
 // https://observablehq.com/plot/features/scales#color-scales
 // https://d3-graph-gallery.com/graph/heatmap_style.html
 
-const Heatmap = () => {
-  const {
-    viewportWidth,
-    heatmapData,
-    heatmapType,
-    currentGame,
-    selectedHeatmapType,
-    setSelectedHeatmapType,
-    allHeatmapTypes,
-    spread,
-    OU,
-  } = useContext(GamesContext)
+const Heatmap = (props) => {
+  const { viewportWidth } = useContext(GamesContext)
+
+  const { heatmapData, currentGame, selectedHeatmapType, spread, OU } = props
 
   const ref = useRef()
 
   useEffect(() => {
     // get home and away team names
+
     const [homeTeam, awayTeam] = currentGame.split(' ')
     let highestScore = 0
     let lowestScore = 10000
     let maxProbability = 0
     let minProbability = 1
+    if (heatmapData.length === 0) {
+      return
+    }
     heatmapData.forEach((elem) => {
       // parse the heatmapData obj and get the high and low scores
       let { homeScore, awayScore, probability } = elem
@@ -322,7 +318,7 @@ const Heatmap = () => {
       .style('text-anchor', 'middle')
       .style('font-size', '1.5vh')
       .text(`${homeTeam}`)
-  }, [heatmapType, heatmapData, viewportWidth, selectedHeatmapType])
+  }, [heatmapData, viewportWidth, selectedHeatmapType])
 
   return (
     <>
