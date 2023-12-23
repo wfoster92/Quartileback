@@ -93,7 +93,7 @@ const GameSelect = () => {
     let [away, home] = newGame.split(' ')
     let k = `${away}_${home}_NCAAF`
     console.log(`new cfb game ${newGame}`)
-    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
+    // console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
     const homeTeamParam = encodeURIComponent(away)
     const awayTeamParam = encodeURIComponent(home)
     const sportParam = encodeURIComponent('NCAAF')
@@ -107,7 +107,7 @@ const GameSelect = () => {
     let [away, home] = newGame.split(' ')
     let k = `${away}_${home}_NBA`
     console.log(`new nba game ${newGame}`)
-    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
+    // console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
     const homeTeamParam = encodeURIComponent(away)
     const awayTeamParam = encodeURIComponent(home)
     const sportParam = encodeURIComponent('NBA')

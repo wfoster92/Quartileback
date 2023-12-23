@@ -4,9 +4,10 @@ import { GamesContext } from '../../contexts/GamesContext'
 import Heatmap from './Heatmap'
 import { ToggleButton, ToggleButtonGroup } from '@mui/material'
 
-const HeatmapContainer = () => {
-  const { selectedHeatmapType, setSelectedHeatmapType, allHeatmapTypes } =
-    useContext(GamesContext)
+const HeatmapContainer = (props) => {
+  const { allHeatmapTypes } = useContext(GamesContext)
+  const { spread, currentGame, OU, heatmapData } = props
+  const [selectedHeatmapType, setSelectedHeatmapType] = useState('moneyLine')
 
   return (
     <>
@@ -43,7 +44,13 @@ const HeatmapContainer = () => {
           </ToggleButtonGroup>
         </div>
       </div>
-      <Heatmap />
+      <Heatmap
+        selectedHeatmapType={selectedHeatmapType}
+        currentGame={currentGame}
+        spread={spread}
+        OU={OU}
+        heatmapData={heatmapData}
+      />
     </>
   )
 }

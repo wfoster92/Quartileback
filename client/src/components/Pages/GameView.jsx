@@ -33,7 +33,6 @@ const GameView = () => {
     setAllNFLGames,
     allNCAABGames,
     setAllNCAABGames,
-    setHeatmapData,
   } = useContext(GamesContext)
 
   const navigate = useNavigate()
@@ -57,30 +56,25 @@ const GameView = () => {
   const [currentGameInfo, setCurrentGameInfo] = useState(null)
   const [currentGame, setCurrentGame] = useState('')
   const [urlParams, setUrlParams] = useState(null)
+  const [heatmapData, setHeatmapData] = useState([])
 
   // const { homeTeam, awayTeam, sport } = useParams()
   // console.log(homeTeam, awayTeam, sport)
 
   const location = useLocation()
-  const queryParams = new URLSearchParams(location.search)
 
-  const homeTeam = queryParams.get('homeTeam')
-  const awayTeam = queryParams.get('awayTeam')
-  const sport = queryParams.get('sport')
-
-  console.log(homeTeam, awayTeam, sport)
-
-  const fetchSingleGameData = async () => {
-    if (homeTeam && awayTeam && sport) {
+  const fetchSingleGameData = async (home, away, s) => {
+    if (home && away && s) {
       try {
-        const response = await fetch(`/sports/bets/${awayTeam}/${homeTeam}`)
+        const response = await fetch(`/sports/bets/${away}/${home}`)
         const tempGameInfo = await response.json()
         setCurrentGameInfo(tempGameInfo)
         let tempOU = Number(tempGameInfo.overUnder)
         let tempSpread = Number(tempGameInfo.gameLine)
-        let k = `${awayTeam}_${homeTeam}_${sport}`
+        let k = `${home}_${away}_${s}`
 
         let tempCurrentOverUnder = gamesObj?.[k]?.ou
+        console.log(`hello1 OU ${JSON.stringify(gamesObj)}`)
         if (Number.isInteger(tempOU)) {
           setOverUnderObj({
             OU: tempOU,
@@ -122,37 +116,38 @@ const GameView = () => {
     }
   }
 
-  // const fetchHeatmapData = async () => {
-  //   if (currentGame.length > 0) {
-  //     const [awayTeam, homeTeam] = currentGame.split(' ')
-  //     console.log(awayTeam, homeTeam)
-  //     try {
-  //       const response = await fetch('/sports/heatmap', {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-Type': 'application/json', // Adjust the content type if necessary
-  //           // Add any other headers as needed
-  //         },
-  //         body: JSON.stringify({
-  //           away: awayTeam,
-  //           home: homeTeam,
-  //           // sport: sport,
-  //         }),
-  //       })
+  const fetchHeatmapData = async (home, away, s) => {
+    // if (currentGame.length > 0) {
+    // const [awayTeam, homeTeam] = currentGame.split(' ')
+    // console.log(awayTeam, homeTeam)
+    try {
+      const response = await fetch('/sports/heatmap', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', // Adjust the content type if necessary
+          // Add any other headers as needed
+        },
+        body: JSON.stringify({
+          away: away,
+          home: home,
+          // sport: sport,
+        }),
+      })
 
-  //       if (!response.ok) {
-  //         throw new Error(`Failed to fetch data. Status: ${response.status}`)
-  //       }
+      if (!response.ok) {
+        throw new Error(`Failed to fetch data. Status: ${response.status}`)
+      }
 
-  //       const [data] = await response.json()
-  //       setHeatmapData(data)
-  //     } catch (error) {
-  //       setError(error)
-  //     } finally {
-  //       setLoading(false)
-  //     }
-  //   }
-  // }
+      const [data] = await response.json()
+      console.log('heatmap', JSON.stringify(data))
+      setHeatmapData(data)
+    } catch (error) {
+      setError(error)
+    } finally {
+      setLoading(false)
+    }
+    // }
+  }
 
   const getAllGameData = async () => {
     try {
@@ -172,46 +167,64 @@ const GameView = () => {
     }
   }
 
+  const getURLData = () => {
+    const queryParams = new URLSearchParams(location.search)
+
+    const homeTeam = queryParams.get('homeTeam')
+    const awayTeam = queryParams.get('awayTeam')
+    const sport = queryParams.get('sport')
+    setUrlParams({
+      homeTeam: homeTeam,
+      awayTeam: awayTeam,
+      sport: sport,
+    })
+    setCurrentGame(`${awayTeam} ${homeTeam}`)
+  }
+
   useEffect(() => {
-    setTimeout(() => {}, 500)
-    const fetchData = async () => {
-      try {
-        await fetchSingleGameData()
-        // fetchHeatmapData(); // Commented out for now
-      } catch (error) {
-        setError(error)
-        setLoading(false)
-      }
-    }
-
-    fetchData()
-  }, [currentGame])
+    getAllGameData()
+    getURLData()
+  }, [])
 
   useEffect(() => {
-    console.log(homeTeam, awayTeam, sport)
-    setUrlParams({ homeTeam, awayTeam, sport })
-
-    const currentGameString = `${awayTeam} ${homeTeam}`
-
-    if (currentGameString !== ' ') {
-      getAllGameData()
-      setCurrentGame(currentGameString)
-    } else {
-      // do nothing
-      // getAllGameData();
+    console.log(JSON.stringify(urlParams))
+    if (
+      urlParams &&
+      urlParams.homeTeam &&
+      urlParams.awayTeam &&
+      urlParams.sport
+    ) {
+      fetchSingleGameData(
+        urlParams.homeTeam,
+        urlParams.awayTeam,
+        urlParams.sport
+      )
+      fetchHeatmapData(urlParams.awayTeam, urlParams.homeTeam, urlParams.sport)
     }
-  }, [homeTeam, awayTeam, sport])
+  }, [currentGame, gamesObj])
+
+  // const handleResize = useCallback(() => {
+  //   const newWidth = window.innerWidth
+  //   // console.log('New Viewport Width:', newWidth)
+  //   setViewportWidth(newWidth)
+  //   const newHeight = window.innerHeight
+  //   setViewportHeight(newHeight)
+  // }, [urlParams])
+
+  // useEffect(() => {
+  //   console.log('hello')
+  //   window.addEventListener('resize', handleResize, false)
+  //   return () => window.removeEventListener('resize', handleResize, false)
+  // }, [handleResize])
 
   const handleResize = useCallback(() => {
     const newWidth = window.innerWidth
-    // console.log('New Viewport Width:', newWidth)
     setViewportWidth(newWidth)
     const newHeight = window.innerHeight
     setViewportHeight(newHeight)
-  }, [urlParams])
+  }, []) // Remove dependencies to prevent unnecessary re-renders
 
   useEffect(() => {
-    console.log('hello')
     window.addEventListener('resize', handleResize, false)
     return () => window.removeEventListener('resize', handleResize, false)
   }, [handleResize])
@@ -363,7 +376,7 @@ const GameView = () => {
         <>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Grid container spacing={1}>
-              {/* <Grid
+              <Grid
                 item
                 xs={12}
                 md={5.5}
@@ -372,8 +385,13 @@ const GameView = () => {
                   margin: '2vw',
                 }}
               >
-                <HeatmapContainer currentGame={currentGame} />
-              </Grid> */}
+                <HeatmapContainer
+                  heatmapData={heatmapData}
+                  currentGame={currentGame}
+                  spread={spreadObj.spread}
+                  OU={overUnderObj.OU}
+                />
+              </Grid>
               <Grid
                 item
                 xs={12}
