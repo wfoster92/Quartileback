@@ -11,34 +11,20 @@ import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { Grid } from '@mui/material'
 import HeatmapContainer from '../SubComponents/HeatmapContainer'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const GameView = () => {
   const {
-    currentSpread,
-    setCurrentSpread,
-    currentOverUnder,
-    setCurrentOverUnder,
-    currentGameInfo,
-    setCurrentGameInfo,
     loading,
     setLoading,
     error,
     setError,
-    allFutureGames,
-    allPastGames,
-    setAllPastGames,
-    setAllFutureGames,
-    currentGame,
-    setCurrentGame,
+
     viewportWidth,
+    viewportHeight,
     setViewportWidth,
     setViewportHeight,
-    setOU,
-    setSpread,
-    setOuIsInt,
-    setSpreadIsInt,
-    setFractionalOU,
-    setFractionalSpread,
+
     allCFBGames,
     setAllCFBGames,
     allNBAGames,
@@ -47,44 +33,87 @@ const GameView = () => {
     setAllNFLGames,
     allNCAABGames,
     setAllNCAABGames,
-    gamesObj,
-    setGamesObj,
     setHeatmapData,
-    selectedSport,
-    setSelectedSport,
   } = useContext(GamesContext)
 
-  const Title = styled.div`
-    font-size: '50px';
-    margin: '10vh 0';
-    text-align: center;
-  `
+  const navigate = useNavigate()
+
+  let tempSpreadObj = {
+    currentSpread: null,
+    spread: 0,
+    spreadIsInt: true,
+    fractionalSpread: false,
+  }
+  const [spreadObj, setSpreadObj] = useState(tempSpreadObj)
+
+  let tempOverUnderObj = {
+    currentOverUnder: null,
+    OU: 0,
+    ouIsInt: true,
+    fractionalOU: false,
+  }
+  const [overUnderObj, setOverUnderObj] = useState(tempOverUnderObj)
+  const [gamesObj, setGamesObj] = useState(null)
+  const [currentGameInfo, setCurrentGameInfo] = useState(null)
+  const [currentGame, setCurrentGame] = useState('')
+  const [urlParams, setUrlParams] = useState(null)
+
+  // const { homeTeam, awayTeam, sport } = useParams()
+  // console.log(homeTeam, awayTeam, sport)
+
+  const location = useLocation()
+  const queryParams = new URLSearchParams(location.search)
+
+  const homeTeam = queryParams.get('homeTeam')
+  const awayTeam = queryParams.get('awayTeam')
+  const sport = queryParams.get('sport')
+
+  console.log(homeTeam, awayTeam, sport)
+
   const fetchSingleGameData = async () => {
-    if (currentGame.length > 0) {
-      const [away, home] = currentGame.split(' ')
+    if (homeTeam && awayTeam && sport) {
       try {
-        const response = await fetch(`/sports/bets/${away}/${home}`)
+        const response = await fetch(`/sports/bets/${awayTeam}/${homeTeam}`)
         const tempGameInfo = await response.json()
         setCurrentGameInfo(tempGameInfo)
-        // console.log(`tempGameInfo.overUnder ${tempGameInfo.overUnder}`)
         let tempOU = Number(tempGameInfo.overUnder)
         let tempSpread = Number(tempGameInfo.gameLine)
+        let k = `${awayTeam}_${homeTeam}_${sport}`
+
+        let tempCurrentOverUnder = gamesObj?.[k]?.ou
         if (Number.isInteger(tempOU)) {
-          setOuIsInt(true)
-          setFractionalOU(false)
+          setOverUnderObj({
+            OU: tempOU,
+            ouIsInt: true,
+            fractionalOU: false,
+            currentOverUnder: tempCurrentOverUnder,
+          })
         } else {
-          setOuIsInt(false)
-          setFractionalOU(true)
+          setOverUnderObj({
+            OU: tempOU,
+            ouIsInt: false,
+            fractionalOU: true,
+            currentOverUnder: tempCurrentOverUnder,
+          })
         }
+        let tempCurrentSpread = gamesObj?.[k]?.spread
         if (Number.isInteger(tempSpread)) {
-          setSpreadIsInt(true)
-          setFractionalSpread(false)
+          setSpreadObj({
+            spread: tempSpread,
+            spreadIsInt: true,
+            fractionalSpread: false,
+            currentSpread: tempCurrentSpread,
+          })
         } else {
-          setSpreadIsInt(false)
-          setFractionalSpread(true)
+          setSpreadObj({
+            spread: tempSpread,
+            spreadIsInt: false,
+            fractionalSpread: true,
+            currentSpread: tempCurrentSpread,
+          })
         }
-        setOU(Math.floor(tempOU))
-        setSpread(Math.floor(tempSpread))
+        // setOU(Math.floor(tempOU))
+        // setSpread(Math.floor(tempSpread))
       } catch (error) {
         setError(error)
       } finally {
@@ -93,37 +122,37 @@ const GameView = () => {
     }
   }
 
-  const fetchHeatmapData = async () => {
-    if (currentGame.length > 0) {
-      const [awayTeam, homeTeam] = currentGame.split(' ')
-      console.log(awayTeam, homeTeam)
-      try {
-        const response = await fetch('/sports/heatmap', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json', // Adjust the content type if necessary
-            // Add any other headers as needed
-          },
-          body: JSON.stringify({
-            away: awayTeam,
-            home: homeTeam,
-            // sport: sport,
-          }),
-        })
+  // const fetchHeatmapData = async () => {
+  //   if (currentGame.length > 0) {
+  //     const [awayTeam, homeTeam] = currentGame.split(' ')
+  //     console.log(awayTeam, homeTeam)
+  //     try {
+  //       const response = await fetch('/sports/heatmap', {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json', // Adjust the content type if necessary
+  //           // Add any other headers as needed
+  //         },
+  //         body: JSON.stringify({
+  //           away: awayTeam,
+  //           home: homeTeam,
+  //           // sport: sport,
+  //         }),
+  //       })
 
-        if (!response.ok) {
-          throw new Error(`Failed to fetch data. Status: ${response.status}`)
-        }
+  //       if (!response.ok) {
+  //         throw new Error(`Failed to fetch data. Status: ${response.status}`)
+  //       }
 
-        const [data] = await response.json()
-        setHeatmapData(data)
-      } catch (error) {
-        setError(error)
-      } finally {
-        setLoading(false)
-      }
-    }
-  }
+  //       const [data] = await response.json()
+  //       setHeatmapData(data)
+  //     } catch (error) {
+  //       setError(error)
+  //     } finally {
+  //       setLoading(false)
+  //     }
+  //   }
+  // }
 
   const getAllGameData = async () => {
     try {
@@ -144,13 +173,34 @@ const GameView = () => {
   }
 
   useEffect(() => {
-    getAllGameData()
-  }, [])
+    setTimeout(() => {}, 500)
+    const fetchData = async () => {
+      try {
+        await fetchSingleGameData()
+        // fetchHeatmapData(); // Commented out for now
+      } catch (error) {
+        setError(error)
+        setLoading(false)
+      }
+    }
+
+    fetchData()
+  }, [currentGame])
 
   useEffect(() => {
-    fetchSingleGameData()
-    fetchHeatmapData()
-  }, [currentGame])
+    console.log(homeTeam, awayTeam, sport)
+    setUrlParams({ homeTeam, awayTeam, sport })
+
+    const currentGameString = `${awayTeam} ${homeTeam}`
+
+    if (currentGameString !== ' ') {
+      getAllGameData()
+      setCurrentGame(currentGameString)
+    } else {
+      // do nothing
+      // getAllGameData();
+    }
+  }, [homeTeam, awayTeam, sport])
 
   const handleResize = useCallback(() => {
     const newWidth = window.innerWidth
@@ -158,7 +208,7 @@ const GameView = () => {
     setViewportWidth(newWidth)
     const newHeight = window.innerHeight
     setViewportHeight(newHeight)
-  }, [])
+  }, [urlParams])
 
   useEffect(() => {
     console.log('hello')
@@ -171,10 +221,12 @@ const GameView = () => {
     let [away, home] = newGame.split(' ')
     let k = `${away}_${home}_NCAAF`
     console.log(`new cfb game ${newGame}`)
-    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
-    setCurrentGame(newGame)
-    setCurrentOverUnder(gamesObj[k].ou)
-    setCurrentSpread(gamesObj[k].spread)
+    const homeTeamParam = encodeURIComponent(away)
+    const awayTeamParam = encodeURIComponent(home)
+    const sportParam = encodeURIComponent('NCAAF')
+
+    const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
+    navigate(url)
   }
 
   const handleGameChangeNBA = (event) => {
@@ -182,10 +234,12 @@ const GameView = () => {
     let [away, home] = newGame.split(' ')
     let k = `${away}_${home}_NBA`
     console.log(`new nba game ${newGame}`)
-    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
-    setCurrentGame(newGame)
-    setCurrentOverUnder(gamesObj[k].ou)
-    setCurrentSpread(gamesObj[k].spread)
+    const homeTeamParam = encodeURIComponent(away)
+    const awayTeamParam = encodeURIComponent(home)
+    const sportParam = encodeURIComponent('NBA')
+
+    const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
+    navigate(url)
   }
 
   const handleGameChangeNCAAB = (event) => {
@@ -193,10 +247,12 @@ const GameView = () => {
     let [away, home] = newGame.split(' ')
     let k = `${away}_${home}_NCAAB`
     // console.log(`new ncaab game ${newGame}`)
-    // console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
-    setCurrentGame(newGame)
-    setCurrentOverUnder(gamesObj[k].ou)
-    setCurrentSpread(gamesObj[k].spread)
+    const homeTeamParam = encodeURIComponent(away)
+    const awayTeamParam = encodeURIComponent(home)
+    const sportParam = encodeURIComponent('NCAAB')
+
+    const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
+    navigate(url)
   }
 
   const handleGameChangeNFL = (event) => {
@@ -204,10 +260,12 @@ const GameView = () => {
     let [away, home] = newGame.split(' ')
     let k = `${away}_${home}_NFL`
     console.log(`new nfl game ${newGame}`)
-    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
-    setCurrentGame(newGame)
-    setCurrentOverUnder(gamesObj[k].ou)
-    setCurrentSpread(gamesObj[k].spread)
+    const homeTeamParam = encodeURIComponent(away)
+    const awayTeamParam = encodeURIComponent(home)
+    const sportParam = encodeURIComponent('NFL')
+
+    const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
+    navigate(url)
   }
 
   if (loading) {
@@ -302,68 +360,59 @@ const GameView = () => {
         >
           {currentGame.replace(' ', ' vs. ')}
         </div>
-        {currentGame ? (
-          <>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Grid container spacing={1}>
-                <Grid
-                  item
-                  xs={12}
-                  md={5.5}
-                  style={{
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                    margin: '2vw',
-                  }}
-                >
-                  <HeatmapContainer />
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  md={5.5}
-                  style={{
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                    margin: '2vw',
-                  }}
-                >
-                  <Spread />
-                </Grid>
+        <>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid container spacing={1}>
+              {/* <Grid
+                item
+                xs={12}
+                md={5.5}
+                style={{
+                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                  margin: '2vw',
+                }}
+              >
+                <HeatmapContainer currentGame={currentGame} />
+              </Grid> */}
+              <Grid
+                item
+                xs={12}
+                md={5.5}
+                style={{
+                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                  margin: '2vw',
+                }}
+              >
+                <Spread
+                  currentGame={currentGame}
+                  spreadObj={spreadObj}
+                  setSpreadObj={setSpreadObj}
+                />
               </Grid>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Grid container spacing={1}>
-                <Grid
-                  item
-                  xs={12}
-                  md={5.5}
-                  style={{
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                    margin: '2vw',
-                  }}
-                >
-                  <div style={{ textAlign: 'center' }}>
-                    <OverUnder />
-                  </div>
-                </Grid>
+            </Grid>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid container spacing={1}>
+              <Grid
+                item
+                xs={12}
+                md={5.5}
+                style={{
+                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                  margin: '2vw',
+                }}
+              >
+                <div style={{ textAlign: 'center' }}>
+                  <OverUnder
+                    currentGame={currentGame}
+                    overUnderObj={overUnderObj}
+                    setOverUnderObj={setOverUnderObj}
+                  />
+                </div>
               </Grid>
-            </div>
-          </>
-        ) : (
-          <>
-            <div style={{ height: '2vh' }}></div>
-            <Title style={{ fontSize: '3vh' }}>Please select a game.</Title>
-            <img
-              style={{
-                borderRadius: '16px',
-                margin: '2vh auto',
-                display: 'block',
-                width: `${viewportWidth * 0.5}px`,
-                height: `${viewportWidth * 0.5 * (5 / 7)}px`,
-              }}
-              src={process.env.PUBLIC_URL + '/big_lebowski_dude.webp'}
-            ></img>
-          </>
-        )}
+            </Grid>
+          </div>
+        </>
       </div>
     </>
   )

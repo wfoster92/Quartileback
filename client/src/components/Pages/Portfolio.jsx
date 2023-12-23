@@ -6,8 +6,14 @@ import { GamesContext } from '../../contexts/GamesContext'
 import PortfolioScatterplot from '../SubComponents/PortfolioScatterplot'
 
 const Portfolio = () => {
-  const { loading, setLoading, error, setError, setBetLegsTable } =
-    useContext(GamesContext)
+  const {
+    loading,
+    setLoading,
+    error,
+    setError,
+    betLegsTable,
+    setBetLegsTable,
+  } = useContext(GamesContext)
   const getBetLegsTable = async () => {
     try {
       const response = await fetch(`/sports/getBetLegsTable`)
@@ -30,7 +36,10 @@ const Portfolio = () => {
   }
   return (
     <>
-      <PortfolioScatterplot />
+      {betLegsTable.filter((elem) => elem.inPortfolio).length > 0 ? (
+        <PortfolioScatterplot />
+      ) : null}
+      {/* <PortfolioScatterplot /> */}
       <TableContainer TableComponent={PortfolioTable} title='Portfolio' />
       <TableContainer TableComponent={BetLegsTable} title='Bet Legs' />
       {/* <PortfolioTable /> */}

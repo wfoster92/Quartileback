@@ -13,37 +13,45 @@ import {
 
 // https://d3-graph-gallery.com/graph/barplot_basic.html
 
-const Spread = () => {
+const OverUnder = (props) => {
   const {
     viewportWidth,
-    OU,
-    setOU,
-    ouIsInt,
-    setOuIsInt,
-    fractionalOU,
-    setFractionalOU,
-    currentOverUnder,
+    // OU,
+    // setOU,
+    // ouIsInt,
+    // setOuIsInt,
+    // fractionalOU,
+    // setFractionalOU,
+    // currentOverUnder,
   } = useContext(GamesContext)
-  // const { data } = props
+  const { overUnderObj, setOverUnderObj } = props
 
-  const keys = Object.keys(currentOverUnder)
-    .map((elem) => Number(elem))
-    .sort((a, b) => a - b)
-  const minScore = keys[0]
-  const maxScore = [...keys].pop()
-  const maxProb = Math.max(...keys.map((k) => currentOverUnder[k]))
-  // console.log(minScore, maxScore)
+  let { currentOverUnder, OU, ouIsInt, fractionalOU } = overUnderObj
 
-  let dataArr = keys.map((k) => {
-    return {
-      score: Number(k),
-      probability: currentOverUnder[k],
-    }
-  })
+  const [dataArr, setDataArr] = useState([])
+
   const ref = useRef()
   useEffect(() => {
     d3.select(ref.current).selectAll('*').remove()
+    if (!currentOverUnder) {
+      return
+    }
+    const keys = Object.keys(currentOverUnder)
+      .map((elem) => Number(elem))
+      .sort((a, b) => a - b)
+    const minScore = keys[0]
+    const maxScore = [...keys].pop()
+    const maxProb = Math.max(...keys.map((k) => currentOverUnder[k]))
+    // console.log(minScore, maxScore)
 
+    setDataArr(
+      keys.map((k) => {
+        return {
+          score: Number(k),
+          probability: currentOverUnder[k],
+        }
+      })
+    )
     // set the dimensions and margins of the graph
     const margin = {
       top: viewportWidth * 0.05,
@@ -109,7 +117,7 @@ const Spread = () => {
       .style('fill', 'black')
       .style('max-width', 400)
       .text('Over Under')
-  }, [currentOverUnder, OU, ouIsInt, fractionalOU, viewportWidth])
+  }, [overUnderObj, viewportWidth])
 
   const overProb =
     dataArr
@@ -152,8 +160,15 @@ const Spread = () => {
             placeholder='Type a number…'
             value={Math.floor(OU)}
             onChange={(event, val) => {
-              setOU(val)
-              setOuIsInt(true)
+              setOverUnderObj((prevState) => {
+                return {
+                  ...prevState,
+                  OU: val,
+                  ouIsInt: true,
+                }
+              })
+              // setOU(val)
+              // setOuIsInt(true)
             }}
           />
         </div>
@@ -171,8 +186,15 @@ const Spread = () => {
                   <Switch
                     checked={fractionalOU}
                     onChange={() => {
-                      setFractionalOU(!fractionalOU)
-                      setOuIsInt(true)
+                      setOverUnderObj((prevState) => {
+                        return {
+                          ...prevState,
+                          fractionalOU: !prevState.fractionalOU,
+                          ouIsInt: true,
+                        }
+                      })
+                      // setFractionalOU(!fractionalOU)
+                      // setOuIsInt(true)
                     }}
                   />
                 }
@@ -196,4 +218,4 @@ const Spread = () => {
   )
 }
 
-export default Spread
+export default OverUnder
