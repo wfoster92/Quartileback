@@ -11,7 +11,7 @@ import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { Grid } from '@mui/material'
 import HeatmapContainer from '../SubComponents/HeatmapContainer'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 const GameSelect = () => {
   const {
@@ -84,6 +84,7 @@ const GameSelect = () => {
     }
   }
 
+  const navigate = useNavigate()
   useEffect(() => {
     getAllGameData()
   }, [])
@@ -99,7 +100,7 @@ const GameSelect = () => {
     const sportParam = encodeURIComponent('NCAAF')
 
     const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
-    window.open(url, '_blank')
+    navigate(url)
   }
 
   const handleGameChangeNBA = (event) => {
@@ -113,7 +114,8 @@ const GameSelect = () => {
     const sportParam = encodeURIComponent('NBA')
 
     const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
-    window.open(url, '_blank')
+    // window.open(url, '_blank')
+    navigate(url)
   }
 
   const handleGameChangeNCAAB = (event) => {
@@ -127,7 +129,7 @@ const GameSelect = () => {
     const sportParam = encodeURIComponent('NCAAB')
 
     const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
-    window.open(url, '_blank')
+    navigate(url)
   }
 
   const handleGameChangeNFL = (event) => {
@@ -140,7 +142,8 @@ const GameSelect = () => {
     const sportParam = encodeURIComponent('NFL')
 
     const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
-    window.open(url, '_blank')
+    // window.open(url, '_blank')
+    navigate(url)
   }
 
   if (loading) {
