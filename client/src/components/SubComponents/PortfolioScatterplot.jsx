@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useContext } from 'react'
 import * as d3 from 'd3'
 import { GamesContext } from '../../contexts/GamesContext'
+import { useNavigate } from 'react-router-dom'
 
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -12,6 +13,8 @@ const PortfolioScatterplot = () => {
     useContext(GamesContext)
 
   const svgRef = useRef()
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll('*').remove()
@@ -135,7 +138,8 @@ const PortfolioScatterplot = () => {
         const sportParam = encodeURIComponent(d.sport)
 
         const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
-        window.open(url, '_blank')
+        // window.open(url, '_blank')
+        navigate(url)
       })
 
     // Add axis if needed
