@@ -305,7 +305,7 @@ const Heatmap = (props) => {
       .attr('y', height + margin.top + 20) // Adjust the position as needed
       .style('text-anchor', 'middle')
       .style('font-size', '1.5vh')
-      .text(`${awayTeam}`)
+      .text(`${homeTeam}`)
 
     // Add y-axis label
     svg
@@ -317,7 +317,7 @@ const Heatmap = (props) => {
       .attr('dy', '1em')
       .style('text-anchor', 'middle')
       .style('font-size', '1.5vh')
-      .text(`${homeTeam}`)
+      .text(`${awayTeam}`)
   }, [heatmapData, viewportWidth, selectedHeatmapType])
 
   return (
