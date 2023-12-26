@@ -300,7 +300,7 @@ app.get('/sports/getAllDatasets', async (req, res) => {
   }
 })
 
-// fetch the current bets for the game in question
+// fetch the heatmap for the game in question
 app.post('/sports/heatmap/', async (req, res) => {
   console.log('hello')
   try {

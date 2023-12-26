@@ -137,9 +137,9 @@ const PortfolioScatterplot = () => {
         const awayTeamParam = encodeURIComponent(d.awayTeamAbbrev)
         const sportParam = encodeURIComponent(d.sport)
 
-        const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
-        // window.open(url, '_blank')
-        navigate(url)
+        // somehow the properties are of home and away teams are switched
+        const url = `/gameView?homeTeam=${awayTeamParam}&awayTeam=${homeTeamParam}&sport=${sportParam}`
+        window.open(url, '_blank')
       })
 
     // Add axis if needed
