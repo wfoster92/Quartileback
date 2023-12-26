@@ -29,6 +29,20 @@ app.use(
   })
 )
 
+// const corsOptions = {
+//   credentials: true,
+// };
+
+// if (process.env.NODE_ENV === 'development') {
+//   // Allow requests from localhost during development
+//   corsOptions.origin = 'http://localhost:3000';
+// } else {
+//   // Allow requests from quartileback.com in other environments
+//   corsOptions.origin = 'http://quartileback.com'; // Adjust to your actual production domain
+// }
+
+// app.use(cors(corsOptions));
+
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static('public'))
@@ -343,7 +357,7 @@ app.use(express.static(path.join(__dirname, 'build')))
 
 // Handle other routes by serving the main HTML file
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+  res.sendFile(path.join(__dirname, 'build', 'static', 'index.html'))
 })
 
 app.listen(PORT, () => {
