@@ -63,10 +63,17 @@ const GameSelect = () => {
     setViewportHeight(newHeight)
   }, [])
 
+  // useEffect(() => {
+  //   console.log('hello')
+  //   window.addEventListener('resize', handleResize, false)
+  //   return () => window.removeEventListener('resize', handleResize, false)
+  // }, [handleResize])
+
   useEffect(() => {
-    console.log('hello')
-    window.addEventListener('resize', handleResize, false)
-    return () => window.removeEventListener('resize', handleResize, false)
+    setTimeout(() => {
+      window.addEventListener('resize', handleResize, false)
+      return () => window.removeEventListener('resize', handleResize, false)
+    }, 100)
   }, [handleResize])
 
   const getAllGameData = async () => {

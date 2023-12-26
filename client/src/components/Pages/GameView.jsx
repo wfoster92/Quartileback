@@ -228,8 +228,10 @@ const GameView = () => {
   }, []) // Remove dependencies to prevent unnecessary re-renders
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize, false)
-    return () => window.removeEventListener('resize', handleResize, false)
+    setTimeout(() => {
+      window.addEventListener('resize', handleResize, false)
+      return () => window.removeEventListener('resize', handleResize, false)
+    }, 100)
   }, [handleResize])
 
   const handleGameChangeCFB = (event) => {
