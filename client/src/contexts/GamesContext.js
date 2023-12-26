@@ -8,8 +8,8 @@ const GamesProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   // const [currentGame, setCurrentGame] = useState('')
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight)
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth - 1)
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight - 1)
 
   const [allCFBGames, setAllCFBGames] = useState([])
   const [allNBAGames, setAllNBAGames] = useState([])
