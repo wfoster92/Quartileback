@@ -357,7 +357,7 @@ app.use(express.static(path.join(__dirname, 'build')))
 
 // Handle other routes by serving the main HTML file
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'static', 'index.html'))
+  res.sendFile(path.join(__dirname, 'build', 'static', 'js', 'index.html'))
 })
 
 app.listen(PORT, () => {
