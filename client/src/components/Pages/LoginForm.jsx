@@ -9,8 +9,8 @@ const LoginForm = () => {
 
   const navigate = useNavigate()
 
-  const handleLogin = async (event) => {
-    event.preventDefault()
+  const handleLogin = async (e) => {
+    e.preventDefault()
 
     try {
       const response = await fetch('/login', {
@@ -28,12 +28,12 @@ const LoginForm = () => {
         console.log('Login successful!')
 
         // Set a session cookie with secure and httpOnly flags (if needed)
-        document.cookie = 'token=value; path=/; secure; httpOnly'
+        // document.cookie = 'token=value; path=/; secure; httpOnly'
+        const authToken = 'authenticatesasfe2098adflj23123'
 
-        login()
-
-        // Redirect or perform additional actions on successful login
-        navigate('/')
+        // Call the login function to store the token
+        login(authToken)
+        // login()
       } else {
         console.error('Login failed.')
       }
@@ -41,6 +41,16 @@ const LoginForm = () => {
       console.error('Error during login:', error)
     }
   }
+
+  // const handleLogin = async (event) => {
+
+  //   // Perform authentication logic, and if successful, obtain the authentication token
+  //   const authToken = 'authenticatesasfe2098adflj23123'
+
+  //   // Call the login function to store the token
+  //   login(authToken)
+  //   navigate('/')
+  // }
 
   return (
     <div>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext, useCallback } from 'react'
 import { GamesContext } from '../../contexts/GamesContext'
+import { useAuth } from '../../contexts/AuthContext'
 import styled from '@emotion/styled'
 import csv from 'csvtojson'
 import Spread from '../SubComponents/Spread'
@@ -34,6 +35,8 @@ const GameView = () => {
     allNCAABGames,
     setAllNCAABGames,
   } = useContext(GamesContext)
+
+  const { authToken } = useAuth()
 
   const navigate = useNavigate()
 
@@ -239,7 +242,7 @@ const GameView = () => {
     const sportParam = encodeURIComponent('NCAAF')
 
     const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
-    navigate(url)
+    window.open(url, '_blank')
   }
 
   const handleGameChangeNBA = (event) => {
@@ -252,7 +255,7 @@ const GameView = () => {
     const sportParam = encodeURIComponent('NBA')
 
     const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
-    navigate(url)
+    window.open(url, '_blank')
   }
 
   const handleGameChangeNCAAB = (event) => {
@@ -265,7 +268,7 @@ const GameView = () => {
     const sportParam = encodeURIComponent('NCAAB')
 
     const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
-    navigate(url)
+    window.open(url, '_blank')
   }
 
   const handleGameChangeNFL = (event) => {
@@ -278,7 +281,7 @@ const GameView = () => {
     const sportParam = encodeURIComponent('NFL')
 
     const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
-    navigate(url)
+    window.open(url, '_blank')
   }
 
   if (loading) {
@@ -286,6 +289,12 @@ const GameView = () => {
   }
   if (error) {
     return <p>Error: {error.message}</p>
+  }
+
+  // Redirect to login page if not authenticated
+  if (!authToken) {
+    // You can use React Router or any other navigation method here
+    navigate('/login')
   }
   return (
     <>
