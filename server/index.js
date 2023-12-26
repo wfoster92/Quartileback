@@ -352,12 +352,19 @@ app.post('/sports/heatmap/', async (req, res) => {
   }
 })
 
-// Serve static files from the build folder
-app.use(express.static(path.join(__dirname, 'build')))
+// // Serve static files from the build folder
+// app.use(express.static(path.join(__dirname, 'build')))
+
+// Your static pre-build assets folder
+app.use(express.static(path.join(__dirname, '..', 'build')))
+// Root Redirects to the pre-build assets
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '..', 'build'))
+})
 
 // Handle other routes by serving the main HTML file
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'build/static/js/index.html'))
+  res.sendFile(path.join(__dirname, '..', 'build/index.html'))
 })
 
 app.listen(PORT, () => {
