@@ -129,7 +129,7 @@ const PortfolioScatterplot = () => {
       .attr('stroke-width', 0.8)
       .on('mousemove', handleMouseOver)
       // .on('mouseover', handleMouseOver)
-      .on('mouseout', handleMouseOut)
+      .on('mouseleave', handleMouseOut)
       .on('click', (event, d) => {
         console.log(JSON.stringify(d))
 
