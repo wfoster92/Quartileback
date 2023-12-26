@@ -55,26 +55,40 @@ const GameSelect = () => {
     text-align: center;
   `
 
-  const handleResize = useCallback(() => {
+  // const handleResize = useCallback(() => {
+  //   const newWidth = window.innerWidth
+  //   // console.log('New Viewport Width:', newWidth)
+  //   setViewportWidth(newWidth)
+  //   const newHeight = window.innerHeight
+  //   setViewportHeight(newHeight)
+  // }, [])
+
+  // // useEffect(() => {
+  // //   console.log('hello')
+  // //   window.addEventListener('resize', handleResize, false)
+  // //   return () => window.removeEventListener('resize', handleResize, false)
+  // // }, [handleResize])
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     window.addEventListener('resize', handleResize, false)
+  //     return () => window.removeEventListener('resize', handleResize, false)
+  //   }, 100)
+  // }, [handleResize])
+
+  const handleResize = () => {
     const newWidth = window.innerWidth
-    // console.log('New Viewport Width:', newWidth)
     setViewportWidth(newWidth)
     const newHeight = window.innerHeight
     setViewportHeight(newHeight)
-  }, [])
-
-  // useEffect(() => {
-  //   console.log('hello')
-  //   window.addEventListener('resize', handleResize, false)
-  //   return () => window.removeEventListener('resize', handleResize, false)
-  // }, [handleResize])
+  } // Remove dependencies to prevent unnecessary re-renders
 
   useEffect(() => {
     setTimeout(() => {
       window.addEventListener('resize', handleResize, false)
       return () => window.removeEventListener('resize', handleResize, false)
-    }, 100)
-  }, [handleResize])
+    }, 2500)
+  }, [])
 
   const getAllGameData = async () => {
     try {
