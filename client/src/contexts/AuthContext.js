@@ -30,21 +30,39 @@ export const AuthProvider = ({ children }) => {
   const [authToken, setAuthToken] = useState(
     localStorage.getItem('authToken') || null
   )
+  const [expirationTime, setExpirationTime] = useState(
+    localStorage.getItem('expirationTime') || null
+  )
 
-  const login = (token) => {
+  const login = (token, expirationTime) => {
     setAuthToken(token)
+    setExpirationTime(expirationTime)
+
     localStorage.setItem('authToken', token)
+    localStorage.setItem('expirationTime', expirationTime)
     // Redirect or perform additional actions on successful login
     navigate('/')
   }
 
   const logout = () => {
     setAuthToken(null)
+    setExpirationTime(null)
+
     localStorage.removeItem('authToken')
+    localStorage.removeItem('expirationTime')
+
+    // Redirect or perform additional actions on logout
+    navigate('/login')
+  }
+
+  const isTokenValid = () => {
+    // Check if expirationTime is set and if the current time is past the expiration time
+    // console.log(new Date(expirationTime).getTime(), Date.now())
+    return expirationTime && new Date(expirationTime).getTime() > Date.now()
   }
 
   return (
-    <AuthContext.Provider value={{ authToken, login, logout }}>
+    <AuthContext.Provider value={{ authToken, login, logout, isTokenValid }}>
       {children}
     </AuthContext.Provider>
   )

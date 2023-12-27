@@ -7,6 +7,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session')
 const cors = require('cors')
+const jwt = require('jsonwebtoken')
 
 const PORT = process.env.PORT || 3001
 
@@ -29,20 +30,6 @@ app.use(
   })
 )
 
-// const corsOptions = {
-//   credentials: true,
-// };
-
-// if (process.env.NODE_ENV === 'development') {
-//   // Allow requests from localhost during development
-//   corsOptions.origin = 'http://localhost:3000';
-// } else {
-//   // Allow requests from quartileback.com in other environments
-//   corsOptions.origin = 'http://quartileback.com'; // Adjust to your actual production domain
-// }
-
-// app.use(cors(corsOptions));
-
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static('public'))
@@ -55,6 +42,28 @@ app.use(
     maxAge: 24 * 60 * 60 * 1000, // Session duration (24 hours in milliseconds)
   })
 )
+
+// generate token etc.
+// Secret key used to sign the token (keep it secure)
+const secretKey = 'sdfkjsd;flkjerlwrlkj'
+
+// Function to generate a JWT token with an expiration time
+const generateAuthToken = (userId) => {
+  // Set the expiration time to one day from now
+  const expirationTime = Date.now() + 60 * 60 * 24 * 7 // 1 week
+
+  // JWT payload
+  const payload = {
+    user_id: userId,
+    exp: expirationTime,
+  }
+
+  // Sign the token with the secret key
+  const token = jwt.sign(payload, secretKey)
+  console.log(token)
+
+  return { token, exp: expirationTime }
+}
 
 // Sample user data (replace with database in production)
 const users = [
@@ -69,12 +78,30 @@ const authenticate = (req, res, next) => {
     (u) => u.username === username && u.password === password
   )
 
-  if (user) {
-    req.session.user = user // Store user information in the session
+  // if (user) {
+  //   req.session.user = user // Store user information in the session
 
-    next()
+  //   next()
+  // }
+
+  if (user) {
+    // Generate JWT token
+    const { token, exp } = generateAuthToken(user.username)
+
+    // Send the token to the client
+    res.json({ token, exp })
+    return
+    // Optionally, you may also store the token in a secure HTTP-only cookie
+    // res.cookie('authToken', token, { httpOnly: true, secure: true });
+
+    // Store user information in the session (if needed)
+    // req.session.user = user
+
+    // Continue with the next middleware or route
+    // next()
   } else {
     res.status(401).send('Unauthorized')
+    return
   }
 }
 
@@ -151,49 +178,6 @@ app.get('/sports/getBetLegsTable', async (req, res) => {
     return
   }
 })
-
-// app.get('/sports/getRankingsTable/:sport', async (req, res) => {
-//   const { sport } = req.params
-
-//   const rankingsDir = path.join(
-//     process.cwd(),
-//     'csvs',
-//     'comprehensive_rankings',
-//     sport,
-//     'current'
-//   )
-
-//   // Read the contents of the directory
-//   fs.readdir(rankingsDir, (err, files) => {
-//     if (err) {
-//       console.error('Error reading directory:', err)
-//       return
-//     }
-//     let fname = ''
-//     // Check if there are files in the directory
-//     if (files.length > 0) {
-//       // Get the name of the first file
-//       fname = files[0]
-//       console.log('Name of the first file:', fname)
-//     } else {
-//       console.log('No files found in the directory.')
-//     }
-//   })
-
-//   // let fname = path.join(rankingsDir, `comprehensive_rankings_${sport}.csv`)
-//   try {
-//     if (fs.existsSync(fname)) {
-//       let result = await csv().fromFile(fname)
-//       res.json([result]) // Send the JSON data as the response
-//     } else {
-//       throw new Error(`CSV file not found: ${fname}`)
-//     }
-//   } catch (error) {
-//     console.error('Error reading CSV file:', error)
-//     res.status(404).json({ error: 'CSV file not found' })
-//     return
-//   }
-// })
 
 app.get('/sports/getRankingsTable/:sport', async (req, res) => {
   const { sport } = req.params

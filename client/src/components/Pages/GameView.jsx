@@ -36,7 +36,7 @@ const GameView = () => {
     setAllNCAABGames,
   } = useContext(GamesContext)
 
-  const { authToken } = useAuth()
+  const { authToken, isTokenValid } = useAuth()
 
   const navigate = useNavigate()
 
@@ -301,7 +301,7 @@ const GameView = () => {
   }
 
   // Redirect to login page if not authenticated
-  if (!authToken) {
+  if (!authToken || !isTokenValid()) {
     // You can use React Router or any other navigation method here
     navigate('/login')
   }
