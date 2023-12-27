@@ -7,7 +7,8 @@ import MenuIcon from '@mui/icons-material/Menu'
 // import Favicon from '/favicon.ico'
 
 export default function NavBar() {
-  const { authToken, logout } = useAuth() // Get authentication state and logout function
+  const { authToken, logout, isTokenValid } = useAuth() // Get authentication state and logout function
+  console.log(authToken, isTokenValid())
 
   return (
     <React.Fragment>
@@ -26,7 +27,7 @@ export default function NavBar() {
             Rankings
           </IconButton>
           {/* Conditionally render based on authentication state */}
-          {authToken ? (
+          {authToken && isTokenValid() ? (
             <>
               <IconButton color='inherit' component={Link} to='/gameSelect'>
                 Games!

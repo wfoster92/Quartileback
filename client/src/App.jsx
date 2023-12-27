@@ -13,7 +13,7 @@ import Rankings from './components/Pages/Rankings'
 import GameSelect from './components/Pages/GameSelect'
 
 const App = () => {
-  const { authToken } = useAuth()
+  const { authToken, isTokenValid } = useAuth()
 
   return (
     <>
@@ -35,7 +35,7 @@ const App = () => {
           }
         />
 
-        {authToken ? (
+        {authToken && isTokenValid() ? (
           <>
             {/* move this back to the authenticated when done developing */}
             <Route

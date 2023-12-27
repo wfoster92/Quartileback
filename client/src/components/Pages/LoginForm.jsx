@@ -25,15 +25,12 @@ const LoginForm = () => {
       })
 
       if (response.ok) {
-        console.log('Login successful!')
-
-        // Set a session cookie with secure and httpOnly flags (if needed)
-        // document.cookie = 'token=value; path=/; secure; httpOnly'
-        const authToken = 'authenticatesasfe2098adflj23123'
-
+        // Parse the JSON response to get the token
+        const { token, exp } = await response.json()
+        console.log(token, exp)
         // Call the login function to store the token
-        login(authToken)
-        // login()
+        login(token, exp)
+        console.log('Login successful!')
       } else {
         console.error('Login failed.')
       }
@@ -41,16 +38,6 @@ const LoginForm = () => {
       console.error('Error during login:', error)
     }
   }
-
-  // const handleLogin = async (event) => {
-
-  //   // Perform authentication logic, and if successful, obtain the authentication token
-  //   const authToken = 'authenticatesasfe2098adflj23123'
-
-  //   // Call the login function to store the token
-  //   login(authToken)
-  //   navigate('/')
-  // }
 
   return (
     <div>

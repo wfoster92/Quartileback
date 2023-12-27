@@ -47,7 +47,7 @@ const GameSelect = () => {
     setSelectedSport,
   } = useContext(GamesContext)
 
-  const { authToken } = useAuth() // Get authentication state and logout function
+  const { authToken, isTokenValid } = useAuth() // Get authentication state and logout function
 
   const Title = styled.div`
     font-size: '50px';
@@ -177,10 +177,12 @@ const GameSelect = () => {
   }
 
   // Redirect to login page if not authenticated
-  if (!authToken) {
-    // You can use React Router or any other navigation method here
-    navigate('/login')
-  }
+  // if (!(authToken && isTokenValid())) {
+  //   console.log(authToken, isTokenValid())
+
+  //   // You can use React Router or any other navigation method here
+  //   navigate('/login')
+  // }
 
   return (
     <>
