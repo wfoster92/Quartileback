@@ -170,7 +170,7 @@ const GameView = () => {
     }
   }
 
-  const getURLData = () => {
+  const getURLData = async () => {
     const queryParams = new URLSearchParams(location.search)
 
     const homeTeam = queryParams.get('homeTeam')

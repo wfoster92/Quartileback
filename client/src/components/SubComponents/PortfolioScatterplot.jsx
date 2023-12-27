@@ -89,18 +89,21 @@ const PortfolioScatterplot = () => {
       .domain([0, d3.max(data.map((elem) => elem.wager))])
       .range([0.5, 5]) //d3.max(data.map((elem) => elem.wager))])
     // Define scales
-    const xScale = d3.scaleLinear().domain([0, 1]).range([0, w])
+    const xScale = d3
+      .scaleLinear()
+      .domain([0, 1])
+      .range([margin.left, w - margin.right])
 
     const yScale = d3
       .scaleLinear()
       .domain([
         Math.min(
-          -200,
+          -220,
           d3.min(data, (d) => Number(d.odds)) *
             (d3.min(data, (d) => Number(d.odds)) > 0 ? 0.7 : 1.4)
         ),
         Math.max(
-          200,
+          220,
           d3.max(data, (d) => Number(d.odds)) *
             (d3.max(data, (d) => Number(d.odds)) > 0 ? 1.4 : 1.4)
         ),
@@ -130,7 +133,7 @@ const PortfolioScatterplot = () => {
       .on('mousemove', handleMouseOver)
       // .on('mouseover', handleMouseOver)
       .on('mouseleave', handleMouseOut)
-      .on('click', (event, d) => {
+      .on('dblclick', (event, d) => {
         console.log(JSON.stringify(d))
 
         const homeTeamParam = encodeURIComponent(d.homeTeamAbbrev)
@@ -148,7 +151,7 @@ const PortfolioScatterplot = () => {
 
     svg
       .append('g')
-      .attr('transform', `translate(${margin.left}, ${yScale(0)})`) // Move the x-axis to the 0 line
+      .attr('transform', `translate(0, ${yScale(0)})`) // Move the x-axis to the 0 line
       .call(xAxis)
 
     svg
