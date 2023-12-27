@@ -8,6 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 
 export default function NavBar() {
   const { authToken, logout, isTokenValid } = useAuth() // Get authentication state and logout function
+  console.log(authToken, isTokenValid())
 
   return (
     <React.Fragment>

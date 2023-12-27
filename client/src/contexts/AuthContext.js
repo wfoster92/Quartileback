@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.getItem('authToken') || null
   )
   const [expirationTime, setExpirationTime] = useState(
-    localStorage.getItem('expirationTime') || null
+    Number(localStorage.getItem('expirationTime')) || null
   )
 
   const login = (token, expirationTime) => {
@@ -58,6 +58,7 @@ export const AuthProvider = ({ children }) => {
   const isTokenValid = () => {
     // Check if expirationTime is set and if the current time is past the expiration time
     // console.log(new Date(expirationTime).getTime(), Date.now())
+    // console.log(expirationTime, new Date(expirationTime).getTime(), Date.now())
     return expirationTime && new Date(expirationTime).getTime() > Date.now()
   }
 

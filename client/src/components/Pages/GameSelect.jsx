@@ -177,10 +177,12 @@ const GameSelect = () => {
   }
 
   // Redirect to login page if not authenticated
-  if (!authToken || !isTokenValid()) {
-    // You can use React Router or any other navigation method here
-    navigate('/login')
-  }
+  // if (!(authToken && isTokenValid())) {
+  //   console.log(authToken, isTokenValid())
+
+  //   // You can use React Router or any other navigation method here
+  //   navigate('/login')
+  // }
 
   return (
     <>

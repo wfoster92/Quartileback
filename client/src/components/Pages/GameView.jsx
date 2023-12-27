@@ -301,10 +301,11 @@ const GameView = () => {
   }
 
   // Redirect to login page if not authenticated
-  if (!authToken || !isTokenValid()) {
-    // You can use React Router or any other navigation method here
-    navigate('/login')
-  }
+  // if (!(authToken && isTokenValid())) {
+  //   // You can use React Router or any other navigation method here
+  //   console.log(authToken, isTokenValid())
+  //   navigate('/login')
+  // }
   return (
     <>
       <div>
