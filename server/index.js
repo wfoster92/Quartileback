@@ -20,7 +20,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-dateStr = '12_27_2023'
+dateStr = '12_29_2023'
 
 app.use(express.static('../client/build'))
 app.use(
