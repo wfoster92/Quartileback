@@ -23,6 +23,16 @@ import FilterListIcon from '@mui/icons-material/FilterList'
 import { visuallyHidden } from '@mui/utils'
 import { GamesContext } from '../../contexts/GamesContext'
 
+// Create our number formatter.
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+
+  // These options are needed to round to whole numbers if that's what you want.
+  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+  //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+})
+
 let columnArr = [
   {
     id: 'inPortfolio',
@@ -330,6 +340,36 @@ const BetLegsTable = (props) => {
                             {row[currentCol.id].split(' | ').map((line) => {
                               return <div>{line}</div>
                             })}
+                          </TableCell>
+                        ) : currentCol.id === 'wager' ? (
+                          <TableCell style={{ textAlign: currentCol.align }}>
+                            <input
+                              type='number'
+                              step='1'
+                              min='0'
+                              value={row[currentCol.id]}
+                              onChange={(e) => {
+                                const newValue = parseFloat(e.target.value)
+                                // let newRow = {...row, wager: newValue}
+                                if (!isNaN(newValue)) {
+                                  setBetLegsTable((prevState) => {
+                                    const updatedTable = prevState.map(
+                                      (elem) => {
+                                        if (elem === row) {
+                                          return {
+                                            ...elem,
+                                            [currentCol.id]: newValue,
+                                          }
+                                        } else {
+                                          return elem
+                                        }
+                                      }
+                                    )
+                                    return updatedTable
+                                  })
+                                }
+                              }}
+                            />
                           </TableCell>
                         ) : (
                           <TableCell style={{ textAlign: currentCol.align }}>
