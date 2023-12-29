@@ -50,7 +50,7 @@ const secretKey = 'sdfkjsd;flkjerlwrlkj'
 // Function to generate a JWT token with an expiration time
 const generateAuthToken = (userId) => {
   // Set the expiration time to one day from now
-  const expirationTime = Date.now() + 60 * 60 * 24 * 7 // 1 week
+  const expirationTime = Date.now() + 1000 * 60 * 60 * 24 * 7 // 1 week
 
   // JWT payload
   const payload = {
