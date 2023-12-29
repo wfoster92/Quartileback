@@ -162,7 +162,7 @@ app.get('/sports/getBetLegsTable', async (req, res) => {
         row = {
           ...row,
           inPortfolio: false,
-          wager: Math.random() * 100,
+          wager: Math.round(Math.random() * 100),
           expectedReturn: 0,
         }
         return row

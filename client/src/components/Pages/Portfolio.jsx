@@ -4,6 +4,7 @@ import TableContainer from '../SubComponents/TableContainer'
 import { useState, useEffect, useContext } from 'react'
 import { GamesContext } from '../../contexts/GamesContext'
 import PortfolioScatterplot from '../SubComponents/PortfolioScatterplot'
+import { FormGroup, FormControlLabel, Switch } from '@mui/material'
 
 const Portfolio = () => {
   const {
@@ -14,6 +15,9 @@ const Portfolio = () => {
     betLegsTable,
     setBetLegsTable,
   } = useContext(GamesContext)
+
+  const [showChart, setShowChart] = useState(false)
+
   const getBetLegsTable = async () => {
     try {
       const response = await fetch(`/sports/getBetLegsTable`)
@@ -36,7 +40,19 @@ const Portfolio = () => {
   }
   return (
     <>
-      {betLegsTable.filter((elem) => elem.inPortfolio).length > 0 ? (
+      <FormGroup>
+        <FormControlLabel
+          control={
+            <Switch
+              value={showChart}
+              onChange={() => setShowChart((prevState) => !prevState)}
+            />
+          }
+          label='Chart'
+        />
+      </FormGroup>
+      {betLegsTable.filter((elem) => elem.inPortfolio).length > 0 &&
+      showChart ? (
         <PortfolioScatterplot />
       ) : null}
       {/* <PortfolioScatterplot /> */}
