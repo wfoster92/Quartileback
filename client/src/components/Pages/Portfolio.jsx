@@ -4,7 +4,7 @@ import TableContainer from '../SubComponents/TableContainer'
 import { useState, useEffect, useContext } from 'react'
 import { GamesContext } from '../../contexts/GamesContext'
 import PortfolioScatterplot from '../SubComponents/PortfolioScatterplot'
-import { FormGroup, FormControlLabel, Switch } from '@mui/material'
+import { FormGroup, FormControlLabel, Switch, Button } from '@mui/material'
 
 const Portfolio = () => {
   const {
@@ -40,17 +40,26 @@ const Portfolio = () => {
   }
   return (
     <>
-      <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              value={showChart}
-              onChange={() => setShowChart((prevState) => !prevState)}
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'inline-block' }}>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Switch
+                  value={showChart}
+                  onChange={() => setShowChart((prevState) => !prevState)}
+                />
+              }
+              label='Chart'
             />
-          }
-          label='Chart'
-        />
-      </FormGroup>
+          </FormGroup>
+        </div>
+        {betLegsTable.filter((elem) => elem.inParlay).length > 1 ? (
+          <Button style={{ display: 'inline-block', height: '38' }}>
+            Add Parlay
+          </Button>
+        ) : null}
+      </div>
       {betLegsTable.filter((elem) => elem.inPortfolio).length > 0 &&
       showChart ? (
         <PortfolioScatterplot />
