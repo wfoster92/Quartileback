@@ -308,7 +308,18 @@ const BetLegsTable = (props) => {
                   const labelId = `enhanced-table-checkbox-${rowIdx}`
 
                   return (
-                    <TableRow>
+                    <TableRow
+                      style={{
+                        backgroundColor: row.inParlay ? '#2e7d32' : null,
+                      }}
+                      onClick={() =>
+                        setBetLegsTable((prevState) =>
+                          prevState.map((r) =>
+                            r === row ? { ...r, inParlay: !r.inParlay } : r
+                          )
+                        )
+                      }
+                    >
                       {columnArr.map((currentCol, colIdx) => {
                         return currentCol.id === 'inPortfolio' ? (
                           <TableCell padding='checkbox'>
