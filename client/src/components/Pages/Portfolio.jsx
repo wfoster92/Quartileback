@@ -99,6 +99,7 @@ const Portfolio = () => {
                 dataType: 'float',
                 align: 'right',
                 kelly: '(0, 1)',
+                wager: 0,
               }
               console.log('parlay', JSON.stringify(parlay))
               setBetLegsTable((prevState) => [
