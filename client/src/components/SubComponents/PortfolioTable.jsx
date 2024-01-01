@@ -312,7 +312,7 @@ const BetLegsTable = (props) => {
                       style={{
                         backgroundColor: row.inParlay ? '#2e7d32' : null,
                       }}
-                      onClick={() =>
+                      onDoubleClick={() =>
                         setBetLegsTable((prevState) =>
                           prevState.map((r) =>
                             r === row ? { ...r, inParlay: !r.inParlay } : r
