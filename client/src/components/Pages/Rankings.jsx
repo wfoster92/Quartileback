@@ -2,6 +2,7 @@ import RankingsTableNCAAF from '../SubComponents/RankingsTableNCAAF'
 import RankingsTableNCAAB from '../SubComponents/RankingsTableNCAAB'
 import RankingsTableNBA from '../SubComponents/RankingsTableNBA'
 import RankingsTableNFL from '../SubComponents/RankingsTableNFL'
+import RankingsTableNHL from '../SubComponents/RankingsTableNHL'
 import { useState, useEffect, useContext } from 'react'
 import { GamesContext } from '../../contexts/GamesContext'
 import { Stack, ToggleButton, ToggleButtonGroup } from '@mui/material'
@@ -51,6 +52,7 @@ const Rankings = () => {
     ncaab: <RankingsTableNCAAB />,
     ncaaf: <RankingsTableNCAAF />,
     nfl: <RankingsTableNFL />,
+    nhl: <RankingsTableNHL />,
   }
 
   if (loading) {
@@ -128,9 +130,9 @@ const Rankings = () => {
                     value={elem}
                     sx={{
                       height: 28,
-                      width: 56,
+                      width: 37,
                       textTransform: 'none',
-                      fontSize: '16px',
+                      fontSize: '12px',
                     }}
                   >
                     {elem}
@@ -150,9 +152,9 @@ const Rankings = () => {
                     value={elem}
                     sx={{
                       height: 28,
-                      width: 56,
+                      width: 37,
                       textTransform: 'none',
-                      fontSize: '16px',
+                      fontSize: '12px',
                     }}
                   >
                     {elem}
