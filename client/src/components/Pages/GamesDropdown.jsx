@@ -43,6 +43,17 @@ const GamesDropdown = () => {
     setCurrentSpread(gamesObj[k].spread)
   }
 
+  const handleGameChangeNHL = (event) => {
+    let newGame = event.target.value
+    let [away, home] = newGame.split(' ')
+    let k = `${away}_${home}_NHL`
+    console.log(`new nhl game ${newGame}`)
+    console.log(`gamesObj ${JSON.stringify(gamesObj[k])}`)
+    setCurrentGame(newGame)
+    setCurrentOverUnder(gamesObj[k].ou)
+    setCurrentSpread(gamesObj[k].spread)
+  }
+
   ;<>
     <div style={{ height: '2vh' }}></div>
     <div
@@ -112,6 +123,22 @@ const GamesDropdown = () => {
             onChange={handleGameChangeNFL}
           >
             {allNFLGames.map((game) => {
+              return <MenuItem value={game}>{game}</MenuItem>
+            })}
+          </Select>
+        </FormControl>
+      </Box>
+      <Box style={{ width: '24vh', margin: '0' }}>
+        <FormControl fullWidth>
+          <InputLabel id='demo-simple-select-label'>NFL</InputLabel>
+          <Select
+            labelId='demo-simple-select-label'
+            id='demo-simple-select'
+            value={allNHLGames.includes(currentGame) ? currentGame : null}
+            label='NFL'
+            onChange={handleGameChangeNFL}
+          >
+            {allNHLGames.map((game) => {
               return <MenuItem value={game}>{game}</MenuItem>
             })}
           </Select>

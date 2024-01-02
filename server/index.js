@@ -20,7 +20,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-dateStr = '12_31_2023'
+dateStr = '1_2_2024'
 
 app.use(express.static('../client/build'))
 app.use(
@@ -238,6 +238,7 @@ app.get('/sports/getAllDatasets', async (req, res) => {
       let ncaabGames = []
       let nbaGames = []
       let nflGames = []
+      let nhlGames = []
       // initialize dictionaries for overUnder and spread
       let output = {}
       // for each row in the csv take the sum for the over under and the diff for the spread
@@ -275,6 +276,8 @@ app.get('/sports/getAllDatasets', async (req, res) => {
           output[k] = tempObj
           if (sport === 'NFL') {
             nflGames.push(`${awayTeam} ${homeTeam}`)
+          } else if (sport === 'NHL') {
+            nhlGames.push(`${awayTeam} ${homeTeam}`)
           } else if (sport === 'NBA') {
             nbaGames.push(`${awayTeam} ${homeTeam}`)
           } else if (sport === 'NCAAF') {
@@ -289,7 +292,8 @@ app.get('/sports/getAllDatasets', async (req, res) => {
       ncaafGames.sort((a, b) => a.localeCompare(b))
       nbaGames.sort((a, b) => a.localeCompare(b))
       nflGames.sort((a, b) => a.localeCompare(b))
-      res.json([output, ncaafGames, ncaabGames, nbaGames, nflGames]) // Send the JSON data as the response
+      nhlGames.sort((a, b) => a.localeCompare(b))
+      res.json([output, ncaafGames, ncaabGames, nbaGames, nflGames, nhlGames]) // Send the JSON data as the response
     } else {
       throw new Error(`CSV file not found: ${fname}`)
     }

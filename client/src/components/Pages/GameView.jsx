@@ -32,6 +32,8 @@ const GameView = () => {
     setAllNBAGames,
     allNFLGames,
     setAllNFLGames,
+    allNHLGames,
+    setAllNHLGames,
     allNCAABGames,
     setAllNCAABGames,
   } = useContext(GamesContext)
@@ -293,6 +295,19 @@ const GameView = () => {
     window.open(url, '_blank')
   }
 
+  const handleGameChangeNHL = (event) => {
+    let newGame = event.target.value
+    let [away, home] = newGame.split(' ')
+    let k = `${away}_${home}_NHL`
+    console.log(`new nhl game ${newGame}`)
+    const homeTeamParam = encodeURIComponent(away)
+    const awayTeamParam = encodeURIComponent(home)
+    const sportParam = encodeURIComponent('NHL')
+
+    const url = `/gameView?homeTeam=${homeTeamParam}&awayTeam=${awayTeamParam}&sport=${sportParam}`
+    window.open(url, '_blank')
+  }
+
   if (loading) {
     return <p>Loading...</p>
   }
@@ -377,6 +392,22 @@ const GameView = () => {
                 onChange={handleGameChangeNFL}
               >
                 {allNFLGames.map((game) => {
+                  return <MenuItem value={game}>{game}</MenuItem>
+                })}
+              </Select>
+            </FormControl>
+          </Box>
+          <Box style={{ width: '24vh', margin: '0' }}>
+            <FormControl fullWidth>
+              <InputLabel id='demo-simple-select-label'>NFL</InputLabel>
+              <Select
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
+                value={allNHLGames.includes(currentGame) ? currentGame : null}
+                label='NHL'
+                onChange={handleGameChangeNHL}
+              >
+                {allNHLGames.map((game) => {
                   return <MenuItem value={game}>{game}</MenuItem>
                 })}
               </Select>

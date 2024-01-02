@@ -14,12 +14,13 @@ const GamesProvider = ({ children }) => {
   const [allCFBGames, setAllCFBGames] = useState([])
   const [allNBAGames, setAllNBAGames] = useState([])
   const [allNFLGames, setAllNFLGames] = useState([])
+  const [allNHLGames, setAllNHLGames] = useState([])
   const [allNCAABGames, setAllNCAABGames] = useState([])
   // const [gamesObj, setGamesObj] = useState(null)
   const [betLegsTable, setBetLegsTable] = useState([])
   const [rankingsTable, setRankingsTable] = useState([])
   const [searchStrRankings, setSearchStrRankings] = useState('')
-  const rankingsTables = ['nba', 'ncaab', 'ncaaf', 'nfl']
+  const rankingsTables = ['nba', 'ncaab', 'ncaaf', 'nfl', 'nhl']
   const [selectedRankingsTable, setSelectedRankingsTable] = useState('nfl')
 
   const [heatmapData, setHeatmapData] = useState([])
@@ -46,6 +47,8 @@ const GamesProvider = ({ children }) => {
     setAllNFLGames,
     allNCAABGames,
     setAllNCAABGames,
+    allNHLGames,
+    setAllNHLGames,
     // gamesObj,
     // setGamesObj,
     betLegsTable,
