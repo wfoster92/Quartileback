@@ -136,7 +136,7 @@ const GamesDropdown = () => {
             id='demo-simple-select'
             value={allNHLGames.includes(currentGame) ? currentGame : null}
             label='NFL'
-            onChange={handleGameChangeNFL}
+            onChange={handleGameChangeNHL}
           >
             {allNHLGames.map((game) => {
               return <MenuItem value={game}>{game}</MenuItem>

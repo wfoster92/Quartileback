@@ -82,8 +82,8 @@ const Heatmap = (props) => {
     }
 
     // to give some padding to the chart
-    highestScore += 1
-    lowestScore -= 1
+    // highestScore += 1
+    // lowestScore -= 1
     if (heatmapData.length === 0) {
       return
     }
@@ -133,7 +133,12 @@ const Heatmap = (props) => {
     svg
       .append('g')
       .style('font-size', 12)
-      .attr('transform', `translate(0, ${height})`)
+      .attr(
+        'transform',
+        `translate(${height / 2 / (highestScore - lowestScore)}, ${
+          height + height / (highestScore - lowestScore)
+        })`
+      )
       .call(d3.axisBottom(x).tickSize(0))
       .select('.domain')
       .remove()
@@ -147,6 +152,10 @@ const Heatmap = (props) => {
     svg
       .append('g')
       .style('font-size', 12)
+      .attr(
+        'transform',
+        `translate(0, ${height / 2 / (highestScore - lowestScore)})`
+      )
       .call(d3.axisLeft(y).tickSize(0))
       .select('.domain')
       .remove()
@@ -202,28 +211,34 @@ const Heatmap = (props) => {
 
     // create a tooltip
     const tooltip = d3
-      .select('#heatmapChart')
+      .select('body')
       .append('div')
       .attr('class', 'tooltip')
+      .style('visibility', 'hidden')
+      .style('position', 'absolute')
+      .style('text-align', 'left')
+      .style('font-size', '16px')
       .style('background-color', 'white')
-      .style('border', 'solid')
-      .style('border-width', '.5vw')
-      .style('border-radius', '1.5vw')
-      .style('padding', '1.5vw')
+      .style('border', '1px solid gray')
+      .style('border-radius', '4px')
+      .style('padding', '5px')
 
-    // Three function that change the tooltip when user hover / move / leave a cell
-    const mouseover = function (event, d) {
-      tooltip.style('opacity', 1)
-      d3.select(this).style('stroke', 'black').style('opacity', 1)
-    }
-    const mousemove = function (event, d) {
+    const handleMouseOver = (event, d) => {
+      console.log('Mouse over:', d)
+
       tooltip
-        .html('The exact value of<br>this cell is: ' + d.value)
-        .style('left', event.x / 2 + 'px')
-        .style('top', event.y / 2 + 'px')
+        .style('visibility', 'visible')
+        .style('left', `${event.pageX}px`)
+        .style('top', `${event.pageY}px`).html(`
+        <h4>Probability: ${d.probability}</h4>
+        <h4>${d.awayTeam} ${d.awayScore} ${d.homeTeam} ${d.homeScore}</h4>
+        `)
     }
-    const mouseleave = function (event, d) {
-      d3.select(this).style('stroke', 'none').style('opacity', 0.8)
+
+    const handleMouseOut = (event, d) => {
+      console.log('Mouse out:', d)
+
+      tooltip.style('visibility', 'hidden')
     }
 
     // add the baselayer of squares
@@ -251,9 +266,9 @@ const Heatmap = (props) => {
       // .style('stroke-width', 4)
       .style('stroke', 'none')
       .style('opacity', 0.8)
-      .on('mouseover', mouseover)
-      .on('mousemove', mousemove)
-      .on('mouseleave', mouseleave)
+      .on('mouseover', handleMouseOver)
+      .on('mousemove', handleMouseOver)
+      .on('mouseleave', handleMouseOut)
 
     // add the squares
     svg
@@ -280,9 +295,9 @@ const Heatmap = (props) => {
       // .style('stroke-width', 4)
       .style('stroke', 'none')
       .style('opacity', 0.8)
-      .on('mouseover', mouseover)
-      .on('mousemove', mousemove)
-      .on('mouseleave', mouseleave)
+      .on('mouseover', handleMouseOver)
+      .on('mousemove', handleMouseOver)
+      .on('mouseleave', handleMouseOut)
     // )
 
     // Add subtitle to graph
