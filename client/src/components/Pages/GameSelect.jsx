@@ -274,7 +274,7 @@ const GameSelect = () => {
           </Box>
           <Box style={{ width: '24vh', margin: '0' }}>
             <FormControl fullWidth>
-              <InputLabel id='demo-simple-select-label'>NFL</InputLabel>
+              <InputLabel id='demo-simple-select-label'>NHL</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
