@@ -1,0 +1,587 @@
+,game_id,home_team,home_id,home_score,away_team,away_id,away_score,home_win,num_ots,is_conference,is_postseason,game_day,game_time,game_location,arena,arena_capacity,attendance
+0,gid_401559236,Tampa Bay Lightning,tid_20,5,Nashville Predators,tid_27,3,True,0,False,False,"October 10, 2023",05:30 PM EDT,"Tampa, FL",Amalie Arena,19092,19092
+1,gid_401559237,Pittsburgh Penguins,tid_16,2,Chicago Blackhawks,tid_4,4,False,0,False,False,"October 10, 2023",08:00 PM EDT,"Pittsburgh, PA",PPG Paints Arena,18187,18411
+2,gid_401559238,Vegas Golden Knights,tid_37,4,Seattle Kraken,tid_124292,1,True,0,False,False,"October 10, 2023",11:14 PM EDT,"Las Vegas, NV",T-Mobile Arena,17367,18724
+3,gid_401559239,Toronto Maple Leafs,tid_21,6,Montreal Canadiens,tid_10,5,True,2,False,False,"October 11, 2023",07:00 PM EDT,"Toronto, ON",Scotiabank Arena,18819,18948
+4,gid_401559240,Carolina Hurricanes,tid_7,5,Ottawa Senators,tid_14,3,True,0,False,False,"October 11, 2023",07:00 PM EDT,"Raleigh, NC",PNC Arena,18680,18893
+5,gid_401559241,Boston Bruins,tid_1,3,Chicago Blackhawks,tid_4,1,True,0,False,False,"October 11, 2023",07:30 PM EDT,"Boston, MA",TD Garden,17850,17565
+6,gid_401559242,Calgary Flames,tid_3,5,Winnipeg Jets,tid_28,3,True,0,False,False,"October 11, 2023",10:00 PM EDT,"Calgary, AB",Scotiabank Saddledome,19289,17414
+7,gid_401559243,Vancouver Canucks,tid_22,8,Edmonton Oilers,tid_6,1,True,0,False,False,"October 11, 2023",10:00 PM EDT,"Vancouver, BC",Rogers Arena,18910,18706
+8,gid_401559244,Los Angeles Kings,tid_8,2,Colorado Avalanche,tid_17,5,False,0,False,False,"October 11, 2023",10:00 PM EDT,"Los Angeles, CA",crypto.com Arena,18230,18145
+9,gid_401559245,Buffalo Sabres,tid_2,1,New York Rangers,tid_13,5,False,0,False,False,"October 12, 2023",07:00 PM EDT,"Buffalo, NY",KeyBank Center,19070,19070
+10,gid_401559248,Columbus Blue Jackets,tid_29,2,Philadelphia Flyers,tid_15,4,False,0,False,False,"October 12, 2023",07:00 PM EDT,"Columbus, OH",Nationwide Arena,18144,18614
+11,gid_401559247,New Jersey Devils,tid_11,4,Detroit Red Wings,tid_5,3,True,0,False,False,"October 12, 2023",07:30 PM EDT,"Newark, NJ",Prudential Center,16514,16514
+12,gid_401559249,Nashville Predators,tid_27,3,Seattle Kraken,tid_124292,0,True,0,False,False,"October 12, 2023",08:00 PM EDT,"Nashville, TN",Bridgestone Arena,17113,17629
+13,gid_401559250,Dallas Stars,tid_9,2,St. Louis Blues,tid_19,1,True,2,False,False,"October 12, 2023",08:00 PM EDT,"Dallas, TX",American Airlines Center,18532,18532
+14,gid_401559251,Minnesota Wild,tid_30,2,Florida Panthers,tid_26,0,True,0,False,False,"October 12, 2023",08:00 PM EDT,"Saint Paul, MN",Xcel Energy Center,17954,18976
+15,gid_401559252,San Jose Sharks,tid_18,1,Vegas Golden Knights,tid_37,4,False,0,False,False,"October 12, 2023",10:30 PM EDT,"San Jose, CA",SAP Center at San Jose,17562,17435
+16,gid_401559253,New Jersey Devils,tid_11,3,Arizona Coyotes,tid_24,4,False,2,False,False,"October 13, 2023",07:00 PM EDT,"Newark, NJ",Prudential Center,16514,16514
+17,gid_401559254,Washington Capitals,tid_23,0,Pittsburgh Penguins,tid_16,4,False,0,False,False,"October 13, 2023",07:30 PM EDT,"Washington, DC",Capital One Arena,18506,18573
+18,gid_401559255,Ottawa Senators,tid_14,5,Philadelphia Flyers,tid_15,2,True,0,False,False,"October 14, 2023",01:00 PM EDT,"Ottawa, ON",Canadian Tire Centre,19153,20011
+19,gid_401559256,Winnipeg Jets,tid_28,6,Florida Panthers,tid_26,4,True,0,False,False,"October 14, 2023",04:00 PM EDT,"Winnipeg, MB",Canada Life Centre,15004,13410
+20,gid_401559257,Boston Bruins,tid_1,3,Nashville Predators,tid_27,2,True,0,False,False,"October 14, 2023",07:00 PM EDT,"Boston, MA",TD Garden,17850,17850
+21,gid_401559258,Toronto Maple Leafs,tid_21,7,Minnesota Wild,tid_30,4,True,0,False,False,"October 14, 2023",07:00 PM EDT,"Toronto, ON",Scotiabank Arena,18819,18903
+22,gid_401559259,Montreal Canadiens,tid_10,3,Chicago Blackhawks,tid_4,2,True,0,False,False,"October 14, 2023",07:00 PM EDT,"Montreal, QC",Bell Centre,21273,21105
+23,gid_401559260,Detroit Red Wings,tid_5,6,Tampa Bay Lightning,tid_20,4,True,0,False,False,"October 14, 2023",07:00 PM EDT,"Detroit, MI",Little Caesars Arena,19515,19515
+24,gid_401559261,Pittsburgh Penguins,tid_16,5,Calgary Flames,tid_3,2,True,0,False,False,"October 14, 2023",07:00 PM EDT,"Pittsburgh, PA",PPG Paints Arena,18187,17635
+25,gid_401559262,Columbus Blue Jackets,tid_29,5,New York Rangers,tid_13,3,True,0,False,False,"October 14, 2023",07:00 PM EDT,"Columbus, OH",Nationwide Arena,18144,16520
+26,gid_401559263,New York Islanders,tid_12,3,Buffalo Sabres,tid_2,2,True,0,False,False,"October 14, 2023",07:30 PM EDT,"Elmont, NY",UBS Arena,17113,17255
+27,gid_401559264,St. Louis Blues,tid_19,2,Seattle Kraken,tid_124292,1,True,2,False,False,"October 14, 2023",08:00 PM EDT,"Saint Louis, MO",Enterprise Center,18096,18096
+28,gid_401559265,Edmonton Oilers,tid_6,3,Vancouver Canucks,tid_22,4,False,0,False,False,"October 14, 2023",10:00 PM EDT,"Edmonton, AB",Rogers Place,18641,18347
+29,gid_401559266,Vegas Golden Knights,tid_37,4,Anaheim Ducks,tid_25,1,True,0,False,False,"October 14, 2023",10:00 PM EDT,"Las Vegas, NV",T-Mobile Arena,17367,18033
+30,gid_401559267,San Jose Sharks,tid_18,1,Colorado Avalanche,tid_17,2,False,2,False,False,"October 14, 2023",10:00 PM EDT,"San Jose, CA",SAP Center at San Jose,17562,17435
+31,gid_401559268,Los Angeles Kings,tid_8,5,Carolina Hurricanes,tid_7,6,False,2,False,False,"October 14, 2023",10:30 PM EDT,"Los Angeles, CA",crypto.com Arena,18230,17517
+32,gid_401559246,Ottawa Senators,tid_14,5,Tampa Bay Lightning,tid_20,2,True,0,False,False,"October 15, 2023",07:00 PM EDT,"Ottawa, ON",Canadian Tire Centre,19153,15584
+33,gid_401559269,Anaheim Ducks,tid_25,6,Carolina Hurricanes,tid_7,3,True,0,False,False,"October 15, 2023",08:30 PM EDT,"Anaheim, CA",Honda Center,17174,17278
+34,gid_401559270,Toronto Maple Leafs,tid_21,1,Chicago Blackhawks,tid_4,4,False,0,False,False,"October 16, 2023",07:00 PM EDT,"Toronto, ON",Scotiabank Arena,18819,19101
+35,gid_401559271,New Jersey Devils,tid_11,3,Florida Panthers,tid_26,4,False,0,False,False,"October 16, 2023",07:00 PM EDT,"Newark, NJ",Prudential Center,16514,15023
+36,gid_401559272,New York Rangers,tid_13,2,Arizona Coyotes,tid_24,1,True,0,False,False,"October 16, 2023",07:00 PM EDT,"New York, NY",Madison Square Garden,18006,18006
+37,gid_401559273,Washington Capitals,tid_23,3,Calgary Flames,tid_3,2,True,2,False,False,"October 16, 2023",07:00 PM EDT,"Washington, DC",Capital One Arena,18506,16489
+38,gid_401559274,Columbus Blue Jackets,tid_29,0,Detroit Red Wings,tid_5,4,False,0,False,False,"October 16, 2023",07:00 PM EDT,"Columbus, OH",Nationwide Arena,18144,14959
+39,gid_401559277,Philadelphia Flyers,tid_15,2,Vancouver Canucks,tid_22,0,True,0,False,False,"October 17, 2023",06:00 PM EDT,"Philadelphia, PA",Wells Fargo Center,19538,18883
+40,gid_401559276,Montreal Canadiens,tid_10,2,Minnesota Wild,tid_30,5,False,0,False,False,"October 17, 2023",07:00 PM EDT,"Montreal, QC",Bell Centre,21273,21105
+41,gid_401559275,Buffalo Sabres,tid_2,3,Tampa Bay Lightning,tid_20,2,True,1,False,False,"October 17, 2023",07:30 PM EDT,"Buffalo, NY",KeyBank Center,19070,12598
+42,gid_401559278,New York Islanders,tid_12,1,Arizona Coyotes,tid_24,0,True,0,False,False,"October 17, 2023",07:30 PM EDT,"Elmont, NY",UBS Arena,17113,14456
+43,gid_401559279,Nashville Predators,tid_27,1,Edmonton Oilers,tid_6,6,False,0,False,False,"October 17, 2023",08:00 PM EDT,"Nashville, TN",Bridgestone Arena,17113,17216
+44,gid_401559280,Winnipeg Jets,tid_28,1,Los Angeles Kings,tid_8,5,False,0,False,False,"October 17, 2023",08:00 PM EDT,"Winnipeg, MB",Canada Life Centre,15004,11226
+45,gid_401559281,Seattle Kraken,tid_124292,1,Colorado Avalanche,tid_17,4,False,0,False,False,"October 17, 2023",10:00 PM EDT,"Seattle, WA",Climate Pledge Arena,17100,17151
+46,gid_401559282,Vegas Golden Knights,tid_37,3,Dallas Stars,tid_9,2,True,2,False,False,"October 17, 2023",10:30 PM EDT,"Las Vegas, NV",T-Mobile Arena,17367,17612
+47,gid_401559283,San Jose Sharks,tid_18,3,Carolina Hurricanes,tid_7,6,False,0,False,False,"October 17, 2023",10:30 PM EDT,"San Jose, CA",SAP Center at San Jose,17562,10378
+48,gid_401559284,Ottawa Senators,tid_14,6,Washington Capitals,tid_23,1,True,0,False,False,"October 18, 2023",07:00 PM EDT,"Ottawa, ON",Canadian Tire Centre,19153,15021
+49,gid_401559285,Detroit Red Wings,tid_5,6,Pittsburgh Penguins,tid_16,3,True,0,False,False,"October 18, 2023",07:30 PM EDT,"Detroit, MI",Little Caesars Arena,19515,18895
+50,gid_401559286,Buffalo Sabres,tid_2,3,Calgary Flames,tid_3,4,False,0,False,False,"October 19, 2023",07:00 PM EDT,"Buffalo, NY",KeyBank Center,19070,13025
+51,gid_401559287,Tampa Bay Lightning,tid_20,4,Vancouver Canucks,tid_22,3,True,0,False,False,"October 19, 2023",07:00 PM EDT,"Tampa, FL",Amalie Arena,19092,19092
+52,gid_401559288,Florida Panthers,tid_26,3,Toronto Maple Leafs,tid_21,1,True,0,False,False,"October 19, 2023",07:00 PM EDT,"Sunrise, FL",Amerant Bank Arena,17040,19288
+53,gid_401559289,New York Rangers,tid_13,1,Nashville Predators,tid_27,4,False,0,False,False,"October 19, 2023",07:00 PM EDT,"New York, NY",Madison Square Garden,18006,18006
+54,gid_401559290,Philadelphia Flyers,tid_15,4,Edmonton Oilers,tid_6,1,True,0,False,False,"October 19, 2023",07:30 PM EDT,"Philadelphia, PA",Wells Fargo Center,19538,17590
+55,gid_401559291,St. Louis Blues,tid_19,2,Arizona Coyotes,tid_24,6,False,0,False,False,"October 19, 2023",08:00 PM EDT,"Saint Louis, MO",Enterprise Center,18096,18096
+56,gid_401559292,Minnesota Wild,tid_30,3,Los Angeles Kings,tid_8,7,False,0,False,False,"October 19, 2023",08:00 PM EDT,"Saint Paul, MN",Xcel Energy Center,17954,18689
+57,gid_401559293,Winnipeg Jets,tid_28,3,Vegas Golden Knights,tid_37,5,False,0,False,False,"October 19, 2023",08:00 PM EDT,"Winnipeg, MB",Canada Life Centre,15004,11521
+58,gid_401559294,Anaheim Ducks,tid_25,2,Dallas Stars,tid_9,3,False,0,False,False,"October 19, 2023",10:00 PM EDT,"Anaheim, CA",Honda Center,17174,14274
+59,gid_401559295,Seattle Kraken,tid_124292,7,Carolina Hurricanes,tid_7,4,True,0,False,False,"October 19, 2023",10:00 PM EDT,"Seattle, WA",Climate Pledge Arena,17100,17151
+60,gid_401559296,Colorado Avalanche,tid_17,4,Chicago Blackhawks,tid_4,0,True,0,False,False,"October 19, 2023",10:30 PM EDT,"Denver, CO",Ball Arena,18007,18140
+61,gid_401559297,San Jose Sharks,tid_18,1,Boston Bruins,tid_1,3,False,0,False,False,"October 19, 2023",10:30 PM EDT,"San Jose, CA",SAP Center at San Jose,17562,12501
+62,gid_401559298,Columbus Blue Jackets,tid_29,3,Calgary Flames,tid_3,1,True,0,False,False,"October 20, 2023",07:00 PM EDT,"Columbus, OH",Nationwide Arena,18144,16276
+63,gid_401559299,New York Islanders,tid_12,4,New Jersey Devils,tid_11,5,False,1,False,False,"October 20, 2023",07:30 PM EDT,"Elmont, NY",UBS Arena,17113,17255
+64,gid_401559300,Ottawa Senators,tid_14,2,Detroit Red Wings,tid_5,5,False,0,False,False,"October 21, 2023",01:00 PM EDT,"Ottawa, ON",Canadian Tire Centre,19153,18834
+65,gid_401559301,Arizona Coyotes,tid_24,2,Anaheim Ducks,tid_25,1,True,0,False,False,"October 21, 2023",04:00 PM EDT,"Tempe, AZ",Mullett Arena,4400,4600
+66,gid_401559302,Buffalo Sabres,tid_2,3,New York Islanders,tid_12,1,True,0,False,False,"October 21, 2023",07:00 PM EDT,"Buffalo, NY",KeyBank Center,19070,16179
+67,gid_401559303,Montreal Canadiens,tid_10,3,Washington Capitals,tid_23,2,True,1,False,False,"October 21, 2023",07:00 PM EDT,"Montreal, QC",Bell Centre,21273,21105
+68,gid_401559304,Tampa Bay Lightning,tid_20,3,Toronto Maple Leafs,tid_21,4,False,1,False,False,"October 21, 2023",07:00 PM EDT,"Tampa, FL",Amalie Arena,19092,19092
+69,gid_401559305,Florida Panthers,tid_26,3,Vancouver Canucks,tid_22,5,False,0,False,False,"October 21, 2023",07:00 PM EDT,"Sunrise, FL",Amerant Bank Arena,17040,16991
+70,gid_401559306,Chicago Blackhawks,tid_4,3,Vegas Golden Knights,tid_37,5,False,0,False,False,"October 21, 2023",08:00 PM EDT,"Chicago, IL",United Center,19717,19867
+71,gid_401559307,St. Louis Blues,tid_19,4,Pittsburgh Penguins,tid_16,2,True,0,False,False,"October 21, 2023",08:00 PM EDT,"Saint Louis, MO",Enterprise Center,18096,18096
+72,gid_401559308,Nashville Predators,tid_27,5,San Jose Sharks,tid_18,1,True,0,False,False,"October 21, 2023",08:00 PM EDT,"Nashville, TN",Bridgestone Arena,17113,17222
+73,gid_401559309,Dallas Stars,tid_9,5,Philadelphia Flyers,tid_15,4,True,1,False,False,"October 21, 2023",08:00 PM EDT,"Dallas, TX",American Airlines Center,18532,18532
+74,gid_401559310,Minnesota Wild,tid_30,4,Columbus Blue Jackets,tid_29,5,False,1,False,False,"October 21, 2023",08:00 PM EDT,"Saint Paul, MN",Xcel Energy Center,17954,18479
+75,gid_401559311,Colorado Avalanche,tid_17,6,Carolina Hurricanes,tid_7,4,True,0,False,False,"October 21, 2023",09:00 PM EDT,"Denver, CO",Ball Arena,18007,18131
+76,gid_401559312,Edmonton Oilers,tid_6,2,Winnipeg Jets,tid_28,3,False,1,False,False,"October 21, 2023",10:00 PM EDT,"Edmonton, AB",Rogers Place,18641,18347
+77,gid_401559313,Seattle Kraken,tid_124292,1,New York Rangers,tid_13,4,False,0,False,False,"October 21, 2023",10:00 PM EDT,"Seattle, WA",Climate Pledge Arena,17100,17151
+78,gid_401559314,Los Angeles Kings,tid_8,2,Boston Bruins,tid_1,4,False,0,False,False,"October 21, 2023",10:30 PM EDT,"Los Angeles, CA",crypto.com Arena,18230,18145
+79,gid_401559315,Detroit Red Wings,tid_5,6,Calgary Flames,tid_3,2,True,0,False,False,"October 22, 2023",05:00 PM EDT,"Detroit, MI",Little Caesars Arena,19515,17626
+80,gid_401559316,Anaheim Ducks,tid_25,1,Boston Bruins,tid_1,3,False,0,False,False,"October 22, 2023",08:30 PM EDT,"Anaheim, CA",Honda Center,17174,14264
+81,gid_401559317,Buffalo Sabres,tid_2,1,Montreal Canadiens,tid_10,3,False,0,False,False,"October 23, 2023",07:00 PM EDT,"Buffalo, NY",KeyBank Center,19070,13507
+82,gid_401559318,Washington Capitals,tid_23,1,Toronto Maple Leafs,tid_21,4,False,0,False,False,"October 24, 2023",06:00 PM EDT,"Washington, DC",Capital One Arena,18506,16641
+83,gid_401559320,Ottawa Senators,tid_14,4,Buffalo Sabres,tid_2,6,False,0,False,False,"October 24, 2023",06:45 PM EDT,"Ottawa, ON",Canadian Tire Centre,19153,14278
+84,gid_401559321,Tampa Bay Lightning,tid_20,3,Carolina Hurricanes,tid_7,0,True,0,False,False,"October 24, 2023",07:00 PM EDT,"Tampa, FL",Amalie Arena,19092,19092
+85,gid_401559322,Montreal Canadiens,tid_10,2,New Jersey Devils,tid_11,5,False,0,False,False,"October 24, 2023",07:15 PM EDT,"Montreal, QC",Bell Centre,21273,21105
+86,gid_401559323,Pittsburgh Penguins,tid_16,1,Dallas Stars,tid_9,4,False,0,False,False,"October 24, 2023",07:30 PM EDT,"Pittsburgh, PA",PPG Paints Arena,18187,17209
+87,gid_401559324,Florida Panthers,tid_26,3,San Jose Sharks,tid_18,1,True,0,False,False,"October 24, 2023",07:45 PM EDT,"Sunrise, FL",Amerant Bank Arena,17040,16142
+88,gid_401559325,New York Islanders,tid_12,4,Colorado Avalanche,tid_17,7,False,0,False,False,"October 24, 2023",08:00 PM EDT,"Elmont, NY",UBS Arena,17113,14856
+89,gid_401559326,Detroit Red Wings,tid_5,4,Seattle Kraken,tid_124292,5,False,1,False,False,"October 24, 2023",08:15 PM EDT,"Detroit, MI",Little Caesars Arena,19515,16894
+90,gid_401559319,Columbus Blue Jackets,tid_29,2,Anaheim Ducks,tid_25,3,False,1,False,False,"October 24, 2023",08:30 PM EDT,"Columbus, OH",Nationwide Arena,18144,16432
+91,gid_401559327,Chicago Blackhawks,tid_4,0,Boston Bruins,tid_1,3,False,0,False,False,"October 24, 2023",08:45 PM EDT,"Chicago, IL",United Center,19717,19370
+92,gid_401559328,Winnipeg Jets,tid_28,4,St. Louis Blues,tid_19,2,True,0,False,False,"October 24, 2023",08:45 PM EDT,"Winnipeg, MB",Canada Life Centre,15004,11136
+93,gid_401559329,Minnesota Wild,tid_30,7,Edmonton Oilers,tid_6,4,True,0,False,False,"October 24, 2023",09:00 PM EDT,"Saint Paul, MN",Xcel Energy Center,17954,17064
+94,gid_401559330,Nashville Predators,tid_27,2,Vancouver Canucks,tid_22,3,False,0,False,False,"October 24, 2023",09:15 PM EDT,"Nashville, TN",Bridgestone Arena,17113,17159
+95,gid_401559331,Calgary Flames,tid_3,1,New York Rangers,tid_13,3,False,0,False,False,"October 24, 2023",09:45 PM EDT,"Calgary, AB",Scotiabank Saddledome,19289,16800
+96,gid_401559332,Los Angeles Kings,tid_8,6,Arizona Coyotes,tid_24,3,True,0,False,False,"October 24, 2023",10:30 PM EDT,"Los Angeles, CA",crypto.com Arena,18230,17668
+97,gid_401559333,Vegas Golden Knights,tid_37,3,Philadelphia Flyers,tid_15,2,True,0,False,False,"October 24, 2023",11:17 PM EDT,"Las Vegas, NV",T-Mobile Arena,17367,17717
+98,gid_401559334,New Jersey Devils,tid_11,4,Washington Capitals,tid_23,6,False,0,False,False,"October 25, 2023",07:30 PM EDT,"Newark, NJ",Prudential Center,16514,16117
+99,gid_401559335,Boston Bruins,tid_1,3,Anaheim Ducks,tid_25,4,False,1,False,False,"October 26, 2023",07:00 PM EDT,"Boston, MA",TD Garden,17850,17850
+100,gid_401559336,Montreal Canadiens,tid_10,4,Columbus Blue Jackets,tid_29,3,True,1,False,False,"October 26, 2023",07:00 PM EDT,"Montreal, QC",Bell Centre,21273,21105
+101,gid_401559337,Detroit Red Wings,tid_5,1,Winnipeg Jets,tid_28,4,False,0,False,False,"October 26, 2023",07:00 PM EDT,"Detroit, MI",Little Caesars Arena,19515,17857
+102,gid_401559338,Tampa Bay Lightning,tid_20,6,San Jose Sharks,tid_18,0,True,0,False,False,"October 26, 2023",07:00 PM EDT,"Tampa, FL",Amalie Arena,19092,19092
+103,gid_401559340,Pittsburgh Penguins,tid_16,4,Colorado Avalanche,tid_17,0,True,0,False,False,"October 26, 2023",07:00 PM EDT,"Pittsburgh, PA",PPG Paints Arena,18187,17154
+104,gid_401559341,Carolina Hurricanes,tid_7,3,Seattle Kraken,tid_124292,2,True,1,False,False,"October 26, 2023",07:00 PM EDT,"Raleigh, NC",PNC Arena,18680,18780
+105,gid_401559339,Philadelphia Flyers,tid_15,6,Minnesota Wild,tid_30,2,True,0,False,False,"October 26, 2023",07:30 PM EDT,"Philadelphia, PA",Wells Fargo Center,19538,17144
+106,gid_401559342,New York Islanders,tid_12,3,Ottawa Senators,tid_14,2,True,0,False,False,"October 26, 2023",07:30 PM EDT,"Elmont, NY",UBS Arena,17113,14911
+107,gid_401559343,Dallas Stars,tid_9,1,Toronto Maple Leafs,tid_21,4,False,0,False,False,"October 26, 2023",08:00 PM EDT,"Dallas, TX",American Airlines Center,18532,18532
+108,gid_401559344,Calgary Flames,tid_3,0,St. Louis Blues,tid_19,3,False,0,False,False,"October 26, 2023",09:00 PM EDT,"Calgary, AB",Scotiabank Saddledome,19289,16897
+109,gid_401559345,Edmonton Oilers,tid_6,0,New York Rangers,tid_13,3,False,0,False,False,"October 26, 2023",09:00 PM EDT,"Edmonton, AB",Rogers Place,18641,17939
+110,gid_401559346,Vegas Golden Knights,tid_37,3,Chicago Blackhawks,tid_4,4,False,1,False,False,"October 27, 2023",06:00 PM EDT,"Las Vegas, NV",T-Mobile Arena,17367,18338
+111,gid_401559347,New Jersey Devils,tid_11,5,Buffalo Sabres,tid_2,4,True,0,False,False,"October 27, 2023",07:00 PM EDT,"Newark, NJ",Prudential Center,16514,16514
+112,gid_401559348,Washington Capitals,tid_23,3,Minnesota Wild,tid_30,2,True,2,False,False,"October 27, 2023",07:00 PM EDT,"Washington, DC",Capital One Arena,18506,16602
+113,gid_401559349,Carolina Hurricanes,tid_7,3,San Jose Sharks,tid_18,0,True,0,False,False,"October 27, 2023",07:00 PM EDT,"Raleigh, NC",PNC Arena,18680,18700
+114,gid_401559350,Vancouver Canucks,tid_22,5,St. Louis Blues,tid_19,0,True,0,False,False,"October 27, 2023",10:00 PM EDT,"Vancouver, BC",Rogers Arena,18910,18548
+115,gid_401559351,Arizona Coyotes,tid_24,4,Los Angeles Kings,tid_8,5,False,0,False,False,"October 27, 2023",10:00 PM EDT,"Tempe, AZ",Mullett Arena,4400,4600
+116,gid_401559352,Philadelphia Flyers,tid_15,4,Anaheim Ducks,tid_25,7,False,0,False,False,"October 28, 2023",01:00 PM EDT,"Philadelphia, PA",Wells Fargo Center,19538,18275
+117,gid_401559353,Florida Panthers,tid_26,3,Seattle Kraken,tid_124292,2,True,0,False,False,"October 28, 2023",06:00 PM EDT,"Sunrise, FL",Amerant Bank Arena,17040,16780
+118,gid_401559354,Boston Bruins,tid_1,4,Detroit Red Wings,tid_5,1,True,0,False,False,"October 28, 2023",07:00 PM EDT,"Boston, MA",TD Garden,17850,17850
+119,gid_401559356,Montreal Canadiens,tid_10,4,Winnipeg Jets,tid_28,3,True,2,False,False,"October 28, 2023",07:00 PM EDT,"Montreal, QC",Bell Centre,21273,21105
+120,gid_401559357,Pittsburgh Penguins,tid_16,2,Ottawa Senators,tid_14,5,False,0,False,False,"October 28, 2023",07:00 PM EDT,"Pittsburgh, PA",PPG Paints Arena,18187,17631
+121,gid_401559358,Columbus Blue Jackets,tid_29,0,New York Islanders,tid_12,2,False,0,False,False,"October 28, 2023",07:00 PM EDT,"Columbus, OH",Nationwide Arena,18144,15424
+122,gid_401559359,Nashville Predators,tid_27,3,Toronto Maple Leafs,tid_21,2,True,1,False,False,"October 28, 2023",07:00 PM EDT,"Nashville, TN",Bridgestone Arena,17113,17537
+123,gid_401559360,Vancouver Canucks,tid_22,3,New York Rangers,tid_13,4,False,1,False,False,"October 28, 2023",10:00 PM EDT,"Vancouver, BC",Rogers Arena,18910,18483
+124,gid_401559361,Los Angeles Kings,tid_8,3,Vegas Golden Knights,tid_37,4,False,2,False,False,"October 28, 2023",10:30 PM EDT,"Los Angeles, CA",crypto.com Arena,18230,18145
+125,gid_401559355,Buffalo Sabres,tid_2,4,Colorado Avalanche,tid_17,0,True,0,False,False,"October 29, 2023",01:00 PM EDT,"Buffalo, NY",KeyBank Center,19070,15717
+126,gid_401559362,New Jersey Devils,tid_11,4,Minnesota Wild,tid_30,3,True,0,False,False,"October 29, 2023",05:00 PM EDT,"Newark, NJ",Prudential Center,16514,16514
+127,gid_401559364,Washington Capitals,tid_23,3,San Jose Sharks,tid_18,1,True,0,False,False,"October 29, 2023",05:00 PM EDT,"Washington, DC",Capital One Arena,18506,15856
+128,gid_401555903,Edmonton Oilers,tid_6,5,Calgary Flames,tid_3,2,True,0,False,False,"October 29, 2023",07:00 PM EDT,"Edmonton, AB",Commonwealth Stadium,0,55411
+129,gid_401559363,Philadelphia Flyers,tid_15,2,Carolina Hurricanes,tid_7,3,False,0,False,False,"October 30, 2023",07:00 PM EDT,"Philadelphia, PA",Wells Fargo Center,19538,15569
+130,gid_401559365,Boston Bruins,tid_1,3,Florida Panthers,tid_26,2,True,1,False,False,"October 30, 2023",07:00 PM EDT,"Boston, MA",TD Garden,17850,17850
+131,gid_401559366,Tampa Bay Lightning,tid_20,3,Seattle Kraken,tid_124292,4,False,1,False,False,"October 30, 2023",07:00 PM EDT,"Tampa, FL",Amalie Arena,19092,19092
+132,gid_401559367,Pittsburgh Penguins,tid_16,3,Anaheim Ducks,tid_25,4,False,0,False,False,"October 30, 2023",07:00 PM EDT,"Pittsburgh, PA",PPG Paints Arena,18187,16903
+133,gid_401559368,New York Islanders,tid_12,3,Detroit Red Wings,tid_5,4,False,1,False,False,"October 30, 2023",07:30 PM EDT,"Elmont, NY",UBS Arena,17113,15407
+134,gid_401559369,Winnipeg Jets,tid_28,2,New York Rangers,tid_13,3,False,1,False,False,"October 30, 2023",07:30 PM EDT,"Winnipeg, MB",Canada Life Centre,15004,11898
+135,gid_401559370,Dallas Stars,tid_9,5,Columbus Blue Jackets,tid_29,3,True,0,False,False,"October 30, 2023",08:00 PM EDT,"Dallas, TX",American Airlines Center,18532,18532
+136,gid_401559371,Arizona Coyotes,tid_24,8,Chicago Blackhawks,tid_4,1,True,0,False,False,"October 30, 2023",10:00 PM EDT,"Tempe, AZ",Mullett Arena,4400,4600
+137,gid_401559372,Vegas Golden Knights,tid_37,3,Montreal Canadiens,tid_10,2,True,2,False,False,"October 30, 2023",10:00 PM EDT,"Las Vegas, NV",T-Mobile Arena,17367,17791
+138,gid_401559374,Toronto Maple Leafs,tid_21,1,Los Angeles Kings,tid_8,4,False,0,False,False,"October 31, 2023",08:00 PM EDT,"Toronto, ON",Scotiabank Arena,18819,18531
+139,gid_401559373,Vancouver Canucks,tid_22,5,Nashville Predators,tid_27,2,True,0,False,False,"October 31, 2023",10:00 PM EDT,"Vancouver, BC",Rogers Arena,18910,18413
+140,gid_401559375,Philadelphia Flyers,tid_15,2,Buffalo Sabres,tid_2,5,False,0,False,False,"November 01, 2023",07:00 PM EDT,"Philadelphia, PA",Wells Fargo Center,19538,17279
+141,gid_401559376,Calgary Flames,tid_3,3,Dallas Stars,tid_9,4,False,0,False,False,"November 01, 2023",08:30 PM EDT,"Calgary, AB",Scotiabank Saddledome,19289,16786
+142,gid_401559377,Colorado Avalanche,tid_17,4,St. Louis Blues,tid_19,1,True,0,False,False,"November 01, 2023",09:30 PM EDT,"Denver, CO",Ball Arena,18007,18091
+143,gid_401559378,Anaheim Ducks,tid_25,4,Arizona Coyotes,tid_24,3,True,1,False,False,"November 01, 2023",10:00 PM EDT,"Anaheim, CA",Honda Center,17174,14894
+144,gid_401559380,Ottawa Senators,tid_14,2,Los Angeles Kings,tid_8,3,False,0,False,False,"November 02, 2023",07:00 PM EDT,"Ottawa, ON",Canadian Tire Centre,19153,16216
+145,gid_401559381,Detroit Red Wings,tid_5,0,Florida Panthers,tid_26,2,False,0,False,False,"November 02, 2023",07:00 PM EDT,"Detroit, MI",Little Caesars Arena,19515,17233
+146,gid_401559382,New York Rangers,tid_13,2,Carolina Hurricanes,tid_7,1,True,0,False,False,"November 02, 2023",07:00 PM EDT,"New York, NY",Madison Square Garden,18006,18006
+147,gid_401559383,Washington Capitals,tid_23,0,New York Islanders,tid_12,3,False,0,False,False,"November 02, 2023",07:00 PM EDT,"Washington, DC",Capital One Arena,18506,16209
+148,gid_401559384,Columbus Blue Jackets,tid_29,4,Tampa Bay Lightning,tid_20,2,True,0,False,False,"November 02, 2023",07:00 PM EDT,"Columbus, OH",Nationwide Arena,18144,14276
+149,gid_401559379,Boston Bruins,tid_1,3,Toronto Maple Leafs,tid_21,2,True,2,False,False,"November 02, 2023",07:30 PM EDT,"Boston, MA",TD Garden,17850,17850
+150,gid_401559385,Minnesota Wild,tid_30,3,New Jersey Devils,tid_11,5,False,0,False,False,"November 02, 2023",08:00 PM EDT,"Saint Paul, MN",Xcel Energy Center,17954,18399
+151,gid_401559386,Edmonton Oilers,tid_6,3,Dallas Stars,tid_9,4,False,0,False,False,"November 02, 2023",09:00 PM EDT,"Edmonton, AB",Rogers Place,18641,17290
+152,gid_401559387,Arizona Coyotes,tid_24,3,Montreal Canadiens,tid_10,2,True,0,False,False,"November 02, 2023",10:00 PM EDT,"Tempe, AZ",Mullett Arena,4400,4600
+153,gid_401559388,Vegas Golden Knights,tid_37,5,Winnipeg Jets,tid_28,2,True,0,False,False,"November 02, 2023",10:00 PM EDT,"Las Vegas, NV",T-Mobile Arena,17367,17878
+154,gid_401559389,Seattle Kraken,tid_124292,4,Nashville Predators,tid_27,2,True,0,False,False,"November 02, 2023",10:00 PM EDT,"Seattle, WA",Climate Pledge Arena,17100,17151
+155,gid_401559390,San Jose Sharks,tid_18,1,Vancouver Canucks,tid_22,10,False,0,False,False,"November 02, 2023",10:30 PM EDT,"San Jose, CA",SAP Center at San Jose,17562,10719
+156,gid_401559391,Buffalo Sabres,tid_2,1,Philadelphia Flyers,tid_15,5,False,0,False,False,"November 03, 2023",07:00 PM EDT,"Buffalo, NY",KeyBank Center,19070,16612
+157,gid_401559392,St. Louis Blues,tid_19,4,New Jersey Devils,tid_11,1,True,0,False,False,"November 03, 2023",08:00 PM EDT,"Saint Louis, MO",Enterprise Center,18096,18096
+158,gid_401559393,Edmonton Oilers,tid_6,2,Nashville Predators,tid_27,5,False,0,False,False,"November 04, 2023",03:00 PM EDT,"Edmonton, AB",Rogers Place,18641,18354
+159,gid_401559394,Arizona Coyotes,tid_24,3,Winnipeg Jets,tid_28,5,False,0,False,False,"November 04, 2023",04:00 PM EDT,"Tempe, AZ",Mullett Arena,4400,4600
+160,gid_401559395,Toronto Maple Leafs,tid_21,4,Buffalo Sabres,tid_2,6,False,0,False,False,"November 04, 2023",07:00 PM EDT,"Toronto, ON",Scotiabank Arena,18819,18902
+161,gid_401559396,Ottawa Senators,tid_14,4,Tampa Bay Lightning,tid_20,6,False,0,False,False,"November 04, 2023",07:00 PM EDT,"Ottawa, ON",Canadian Tire Centre,19153,17387
+162,gid_401559397,Detroit Red Wings,tid_5,5,Boston Bruins,tid_1,4,True,0,False,False,"November 04, 2023",07:00 PM EDT,"Detroit, MI",Little Caesars Arena,19515,18676
+163,gid_401559399,Washington Capitals,tid_23,2,Columbus Blue Jackets,tid_29,1,True,0,False,False,"November 04, 2023",07:00 PM EDT,"Washington, DC",Capital One Arena,18506,18573
+164,gid_401559400,St. Louis Blues,tid_19,6,Montreal Canadiens,tid_10,3,True,0,False,False,"November 04, 2023",07:00 PM EDT,"Saint Louis, MO",Enterprise Center,18096,18096
+165,gid_401559398,Philadelphia Flyers,tid_15,0,Los Angeles Kings,tid_8,5,False,0,False,False,"November 04, 2023",07:30 PM EDT,"Philadelphia, PA",Wells Fargo Center,19538,18304
+166,gid_401559401,New York Islanders,tid_12,3,Carolina Hurricanes,tid_7,4,False,1,False,False,"November 04, 2023",07:30 PM EDT,"Elmont, NY",UBS Arena,17113,17255
+167,gid_401559402,Chicago Blackhawks,tid_4,5,Florida Panthers,tid_26,2,True,0,False,False,"November 04, 2023",08:00 PM EDT,"Chicago, IL",United Center,19717,18666
+168,gid_401559403,Minnesota Wild,tid_30,5,New York Rangers,tid_13,4,True,2,False,False,"November 04, 2023",08:00 PM EDT,"Saint Paul, MN",Xcel Energy Center,17954,18678
+169,gid_401559404,Vancouver Canucks,tid_22,2,Dallas Stars,tid_9,0,True,0,False,False,"November 04, 2023",10:00 PM EDT,"Vancouver, BC",Rogers Arena,18910,18895
+170,gid_401559405,Vegas Golden Knights,tid_37,7,Colorado Avalanche,tid_17,0,True,0,False,False,"November 04, 2023",10:00 PM EDT,"Las Vegas, NV",T-Mobile Arena,17367,18512
+171,gid_401559406,San Jose Sharks,tid_18,2,Pittsburgh Penguins,tid_16,10,False,0,False,False,"November 04, 2023",10:00 PM EDT,"San Jose, CA",SAP Center at San Jose,17562,17435
+172,gid_401559407,Seattle Kraken,tid_124292,3,Calgary Flames,tid_3,6,False,0,False,False,"November 04, 2023",10:00 PM EDT,"Seattle, WA",Climate Pledge Arena,17100,17151
+173,gid_401559408,Chicago Blackhawks,tid_4,2,New Jersey Devils,tid_11,4,False,0,False,False,"November 05, 2023",07:00 PM EST,"Chicago, IL",United Center,19717,18388
+174,gid_401559409,Anaheim Ducks,tid_25,4,Vegas Golden Knights,tid_37,2,True,0,False,False,"November 05, 2023",08:00 PM EST,"Anaheim, CA",Honda Center,17174,15720
+175,gid_401559410,Toronto Maple Leafs,tid_21,6,Tampa Bay Lightning,tid_20,5,True,1,False,False,"November 06, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,18445
+176,gid_401559411,Florida Panthers,tid_26,5,Columbus Blue Jackets,tid_29,4,True,1,False,False,"November 06, 2023",07:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,17103
+177,gid_401559412,Dallas Stars,tid_9,2,Boston Bruins,tid_1,3,False,0,False,False,"November 06, 2023",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+178,gid_401559413,Vancouver Canucks,tid_22,6,Edmonton Oilers,tid_6,2,True,0,False,False,"November 06, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18857
+179,gid_401559414,Montreal Canadiens,tid_10,3,Tampa Bay Lightning,tid_20,5,False,0,False,False,"November 07, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,21105
+180,gid_401559925,Carolina Hurricanes,tid_7,3,Buffalo Sabres,tid_2,2,True,1,False,False,"November 07, 2023",07:00 PM EST,"Raleigh, NC",PNC Arena,18680,18700
+181,gid_401559415,New York Islanders,tid_12,2,Minnesota Wild,tid_30,4,False,0,False,False,"November 07, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,13527
+182,gid_401559416,New York Rangers,tid_13,5,Detroit Red Wings,tid_5,3,True,0,False,False,"November 07, 2023",07:30 PM EST,"New York, NY",Madison Square Garden,18006,18006
+183,gid_401559417,St. Louis Blues,tid_19,2,Winnipeg Jets,tid_28,5,False,0,False,False,"November 07, 2023",08:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+184,gid_401559418,Calgary Flames,tid_3,4,Nashville Predators,tid_27,2,True,0,False,False,"November 07, 2023",09:00 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,16975
+185,gid_401559419,Arizona Coyotes,tid_24,4,Seattle Kraken,tid_124292,3,True,2,False,False,"November 07, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+186,gid_401559420,Colorado Avalanche,tid_17,6,New Jersey Devils,tid_11,3,True,0,False,False,"November 07, 2023",10:00 PM EST,"Denver, CO",Ball Arena,18007,18087
+187,gid_401559421,Anaheim Ducks,tid_25,0,Pittsburgh Penguins,tid_16,2,False,0,False,False,"November 07, 2023",10:00 PM EST,"Anaheim, CA",Honda Center,17174,16043
+188,gid_401559422,San Jose Sharks,tid_18,2,Philadelphia Flyers,tid_15,1,True,0,False,False,"November 07, 2023",10:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,10074
+189,gid_401559423,Toronto Maple Leafs,tid_21,3,Ottawa Senators,tid_14,6,False,0,False,False,"November 08, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,18372
+190,gid_401559424,Washington Capitals,tid_23,3,Florida Panthers,tid_26,4,False,1,False,False,"November 08, 2023",07:30 PM EST,"Washington, DC",Capital One Arena,18506,16104
+191,gid_401559425,Vegas Golden Knights,tid_37,1,Los Angeles Kings,tid_8,4,False,0,False,False,"November 08, 2023",10:00 PM EST,"Las Vegas, NV",T-Mobile Arena,17367,18330
+192,gid_401559426,Boston Bruins,tid_1,5,New York Islanders,tid_12,2,True,0,False,False,"November 09, 2023",07:00 PM EST,"Boston, MA",TD Garden,17850,17850
+193,gid_401559427,Ottawa Senators,tid_14,2,Vancouver Canucks,tid_22,5,False,0,False,False,"November 09, 2023",07:00 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,16653
+194,gid_401559428,Detroit Red Wings,tid_5,2,Montreal Canadiens,tid_10,3,False,1,False,False,"November 09, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,18504
+195,gid_401559429,Tampa Bay Lightning,tid_20,3,Chicago Blackhawks,tid_4,5,False,0,False,False,"November 09, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+196,gid_401559430,New York Rangers,tid_13,4,Minnesota Wild,tid_30,1,True,0,False,False,"November 09, 2023",07:00 PM EST,"New York, NY",Madison Square Garden,18006,18006
+197,gid_401559431,Columbus Blue Jackets,tid_29,2,Dallas Stars,tid_9,5,False,0,False,False,"November 09, 2023",07:30 PM EST,"Columbus, OH",Nationwide Arena,18144,15253
+198,gid_401559432,St. Louis Blues,tid_19,2,Arizona Coyotes,tid_24,1,True,0,False,False,"November 09, 2023",08:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+199,gid_401559433,Winnipeg Jets,tid_28,6,Nashville Predators,tid_27,3,True,0,False,False,"November 09, 2023",08:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,12199
+200,gid_401559434,Colorado Avalanche,tid_17,3,Seattle Kraken,tid_124292,4,False,0,False,False,"November 09, 2023",09:00 PM EST,"Denver, CO",Ball Arena,18007,18124
+201,gid_401559435,Los Angeles Kings,tid_8,3,Pittsburgh Penguins,tid_16,4,False,1,False,False,"November 09, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+202,gid_401559436,San Jose Sharks,tid_18,3,Edmonton Oilers,tid_6,2,True,0,False,False,"November 09, 2023",10:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,12206
+203,gid_401559437,Buffalo Sabres,tid_2,3,Minnesota Wild,tid_30,2,True,0,False,False,"November 10, 2023",07:00 PM EST,"Buffalo, NY",KeyBank Center,19070,17031
+204,gid_401559438,Toronto Maple Leafs,tid_21,5,Calgary Flames,tid_3,4,True,2,False,False,"November 10, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,18939
+205,gid_401559439,Florida Panthers,tid_26,5,Carolina Hurricanes,tid_7,2,True,0,False,False,"November 10, 2023",07:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,17845
+206,gid_401559440,New Jersey Devils,tid_11,2,Washington Capitals,tid_23,4,False,0,False,False,"November 10, 2023",07:00 PM EST,"Newark, NJ",Prudential Center,16514,16514
+207,gid_401559441,Vegas Golden Knights,tid_37,5,San Jose Sharks,tid_18,0,True,0,False,False,"November 10, 2023",10:00 PM EST,"Las Vegas, NV",T-Mobile Arena,17367,18423
+208,gid_401559442,Anaheim Ducks,tid_25,3,Philadelphia Flyers,tid_15,6,False,0,False,False,"November 10, 2023",10:00 PM EST,"Anaheim, CA",Honda Center,17174,15550
+209,gid_401559443,Detroit Red Wings,tid_5,5,Columbus Blue Jackets,tid_29,4,True,0,False,False,"November 11, 2023",01:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,19156
+210,gid_401559444,Winnipeg Jets,tid_28,2,Dallas Stars,tid_9,3,False,0,False,False,"November 11, 2023",03:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,12420
+211,gid_401559445,Toronto Maple Leafs,tid_21,5,Vancouver Canucks,tid_22,2,True,0,False,False,"November 11, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,19107
+212,gid_401559446,Montreal Canadiens,tid_10,3,Boston Bruins,tid_1,2,True,1,False,False,"November 11, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,21105
+213,gid_401559447,Ottawa Senators,tid_14,4,Calgary Flames,tid_3,1,True,0,False,False,"November 11, 2023",07:00 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,18874
+214,gid_401559448,Tampa Bay Lightning,tid_20,0,Carolina Hurricanes,tid_7,4,False,0,False,False,"November 11, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+215,gid_401559449,Pittsburgh Penguins,tid_16,4,Buffalo Sabres,tid_2,0,True,0,False,False,"November 11, 2023",07:30 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18429
+216,gid_401559450,New York Islanders,tid_12,1,Washington Capitals,tid_23,4,False,0,False,False,"November 11, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,16519
+217,gid_401559451,Nashville Predators,tid_27,5,Arizona Coyotes,tid_24,7,False,0,False,False,"November 11, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17303
+218,gid_401559452,Colorado Avalanche,tid_17,2,St. Louis Blues,tid_19,8,False,0,False,False,"November 11, 2023",09:00 PM EST,"Denver, CO",Ball Arena,18007,18132
+219,gid_401559453,Seattle Kraken,tid_124292,1,Edmonton Oilers,tid_6,4,False,0,False,False,"November 11, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+220,gid_401559454,Los Angeles Kings,tid_8,2,Philadelphia Flyers,tid_15,4,False,0,False,False,"November 11, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+221,gid_401559455,Florida Panthers,tid_26,4,Chicago Blackhawks,tid_4,3,True,0,False,False,"November 12, 2023",01:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,19359
+222,gid_401559456,Minnesota Wild,tid_30,3,Dallas Stars,tid_9,8,False,0,False,False,"November 12, 2023",06:00 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,18509
+223,gid_401559457,Montreal Canadiens,tid_10,2,Vancouver Canucks,tid_22,5,False,0,False,False,"November 12, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,21105
+224,gid_401559458,New York Rangers,tid_13,4,Columbus Blue Jackets,tid_29,3,True,2,False,False,"November 12, 2023",07:00 PM EST,"New York, NY",Madison Square Garden,18006,18006
+225,gid_401559459,Anaheim Ducks,tid_25,4,San Jose Sharks,tid_18,1,True,0,False,False,"November 12, 2023",08:00 PM EST,"Anaheim, CA",Honda Center,17174,16471
+226,gid_401559460,Edmonton Oilers,tid_6,4,New York Islanders,tid_12,1,True,0,False,False,"November 13, 2023",08:30 PM EST,"Edmonton, AB",Rogers Place,18641,17881
+227,gid_401559461,Seattle Kraken,tid_124292,1,Colorado Avalanche,tid_17,5,False,0,False,False,"November 13, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+228,gid_401559462,Buffalo Sabres,tid_2,2,Boston Bruins,tid_1,5,False,0,False,False,"November 14, 2023",07:00 PM EST,"Buffalo, NY",KeyBank Center,19070,14840
+229,gid_401559463,Montreal Canadiens,tid_10,1,Calgary Flames,tid_3,2,False,0,False,False,"November 14, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,21105
+230,gid_401559464,Washington Capitals,tid_23,3,Vegas Golden Knights,tid_37,0,True,0,False,False,"November 14, 2023",07:00 PM EST,"Washington, DC",Capital One Arena,18506,16598
+231,gid_401559465,Columbus Blue Jackets,tid_29,3,Pittsburgh Penguins,tid_16,5,False,0,False,False,"November 14, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,16596
+232,gid_401559466,St. Louis Blues,tid_19,5,Tampa Bay Lightning,tid_20,0,True,0,False,False,"November 14, 2023",08:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,17621
+233,gid_401559467,Nashville Predators,tid_27,2,Anaheim Ducks,tid_25,3,False,0,False,False,"November 14, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17159
+234,gid_401559468,Dallas Stars,tid_9,4,Arizona Coyotes,tid_24,3,True,1,False,False,"November 14, 2023",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+235,gid_401559469,Winnipeg Jets,tid_28,6,New Jersey Devils,tid_11,3,True,0,False,False,"November 14, 2023",08:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,11717
+236,gid_401559470,San Jose Sharks,tid_18,3,Florida Panthers,tid_26,5,False,0,False,False,"November 14, 2023",10:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,10108
+237,gid_401559471,Carolina Hurricanes,tid_7,1,Philadelphia Flyers,tid_15,3,False,0,False,False,"November 15, 2023",07:30 PM EST,"Raleigh, NC",PNC Arena,18680,18700
+238,gid_401559472,Edmonton Oilers,tid_6,4,Seattle Kraken,tid_124292,3,True,1,False,False,"November 15, 2023",08:30 PM EST,"Edmonton, AB",Rogers Place,18641,18347
+239,gid_401559473,Colorado Avalanche,tid_17,8,Anaheim Ducks,tid_25,2,True,0,False,False,"November 15, 2023",09:00 PM EST,"Denver, CO",Ball Arena,18007,18029
+240,gid_401559474,Vancouver Canucks,tid_22,4,New York Islanders,tid_12,3,True,1,False,False,"November 15, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18972
+241,gid_401555904,Ottawa Senators,tid_14,5,Detroit Red Wings,tid_5,4,True,1,False,False,"November 16, 2023",02:00 PM EST,"Stockholm, Sweden",Avicii Arena,13850,12487
+242,gid_401559475,Montreal Canadiens,tid_10,5,Vegas Golden Knights,tid_37,6,False,0,False,False,"November 16, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,21105
+243,gid_401559476,Pittsburgh Penguins,tid_16,2,New Jersey Devils,tid_11,5,False,0,False,False,"November 16, 2023",07:00 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18321
+244,gid_401559477,Columbus Blue Jackets,tid_29,2,Arizona Coyotes,tid_24,3,False,0,False,False,"November 16, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,15909
+245,gid_401559478,Chicago Blackhawks,tid_4,2,Tampa Bay Lightning,tid_20,4,False,0,False,False,"November 16, 2023",08:00 PM EST,"Chicago, IL",United Center,19717,18691
+246,gid_401559479,Calgary Flames,tid_3,5,Vancouver Canucks,tid_22,2,True,0,False,False,"November 16, 2023",09:00 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,17501
+247,gid_401559480,Seattle Kraken,tid_124292,4,New York Islanders,tid_12,3,True,2,False,False,"November 16, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+248,gid_401559481,Los Angeles Kings,tid_8,2,Florida Panthers,tid_26,1,True,0,False,False,"November 16, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,18230,17243
+249,gid_401559482,San Jose Sharks,tid_18,5,St. Louis Blues,tid_19,1,True,0,False,False,"November 16, 2023",10:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,10452
+250,gid_401555905,Detroit Red Wings,tid_5,2,Toronto Maple Leafs,tid_21,3,False,0,False,False,"November 17, 2023",02:00 PM EST,"Stockholm, Sweden",Avicii Arena,13850,13510
+251,gid_401559483,Winnipeg Jets,tid_28,3,Buffalo Sabres,tid_2,2,True,0,False,False,"November 17, 2023",08:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,11340
+252,gid_401559484,Anaheim Ducks,tid_25,1,Florida Panthers,tid_26,2,False,0,False,False,"November 17, 2023",10:00 PM EST,"Anaheim, CA",Honda Center,17174,14932
+253,gid_401555906,Ottawa Senators,tid_14,2,Minnesota Wild,tid_30,1,True,2,False,False,"November 18, 2023",11:00 AM EST,"Stockholm, Sweden",Avicii Arena,13850,13213
+254,gid_401559485,Philadelphia Flyers,tid_15,4,Vegas Golden Knights,tid_37,3,True,1,False,False,"November 18, 2023",01:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19538,18113
+255,gid_401559493,Nashville Predators,tid_27,4,Chicago Blackhawks,tid_4,2,True,0,False,False,"November 18, 2023",02:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17397
+256,gid_401559486,Tampa Bay Lightning,tid_20,6,Edmonton Oilers,tid_6,4,True,0,False,False,"November 18, 2023",04:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+257,gid_401559487,Boston Bruins,tid_1,5,Montreal Canadiens,tid_10,2,True,0,False,False,"November 18, 2023",07:00 PM EST,"Boston, MA",TD Garden,17850,17850
+258,gid_401559488,New Jersey Devils,tid_11,3,New York Rangers,tid_13,5,False,0,False,False,"November 18, 2023",07:00 PM EST,"Newark, NJ",Prudential Center,16514,17086
+259,gid_401559490,Carolina Hurricanes,tid_7,4,Pittsburgh Penguins,tid_16,2,True,0,False,False,"November 18, 2023",07:00 PM EST,"Raleigh, NC",PNC Arena,18680,18700
+260,gid_401559491,Winnipeg Jets,tid_28,5,Arizona Coyotes,tid_24,2,True,0,False,False,"November 18, 2023",07:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,12103
+261,gid_401559492,Calgary Flames,tid_3,4,New York Islanders,tid_12,5,False,2,False,False,"November 18, 2023",07:00 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,17167
+262,gid_401559489,Washington Capitals,tid_23,4,Columbus Blue Jackets,tid_29,3,True,0,False,False,"November 18, 2023",07:30 PM EST,"Washington, DC",Capital One Arena,18506,18573
+263,gid_401559494,Dallas Stars,tid_9,3,Colorado Avalanche,tid_17,6,False,0,False,False,"November 18, 2023",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+264,gid_401559495,Vancouver Canucks,tid_22,3,Seattle Kraken,tid_124292,4,False,0,False,False,"November 18, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18857
+265,gid_401559496,Los Angeles Kings,tid_8,5,St. Louis Blues,tid_19,1,True,0,False,False,"November 18, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+266,gid_401555907,Minnesota Wild,tid_30,3,Toronto Maple Leafs,tid_21,4,False,1,False,False,"November 19, 2023",08:00 AM EST,"Stockholm, Sweden",Avicii Arena,13850,13356
+267,gid_401559497,Philadelphia Flyers,tid_15,5,Columbus Blue Jackets,tid_29,2,True,0,False,False,"November 19, 2023",05:30 PM EST,"Philadelphia, PA",Wells Fargo Center,19538,17416
+268,gid_401559498,Pittsburgh Penguins,tid_16,3,Vegas Golden Knights,tid_37,0,True,0,False,False,"November 19, 2023",06:00 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18120
+269,gid_401559499,Chicago Blackhawks,tid_4,2,Buffalo Sabres,tid_2,3,False,0,False,False,"November 19, 2023",07:00 PM EST,"Chicago, IL",United Center,19717,19027
+270,gid_401559500,Anaheim Ducks,tid_25,1,St. Louis Blues,tid_19,3,False,0,False,False,"November 19, 2023",08:00 PM EST,"Anaheim, CA",Honda Center,17174,15243
+271,gid_401559501,Tampa Bay Lightning,tid_20,5,Boston Bruins,tid_1,4,True,1,False,False,"November 20, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+272,gid_401559502,Florida Panthers,tid_26,5,Edmonton Oilers,tid_6,3,True,0,False,False,"November 20, 2023",07:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,19628
+273,gid_401559503,Nashville Predators,tid_27,4,Colorado Avalanche,tid_17,3,True,0,False,False,"November 20, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17159
+274,gid_401559504,Dallas Stars,tid_9,6,New York Rangers,tid_13,3,True,0,False,False,"November 20, 2023",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+275,gid_401559505,Arizona Coyotes,tid_24,1,Los Angeles Kings,tid_8,4,False,0,False,False,"November 20, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+276,gid_401559506,Vancouver Canucks,tid_22,3,San Jose Sharks,tid_18,1,True,0,False,False,"November 20, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18718
+277,gid_401559507,Seattle Kraken,tid_124292,3,Calgary Flames,tid_3,4,False,1,False,False,"November 20, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+278,gid_401559508,Detroit Red Wings,tid_5,4,New Jersey Devils,tid_11,0,True,0,False,False,"November 22, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,19515
+279,gid_401559509,Tampa Bay Lightning,tid_20,2,Winnipeg Jets,tid_28,3,False,1,False,False,"November 22, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+280,gid_401559510,Florida Panthers,tid_26,1,Boston Bruins,tid_1,3,False,0,False,False,"November 22, 2023",07:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,19327
+281,gid_401559511,Pittsburgh Penguins,tid_16,0,New York Rangers,tid_13,1,False,0,False,False,"November 22, 2023",07:00 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18250
+282,gid_401559512,Washington Capitals,tid_23,4,Buffalo Sabres,tid_2,3,True,1,False,False,"November 22, 2023",07:00 PM EST,"Washington, DC",Capital One Arena,18506,18573
+283,gid_401559513,Carolina Hurricanes,tid_7,6,Edmonton Oilers,tid_6,3,True,0,False,False,"November 22, 2023",07:00 PM EST,"Raleigh, NC",PNC Arena,18680,18805
+284,gid_401559514,Columbus Blue Jackets,tid_29,7,Chicago Blackhawks,tid_4,3,True,0,False,False,"November 22, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,18158
+285,gid_401559515,New York Islanders,tid_12,3,Philadelphia Flyers,tid_15,2,True,0,False,False,"November 22, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,17255
+286,gid_401559516,Nashville Predators,tid_27,4,Calgary Flames,tid_3,2,True,0,False,False,"November 22, 2023",09:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17252
+287,gid_401559517,Arizona Coyotes,tid_24,5,St. Louis Blues,tid_19,6,False,0,False,False,"November 22, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+288,gid_401559518,Dallas Stars,tid_9,1,Vegas Golden Knights,tid_37,2,False,1,False,False,"November 22, 2023",09:30 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+289,gid_401559519,Colorado Avalanche,tid_17,5,Vancouver Canucks,tid_22,2,True,0,False,False,"November 22, 2023",10:00 PM EST,"Denver, CO",Ball Arena,18007,18133
+290,gid_401559520,Anaheim Ducks,tid_25,3,Montreal Canadiens,tid_10,4,False,0,False,False,"November 22, 2023",10:00 PM EST,"Anaheim, CA",Honda Center,17174,15168
+291,gid_401559521,Seattle Kraken,tid_124292,7,San Jose Sharks,tid_18,1,True,0,False,False,"November 22, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+292,gid_401559522,Boston Bruins,tid_1,2,Detroit Red Wings,tid_5,5,False,0,False,False,"November 24, 2023",01:00 PM EST,"Boston, MA",TD Garden,17850,17850
+293,gid_401559523,Philadelphia Flyers,tid_15,1,New York Rangers,tid_13,3,False,0,False,False,"November 24, 2023",01:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19538,19032
+294,gid_401559524,Chicago Blackhawks,tid_4,4,Toronto Maple Leafs,tid_21,3,True,1,False,False,"November 24, 2023",02:00 PM EST,"Chicago, IL",United Center,19717,20238
+295,gid_401559525,Washington Capitals,tid_23,0,Edmonton Oilers,tid_6,5,False,0,False,False,"November 24, 2023",03:00 PM EST,"Washington, DC",Capital One Arena,18506,18573
+296,gid_401559527,St. Louis Blues,tid_19,3,Nashville Predators,tid_27,8,False,0,False,False,"November 24, 2023",03:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+297,gid_401559532,New Jersey Devils,tid_11,1,Columbus Blue Jackets,tid_29,2,False,0,False,False,"November 24, 2023",03:00 PM EST,"Newark, NJ",Prudential Center,16514,16514
+298,gid_401559528,Anaheim Ducks,tid_25,2,Los Angeles Kings,tid_8,5,False,0,False,False,"November 24, 2023",03:30 PM EST,"Anaheim, CA",Honda Center,17174,17205
+299,gid_401559529,San Jose Sharks,tid_18,2,Montreal Canadiens,tid_10,3,False,2,False,False,"November 24, 2023",03:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,16897
+300,gid_401559530,Buffalo Sabres,tid_2,3,Pittsburgh Penguins,tid_16,2,True,0,False,False,"November 24, 2023",06:00 PM EST,"Buffalo, NY",KeyBank Center,19070,19070
+301,gid_401559531,Ottawa Senators,tid_14,3,New York Islanders,tid_12,5,False,0,False,False,"November 24, 2023",07:30 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,17693
+302,gid_401559526,Carolina Hurricanes,tid_7,2,Tampa Bay Lightning,tid_20,8,False,0,False,False,"November 24, 2023",08:00 PM EST,"Raleigh, NC",PNC Arena,18680,18802
+303,gid_401559533,Florida Panthers,tid_26,0,Winnipeg Jets,tid_28,3,False,0,False,False,"November 24, 2023",08:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,18801
+304,gid_401559534,Dallas Stars,tid_9,4,Calgary Flames,tid_3,7,False,0,False,False,"November 24, 2023",08:30 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+305,gid_401559535,Minnesota Wild,tid_30,2,Colorado Avalanche,tid_17,3,False,0,False,False,"November 24, 2023",08:30 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,19057
+306,gid_401559536,Seattle Kraken,tid_124292,1,Vancouver Canucks,tid_22,5,False,0,False,False,"November 24, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+307,gid_401559537,New York Rangers,tid_13,7,Boston Bruins,tid_1,4,True,0,False,False,"November 25, 2023",01:00 PM EST,"New York, NY",Madison Square Garden,18006,18006
+308,gid_401559538,Los Angeles Kings,tid_8,4,Montreal Canadiens,tid_10,0,True,0,False,False,"November 25, 2023",04:00 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+309,gid_401559539,New Jersey Devils,tid_11,7,Buffalo Sabres,tid_2,2,True,0,False,False,"November 25, 2023",07:00 PM EST,"Newark, NJ",Prudential Center,16514,16514
+310,gid_401559540,Pittsburgh Penguins,tid_16,3,Toronto Maple Leafs,tid_21,2,True,0,False,False,"November 25, 2023",07:00 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18229
+311,gid_401559541,New York Islanders,tid_12,0,Philadelphia Flyers,tid_15,1,False,2,False,False,"November 25, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,17255
+312,gid_401559542,Colorado Avalanche,tid_17,3,Calgary Flames,tid_3,1,True,0,False,False,"November 25, 2023",10:00 PM EST,"Denver, CO",Ball Arena,18007,18139
+313,gid_401559543,Vegas Golden Knights,tid_37,0,Arizona Coyotes,tid_24,2,False,0,False,False,"November 25, 2023",10:00 PM EST,"Las Vegas, NV",T-Mobile Arena,17367,18591
+314,gid_401559544,San Jose Sharks,tid_18,4,Vancouver Canucks,tid_22,3,True,0,False,False,"November 25, 2023",10:00 PM EST,"San Jose, CA",SAP Center at San Jose,17562,15538
+315,gid_401559545,Detroit Red Wings,tid_5,4,Minnesota Wild,tid_30,1,True,0,False,False,"November 26, 2023",01:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,18833
+316,gid_401559546,Chicago Blackhawks,tid_4,2,St. Louis Blues,tid_19,4,False,0,False,False,"November 26, 2023",02:00 PM EST,"Chicago, IL",United Center,19717,18223
+317,gid_401559547,Carolina Hurricanes,tid_7,3,Columbus Blue Jackets,tid_29,2,True,0,False,False,"November 26, 2023",05:00 PM EST,"Raleigh, NC",PNC Arena,18680,18700
+318,gid_401559548,Nashville Predators,tid_27,3,Winnipeg Jets,tid_28,2,True,0,False,False,"November 26, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17159
+319,gid_401559549,Edmonton Oilers,tid_6,8,Anaheim Ducks,tid_25,2,True,0,False,False,"November 26, 2023",09:00 PM EST,"Edmonton, AB",Rogers Place,18641,17781
+320,gid_401559550,Ottawa Senators,tid_14,0,Florida Panthers,tid_26,5,False,0,False,False,"November 27, 2023",07:00 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,15594
+321,gid_401559551,New York Rangers,tid_13,1,Buffalo Sabres,tid_2,5,False,0,False,False,"November 27, 2023",07:00 PM EST,"New York, NY",Madison Square Garden,18006,18006
+322,gid_401559552,Columbus Blue Jackets,tid_29,5,Boston Bruins,tid_1,2,True,0,False,False,"November 27, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,14357
+323,gid_401559553,Colorado Avalanche,tid_17,4,Tampa Bay Lightning,tid_20,1,True,0,False,False,"November 27, 2023",09:00 PM EST,"Denver, CO",Ball Arena,18007,18009
+324,gid_401559554,Calgary Flames,tid_3,2,Vegas Golden Knights,tid_37,1,True,1,False,False,"November 27, 2023",09:30 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,17031
+325,gid_401559556,San Jose Sharks,tid_18,2,Washington Capitals,tid_23,1,True,0,False,False,"November 27, 2023",10:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,10759
+326,gid_401559557,Toronto Maple Leafs,tid_21,2,Florida Panthers,tid_26,1,True,2,False,False,"November 28, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,18508
+327,gid_401559558,New Jersey Devils,tid_11,5,New York Islanders,tid_12,4,True,0,False,False,"November 28, 2023",07:00 PM EST,"Newark, NJ",Prudential Center,16514,16091
+328,gid_401559559,Philadelphia Flyers,tid_15,1,Carolina Hurricanes,tid_7,4,False,0,False,False,"November 28, 2023",07:30 PM EST,"Philadelphia, PA",Wells Fargo Center,19538,17885
+329,gid_401559560,Nashville Predators,tid_27,3,Pittsburgh Penguins,tid_16,2,True,1,False,False,"November 28, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17159
+330,gid_401559561,Minnesota Wild,tid_30,3,St. Louis Blues,tid_19,1,True,0,False,False,"November 28, 2023",08:00 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,17563
+331,gid_401559562,Winnipeg Jets,tid_28,0,Dallas Stars,tid_9,2,False,0,False,False,"November 28, 2023",08:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,11439
+332,gid_401559563,Chicago Blackhawks,tid_4,4,Seattle Kraken,tid_124292,3,True,0,False,False,"November 28, 2023",08:30 PM EST,"Chicago, IL",United Center,19717,17070
+333,gid_401559564,Edmonton Oilers,tid_6,5,Vegas Golden Knights,tid_37,4,True,2,False,False,"November 28, 2023",09:00 PM EST,"Edmonton, AB",Rogers Place,18641,18098
+334,gid_401559565,Arizona Coyotes,tid_24,3,Tampa Bay Lightning,tid_20,1,True,0,False,False,"November 28, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+335,gid_401559555,Vancouver Canucks,tid_22,3,Anaheim Ducks,tid_25,1,True,0,False,False,"November 28, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18639
+336,gid_401559566,Columbus Blue Jackets,tid_29,2,Montreal Canadiens,tid_10,4,False,0,False,False,"November 29, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,14316
+337,gid_401559567,New York Rangers,tid_13,3,Detroit Red Wings,tid_5,2,True,0,False,False,"November 29, 2023",07:30 PM EST,"New York, NY",Madison Square Garden,18006,18006
+338,gid_401559568,Los Angeles Kings,tid_8,1,Washington Capitals,tid_23,2,False,0,False,False,"November 29, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+339,gid_401559569,Boston Bruins,tid_1,3,San Jose Sharks,tid_18,0,True,0,False,False,"November 30, 2023",07:00 PM EST,"Boston, MA",TD Garden,17850,17850
+340,gid_401559570,Toronto Maple Leafs,tid_21,4,Seattle Kraken,tid_124292,3,True,2,False,False,"November 30, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,18366
+341,gid_401559571,Montreal Canadiens,tid_10,1,Florida Panthers,tid_26,5,False,0,False,False,"November 30, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,21105
+342,gid_401559572,Detroit Red Wings,tid_5,5,Chicago Blackhawks,tid_4,1,True,0,False,False,"November 30, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,19515
+343,gid_401559573,Tampa Bay Lightning,tid_20,2,Pittsburgh Penguins,tid_16,4,False,0,False,False,"November 30, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+344,gid_401559574,Philadelphia Flyers,tid_15,3,New Jersey Devils,tid_11,4,False,1,False,False,"November 30, 2023",07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19538,17748
+345,gid_401559575,Carolina Hurricanes,tid_7,4,New York Islanders,tid_12,5,False,1,False,False,"November 30, 2023",07:30 PM EST,"Raleigh, NC",PNC Arena,18680,18700
+346,gid_401559576,St. Louis Blues,tid_19,6,Buffalo Sabres,tid_2,4,True,0,False,False,"November 30, 2023",08:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+347,gid_401559577,Nashville Predators,tid_27,1,Minnesota Wild,tid_30,6,False,0,False,False,"November 30, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17159
+348,gid_401559578,Winnipeg Jets,tid_28,1,Edmonton Oilers,tid_6,3,False,0,False,False,"November 30, 2023",08:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,13611
+349,gid_401559579,Calgary Flames,tid_3,4,Dallas Stars,tid_9,3,True,1,False,False,"November 30, 2023",09:00 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,16941
+350,gid_401559580,Arizona Coyotes,tid_24,4,Colorado Avalanche,tid_17,3,True,1,False,False,"November 30, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+351,gid_401559581,Vancouver Canucks,tid_22,1,Vegas Golden Knights,tid_37,4,False,0,False,False,"November 30, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18856
+352,gid_401559582,Anaheim Ducks,tid_25,4,Washington Capitals,tid_23,5,False,0,False,False,"November 30, 2023",10:00 PM EST,"Anaheim, CA",Honda Center,17174,14336
+353,gid_401559583,New Jersey Devils,tid_11,3,San Jose Sharks,tid_18,6,False,0,False,False,"December 01, 2023",07:00 PM EST,"Newark, NJ",Prudential Center,16514,16528
+354,gid_401559584,Columbus Blue Jackets,tid_29,4,Ottawa Senators,tid_14,2,True,0,False,False,"December 01, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,15552
+355,gid_401559585,Dallas Stars,tid_9,8,Tampa Bay Lightning,tid_20,1,True,0,False,False,"December 02, 2023",02:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+356,gid_401559586,Winnipeg Jets,tid_28,3,Chicago Blackhawks,tid_4,1,True,0,False,False,"December 02, 2023",03:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,14189
+357,gid_401559587,Nashville Predators,tid_27,3,New York Rangers,tid_13,4,False,0,False,False,"December 02, 2023",04:30 PM EST,"Nashville, TN",Bridgestone Arena,17113,17341
+358,gid_401559588,Florida Panthers,tid_26,3,New York Islanders,tid_12,4,False,0,False,False,"December 02, 2023",06:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,18721
+359,gid_401559589,Toronto Maple Leafs,tid_21,3,Boston Bruins,tid_1,4,False,1,False,False,"December 02, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,18959
+360,gid_401559590,Montreal Canadiens,tid_10,4,Detroit Red Wings,tid_5,5,False,1,False,False,"December 02, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,21105
+361,gid_401559591,Ottawa Senators,tid_14,2,Seattle Kraken,tid_124292,0,True,0,False,False,"December 02, 2023",07:00 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,18159
+362,gid_401559592,Pittsburgh Penguins,tid_16,3,Philadelphia Flyers,tid_15,4,False,2,False,False,"December 02, 2023",07:00 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18303
+363,gid_401559593,Carolina Hurricanes,tid_7,6,Buffalo Sabres,tid_2,2,True,0,False,False,"December 02, 2023",07:00 PM EST,"Raleigh, NC",PNC Arena,18680,18797
+364,gid_401559594,Arizona Coyotes,tid_24,4,St. Louis Blues,tid_19,1,True,0,False,False,"December 02, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+365,gid_401559595,Calgary Flames,tid_3,3,Vancouver Canucks,tid_22,4,False,0,False,False,"December 02, 2023",10:00 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,19079
+366,gid_401559596,Vegas Golden Knights,tid_37,4,Washington Capitals,tid_23,1,True,0,False,False,"December 02, 2023",10:00 PM EST,"Las Vegas, NV",T-Mobile Arena,17367,18140
+367,gid_401559597,Anaheim Ducks,tid_25,4,Colorado Avalanche,tid_17,3,True,2,False,False,"December 02, 2023",10:00 PM EST,"Anaheim, CA",Honda Center,17174,14712
+368,gid_401559598,Minnesota Wild,tid_30,4,Chicago Blackhawks,tid_4,1,True,0,False,False,"December 03, 2023",02:00 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,19301
+369,gid_401559599,New York Rangers,tid_13,6,San Jose Sharks,tid_18,5,True,0,False,False,"December 03, 2023",06:00 PM EST,"New York, NY",Madison Square Garden,18006,18006
+370,gid_401559600,Boston Bruins,tid_1,3,Columbus Blue Jackets,tid_29,1,True,0,False,False,"December 03, 2023",07:00 PM EST,"Boston, MA",TD Garden,17850,17850
+371,gid_401559601,Buffalo Sabres,tid_2,1,Nashville Predators,tid_27,2,False,0,False,False,"December 03, 2023",07:00 PM EST,"Buffalo, NY",KeyBank Center,19070,14644
+372,gid_401559602,Los Angeles Kings,tid_8,4,Colorado Avalanche,tid_17,1,True,0,False,False,"December 03, 2023",08:00 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+373,gid_401559604,Tampa Bay Lightning,tid_20,4,Dallas Stars,tid_9,0,True,0,False,False,"December 04, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+374,gid_401559605,Philadelphia Flyers,tid_15,2,Pittsburgh Penguins,tid_16,1,True,1,False,False,"December 04, 2023",07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19538,18084
+375,gid_401559603,Montreal Canadiens,tid_10,4,Seattle Kraken,tid_124292,2,True,0,False,False,"December 04, 2023",07:30 PM EST,"Montreal, QC",Bell Centre,21273,20915
+376,gid_401559606,Winnipeg Jets,tid_28,2,Carolina Hurricanes,tid_7,1,True,0,False,False,"December 04, 2023",07:30 PM EST,"Winnipeg, MB",Canada Life Centre,15004,11468
+377,gid_401559607,Arizona Coyotes,tid_24,6,Washington Capitals,tid_23,0,True,0,False,False,"December 04, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+378,gid_401559608,Vegas Golden Knights,tid_37,1,St. Louis Blues,tid_19,2,False,1,False,False,"December 04, 2023",10:00 PM EST,"Las Vegas, NV",T-Mobile Arena,17367,17826
+379,gid_401559610,Ottawa Senators,tid_14,6,New York Rangers,tid_13,2,True,0,False,False,"December 05, 2023",07:00 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,17362
+380,gid_401559611,Columbus Blue Jackets,tid_29,3,Los Angeles Kings,tid_8,4,False,1,False,False,"December 05, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,15088
+381,gid_401559609,Buffalo Sabres,tid_2,3,Detroit Red Wings,tid_5,5,False,0,False,False,"December 05, 2023",07:30 PM EST,"Buffalo, NY",KeyBank Center,19070,14800
+382,gid_401559612,New York Islanders,tid_12,4,San Jose Sharks,tid_18,5,False,1,False,False,"December 05, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,14244
+383,gid_401559613,Chicago Blackhawks,tid_4,3,Nashville Predators,tid_27,4,False,2,False,False,"December 05, 2023",08:30 PM EST,"Chicago, IL",United Center,19717,16521
+384,gid_401559614,Colorado Avalanche,tid_17,3,Anaheim Ducks,tid_25,2,True,0,False,False,"December 05, 2023",09:00 PM EST,"Denver, CO",Ball Arena,18007,18021
+385,gid_401559615,Calgary Flames,tid_3,2,Minnesota Wild,tid_30,5,False,0,False,False,"December 05, 2023",09:00 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,16661
+386,gid_401559616,Vancouver Canucks,tid_22,5,New Jersey Devils,tid_11,6,False,0,False,False,"December 05, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18983
+387,gid_401559617,Tampa Bay Lightning,tid_20,3,Pittsburgh Penguins,tid_16,1,True,0,False,False,"December 06, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+388,gid_401559618,Florida Panthers,tid_26,5,Dallas Stars,tid_9,4,True,0,False,False,"December 06, 2023",07:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,18376
+389,gid_401559619,St. Louis Blues,tid_19,3,Vegas Golden Knights,tid_37,6,False,0,False,False,"December 06, 2023",09:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+390,gid_401559620,Edmonton Oilers,tid_6,6,Carolina Hurricanes,tid_7,1,True,0,False,False,"December 06, 2023",09:30 PM EST,"Edmonton, AB",Rogers Place,18641,18347
+391,gid_401559621,Boston Bruins,tid_1,1,Buffalo Sabres,tid_2,3,False,0,False,False,"December 07, 2023",07:00 PM EST,"Boston, MA",TD Garden,17850,17850
+392,gid_401559622,Montreal Canadiens,tid_10,0,Los Angeles Kings,tid_8,4,False,0,False,False,"December 07, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,21105
+393,gid_401559623,Ottawa Senators,tid_14,3,Toronto Maple Leafs,tid_21,4,False,0,False,False,"December 07, 2023",07:00 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,19309
+394,gid_401559624,Detroit Red Wings,tid_5,5,San Jose Sharks,tid_18,6,False,1,False,False,"December 07, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,19515
+395,gid_401559626,New York Islanders,tid_12,7,Columbus Blue Jackets,tid_29,3,True,0,False,False,"December 07, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,13510
+396,gid_401559625,Washington Capitals,tid_23,4,Dallas Stars,tid_9,5,False,2,False,False,"December 07, 2023",08:00 PM EST,"Washington, DC",Capital One Arena,18506,15850
+397,gid_401559627,Nashville Predators,tid_27,5,Tampa Bay Lightning,tid_20,1,True,0,False,False,"December 07, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17159
+398,gid_401559628,Chicago Blackhawks,tid_4,1,Anaheim Ducks,tid_25,0,True,0,False,False,"December 07, 2023",08:30 PM EST,"Chicago, IL",United Center,19717,17424
+399,gid_401559629,Colorado Avalanche,tid_17,2,Winnipeg Jets,tid_28,4,False,0,False,False,"December 07, 2023",09:00 PM EST,"Denver, CO",Ball Arena,18007,18008
+400,gid_401559630,Calgary Flames,tid_3,3,Carolina Hurricanes,tid_7,2,True,0,False,False,"December 07, 2023",09:00 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,16983
+401,gid_401559631,Arizona Coyotes,tid_24,1,Philadelphia Flyers,tid_15,4,False,0,False,False,"December 07, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+402,gid_401559632,Vancouver Canucks,tid_22,2,Minnesota Wild,tid_30,0,True,0,False,False,"December 07, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18667
+403,gid_401559633,Seattle Kraken,tid_124292,1,New Jersey Devils,tid_11,2,False,0,False,False,"December 07, 2023",10:30 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+404,gid_401559634,Florida Panthers,tid_26,3,Pittsburgh Penguins,tid_16,1,True,0,False,False,"December 08, 2023",07:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,18640
+405,gid_401559635,Columbus Blue Jackets,tid_29,5,St. Louis Blues,tid_19,2,True,0,False,False,"December 08, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,15713
+406,gid_401559636,Edmonton Oilers,tid_6,4,Minnesota Wild,tid_30,3,True,0,False,False,"December 08, 2023",09:00 PM EST,"Edmonton, AB",Rogers Place,18641,18173
+407,gid_401559637,Boston Bruins,tid_1,5,Arizona Coyotes,tid_24,3,True,0,False,False,"December 09, 2023",01:00 PM EST,"Boston, MA",TD Garden,17850,17850
+408,gid_401559638,Dallas Stars,tid_9,1,Vegas Golden Knights,tid_37,6,False,0,False,False,"December 09, 2023",04:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+409,gid_401559639,Calgary Flames,tid_3,2,New Jersey Devils,tid_11,4,False,0,False,False,"December 09, 2023",04:00 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,17597
+410,gid_401559640,Buffalo Sabres,tid_2,2,Montreal Canadiens,tid_10,3,False,2,False,False,"December 09, 2023",07:00 PM EST,"Buffalo, NY",KeyBank Center,19070,17123
+411,gid_401559641,Toronto Maple Leafs,tid_21,4,Nashville Predators,tid_27,0,True,0,False,False,"December 09, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,18611
+412,gid_401559642,Detroit Red Wings,tid_5,1,Ottawa Senators,tid_14,5,False,0,False,False,"December 09, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,19515
+413,gid_401559643,Washington Capitals,tid_23,4,New York Rangers,tid_13,0,True,0,False,False,"December 09, 2023",07:00 PM EST,"Washington, DC",Capital One Arena,18506,18573
+414,gid_401559644,New York Islanders,tid_12,3,Los Angeles Kings,tid_8,2,True,1,False,False,"December 09, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,17255
+415,gid_401559645,Chicago Blackhawks,tid_4,3,St. Louis Blues,tid_19,1,True,0,False,False,"December 09, 2023",08:00 PM EST,"Chicago, IL",United Center,19717,18892
+416,gid_401559646,Colorado Avalanche,tid_17,2,Philadelphia Flyers,tid_15,5,False,0,False,False,"December 09, 2023",09:00 PM EST,"Denver, CO",Ball Arena,18007,18119
+417,gid_401559647,Vancouver Canucks,tid_22,4,Carolina Hurricanes,tid_7,3,True,0,False,False,"December 09, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18586
+418,gid_401559648,Seattle Kraken,tid_124292,3,Tampa Bay Lightning,tid_20,4,False,1,False,False,"December 09, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+419,gid_401559649,Columbus Blue Jackets,tid_29,2,Florida Panthers,tid_26,5,False,0,False,False,"December 10, 2023",01:00 PM EST,"Columbus, OH",Nationwide Arena,18144,16269
+420,gid_401559650,Edmonton Oilers,tid_6,4,New Jersey Devils,tid_11,1,True,0,False,False,"December 10, 2023",04:00 PM EST,"Edmonton, AB",Rogers Place,18641,18347
+421,gid_401559651,Montreal Canadiens,tid_10,1,Nashville Predators,tid_27,2,False,0,False,False,"December 10, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,20864
+422,gid_401559652,New York Rangers,tid_13,4,Los Angeles Kings,tid_8,1,True,0,False,False,"December 10, 2023",07:00 PM EST,"New York, NY",Madison Square Garden,18006,18006
+423,gid_401559653,Chicago Blackhawks,tid_4,2,Washington Capitals,tid_23,4,False,0,False,False,"December 10, 2023",07:00 PM EST,"Chicago, IL",United Center,19717,18258
+424,gid_401559654,Anaheim Ducks,tid_25,2,Winnipeg Jets,tid_28,4,False,0,False,False,"December 10, 2023",08:00 PM EST,"Anaheim, CA",Honda Center,17174,13626
+425,gid_401559655,Seattle Kraken,tid_124292,0,Minnesota Wild,tid_30,3,False,0,False,False,"December 10, 2023",09:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+426,gid_401559656,Vegas Golden Knights,tid_37,5,San Jose Sharks,tid_18,4,True,2,False,False,"December 10, 2023",10:00 PM EST,"Las Vegas, NV",T-Mobile Arena,17367,17849
+427,gid_401559657,Buffalo Sabres,tid_2,5,Arizona Coyotes,tid_24,2,True,0,False,False,"December 11, 2023",07:00 PM EST,"Buffalo, NY",KeyBank Center,19070,14083
+428,gid_401559658,New York Islanders,tid_12,4,Toronto Maple Leafs,tid_21,3,True,1,False,False,"December 11, 2023",07:00 PM EST,"Elmont, NY",UBS Arena,17113,17255
+429,gid_401559659,Dallas Stars,tid_9,6,Detroit Red Wings,tid_5,3,True,0,False,False,"December 11, 2023",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+430,gid_401559660,Colorado Avalanche,tid_17,6,Calgary Flames,tid_3,5,True,0,False,False,"December 11, 2023",09:30 PM EST,"Denver, CO",Ball Arena,18007,17967
+431,gid_401559661,Ottawa Senators,tid_14,1,Carolina Hurricanes,tid_7,4,False,0,False,False,"December 12, 2023",07:00 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,16877
+432,gid_401559662,New York Rangers,tid_13,3,Toronto Maple Leafs,tid_21,7,False,0,False,False,"December 12, 2023",07:00 PM EST,"New York, NY",Madison Square Garden,18006,18006
+433,gid_401559663,Pittsburgh Penguins,tid_16,4,Arizona Coyotes,tid_24,2,True,0,False,False,"December 12, 2023",07:00 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,17068
+434,gid_401559664,St. Louis Blues,tid_19,4,Detroit Red Wings,tid_5,6,False,0,False,False,"December 12, 2023",07:30 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+435,gid_401559665,Nashville Predators,tid_27,3,Philadelphia Flyers,tid_15,2,True,1,False,False,"December 12, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17159
+436,gid_401559667,Vancouver Canucks,tid_22,4,Tampa Bay Lightning,tid_20,1,True,0,False,False,"December 12, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18771
+437,gid_401559668,Vegas Golden Knights,tid_37,5,Calgary Flames,tid_3,4,True,1,False,False,"December 12, 2023",10:00 PM EST,"Las Vegas, NV",T-Mobile Arena,17367,17814
+438,gid_401559669,Seattle Kraken,tid_124292,4,Florida Panthers,tid_26,0,True,0,False,False,"December 12, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+439,gid_401559666,Edmonton Oilers,tid_6,4,Chicago Blackhawks,tid_4,1,True,0,False,False,"December 12, 2023",10:15 PM EST,"Edmonton, AB",Rogers Place,18641,18347
+440,gid_401559670,San Jose Sharks,tid_18,2,Winnipeg Jets,tid_28,1,True,0,False,False,"December 12, 2023",10:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,13142
+441,gid_401559671,Montreal Canadiens,tid_10,3,Pittsburgh Penguins,tid_16,4,False,2,False,False,"December 13, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,21105
+442,gid_401559672,New Jersey Devils,tid_11,2,Boston Bruins,tid_1,1,True,1,False,False,"December 13, 2023",07:30 PM EST,"Newark, NJ",Prudential Center,16514,16514
+443,gid_401559673,New York Islanders,tid_12,4,Anaheim Ducks,tid_25,3,True,0,False,False,"December 13, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,14207
+444,gid_401559674,Colorado Avalanche,tid_17,5,Buffalo Sabres,tid_2,1,True,0,False,False,"December 13, 2023",10:00 PM EST,"Denver, CO",Ball Arena,18007,18034
+445,gid_401559675,Los Angeles Kings,tid_8,2,Winnipeg Jets,tid_28,5,False,0,False,False,"December 13, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+446,gid_401559676,Toronto Maple Leafs,tid_21,5,Columbus Blue Jackets,tid_29,6,False,1,False,False,"December 14, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,18338
+447,gid_401559678,Philadelphia Flyers,tid_15,4,Washington Capitals,tid_23,3,True,2,False,False,"December 14, 2023",07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19538,18557
+448,gid_401559677,Detroit Red Wings,tid_5,1,Carolina Hurricanes,tid_7,2,False,0,False,False,"December 14, 2023",07:30 PM EST,"Detroit, MI",Little Caesars Arena,19515,19515
+449,gid_401559679,St. Louis Blues,tid_19,4,Ottawa Senators,tid_14,2,True,0,False,False,"December 14, 2023",08:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+450,gid_401559680,Minnesota Wild,tid_30,3,Calgary Flames,tid_3,2,True,2,False,False,"December 14, 2023",08:00 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,18167
+451,gid_401559681,Edmonton Oilers,tid_6,4,Tampa Bay Lightning,tid_20,7,False,0,False,False,"December 14, 2023",09:00 PM EST,"Edmonton, AB",Rogers Place,18641,18060
+452,gid_401559682,Vancouver Canucks,tid_22,4,Florida Panthers,tid_26,0,True,0,False,False,"December 14, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18873
+453,gid_401559683,Seattle Kraken,tid_124292,7,Chicago Blackhawks,tid_4,1,True,0,False,False,"December 14, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+454,gid_401559684,New York Rangers,tid_13,5,Anaheim Ducks,tid_25,1,True,0,False,False,"December 15, 2023",07:00 PM EST,"New York, NY",Madison Square Garden,18006,18006
+455,gid_401559685,Carolina Hurricanes,tid_7,5,Nashville Predators,tid_27,6,False,1,False,False,"December 15, 2023",07:30 PM EST,"Raleigh, NC",PNC Arena,18680,18770
+456,gid_401559686,New York Islanders,tid_12,4,Boston Bruins,tid_1,5,False,2,False,False,"December 15, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,17255
+457,gid_401559687,Dallas Stars,tid_9,5,Ottawa Senators,tid_14,4,True,0,False,False,"December 15, 2023",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+458,gid_401559688,Arizona Coyotes,tid_24,1,San Jose Sharks,tid_18,0,True,0,False,False,"December 15, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+459,gid_401559689,Vegas Golden Knights,tid_37,2,Buffalo Sabres,tid_2,5,False,0,False,False,"December 15, 2023",10:00 PM EST,"Las Vegas, NV",T-Mobile Arena,17367,18008
+460,gid_401559690,Minnesota Wild,tid_30,2,Vancouver Canucks,tid_22,1,True,2,False,False,"December 16, 2023",02:00 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,18519
+461,gid_401559691,Boston Bruins,tid_1,1,New York Rangers,tid_13,2,False,1,False,False,"December 16, 2023",07:00 PM EST,"Boston, MA",TD Garden,17850,17850
+462,gid_401559692,Toronto Maple Leafs,tid_21,7,Pittsburgh Penguins,tid_16,0,True,0,False,False,"December 16, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,18921
+463,gid_401559693,Montreal Canadiens,tid_10,5,New York Islanders,tid_12,3,True,0,False,False,"December 16, 2023",07:00 PM EST,"Montreal, QC",Bell Centre,21273,21105
+464,gid_401559694,Philadelphia Flyers,tid_15,1,Detroit Red Wings,tid_5,0,True,0,False,False,"December 16, 2023",07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19538,18341
+465,gid_401559695,Columbus Blue Jackets,tid_29,3,New Jersey Devils,tid_11,6,False,0,False,False,"December 16, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,18172
+466,gid_401559696,Winnipeg Jets,tid_28,6,Colorado Avalanche,tid_17,2,True,0,False,False,"December 16, 2023",07:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,13515
+467,gid_401559697,St. Louis Blues,tid_19,4,Dallas Stars,tid_9,3,True,1,False,False,"December 16, 2023",08:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+468,gid_401559698,Nashville Predators,tid_27,3,Washington Capitals,tid_23,1,True,0,False,False,"December 16, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17267
+469,gid_401559699,Arizona Coyotes,tid_24,2,Buffalo Sabres,tid_2,0,True,0,False,False,"December 16, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+470,gid_401559700,Calgary Flames,tid_3,4,Tampa Bay Lightning,tid_20,2,True,0,False,False,"December 16, 2023",10:00 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,16801
+471,gid_401559701,Edmonton Oilers,tid_6,1,Florida Panthers,tid_26,5,False,0,False,False,"December 16, 2023",10:00 PM EST,"Edmonton, AB",Rogers Place,18641,18347
+472,gid_401559702,Seattle Kraken,tid_124292,2,Los Angeles Kings,tid_8,3,False,2,False,False,"December 16, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+473,gid_401559703,Chicago Blackhawks,tid_4,3,Vancouver Canucks,tid_22,4,False,0,False,False,"December 17, 2023",03:00 PM EST,"Chicago, IL",United Center,19717,19302
+474,gid_401559704,Carolina Hurricanes,tid_7,1,Washington Capitals,tid_23,2,False,2,False,False,"December 17, 2023",06:00 PM EST,"Raleigh, NC",PNC Arena,18680,18700
+475,gid_401559705,New Jersey Devils,tid_11,1,Anaheim Ducks,tid_25,5,False,0,False,False,"December 17, 2023",07:00 PM EST,"Newark, NJ",Prudential Center,16514,16514
+476,gid_401559706,Colorado Avalanche,tid_17,6,San Jose Sharks,tid_18,2,True,0,False,False,"December 17, 2023",08:00 PM EST,"Denver, CO",Ball Arena,18007,18093
+477,gid_401559707,Vegas Golden Knights,tid_37,6,Ottawa Senators,tid_14,3,True,0,False,False,"December 17, 2023",08:00 PM EST,"Las Vegas, NV",T-Mobile Arena,17367,17892
+478,gid_401559708,Detroit Red Wings,tid_5,3,Anaheim Ducks,tid_25,4,False,0,False,False,"December 18, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,19515
+479,gid_401559709,Pittsburgh Penguins,tid_16,4,Minnesota Wild,tid_30,3,True,0,False,False,"December 18, 2023",07:00 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18200
+480,gid_401559710,Winnipeg Jets,tid_28,2,Montreal Canadiens,tid_10,3,False,1,False,False,"December 18, 2023",07:30 PM EST,"Winnipeg, MB",Canada Life Centre,15004,13363
+481,gid_401559711,Dallas Stars,tid_9,4,Seattle Kraken,tid_124292,3,True,1,False,False,"December 18, 2023",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+482,gid_401559712,Calgary Flames,tid_3,3,Florida Panthers,tid_26,1,True,0,False,False,"December 18, 2023",09:30 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,16813
+gid_401559713,,Boston Bruins,tid_1,3,Minnesota Wild,tid_30,4,False,1,False,False,"December 19, 2023",07:00 PM EST,"Boston, MA",TD Garden,17850,17850
+gid_401559714,,Buffalo Sabres,tid_2,4,Columbus Blue Jackets,tid_29,9,False,0,False,False,"December 19, 2023",07:00 PM EST,"Buffalo, NY",KeyBank Center,19070,14888
+gid_401559715,,Toronto Maple Leafs,tid_21,2,New York Rangers,tid_13,5,False,0,False,False,"December 19, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,19264
+gid_401559716,,Tampa Bay Lightning,tid_20,6,St. Louis Blues,tid_19,1,True,0,False,False,"December 19, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+gid_401559717,,New Jersey Devils,tid_11,2,Philadelphia Flyers,tid_15,3,False,1,False,False,"December 19, 2023",07:00 PM EST,"Newark, NJ",Prudential Center,16514,16514
+gid_401559718,,Carolina Hurricanes,tid_7,6,Vegas Golden Knights,tid_37,3,True,0,False,False,"December 19, 2023",07:00 PM EST,"Raleigh, NC",PNC Arena,18680,18848
+gid_401559719,,New York Islanders,tid_12,3,Edmonton Oilers,tid_6,1,True,0,False,False,"December 19, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,16523
+gid_401559720,,Nashville Predators,tid_27,2,Vancouver Canucks,tid_22,5,False,0,False,False,"December 19, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17159
+gid_401559721,,Chicago Blackhawks,tid_4,3,Colorado Avalanche,tid_17,2,True,0,False,False,"December 19, 2023",08:30 PM EST,"Chicago, IL",United Center,19717,19719
+gid_401559722,,Arizona Coyotes,tid_24,4,Ottawa Senators,tid_14,3,True,0,False,False,"December 19, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+gid_401559723,,San Jose Sharks,tid_18,1,Los Angeles Kings,tid_8,4,False,0,False,False,"December 19, 2023",10:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,11593
+gid_401559724,,Washington Capitals,tid_23,3,New York Islanders,tid_12,2,True,1,False,False,"December 20, 2023",07:30 PM EST,"Washington, DC",Capital One Arena,18506,18573
+gid_401559725,,Winnipeg Jets,tid_28,5,Detroit Red Wings,tid_5,2,True,0,False,False,"December 20, 2023",07:30 PM EST,"Winnipeg, MB",Canada Life Centre,15004,12571
+gid_401559726,,Los Angeles Kings,tid_8,1,Seattle Kraken,tid_124292,2,False,0,False,False,"December 20, 2023",10:00 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+gid_401559727,,Buffalo Sabres,tid_2,9,Toronto Maple Leafs,tid_21,3,True,0,False,False,"December 21, 2023",07:00 PM EST,"Buffalo, NY",KeyBank Center,19070,19070
+gid_401559728,,Tampa Bay Lightning,tid_20,5,Vegas Golden Knights,tid_37,4,True,0,False,False,"December 21, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+gid_401559729,,Florida Panthers,tid_26,1,St. Louis Blues,tid_19,4,False,0,False,False,"December 21, 2023",07:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,18753
+gid_401559731,,Philadelphia Flyers,tid_15,2,Nashville Predators,tid_27,4,False,0,False,False,"December 21, 2023",07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19538,19313
+gid_401559732,,Pittsburgh Penguins,tid_16,2,Carolina Hurricanes,tid_7,1,True,2,False,False,"December 21, 2023",07:00 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18267
+gid_401559733,,Columbus Blue Jackets,tid_29,2,Washington Capitals,tid_23,3,False,1,False,False,"December 21, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,18172
+gid_401559730,,New Jersey Devils,tid_11,3,Edmonton Oilers,tid_6,6,False,0,False,False,"December 21, 2023",07:30 PM EST,"Newark, NJ",Prudential Center,16514,16514
+gid_401559734,,Dallas Stars,tid_9,4,Vancouver Canucks,tid_22,3,True,1,False,False,"December 21, 2023",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+gid_401559735,,Minnesota Wild,tid_30,4,Montreal Canadiens,tid_10,3,True,1,False,False,"December 21, 2023",08:00 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,18387
+gid_401559736,,Colorado Avalanche,tid_17,6,Ottawa Senators,tid_14,4,True,0,False,False,"December 21, 2023",09:00 PM EST,"Denver, CO",Ball Arena,18007,18107
+gid_401559737,,Anaheim Ducks,tid_25,0,Calgary Flames,tid_3,3,False,0,False,False,"December 21, 2023",10:00 PM EST,"Anaheim, CA",Honda Center,17174,16102
+gid_401559738,,San Jose Sharks,tid_18,2,Arizona Coyotes,tid_24,5,False,0,False,False,"December 21, 2023",10:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,17435
+gid_401559739,,Detroit Red Wings,tid_5,7,Philadelphia Flyers,tid_15,6,True,2,False,False,"December 22, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,19515
+gid_401559740,,New York Rangers,tid_13,3,Edmonton Oilers,tid_6,4,False,0,False,False,"December 22, 2023",07:30 PM EST,"New York, NY",Madison Square Garden,18006,18006
+gid_401559741,,Winnipeg Jets,tid_28,5,Boston Bruins,tid_1,1,True,0,False,False,"December 22, 2023",08:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,14405
+gid_401559742,,Chicago Blackhawks,tid_4,2,Montreal Canadiens,tid_10,5,False,0,False,False,"December 22, 2023",08:30 PM EST,"Chicago, IL",United Center,19717,20340
+gid_401559744,,Nashville Predators,tid_27,2,Dallas Stars,tid_9,3,False,0,False,False,"December 23, 2023",02:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17159
+gid_401559743,,Florida Panthers,tid_26,4,Vegas Golden Knights,tid_37,2,True,0,False,False,"December 23, 2023",03:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,19364
+gid_401559745,,Ottawa Senators,tid_14,5,Pittsburgh Penguins,tid_16,4,True,1,False,False,"December 23, 2023",07:00 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,19286
+gid_401559746,,New Jersey Devils,tid_11,3,Detroit Red Wings,tid_5,2,True,0,False,False,"December 23, 2023",07:00 PM EST,"Newark, NJ",Prudential Center,16514,16514
+gid_401559747,,Washington Capitals,tid_23,1,Tampa Bay Lightning,tid_20,2,False,2,False,False,"December 23, 2023",07:00 PM EST,"Washington, DC",Capital One Arena,18506,18573
+gid_401559749,,Columbus Blue Jackets,tid_29,1,Toronto Maple Leafs,tid_21,4,False,0,False,False,"December 23, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,17806
+gid_401559750,,Minnesota Wild,tid_30,3,Boston Bruins,tid_1,2,True,0,False,False,"December 23, 2023",07:00 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,19183
+gid_401559748,,Carolina Hurricanes,tid_7,4,New York Islanders,tid_12,5,False,0,False,False,"December 23, 2023",07:30 PM EST,"Raleigh, NC",PNC Arena,18680,18921
+gid_401559751,,New York Rangers,tid_13,4,Buffalo Sabres,tid_2,3,True,1,False,False,"December 23, 2023",07:30 PM EST,"New York, NY",Madison Square Garden,18006,18006
+gid_401559752,,St. Louis Blues,tid_19,7,Chicago Blackhawks,tid_4,5,True,0,False,False,"December 23, 2023",08:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+gid_401559753,,Anaheim Ducks,tid_25,2,Seattle Kraken,tid_124292,3,False,0,False,False,"December 23, 2023",08:00 PM EST,"Anaheim, CA",Honda Center,17174,14608
+gid_401559754,,Colorado Avalanche,tid_17,4,Arizona Coyotes,tid_24,1,True,0,False,False,"December 23, 2023",09:00 PM EST,"Denver, CO",Ball Arena,18007,18117
+gid_401559755,,Vancouver Canucks,tid_22,7,San Jose Sharks,tid_18,4,True,0,False,False,"December 23, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18875
+gid_401559756,,Los Angeles Kings,tid_8,5,Calgary Flames,tid_3,3,True,0,False,False,"December 23, 2023",10:00 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+gid_401559757,,Toronto Maple Leafs,tid_21,2,Ottawa Senators,tid_14,4,False,0,False,False,"December 27, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,19261
+gid_401559758,,Tampa Bay Lightning,tid_20,2,Florida Panthers,tid_26,3,False,0,False,False,"December 27, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+gid_401559759,,New Jersey Devils,tid_11,4,Columbus Blue Jackets,tid_29,3,True,1,False,False,"December 27, 2023",07:00 PM EST,"Newark, NJ",Prudential Center,16514,16514
+gid_401559760,,New York Rangers,tid_13,5,Washington Capitals,tid_23,1,True,0,False,False,"December 27, 2023",07:00 PM EST,"New York, NY",Madison Square Garden,18006,18006
+gid_401559761,,Buffalo Sabres,tid_2,1,Boston Bruins,tid_1,4,False,0,False,False,"December 27, 2023",07:30 PM EST,"Buffalo, NY",KeyBank Center,19070,19070
+gid_401559762,,New York Islanders,tid_12,0,Pittsburgh Penguins,tid_16,7,False,0,False,False,"December 27, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,17255
+gid_401559763,,St. Louis Blues,tid_19,2,Dallas Stars,tid_9,1,True,0,False,False,"December 27, 2023",08:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+gid_401559764,,Nashville Predators,tid_27,2,Carolina Hurricanes,tid_7,5,False,0,False,False,"December 27, 2023",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17846
+gid_401559765,,Minnesota Wild,tid_30,6,Detroit Red Wings,tid_5,3,True,0,False,False,"December 27, 2023",08:00 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,19105
+gid_401559766,,Chicago Blackhawks,tid_4,2,Winnipeg Jets,tid_28,1,True,1,False,False,"December 27, 2023",09:00 PM EST,"Chicago, IL",United Center,19717,20540
+gid_401559767,,Arizona Coyotes,tid_24,5,Colorado Avalanche,tid_17,4,True,1,False,False,"December 27, 2023",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+gid_401559768,,Calgary Flames,tid_3,1,Seattle Kraken,tid_124292,2,False,0,False,False,"December 27, 2023",09:30 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,18881
+gid_401559769,,Anaheim Ducks,tid_25,5,Vegas Golden Knights,tid_37,2,True,0,False,False,"December 27, 2023",10:00 PM EST,"Anaheim, CA",Honda Center,17174,15109
+gid_401559770,,Los Angeles Kings,tid_8,5,San Jose Sharks,tid_18,1,True,0,False,False,"December 27, 2023",10:00 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+gid_401559771,,Carolina Hurricanes,tid_7,5,Montreal Canadiens,tid_10,3,True,0,False,False,"December 28, 2023",07:00 PM EST,"Raleigh, NC",PNC Arena,18680,18969
+gid_401559772,,Vancouver Canucks,tid_22,1,Philadelphia Flyers,tid_15,4,False,0,False,False,"December 28, 2023",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18986
+gid_401559773,,Vegas Golden Knights,tid_37,3,Los Angeles Kings,tid_8,2,True,0,False,False,"December 28, 2023",10:00 PM EST,"Las Vegas, NV",T-Mobile Arena,17367,18595
+gid_401559774,,San Jose Sharks,tid_18,0,Edmonton Oilers,tid_6,5,False,0,False,False,"December 28, 2023",10:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,17435
+gid_401559775,,Ottawa Senators,tid_14,2,New Jersey Devils,tid_11,6,False,0,False,False,"December 29, 2023",07:00 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,20022
+gid_401559776,,Detroit Red Wings,tid_5,5,Nashville Predators,tid_27,4,True,1,False,False,"December 29, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,19515
+gid_401559777,,Florida Panthers,tid_26,4,New York Rangers,tid_13,3,True,0,False,False,"December 29, 2023",07:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,19723
+gid_401559778,,Columbus Blue Jackets,tid_29,6,Toronto Maple Leafs,tid_21,5,True,1,False,False,"December 29, 2023",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,18516
+gid_401559779,,New York Islanders,tid_12,5,Washington Capitals,tid_23,1,True,0,False,False,"December 29, 2023",07:30 PM EST,"Elmont, NY",UBS Arena,17113,17255
+gid_401559780,,St. Louis Blues,tid_19,1,Colorado Avalanche,tid_17,2,False,0,False,False,"December 29, 2023",08:00 PM EST,"Saint Louis, MO",Enterprise Center,18096,18096
+gid_401559781,,Dallas Stars,tid_9,5,Chicago Blackhawks,tid_4,4,True,1,False,False,"December 29, 2023",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+gid_401559782,,Anaheim Ducks,tid_25,0,Arizona Coyotes,tid_24,2,False,0,False,False,"December 29, 2023",10:00 PM EST,"Anaheim, CA",Honda Center,17174,16052
+gid_401559783,,Seattle Kraken,tid_124292,2,Philadelphia Flyers,tid_15,1,True,1,False,False,"December 29, 2023",10:00 PM EST,"Seattle, WA",Climate Pledge Arena,17100,17151
+gid_401559784,,Winnipeg Jets,tid_28,4,Minnesota Wild,tid_30,2,True,0,False,False,"December 30, 2023",02:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,15225
+gid_401559785,,Buffalo Sabres,tid_2,3,Columbus Blue Jackets,tid_29,2,True,1,False,False,"December 30, 2023",05:00 PM EST,"Buffalo, NY",KeyBank Center,19070,19070
+gid_401559786,,Boston Bruins,tid_1,5,New Jersey Devils,tid_11,2,True,0,False,False,"December 30, 2023",07:00 PM EST,"Boston, MA",TD Garden,17850,17850
+gid_401559787,,Toronto Maple Leafs,tid_21,2,Carolina Hurricanes,tid_7,3,False,0,False,False,"December 30, 2023",07:00 PM EST,"Toronto, ON",Scotiabank Arena,18819,18974
+gid_401559788,,Tampa Bay Lightning,tid_20,1,New York Rangers,tid_13,5,False,0,False,False,"December 30, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+gid_401559789,,Florida Panthers,tid_26,4,Montreal Canadiens,tid_10,1,True,0,False,False,"December 30, 2023",07:00 PM EST,"Sunrise, FL",Amerant Bank Arena,17040,19663
+gid_401559790,,Pittsburgh Penguins,tid_16,4,St. Louis Blues,tid_19,2,True,0,False,False,"December 30, 2023",07:00 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18321
+gid_401559791,,Washington Capitals,tid_23,2,Nashville Predators,tid_27,3,False,2,False,False,"December 30, 2023",07:00 PM EST,"Washington, DC",Capital One Arena,18506,18573
+gid_401559792,,Los Angeles Kings,tid_8,2,Edmonton Oilers,tid_6,3,False,2,False,False,"December 30, 2023",10:00 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+gid_401559793,,Minnesota Wild,tid_30,2,Winnipeg Jets,tid_28,3,False,0,False,False,"December 31, 2023",02:00 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,19129
+gid_401559794,,Detroit Red Wings,tid_5,3,Boston Bruins,tid_1,5,False,0,False,False,"December 31, 2023",05:00 PM EST,"Detroit, MI",Little Caesars Arena,19515,19515
+gid_401559795,,Ottawa Senators,tid_14,5,Buffalo Sabres,tid_2,1,True,0,False,False,"December 31, 2023",06:00 PM EST,"Ottawa, ON",Canadian Tire Centre,19153,19421
+gid_401559796,,Pittsburgh Penguins,tid_16,3,New York Islanders,tid_12,1,True,0,False,False,"December 31, 2023",06:00 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18216
+gid_401559797,,Tampa Bay Lightning,tid_20,4,Montreal Canadiens,tid_10,3,True,0,False,False,"December 31, 2023",07:00 PM EST,"Tampa, FL",Amalie Arena,19092,19092
+gid_401559798,,Dallas Stars,tid_9,8,Chicago Blackhawks,tid_4,1,True,0,False,False,"December 31, 2023",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+gid_401559799,,Colorado Avalanche,tid_17,3,San Jose Sharks,tid_18,1,True,0,False,False,"December 31, 2023",08:00 PM EST,"Denver, CO",Ball Arena,18007,18140
+gid_401559800,,Calgary Flames,tid_3,4,Philadelphia Flyers,tid_15,3,True,0,False,False,"December 31, 2023",08:00 PM EST,"Calgary, AB",Scotiabank Saddledome,19289,18723
+gid_401559801,,Anaheim Ducks,tid_25,2,Edmonton Oilers,tid_6,7,False,0,False,False,"December 31, 2023",08:00 PM EST,"Anaheim, CA",Honda Center,17174,16041
+gid_401555902,,Seattle Kraken,tid_124292,3,Vegas Golden Knights,tid_37,0,True,0,False,False,"January 01, 2024",03:00 PM EST,"Seattle, WA",T-Mobile Park,0,47313
+gid_401559802,,New York Rangers,tid_13,1,Carolina Hurricanes,tid_7,6,False,0,False,False,"January 02, 2024",07:00 PM EST,"New York, NY",Madison Square Garden,18006,18006
+gid_401559804,,Columbus Blue Jackets,tid_29,1,Boston Bruins,tid_1,4,False,0,False,False,"January 02, 2024",07:00 PM EST,"Columbus, OH",Nationwide Arena,18144,18262
+gid_401559803,,Pittsburgh Penguins,tid_16,3,Washington Capitals,tid_23,4,False,0,False,False,"January 02, 2024",07:30 PM EST,"Pittsburgh, PA",PPG Paints Arena,18187,18190
+gid_401559805,,Nashville Predators,tid_27,3,Chicago Blackhawks,tid_4,0,True,0,False,False,"January 02, 2024",08:00 PM EST,"Nashville, TN",Bridgestone Arena,17113,17363
+gid_401559806,,Dallas Stars,tid_9,3,Montreal Canadiens,tid_10,4,False,0,False,False,"January 02, 2024",08:00 PM EST,"Dallas, TX",American Airlines Center,18532,18532
+gid_401559807,,Minnesota Wild,tid_30,1,Calgary Flames,tid_3,3,False,0,False,False,"January 02, 2024",08:00 PM EST,"Saint Paul, MN",Xcel Energy Center,17954,18456
+gid_401559808,,Winnipeg Jets,tid_28,4,Tampa Bay Lightning,tid_20,2,True,0,False,False,"January 02, 2024",08:00 PM EST,"Winnipeg, MB",Canada Life Centre,15004,14157
+gid_401559809,,Colorado Avalanche,tid_17,5,New York Islanders,tid_12,4,True,1,False,False,"January 02, 2024",09:00 PM EST,"Denver, CO",Ball Arena,18007,18121
+gid_401559810,,Edmonton Oilers,tid_6,5,Philadelphia Flyers,tid_15,2,True,0,False,False,"January 02, 2024",09:00 PM EST,"Edmonton, AB",Rogers Place,18641,18347
+gid_401559811,,Arizona Coyotes,tid_24,1,Florida Panthers,tid_26,4,False,0,False,False,"January 02, 2024",09:00 PM EST,"Tempe, AZ",Mullett Arena,4400,4600
+gid_401559812,,Vancouver Canucks,tid_22,6,Ottawa Senators,tid_14,3,True,0,False,False,"January 02, 2024",10:00 PM EST,"Vancouver, BC",Rogers Arena,18910,18810
+gid_401559813,,Los Angeles Kings,tid_8,0,Toronto Maple Leafs,tid_21,3,False,0,False,False,"January 02, 2024",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,18230,18145
+gid_401559814,,San Jose Sharks,tid_18,3,Detroit Red Wings,tid_5,5,False,0,False,False,"January 02, 2024",10:30 PM EST,"San Jose, CA",SAP Center at San Jose,17562,12195

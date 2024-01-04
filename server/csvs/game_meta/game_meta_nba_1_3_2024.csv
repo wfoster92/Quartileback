@@ -1,0 +1,496 @@
+game_id,home_team,home_id,home_score,away_team,away_id,away_score,home_win,num_ots,is_conference,is_postseason,tournament,game_day,game_time,game_location,arena,arena_capacity,attendance,referee_1,referee_2,referee_3
+gid_401584689,Denver Nuggets,tid_7,119,Los Angeles Lakers,tid_13,107,True,0,False,False,,24-Oct-23,04:30 PM PDT,"Denver, CO",Ball Arena,19520,19842,James Williams,Kevin Cutler,Scott Twardoski
+gid_401584690,Golden State Warriors,tid_9,104,Phoenix Suns,tid_21,108,False,0,False,False,,24-Oct-23,07:00 PM PDT,"San Francisco, CA",Chase Center,18064,18064,Josh Tiven,Karl Lane,John Butler
+gid_401584691,Charlotte Hornets,tid_30,116,Atlanta Hawks,tid_1,110,True,0,False,False,,25-Oct-23,04:00 PM PDT,"Charlotte, NC",Spectrum Center,19077,16129,Ed Malloy,Lauren Holtkamp,Aaron Smith
+gid_401584692,Indiana Pacers,tid_11,143,Washington Wizards,tid_27,120,True,0,False,False,,25-Oct-23,04:00 PM PDT,"Indianapolis, IN",Gainbridge Fieldhouse,17923,16004,Sean Wright,Nick Buchert,Dannica Mosher
+gid_401584693,New York Knicks,tid_18,104,Boston Celtics,tid_2,108,False,0,False,False,,25-Oct-23,04:00 PM PDT,"New York, NY",Madison Square Garden,19763,19812,Dedric Taylor,Jacyn Goble,Ben Taylor
+gid_401584694,Orlando Magic,tid_19,116,Houston Rockets,tid_10,86,True,0,False,False,,25-Oct-23,04:00 PM PDT,"Orlando, FL",Amway Center,18500,18846,Tom Washington,Gediminas Petraitis,Tyler Ford
+gid_401584695,Brooklyn Nets,tid_17,113,Cleveland Cavaliers,tid_5,114,False,0,False,False,,25-Oct-23,04:30 PM PDT,"Brooklyn, NY",Barclays Center,17732,17931,Marc Davis,Phenizee Ransom,Ray Acosta
+gid_401584696,Miami Heat,tid_14,103,Detroit Pistons,tid_8,102,True,0,False,False,,25-Oct-23,04:30 PM PDT,"Miami, FL",Kaseya Center,19600,19695,Brian Forte,Marat Kogut,Curtis Blair
+gid_401584697,Toronto Raptors,tid_28,97,Minnesota Timberwolves,tid_16,94,True,0,False,False,,25-Oct-23,04:30 PM PDT,"Toronto, ON",Scotiabank Arena,19800,19800,Kevin Scott,Brett Nansel,Brandon Schwab
+gid_401584698,Chicago Bulls,tid_4,104,Oklahoma City Thunder,tid_25,124,False,0,False,False,,25-Oct-23,05:00 PM PDT,"Chicago, IL",United Center,20917,21369,James Capers,Mitchell Ervin,Nate Green
+gid_401584699,Memphis Grizzlies,tid_29,104,New Orleans Pelicans,tid_3,111,False,0,False,False,,25-Oct-23,05:00 PM PDT,"Memphis, TN",FedExForum,18400,17798,Courtney Kirkland,Rodney Mott,Danielle Scott
+gid_401584700,Utah Jazz,tid_26,114,Sacramento Kings,tid_23,130,False,0,False,False,,25-Oct-23,06:00 PM PDT,"Salt Lake City, UT",Delta Center,18206,18206,James Williams,Leon Wood,Karl Lane
+gid_401584701,San Antonio Spurs,tid_24,119,Dallas Mavericks,tid_6,126,False,0,False,False,,25-Oct-23,06:30 PM PDT,"San Antonio, TX",Frost Bank Center,18354,18947,Derrick Collins,Tony Brothers,Tre Maddox
+gid_401584702,LA Clippers,tid_12,123,Portland Trail Blazers,tid_22,111,True,0,False,False,,25-Oct-23,07:30 PM PDT,"Los Angeles, CA",crypto.com Arena,19068,19370,Josh Tiven,CJ Washington,J.B. DeRosa
+gid_401584703,Milwaukee Bucks,tid_15,118,Philadelphia 76ers,tid_20,117,True,0,False,False,,26-Oct-23,04:30 PM PDT,"Milwaukee, WI",Fiserv Forum,17341,17783,Brent Barnaky,Mark Lindsay,Evan Scott
+gid_401584704,Los Angeles Lakers,tid_13,100,Phoenix Suns,tid_21,95,True,0,False,False,,26-Oct-23,07:00 PM PDT,"Los Angeles, CA",crypto.com Arena,19068,18997,Zach Zarba,Jason Goldenberg,Justin Van Duyne
+gid_401584705,Charlotte Hornets,tid_30,99,Detroit Pistons,tid_8,111,False,0,False,False,,27-Oct-23,04:00 PM PDT,"Charlotte, NC",Spectrum Center,19077,15855,Bill Kennedy,Rodney Mott,Jenna Schroeder
+gid_401584706,Memphis Grizzlies,tid_29,104,Denver Nuggets,tid_7,108,False,0,False,False,,27-Oct-23,04:00 PM PDT,"Memphis, TN",FedExForum,18400,16617,Ed Malloy,Tre Maddox,Sha'Rae Mitchell
+gid_401584707,Atlanta Hawks,tid_1,120,New York Knicks,tid_18,126,False,0,False,False,,27-Oct-23,04:30 PM PDT,"Atlanta, GA",State Farm Arena,16888,17692,Curtis Blair,Scott Wall,Ashley Moyer-Gleich
+gid_401584708,Boston Celtics,tid_2,119,Miami Heat,tid_14,111,True,0,False,False,,27-Oct-23,04:30 PM PDT,"Boston, MA",TD Garden,19156,19156,Eric Dalen,Kevin Scott,Brett Nansel
+gid_401584709,Cleveland Cavaliers,tid_5,105,Oklahoma City Thunder,tid_25,108,False,0,False,False,,27-Oct-23,04:30 PM PDT,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,Pat Fraher,Natalie Sago,Intae Hwang
+gid_401584710,Chicago Bulls,tid_4,104,Toronto Raptors,tid_28,103,True,1,False,False,,27-Oct-23,05:00 PM PDT,"Chicago, IL",United Center,20917,19555,Brent Barnaky,Jacyn Goble,Suyash Mehta
+gid_401584711,San Antonio Spurs,tid_24,126,Houston Rockets,tid_10,122,True,1,False,False,,27-Oct-23,05:00 PM PDT,"San Antonio, TX",Frost Bank Center,18354,18354,Brian Forte,Karl Lane,Matt Kallio
+gid_401584712,Dallas Mavericks,tid_6,125,Brooklyn Nets,tid_17,120,True,0,False,False,,27-Oct-23,05:30 PM PDT,"Dallas, TX",American Airlines Center,19200,20238,Josh Tiven,Tyler Ford,Danielle Scott
+gid_401584713,Utah Jazz,tid_26,120,LA Clippers,tid_12,118,True,0,False,False,,27-Oct-23,06:30 PM PDT,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401584714,Portland Trail Blazers,tid_22,97,Orlando Magic,tid_19,102,False,0,False,False,,27-Oct-23,07:00 PM PDT,"Portland, OR",Moda Center,19441,19464,,,
+gid_401584715,Sacramento Kings,tid_23,114,Golden State Warriors,tid_9,122,False,0,False,False,,27-Oct-23,07:00 PM PDT,"Sacramento, CA",Golden 1 Center,17611,18250,Zach Zarba,CJ Washington,J.B. DeRosa
+gid_401584716,Detroit Pistons,tid_8,118,Chicago Bulls,tid_4,102,True,0,False,False,,28-Oct-23,04:00 PM PDT,"Detroit, MI",Little Caesars Arena,20332,20062,Mark Lindsay,Natalie Sago,Dannica Mosher
+gid_401584717,Washington Wizards,tid_27,113,Memphis Grizzlies,tid_29,106,True,0,False,False,,28-Oct-23,04:00 PM PDT,"Washington, DC",Capital One Arena,20600,16191,Gediminas Petraitis,Aaron Smith,Mousa Dagher
+gid_401584718,New Orleans Pelicans,tid_3,96,New York Knicks,tid_18,87,True,0,False,False,,28-Oct-23,04:00 PM PDT,"New Orleans, LA",Smoothie King Center,16867,16331,Sean Wright,Tom Washington,Matt Kallio
+gid_401584719,Cleveland Cavaliers,tid_5,113,Indiana Pacers,tid_11,125,False,0,False,False,,28-Oct-23,04:30 PM PDT,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,Michael Smith,Mitchell Ervin,Ashley Moyer-Gleich
+gid_401584720,Toronto Raptors,tid_28,107,Philadelphia 76ers,tid_20,114,False,0,False,False,,28-Oct-23,04:30 PM PDT,"Toronto, ON",Scotiabank Arena,19800,19800,Matt Boland,Marat Kogut,Marc Davis
+gid_401584721,Minnesota Timberwolves,tid_16,106,Miami Heat,tid_14,90,True,0,False,False,,28-Oct-23,05:00 PM PDT,"Minneapolis, MN",Target Center,19356,18024,Courtney Kirkland,Andy Nagy,Robert Hussey
+gid_401584722,Phoenix Suns,tid_21,126,Utah Jazz,tid_26,104,True,0,False,False,,28-Oct-23,07:00 PM PDT,"Phoenix, AZ",Footprint Center,17071,17071,James Capers,Matt Myers,Scott Twardoski
+gid_401584723,Oklahoma City Thunder,tid_25,95,Denver Nuggets,tid_7,128,False,0,False,False,,29-Oct-23,12:30 PM PDT,"Oklahoma City, OK",Paycom Center,18203,18203,Tyler Ford,J.B. DeRosa,John Conley
+gid_401584724,Houston Rockets,tid_10,95,Golden State Warriors,tid_9,106,False,0,False,False,,29-Oct-23,04:00 PM PDT,"Houston, TX",Toyota Center (Houston),18055,18055,Rodney Mott,Kevin Scott,Sha'Rae Mitchell
+gid_401584725,Milwaukee Bucks,tid_15,110,Atlanta Hawks,tid_1,127,False,0,False,False,,29-Oct-23,04:00 PM PDT,"Milwaukee, WI",Fiserv Forum,17341,17341,Bill Kennedy,Tre Maddox,Brett Nansel
+gid_401584726,Philadelphia 76ers,tid_20,126,Portland Trail Blazers,tid_22,98,True,0,False,False,,29-Oct-23,04:30 PM PDT,"Philadelphia, PA",Wells Fargo Center,21000,19768,Phenizee Ransom,Ben Taylor,Nick Buchert
+gid_401584727,LA Clippers,tid_12,123,San Antonio Spurs,tid_24,83,True,0,False,False,,29-Oct-23,06:00 PM PDT,"Los Angeles, CA",crypto.com Arena,19068,19370,Zach Zarba,Justin Van Duyne,Che Flores
+gid_401584728,Sacramento Kings,tid_23,132,Los Angeles Lakers,tid_13,127,True,1,False,False,,29-Oct-23,06:00 PM PDT,"Sacramento, CA",Golden 1 Center,17611,18198,Derek Richardson,Sean Corbin,David Guthrie
+gid_401584729,Charlotte Hornets,tid_30,121,Brooklyn Nets,tid_17,133,False,0,False,False,,30-Oct-23,04:00 PM PDT,"Charlotte, NC",Spectrum Center,19077,14491,CJ Washington,Gediminas Petraitis,Ashley Moyer-Gleich
+gid_401584730,Indiana Pacers,tid_11,105,Chicago Bulls,tid_4,112,False,0,False,False,,30-Oct-23,04:00 PM PDT,"Indianapolis, IN",Gainbridge Fieldhouse,17923,15021,Pat Fraher,Marat Kogut,Brett Nansel
+gid_401584731,Washington Wizards,tid_27,107,Boston Celtics,tid_2,126,False,0,False,False,,30-Oct-23,04:00 PM PDT,"Washington, DC",Capital One Arena,20600,17898,Brent Barnaky,Mark Lindsay,Nate Green
+gid_401584732,Atlanta Hawks,tid_1,127,Minnesota Timberwolves,tid_16,113,True,0,False,False,,30-Oct-23,04:30 PM PDT,"Atlanta, GA",State Farm Arena,16888,15504,Sean Wright,Nick Buchert,Intae Hwang
+gid_401584733,Toronto Raptors,tid_28,91,Portland Trail Blazers,tid_22,99,False,0,False,False,,30-Oct-23,04:30 PM PDT,"Toronto, ON",Scotiabank Arena,19800,19266,Brian Forte,Dedric Taylor,Mousa Dagher
+gid_401584734,Memphis Grizzlies,tid_29,110,Dallas Mavericks,tid_6,125,False,0,False,False,,30-Oct-23,05:00 PM PDT,"Memphis, TN",FedExForum,18400,15031,Eric Dalen,Mitchell Ervin,Brandon Adair
+gid_401584735,Milwaukee Bucks,tid_15,122,Miami Heat,tid_14,114,True,0,False,False,,30-Oct-23,05:00 PM PDT,"Milwaukee, WI",Fiserv Forum,17341,17341,Derrick Collins,Tom Washington,Tony Brothers
+gid_401584736,New Orleans Pelicans,tid_3,102,Golden State Warriors,tid_9,130,False,0,False,False,,30-Oct-23,05:00 PM PDT,"New Orleans, LA",Smoothie King Center,16867,17286,Curtis Blair,Jacyn Goble,Dannica Mosher
+gid_401584737,Oklahoma City Thunder,tid_25,124,Detroit Pistons,tid_8,112,True,0,False,False,,30-Oct-23,05:00 PM PDT,"Oklahoma City, OK",Paycom Center,18203,16127,Karl Lane,Lauren Holtkamp,Brandon Schwab
+gid_401584738,Denver Nuggets,tid_7,110,Utah Jazz,tid_26,102,True,0,False,False,,30-Oct-23,06:00 PM PDT,"Denver, CO",Ball Arena,19520,19671,Courtney Kirkland,Andy Nagy,Robert Hussey
+gid_401584739,Los Angeles Lakers,tid_13,106,Orlando Magic,tid_19,103,True,0,False,False,,30-Oct-23,07:30 PM PDT,"Los Angeles, CA",crypto.com Arena,19068,18997,James Capers,Matt Myers,John Butler
+gid_401584740,Cleveland Cavaliers,tid_5,91,New York Knicks,tid_18,109,False,0,False,False,,31-Oct-23,04:30 PM PDT,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,Bill Kennedy,J.T. Orr,Aaron Smith
+gid_401584741,Phoenix Suns,tid_21,114,San Antonio Spurs,tid_24,115,False,0,False,False,,31-Oct-23,07:00 PM PDT,"Phoenix, AZ",Footprint Center,17071,17071,Sean Corbin,David Guthrie,Phenizee Ransom
+gid_401584742,LA Clippers,tid_12,118,Orlando Magic,tid_19,102,True,0,False,False,,31-Oct-23,07:30 PM PDT,"Los Angeles, CA",crypto.com Arena,19068,14014,Rodney Mott,Scott Twardoski,Jenna Schroeder
+gid_401584743,Detroit Pistons,tid_8,101,Portland Trail Blazers,tid_22,110,False,0,False,False,,1-Nov-23,04:00 PM PDT,"Detroit, MI",Little Caesars Arena,20332,16912,Pat Fraher,Sean Wright,Jonathan Sterling
+gid_401584744,Toronto Raptors,tid_28,130,Milwaukee Bucks,tid_15,111,True,0,False,False,,1-Nov-23,04:00 PM PDT,"Toronto, ON",Scotiabank Arena,19800,19800,Josh Tiven,J.B. DeRosa,Tyler Mirkovich
+gid_401584745,Atlanta Hawks,tid_1,130,Washington Wizards,tid_27,121,True,0,False,False,,1-Nov-23,04:30 PM PDT,"Atlanta, GA",State Farm Arena,16888,15925,Dedric Taylor,Kevin Scott,Biniam Maru
+gid_401584746,Boston Celtics,tid_2,155,Indiana Pacers,tid_11,104,True,0,False,False,,1-Nov-23,04:30 PM PDT,"Boston, MA",TD Garden,19156,19156,Derek Richardson,Ben Taylor,Tyler Ford
+gid_401584747,Miami Heat,tid_14,105,Brooklyn Nets,tid_17,109,False,0,False,False,,1-Nov-23,04:30 PM PDT,"Miami, FL",Kaseya Center,19600,19600,Jacyn Goble,Nick Buchert,Tyler Ricks
+gid_401584748,New York Knicks,tid_18,89,Cleveland Cavaliers,tid_5,95,False,0,False,False,,1-Nov-23,04:30 PM PDT,"New York, NY",Madison Square Garden,19763,19812,Zach Zarba,Ray Acosta,Pat O'Connell
+gid_401584749,Oklahoma City Thunder,tid_25,106,New Orleans Pelicans,tid_3,110,False,0,False,False,,1-Nov-23,04:30 PM PDT,"Oklahoma City, OK",Paycom Center,18203,15764,Courtney Kirkland,Eric Dalen,Brandon Adair
+gid_401584750,Houston Rockets,tid_10,128,Charlotte Hornets,tid_30,119,True,0,False,False,,1-Nov-23,05:00 PM PDT,"Houston, TX",Toyota Center (Houston),18055,16263,Ed Malloy,Marat Kogut,Jason Goldenberg
+gid_401584751,Minnesota Timberwolves,tid_16,110,Denver Nuggets,tid_7,89,True,0,False,False,,1-Nov-23,05:00 PM PDT,"Minneapolis, MN",Target Center,19356,18024,Brian Forte,Michael Smith,Che Flores
+gid_401584752,Dallas Mavericks,tid_6,114,Chicago Bulls,tid_4,105,True,0,False,False,,1-Nov-23,05:30 PM PDT,"Dallas, TX",American Airlines Center,19200,20103,Marc Davis,Ashley Moyer-Gleich,Brent Haskill
+gid_401584753,Utah Jazz,tid_26,133,Memphis Grizzlies,tid_29,109,True,0,False,False,,1-Nov-23,06:00 PM PDT,"Salt Lake City, UT",Delta Center,18206,18206,Scott Wall,Tony Brothers,Justin Van Duyne
+gid_401584754,Golden State Warriors,tid_9,102,Sacramento Kings,tid_23,101,True,0,False,False,,1-Nov-23,07:00 PM PDT,"San Francisco, CA",Chase Center,18064,18064,James Capers,Kevin Cutler,Jenna Schroeder
+gid_401584755,Los Angeles Lakers,tid_13,130,LA Clippers,tid_12,125,True,1,False,False,,1-Nov-23,07:00 PM PDT,"Los Angeles, CA",crypto.com Arena,19068,18997,Curtis Blair,Mitchell Ervin,Andy Nagy
+gid_401584756,Philadelphia 76ers,tid_20,114,Toronto Raptors,tid_28,99,True,0,False,False,,2-Nov-23,04:00 PM PDT,"Philadelphia, PA",Wells Fargo Center,21000,19773,Mark Lindsay,J.T. Orr,Evan Scott
+gid_401584757,New Orleans Pelicans,tid_3,125,Detroit Pistons,tid_8,116,True,0,False,False,,2-Nov-23,05:00 PM PDT,"New Orleans, LA",Smoothie King Center,16867,15884,Bill Kennedy,CJ Washington,Danielle Scott
+gid_401584758,Utah Jazz,tid_26,113,Orlando Magic,tid_19,115,False,0,False,False,,2-Nov-23,06:00 PM PDT,"Salt Lake City, UT",Delta Center,18206,18206,Curtis Blair,Phenizee Ransom,Gediminas Petraitis
+gid_401584759,Phoenix Suns,tid_21,121,San Antonio Spurs,tid_24,132,False,0,False,False,,2-Nov-23,07:00 PM PDT,"Phoenix, AZ",Footprint Center,17071,17071,Tom Washington,Tony Brothers,Sha'Rae Mitchell
+gid_401584089,Indiana Pacers,tid_11,121,Cleveland Cavaliers,tid_5,116,True,0,False,False,NBA In-Season Tournament - Group Play,3-Nov-23,04:00 PM PDT,"Indianapolis, IN",Gainbridge Fieldhouse,17923,16744,Brent Barnaky,Brian Forte,Suyash Mehta
+gid_401584090,Milwaukee Bucks,tid_15,110,New York Knicks,tid_18,105,True,0,False,False,NBA In-Season Tournament - Group Play,3-Nov-23,04:30 PM PDT,"Milwaukee, WI",Fiserv Forum,17341,17717,Derek Richardson,James Williams,Tyler Ford
+gid_401584091,Miami Heat,tid_14,121,Washington Wizards,tid_27,114,True,0,False,False,NBA In-Season Tournament - Group Play,3-Nov-23,05:00 PM PDT,"Miami, FL",Kaseya Center,19600,19660,Zach Zarba,Sean Corbin,John Conley
+gid_401584092,Chicago Bulls,tid_4,107,Brooklyn Nets,tid_17,109,False,0,False,False,NBA In-Season Tournament - Group Play,3-Nov-23,05:00 PM PDT,"Chicago, IL",United Center,20917,20645,Josh Tiven,J.T. Orr,Ray Acosta
+gid_401584093,Oklahoma City Thunder,tid_25,139,Golden State Warriors,tid_9,141,False,0,False,False,NBA In-Season Tournament - Group Play,3-Nov-23,05:00 PM PDT,"Oklahoma City, OK",Paycom Center,18203,16827,Mitchell Ervin,Nick Buchert,Che Flores
+gid_401584094,Denver Nuggets,tid_7,125,Dallas Mavericks,tid_6,114,True,0,False,False,NBA In-Season Tournament - Group Play,3-Nov-23,07:00 PM PDT,"Denver, CO",Ball Arena,19520,19729,Ed Malloy,Scott Wall,Gediminas Petraitis
+gid_401584095,Portland Trail Blazers,tid_22,115,Memphis Grizzlies,tid_29,113,True,1,False,False,NBA In-Season Tournament - Group Play,3-Nov-23,07:00 PM PDT,"Portland, OR",Moda Center,19441,18592,James Capers,Brett Nansel,Andy Nagy
+gid_401584760,Philadelphia 76ers,tid_20,112,Phoenix Suns,tid_21,100,True,0,False,False,,4-Nov-23,10:00 AM PDT,"Philadelphia, PA",Wells Fargo Center,21000,19796,Matt Boland,Eric Dalen,Kevin Scott
+gid_401584761,Indiana Pacers,tid_11,124,Charlotte Hornets,tid_30,125,False,0,False,False,,4-Nov-23,04:00 PM PDT,"Indianapolis, IN",Gainbridge Fieldhouse,17923,15945,Courtney Kirkland,Ray Acosta,J.D. Ralls
+gid_401584762,Orlando Magic,tid_19,120,Los Angeles Lakers,tid_13,101,True,0,False,False,,4-Nov-23,04:00 PM PDT,"Orlando, FL",Amway Center,18500,18846,Mark Lindsay,Michael Smith,Danielle Scott
+gid_401584763,New Orleans Pelicans,tid_3,105,Atlanta Hawks,tid_1,123,False,0,False,False,,4-Nov-23,04:00 PM PDT,"New Orleans, LA",Smoothie King Center,16867,17237,Kevin Cutler,Ben Taylor,Scott Twardoski
+gid_401584764,Brooklyn Nets,tid_17,114,Boston Celtics,tid_2,124,False,0,False,False,,4-Nov-23,05:00 PM PDT,"Brooklyn, NY",Barclays Center,17732,17983,David Guthrie,Natalie Sago,John Butler
+gid_401584765,Houston Rockets,tid_10,107,Sacramento Kings,tid_23,89,True,0,False,False,,4-Nov-23,05:00 PM PDT,"Houston, TX",Toyota Center (Houston),18055,18055,Sean Wright,Curtis Blair,Jenna Reneau
+gid_401584766,Minnesota Timberwolves,tid_16,123,Utah Jazz,tid_26,95,True,0,False,False,,4-Nov-23,05:00 PM PDT,"Minneapolis, MN",Target Center,19356,18024,Pat Fraher,Matt Myers,Ashley Moyer-Gleich
+gid_401584767,Denver Nuggets,tid_7,123,Chicago Bulls,tid_4,101,True,0,False,False,,4-Nov-23,06:00 PM PDT,"Denver, CO",Ball Arena,19520,19610,Tom Washington,Tony Brothers,Brandon Schwab
+gid_401584768,Detroit Pistons,tid_8,106,Phoenix Suns,tid_21,120,False,0,False,False,,5-Nov-23,12:00 PM PST,"Detroit, MI",Little Caesars Arena,20332,20062,Jason Goldenberg,Marc Davis,Pat O'Connell
+gid_401584769,San Antonio Spurs,tid_24,116,Toronto Raptors,tid_28,123,False,1,False,False,,5-Nov-23,12:30 PM PST,"San Antonio, TX",Frost Bank Center,18354,18354,Zach Zarba,Dedric Taylor,Che Flores
+gid_401584770,Cleveland Cavaliers,tid_5,115,Golden State Warriors,tid_9,104,True,0,False,False,,5-Nov-23,03:00 PM PST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,Derek Richardson,Marat Kogut,Rodney Mott
+gid_401584771,Dallas Mavericks,tid_6,124,Charlotte Hornets,tid_30,118,True,0,False,False,,5-Nov-23,04:30 PM PST,"Dallas, TX",American Airlines Center,19200,20052,Bill Kennedy,J.T. Orr,Justin Van Duyne
+gid_401584772,Portland Trail Blazers,tid_22,100,Memphis Grizzlies,tid_29,112,False,0,False,False,,5-Nov-23,06:00 PM PST,"Portland, OR",Moda Center,19441,18187,Ed Malloy,Leon Wood,Gediminas Petraitis
+gid_401584773,Detroit Pistons,tid_8,109,Golden State Warriors,tid_9,120,False,0,False,False,,6-Nov-23,04:00 PM PST,"Detroit, MI",Little Caesars Arena,20332,20062,Sean Corbin,Tyler Ford,Intae Hwang
+gid_401584774,Indiana Pacers,tid_11,152,San Antonio Spurs,tid_24,111,True,0,False,False,,6-Nov-23,04:00 PM PST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,15129,Jason Goldenberg,Marc Davis,Ashley Moyer-Gleich
+gid_401584775,Orlando Magic,tid_19,102,Dallas Mavericks,tid_6,117,False,0,False,False,,6-Nov-23,04:00 PM PST,"Orlando, FL",Amway Center,18500,19409,Scott Foster,Nick Buchert,Tyler Ricks
+gid_401584776,Philadelphia 76ers,tid_20,146,Washington Wizards,tid_27,128,True,0,False,False,,6-Nov-23,04:00 PM PST,"Philadelphia, PA",Wells Fargo Center,21000,19765,Brian Forte,Josh Tiven,Jonathan Sterling
+gid_401584777,Brooklyn Nets,tid_17,125,Milwaukee Bucks,tid_15,129,False,0,False,False,,6-Nov-23,04:30 PM PST,"Brooklyn, NY",Barclays Center,17732,17935,Courtney Kirkland,Michael Smith,Sha'Rae Mitchell
+gid_401584778,Miami Heat,tid_14,108,Los Angeles Lakers,tid_13,107,True,0,False,False,,6-Nov-23,04:30 PM PST,"Miami, FL",Kaseya Center,19600,19725,James Williams,Natalie Sago,Brent Haskill
+gid_401584779,New York Knicks,tid_18,111,LA Clippers,tid_12,97,True,0,False,False,,6-Nov-23,04:30 PM PST,"New York, NY",Madison Square Garden,19763,19812,Mitchell Ervin,J.B. DeRosa,Robert Hussey
+gid_401584780,Chicago Bulls,tid_4,130,Utah Jazz,tid_26,113,True,0,False,False,,6-Nov-23,05:00 PM PST,"Chicago, IL",United Center,20917,18031,Rodney Mott,Scott Twardoski,Evan Scott
+gid_401584781,Houston Rockets,tid_10,122,Sacramento Kings,tid_23,97,True,0,False,False,,6-Nov-23,05:00 PM PST,"Houston, TX",Toyota Center (Houston),18055,15130,Pat Fraher,Justin Van Duyne,Nate Green
+gid_401584782,Minnesota Timberwolves,tid_16,114,Boston Celtics,tid_2,109,True,1,False,False,,6-Nov-23,05:00 PM PST,"Minneapolis, MN",Target Center,19356,18024,Kevin Cutler,Aaron Smith,Brandon Schwab
+gid_401584783,Oklahoma City Thunder,tid_25,126,Atlanta Hawks,tid_1,117,True,0,False,False,,6-Nov-23,05:00 PM PST,"Oklahoma City, OK",Paycom Center,18203,16486,Tom Washington,Tre Maddox,Mousa Dagher
+gid_401584784,Denver Nuggets,tid_7,134,New Orleans Pelicans,tid_3,116,True,0,False,False,,6-Nov-23,06:00 PM PST,"Denver, CO",Ball Arena,19520,19544,Sean Wright,Jacyn Goble,Dannica Mosher
+gid_401584785,Charlotte Hornets,tid_30,116,Washington Wizards,tid_27,132,False,0,False,False,,8-Nov-23,07:00 PM EST,"Charlotte, NC",Spectrum Center,19077,14267,,,
+gid_401584786,Indiana Pacers,tid_11,134,Utah Jazz,tid_26,118,True,0,False,False,,8-Nov-23,07:00 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,14509,,,
+gid_401584787,Philadelphia 76ers,tid_20,106,Boston Celtics,tid_2,103,True,0,False,False,,8-Nov-23,07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,21000,19953,,,
+gid_401584788,Brooklyn Nets,tid_17,100,LA Clippers,tid_12,93,True,0,False,False,,8-Nov-23,07:30 PM EST,"Brooklyn, NY",Barclays Center,17732,17933,,,
+gid_401584789,New York Knicks,tid_18,126,San Antonio Spurs,tid_24,105,True,0,False,False,,8-Nov-23,07:30 PM EST,"New York, NY",Madison Square Garden,19763,19812,,,
+gid_401584790,Chicago Bulls,tid_4,115,Phoenix Suns,tid_21,116,False,1,False,False,,8-Nov-23,08:00 PM EST,"Chicago, IL",United Center,20917,18220,,,
+gid_401584791,Houston Rockets,tid_10,128,Los Angeles Lakers,tid_13,94,True,0,False,False,,8-Nov-23,08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,18055,,,
+gid_401584792,Memphis Grizzlies,tid_29,102,Miami Heat,tid_14,108,False,0,False,False,,8-Nov-23,08:00 PM EST,"Memphis, TN",FedExForum,18400,16781,,,
+gid_401584793,Milwaukee Bucks,tid_15,120,Detroit Pistons,tid_8,118,True,0,False,False,,8-Nov-23,08:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17341,,,
+gid_401584794,Minnesota Timberwolves,tid_16,122,New Orleans Pelicans,tid_3,101,True,0,False,False,,8-Nov-23,08:00 PM EST,"Minneapolis, MN",Target Center,19356,18024,,,
+gid_401584795,Oklahoma City Thunder,tid_25,128,Cleveland Cavaliers,tid_5,120,True,0,False,False,,8-Nov-23,08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,16314,,,
+gid_401584796,Dallas Mavericks,tid_6,116,Toronto Raptors,tid_28,127,False,0,False,False,,8-Nov-23,08:30 PM EST,"Dallas, TX",American Airlines Center,19200,20063,,,
+gid_401584797,Denver Nuggets,tid_7,108,Golden State Warriors,tid_9,105,True,0,False,False,,8-Nov-23,10:00 PM EST,"Denver, CO",Ball Arena,19520,19737,,,
+gid_401584798,Sacramento Kings,tid_23,121,Portland Trail Blazers,tid_22,118,True,1,False,False,,8-Nov-23,10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17829,,,
+gid_401584799,Indiana Pacers,tid_11,126,Milwaukee Bucks,tid_15,124,True,0,False,False,,9-Nov-23,07:00 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,14648,,,
+gid_401584800,Orlando Magic,tid_19,119,Atlanta Hawks,tid_1,120,False,0,False,False,,9-Nov-23,09:30 PM EST,Mexico City,Mexico City Arena,0,19986,,,
+gid_401584096,Detroit Pistons,tid_8,106,Philadelphia 76ers,tid_20,114,False,0,False,False,,10-Nov-23,07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,18902,,,
+gid_401584097,Washington Wizards,tid_27,117,Charlotte Hornets,tid_30,124,False,0,False,False,,10-Nov-23,07:00 PM EST,"Washington, DC",Capital One Arena,20600,17602,,,
+gid_401584098,Boston Celtics,tid_2,121,Brooklyn Nets,tid_17,107,True,0,False,False,,10-Nov-23,07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584099,Houston Rockets,tid_10,104,New Orleans Pelicans,tid_3,101,True,0,False,False,,10-Nov-23,08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,16236,,,
+gid_401584100,Memphis Grizzlies,tid_29,121,Utah Jazz,tid_26,127,False,0,False,False,,10-Nov-23,08:00 PM EST,"Memphis, TN",FedExForum,18400,16977,,,
+gid_401584101,San Antonio Spurs,tid_24,110,Minnesota Timberwolves,tid_16,117,False,0,False,False,,10-Nov-23,08:00 PM EST,"San Antonio, TX",Frost Bank Center,18354,18354,,,
+gid_401584102,Dallas Mavericks,tid_6,144,LA Clippers,tid_12,126,True,0,False,False,,10-Nov-23,08:30 PM EST,"Dallas, TX",American Airlines Center,19200,20377,,,
+gid_401584103,Phoenix Suns,tid_21,119,Los Angeles Lakers,tid_13,122,False,0,False,False,,10-Nov-23,10:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584104,Sacramento Kings,tid_23,105,Oklahoma City Thunder,tid_25,98,True,0,False,False,,10-Nov-23,10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,18097,,,
+gid_401584801,Orlando Magic,tid_19,112,Milwaukee Bucks,tid_15,97,True,0,False,False,,11-Nov-23,06:00 PM EST,"Orlando, FL",Amway Center,18500,19354,,,
+gid_401584802,Boston Celtics,tid_2,117,Toronto Raptors,tid_28,94,True,0,False,False,,11-Nov-23,07:00 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584803,Atlanta Hawks,tid_1,109,Miami Heat,tid_14,117,False,0,False,False,,11-Nov-23,07:30 PM EST,"Atlanta, GA",State Farm Arena,16888,17722,,,
+gid_401584804,Golden State Warriors,tid_9,110,Cleveland Cavaliers,tid_5,118,False,0,False,False,,11-Nov-23,08:30 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401584805,New York Knicks,tid_18,129,Charlotte Hornets,tid_30,107,True,0,False,False,,12-Nov-23,12:00 PM EST,"New York, NY",Madison Square Garden,19763,19812,,,
+gid_401584806,Brooklyn Nets,tid_17,102,Washington Wizards,tid_27,94,True,0,False,False,,12-Nov-23,03:00 PM EST,"Brooklyn, NY",Barclays Center,17732,17732,,,
+gid_401584807,LA Clippers,tid_12,101,Memphis Grizzlies,tid_29,105,False,0,False,False,,12-Nov-23,03:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,17220,,,
+gid_401584808,Philadelphia 76ers,tid_20,137,Indiana Pacers,tid_11,126,True,0,False,False,,12-Nov-23,06:00 PM EST,"Philadelphia, PA",Wells Fargo Center,21000,19758,,,
+gid_401584809,Chicago Bulls,tid_4,119,Detroit Pistons,tid_8,108,True,0,False,False,,12-Nov-23,07:00 PM EST,"Chicago, IL",United Center,20917,19088,,,
+gid_401584810,Houston Rockets,tid_10,107,Denver Nuggets,tid_7,104,True,0,False,False,,12-Nov-23,07:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,18055,,,
+gid_401584811,New Orleans Pelicans,tid_3,124,Dallas Mavericks,tid_6,136,False,0,False,False,,12-Nov-23,07:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,16302,,,
+gid_401584812,San Antonio Spurs,tid_24,113,Miami Heat,tid_14,118,False,0,False,False,,12-Nov-23,07:00 PM EST,"San Antonio, TX",Frost Bank Center,18354,18036,,,
+gid_401584813,Phoenix Suns,tid_21,99,Oklahoma City Thunder,tid_25,111,False,0,False,False,,12-Nov-23,08:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584814,Golden State Warriors,tid_9,110,Minnesota Timberwolves,tid_16,116,False,0,False,False,,12-Nov-23,08:30 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401584815,Los Angeles Lakers,tid_13,116,Portland Trail Blazers,tid_22,110,True,0,False,False,,12-Nov-23,10:00 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18997,,,
+gid_401584816,Boston Celtics,tid_2,114,New York Knicks,tid_18,98,True,0,False,False,,13-Nov-23,07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584817,Toronto Raptors,tid_28,111,Washington Wizards,tid_27,107,True,0,False,False,,13-Nov-23,07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19800,,,
+gid_401584818,Milwaukee Bucks,tid_15,118,Chicago Bulls,tid_4,109,True,0,False,False,,13-Nov-23,08:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17865,,,
+gid_401584819,Sacramento Kings,tid_23,132,Cleveland Cavaliers,tid_5,120,True,0,False,False,,13-Nov-23,10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17829,,,
+gid_401584105,Charlotte Hornets,tid_30,105,Miami Heat,tid_14,111,False,0,False,False,,14-Nov-23,07:00 PM EST,"Charlotte, NC",Spectrum Center,19077,15673,,,
+gid_401584106,Detroit Pistons,tid_8,120,Atlanta Hawks,tid_1,126,False,0,False,False,,14-Nov-23,07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,16963,,,
+gid_401584107,Philadelphia 76ers,tid_20,126,Indiana Pacers,tid_11,132,False,0,False,False,,14-Nov-23,07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,21000,19774,,,
+gid_401584108,Brooklyn Nets,tid_17,124,Orlando Magic,tid_19,104,True,0,False,False,,14-Nov-23,07:30 PM EST,"Brooklyn, NY",Barclays Center,17732,17361,,,
+gid_401584109,Oklahoma City Thunder,tid_25,123,San Antonio Spurs,tid_24,87,True,0,False,False,,14-Nov-23,07:30 PM EST,"Oklahoma City, OK",Paycom Center,18203,18203,,,
+gid_401584110,New Orleans Pelicans,tid_3,131,Dallas Mavericks,tid_6,110,True,0,False,False,,14-Nov-23,08:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,16354,,,
+gid_401584111,Utah Jazz,tid_26,115,Portland Trail Blazers,tid_22,99,True,0,False,False,,14-Nov-23,09:00 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401584112,Denver Nuggets,tid_7,111,LA Clippers,tid_12,108,True,0,False,False,,14-Nov-23,10:00 PM EST,"Denver, CO",Ball Arena,19520,19661,,,
+gid_401584113,Golden State Warriors,tid_9,101,Minnesota Timberwolves,tid_16,104,False,0,False,False,,14-Nov-23,10:00 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401584114,Los Angeles Lakers,tid_13,134,Memphis Grizzlies,tid_29,107,True,0,False,False,,14-Nov-23,10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18430,,,
+gid_401584820,Washington Wizards,tid_27,117,Dallas Mavericks,tid_6,130,False,0,False,False,,15-Nov-23,07:00 PM EST,"Washington, DC",Capital One Arena,20600,16632,,,
+gid_401584821,Atlanta Hawks,tid_1,114,New York Knicks,tid_18,116,False,0,False,False,,15-Nov-23,07:30 PM EST,"Atlanta, GA",State Farm Arena,16888,17060,,,
+gid_401584822,Philadelphia 76ers,tid_20,107,Boston Celtics,tid_2,117,False,0,False,False,,15-Nov-23,07:30 PM EST,"Philadelphia, PA",Wells Fargo Center,19746,19773,,,
+gid_401584823,Toronto Raptors,tid_28,112,Milwaukee Bucks,tid_15,128,False,0,False,False,,15-Nov-23,07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19800,,,
+gid_401584824,Chicago Bulls,tid_4,94,Orlando Magic,tid_19,96,False,0,False,False,,15-Nov-23,08:00 PM EST,"Chicago, IL",United Center,20917,19092,,,
+gid_401584825,Phoenix Suns,tid_21,133,Minnesota Timberwolves,tid_16,115,True,0,False,False,,15-Nov-23,09:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584826,Los Angeles Lakers,tid_13,110,Sacramento Kings,tid_23,125,False,0,False,False,,15-Nov-23,10:00 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18687,,,
+gid_401584827,Portland Trail Blazers,tid_22,95,Cleveland Cavaliers,tid_5,109,False,0,False,False,,15-Nov-23,10:00 PM EST,"Portland, OR",Moda Center,19441,18137,,,
+gid_401584828,Miami Heat,tid_14,122,Brooklyn Nets,tid_17,115,True,0,False,False,,16-Nov-23,07:30 PM EST,"Miami, FL",Kaseya Center,19600,19866,,,
+gid_401584829,Golden State Warriors,tid_9,109,Oklahoma City Thunder,tid_25,128,False,0,False,False,,16-Nov-23,10:00 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401584115,Charlotte Hornets,tid_30,99,Milwaukee Bucks,tid_15,130,False,0,False,False,,17-Nov-23,07:00 PM EST,"Charlotte, NC",Spectrum Center,19077,19258,,,
+gid_401584116,Washington Wizards,tid_27,99,New York Knicks,tid_18,120,False,0,False,False,,17-Nov-23,07:00 PM EST,"Washington, DC",Capital One Arena,20600,16886,,,
+gid_401584117,Atlanta Hawks,tid_1,116,Philadelphia 76ers,tid_20,126,False,0,False,False,,17-Nov-23,07:30 PM EST,"Atlanta, GA",State Farm Arena,16888,17067,,,
+gid_401584118,Cleveland Cavaliers,tid_5,108,Detroit Pistons,tid_8,100,True,0,False,False,,17-Nov-23,07:30 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401584119,Toronto Raptors,tid_28,105,Boston Celtics,tid_2,108,False,0,False,False,,17-Nov-23,07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19800,,,
+gid_401584120,San Antonio Spurs,tid_24,120,Sacramento Kings,tid_23,129,False,0,False,False,,17-Nov-23,07:30 PM EST,"San Antonio, TX",Frost Bank Center,18354,18354,,,
+gid_401584121,Chicago Bulls,tid_4,97,Orlando Magic,tid_19,103,False,0,False,False,,17-Nov-23,08:00 PM EST,"Chicago, IL",United Center,20917,20235,,,
+gid_401584122,New Orleans Pelicans,tid_3,115,Denver Nuggets,tid_7,110,True,0,False,False,,17-Nov-23,08:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,15278,,,
+gid_401584123,Utah Jazz,tid_26,128,Phoenix Suns,tid_21,131,False,0,False,False,,17-Nov-23,10:00 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401584124,Portland Trail Blazers,tid_22,95,Los Angeles Lakers,tid_13,107,False,0,False,False,,17-Nov-23,10:00 PM EST,"Portland, OR",Moda Center,19441,18570,,,
+gid_401584125,LA Clippers,tid_12,106,Houston Rockets,tid_10,100,True,0,False,False,,17-Nov-23,10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,19370,,,
+gid_401584830,Charlotte Hornets,tid_30,108,New York Knicks,tid_18,122,False,0,False,False,,18-Nov-23,06:00 PM EST,"Charlotte, NC",Spectrum Center,19077,19171,,,
+gid_401584831,New Orleans Pelicans,tid_3,120,Minnesota Timberwolves,tid_16,121,False,0,False,False,,18-Nov-23,07:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,15536,,,
+gid_401584832,Chicago Bulls,tid_4,102,Miami Heat,tid_14,97,True,0,False,False,,18-Nov-23,08:00 PM EST,"Chicago, IL",United Center,20917,18063,,,
+gid_401584833,Milwaukee Bucks,tid_15,132,Dallas Mavericks,tid_6,125,True,0,False,False,,18-Nov-23,08:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,18128,,,
+gid_401584834,San Antonio Spurs,tid_24,108,Memphis Grizzlies,tid_29,120,False,0,False,False,,18-Nov-23,08:00 PM EST,"San Antonio, TX",Frost Bank Center,18354,18354,,,
+gid_401584835,Golden State Warriors,tid_9,123,Oklahoma City Thunder,tid_25,130,False,1,False,False,,18-Nov-23,08:30 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401584836,Brooklyn Nets,tid_17,99,Philadelphia 76ers,tid_20,121,False,0,False,False,,19-Nov-23,03:00 PM EST,"Brooklyn, NY",Barclays Center,17732,17934,,,
+gid_401584839,Toronto Raptors,tid_28,142,Detroit Pistons,tid_8,113,True,0,False,False,,19-Nov-23,04:00 PM EST,"Toronto, ON",Scotiabank Arena,19800,19182,,,
+gid_401584837,Indiana Pacers,tid_11,116,Orlando Magic,tid_19,128,False,0,False,False,,19-Nov-23,05:00 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,17276,,,
+gid_401584838,Cleveland Cavaliers,tid_5,121,Denver Nuggets,tid_7,109,True,0,False,False,,19-Nov-23,06:00 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401584840,Dallas Mavericks,tid_6,113,Sacramento Kings,tid_23,129,False,0,False,False,,19-Nov-23,07:30 PM EST,"Dallas, TX",American Airlines Center,19200,20211,,,
+gid_401584841,Memphis Grizzlies,tid_29,100,Boston Celtics,tid_2,102,False,0,False,False,,19-Nov-23,08:00 PM EST,"Memphis, TN",FedExForum,18400,17798,,,
+gid_401584842,Utah Jazz,tid_26,137,Phoenix Suns,tid_21,140,False,2,False,False,,19-Nov-23,08:00 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401584843,Portland Trail Blazers,tid_22,91,Oklahoma City Thunder,tid_25,134,False,0,False,False,,19-Nov-23,09:00 PM EST,"Portland, OR",Moda Center,19441,18235,,,
+gid_401584844,Los Angeles Lakers,tid_13,105,Houston Rockets,tid_10,104,True,0,False,False,,19-Nov-23,09:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18997,,,
+gid_401584845,Charlotte Hornets,tid_30,121,Boston Celtics,tid_2,118,True,1,False,False,,20-Nov-23,07:00 PM EST,"Charlotte, NC",Spectrum Center,19077,19134,,,
+gid_401584846,Detroit Pistons,tid_8,103,Denver Nuggets,tid_7,107,False,0,False,False,,20-Nov-23,07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,19403,,,
+gid_401584847,Washington Wizards,tid_27,129,Milwaukee Bucks,tid_15,142,False,0,False,False,,20-Nov-23,07:00 PM EST,"Washington, DC",Capital One Arena,20600,17746,,,
+gid_401584848,Chicago Bulls,tid_4,100,Miami Heat,tid_14,118,False,0,False,False,,20-Nov-23,08:00 PM EST,"Chicago, IL",United Center,20917,19258,,,
+gid_401584849,Minnesota Timberwolves,tid_16,117,New York Knicks,tid_18,100,True,0,False,False,,20-Nov-23,08:00 PM EST,"Minneapolis, MN",Target Center,18024,18024,,,
+gid_401584850,New Orleans Pelicans,tid_3,129,Sacramento Kings,tid_23,93,True,0,False,False,,20-Nov-23,08:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,16004,,,
+gid_401584851,San Antonio Spurs,tid_24,99,LA Clippers,tid_12,124,False,0,False,False,,20-Nov-23,08:00 PM EST,"San Antonio, TX",Frost Bank Center,18354,18354,,,
+gid_401584852,Golden State Warriors,tid_9,121,Houston Rockets,tid_10,116,True,0,False,False,,20-Nov-23,10:00 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401584126,Orlando Magic,tid_19,126,Toronto Raptors,tid_28,107,True,0,False,False,,21-Nov-23,07:00 PM EST,"Orlando, FL",Amway Center,18500,18846,,,
+gid_401584127,Atlanta Hawks,tid_1,152,Indiana Pacers,tid_11,157,False,0,False,False,,21-Nov-23,07:30 PM EST,"Atlanta, GA",State Farm Arena,16888,17162,,,
+gid_401584128,Philadelphia 76ers,tid_20,119,Cleveland Cavaliers,tid_5,122,False,1,False,False,,21-Nov-23,07:30 PM EST,"Philadelphia, PA",Wells Fargo Center,19746,20565,,,
+gid_401584129,Phoenix Suns,tid_21,120,Portland Trail Blazers,tid_22,107,True,0,False,False,,21-Nov-23,09:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584130,Los Angeles Lakers,tid_13,131,Utah Jazz,tid_26,99,True,0,False,False,,21-Nov-23,10:00 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18997,,,
+gid_401584853,Charlotte Hornets,tid_30,117,Washington Wizards,tid_27,114,True,0,False,False,,22-Nov-23,07:00 PM EST,"Charlotte, NC",Spectrum Center,19077,16432,,,
+gid_401584854,Orlando Magic,tid_19,124,Denver Nuggets,tid_7,119,True,0,False,False,,22-Nov-23,07:00 PM EST,"Orlando, FL",Amway Center,18500,18237,,,
+gid_401584855,Atlanta Hawks,tid_1,147,Brooklyn Nets,tid_17,145,True,1,False,False,,22-Nov-23,07:30 PM EST,"Atlanta, GA",State Farm Arena,16888,17340,,,
+gid_401584856,Boston Celtics,tid_2,119,Milwaukee Bucks,tid_15,116,True,0,False,False,,22-Nov-23,07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584857,Cleveland Cavaliers,tid_5,96,Miami Heat,tid_14,129,False,0,False,False,,22-Nov-23,07:30 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401584858,Indiana Pacers,tid_11,131,Toronto Raptors,tid_28,132,False,0,False,False,,22-Nov-23,07:30 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,17091,,,
+gid_401584859,Houston Rockets,tid_10,111,Memphis Grizzlies,tid_29,91,True,0,False,False,,22-Nov-23,08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,18055,,,
+gid_401584860,Minnesota Timberwolves,tid_16,112,Philadelphia 76ers,tid_20,99,True,0,False,False,,22-Nov-23,08:00 PM EST,"Minneapolis, MN",Target Center,18024,18024,,,
+gid_401584861,New Orleans Pelicans,tid_3,117,Sacramento Kings,tid_23,112,True,0,False,False,,22-Nov-23,08:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,16012,,,
+gid_401584862,Oklahoma City Thunder,tid_25,116,Chicago Bulls,tid_4,102,True,0,False,False,,22-Nov-23,08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,18203,,,
+gid_401584863,San Antonio Spurs,tid_24,102,LA Clippers,tid_12,109,False,0,False,False,,22-Nov-23,08:00 PM EST,"San Antonio, TX",Frost Bank Center,18354,18354,,,
+gid_401584864,Phoenix Suns,tid_21,123,Golden State Warriors,tid_9,115,True,0,False,False,,22-Nov-23,10:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584865,Portland Trail Blazers,tid_22,121,Utah Jazz,tid_26,105,True,0,False,False,,22-Nov-23,10:00 PM EST,"Portland, OR",Moda Center,19441,17819,,,
+gid_401584866,Los Angeles Lakers,tid_13,101,Dallas Mavericks,tid_6,104,False,0,False,False,,22-Nov-23,10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18997,,,
+gid_401584131,Orlando Magic,tid_19,113,Boston Celtics,tid_2,96,True,0,False,False,,24-Nov-23,02:30 PM EST,"Orlando, FL",Amway Center,18500,18846,,,
+gid_401584132,Memphis Grizzlies,tid_29,89,Phoenix Suns,tid_21,110,False,0,False,False,,24-Nov-23,05:00 PM EST,"Memphis, TN",FedExForum,18400,17794,,,
+gid_401584133,New York Knicks,tid_18,100,Miami Heat,tid_14,98,True,0,False,False,,24-Nov-23,07:30 PM EST,"New York, NY",Madison Square Garden,19763,19812,,,
+gid_401584134,Toronto Raptors,tid_28,121,Chicago Bulls,tid_4,108,True,0,False,False,,24-Nov-23,07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19800,,,
+gid_401584135,Indiana Pacers,tid_11,136,Detroit Pistons,tid_8,113,True,0,False,False,,24-Nov-23,08:00 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,17274,,,
+gid_401584136,Houston Rockets,tid_10,105,Denver Nuggets,tid_7,86,True,0,False,False,,24-Nov-23,08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,18055,,,
+gid_401584137,Milwaukee Bucks,tid_15,131,Washington Wizards,tid_27,128,True,0,False,False,,24-Nov-23,08:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17880,,,
+gid_401584138,Minnesota Timberwolves,tid_16,111,Sacramento Kings,tid_23,124,False,0,False,False,,24-Nov-23,08:00 PM EST,"Minneapolis, MN",Target Center,18024,18024,,,
+gid_401584139,Golden State Warriors,tid_9,118,San Antonio Spurs,tid_24,112,True,0,False,False,,24-Nov-23,10:00 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401584140,LA Clippers,tid_12,106,New Orleans Pelicans,tid_3,116,False,0,False,False,,24-Nov-23,10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,19370,,,
+gid_401584867,Oklahoma City Thunder,tid_25,123,Philadelphia 76ers,tid_20,127,False,0,False,False,,25-Nov-23,05:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,17125,,,
+gid_401584868,Brooklyn Nets,tid_17,112,Miami Heat,tid_14,97,True,0,False,False,,25-Nov-23,06:00 PM EST,"Brooklyn, NY",Barclays Center,17732,17817,,,
+gid_401584869,Washington Wizards,tid_27,108,Atlanta Hawks,tid_1,136,False,0,False,False,,25-Nov-23,07:00 PM EST,"Washington, DC",Capital One Arena,20600,16276,,,
+gid_401584870,Cleveland Cavaliers,tid_5,115,Los Angeles Lakers,tid_13,121,False,0,False,False,,25-Nov-23,07:30 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401584871,Utah Jazz,tid_26,105,New Orleans Pelicans,tid_3,100,True,0,False,False,,25-Nov-23,09:30 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401584872,LA Clippers,tid_12,107,Dallas Mavericks,tid_6,88,True,0,False,False,,25-Nov-23,10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,19370,,,
+gid_401584873,Milwaukee Bucks,tid_15,108,Portland Trail Blazers,tid_22,102,True,0,False,False,,26-Nov-23,03:30 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17602,,,
+gid_401584874,Boston Celtics,tid_2,113,Atlanta Hawks,tid_1,103,True,0,False,False,,26-Nov-23,06:00 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584875,New York Knicks,tid_18,113,Phoenix Suns,tid_21,116,False,0,False,False,,26-Nov-23,06:00 PM EST,"New York, NY",Madison Square Garden,19763,19812,,,
+gid_401584876,Orlando Magic,tid_19,130,Charlotte Hornets,tid_30,117,True,0,False,False,,26-Nov-23,06:00 PM EST,"Orlando, FL",Amway Center,18500,18846,,,
+gid_401584877,Memphis Grizzlies,tid_29,97,Minnesota Timberwolves,tid_16,119,False,0,False,False,,26-Nov-23,06:00 PM EST,"Memphis, TN",FedExForum,18400,15764,,,
+gid_401584878,Brooklyn Nets,tid_17,118,Chicago Bulls,tid_4,109,True,0,False,False,,26-Nov-23,07:30 PM EST,"Brooklyn, NY",Barclays Center,17732,16687,,,
+gid_401584879,Cleveland Cavaliers,tid_5,105,Toronto Raptors,tid_28,102,True,0,False,False,,26-Nov-23,07:30 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401584880,Denver Nuggets,tid_7,132,San Antonio Spurs,tid_24,120,True,0,False,False,,26-Nov-23,08:00 PM EST,"Denver, CO",Ball Arena,19520,19665,,,
+gid_401584881,Detroit Pistons,tid_8,107,Washington Wizards,tid_27,126,False,0,False,False,,27-Nov-23,07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,14346,,,
+gid_401584882,Indiana Pacers,tid_11,110,Portland Trail Blazers,tid_22,114,False,0,False,False,,27-Nov-23,07:00 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,14508,,,
+gid_401584883,Philadelphia 76ers,tid_20,138,Los Angeles Lakers,tid_13,94,True,0,False,False,,27-Nov-23,07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19746,19907,,,
+gid_401584884,Utah Jazz,tid_26,114,New Orleans Pelicans,tid_3,112,True,0,False,False,,27-Nov-23,09:00 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401584885,LA Clippers,tid_12,104,Denver Nuggets,tid_7,113,False,0,False,False,,27-Nov-23,10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,17071,,,
+gid_401584141,Boston Celtics,tid_2,124,Chicago Bulls,tid_4,97,True,0,False,False,,28-Nov-23,07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584142,Brooklyn Nets,tid_17,115,Toronto Raptors,tid_28,103,True,0,False,False,,28-Nov-23,07:30 PM EST,"Brooklyn, NY",Barclays Center,17732,15844,,,
+gid_401584143,Cleveland Cavaliers,tid_5,128,Atlanta Hawks,tid_1,105,True,0,False,False,,28-Nov-23,07:30 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401584144,Miami Heat,tid_14,124,Milwaukee Bucks,tid_15,131,False,0,False,False,,28-Nov-23,07:30 PM EST,"Miami, FL",Kaseya Center,19600,19691,,,
+gid_401584145,New York Knicks,tid_18,115,Charlotte Hornets,tid_30,91,True,0,False,False,,28-Nov-23,07:30 PM EST,"New York, NY",Madison Square Garden,19763,19111,,,
+gid_401584146,Minnesota Timberwolves,tid_16,106,Oklahoma City Thunder,tid_25,103,True,0,False,False,,28-Nov-23,08:00 PM EST,"Minneapolis, MN",Target Center,18024,18024,,,
+gid_401584147,Dallas Mavericks,tid_6,121,Houston Rockets,tid_10,115,True,0,False,False,,28-Nov-23,08:30 PM EST,"Dallas, TX",American Airlines Center,19200,20103,,,
+gid_401584148,Sacramento Kings,tid_23,124,Golden State Warriors,tid_9,123,True,0,False,False,,28-Nov-23,10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,18039,,,
+gid_401584886,Detroit Pistons,tid_8,107,Los Angeles Lakers,tid_13,133,False,0,False,False,,29-Nov-23,07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,20062,,,
+gid_401584887,Orlando Magic,tid_19,139,Washington Wizards,tid_27,120,True,0,False,False,,29-Nov-23,07:00 PM EST,"Orlando, FL",Amway Center,18500,17109,,,
+gid_401584888,Toronto Raptors,tid_28,112,Phoenix Suns,tid_21,105,True,0,False,False,,29-Nov-23,07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19800,,,
+gid_401584889,Memphis Grizzlies,tid_29,105,Utah Jazz,tid_26,91,True,0,False,False,,29-Nov-23,08:00 PM EST,"Memphis, TN",FedExForum,18400,15327,,,
+gid_401584890,New Orleans Pelicans,tid_3,124,Philadelphia 76ers,tid_20,114,True,0,False,False,,29-Nov-23,08:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,16009,,,
+gid_401584891,Denver Nuggets,tid_7,134,Houston Rockets,tid_10,124,True,0,False,False,,29-Nov-23,09:00 PM EST,"Denver, CO",Ball Arena,19520,19590,,,
+gid_401584892,Sacramento Kings,tid_23,117,LA Clippers,tid_12,131,False,0,False,False,,29-Nov-23,10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17829,,,
+gid_401584893,Cleveland Cavaliers,tid_5,95,Portland Trail Blazers,tid_22,103,False,0,False,False,,30-Nov-23,07:00 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401584894,Brooklyn Nets,tid_17,128,Charlotte Hornets,tid_30,129,False,0,False,False,,30-Nov-23,07:30 PM EST,"Brooklyn, NY",Barclays Center,17732,16072,,,
+gid_401584895,Miami Heat,tid_14,142,Indiana Pacers,tid_11,132,True,0,False,False,,30-Nov-23,07:30 PM EST,"Miami, FL",Kaseya Center,19600,19604,,,
+gid_401584896,New York Knicks,tid_18,118,Detroit Pistons,tid_8,112,True,0,False,False,,30-Nov-23,07:30 PM EST,"New York, NY",Madison Square Garden,19763,19812,,,
+gid_401584897,Chicago Bulls,tid_4,120,Milwaukee Bucks,tid_15,113,True,1,False,False,,30-Nov-23,08:00 PM EST,"Chicago, IL",United Center,20917,19838,,,
+gid_401584898,Minnesota Timberwolves,tid_16,101,Utah Jazz,tid_26,90,True,0,False,False,,30-Nov-23,08:00 PM EST,"Minneapolis, MN",Target Center,18024,18024,,,
+gid_401584899,Oklahoma City Thunder,tid_25,133,Los Angeles Lakers,tid_13,110,True,0,False,False,,30-Nov-23,08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,17401,,,
+gid_401584900,San Antonio Spurs,tid_24,135,Atlanta Hawks,tid_1,137,False,0,False,False,,30-Nov-23,08:00 PM EST,"San Antonio, TX",Frost Bank Center,18354,17646,,,
+gid_401584901,Golden State Warriors,tid_9,120,LA Clippers,tid_12,114,True,0,False,False,,30-Nov-23,10:00 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401584902,Orlando Magic,tid_19,130,Washington Wizards,tid_27,125,True,0,False,False,,1-Dec-23,07:00 PM EST,"Orlando, FL",Amway Center,18500,18846,,,
+gid_401584903,Boston Celtics,tid_2,125,Philadelphia 76ers,tid_20,119,True,0,False,False,,1-Dec-23,07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584904,Toronto Raptors,tid_28,106,New York Knicks,tid_18,119,False,0,False,False,,1-Dec-23,07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19800,,,
+gid_401584905,Dallas Mavericks,tid_6,94,Memphis Grizzlies,tid_29,108,False,0,False,False,,1-Dec-23,07:30 PM EST,"Dallas, TX",American Airlines Center,19200,20150,,,
+gid_401584906,New Orleans Pelicans,tid_3,121,San Antonio Spurs,tid_24,106,True,0,False,False,,1-Dec-23,08:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,17028,,,
+gid_401584907,Phoenix Suns,tid_21,111,Denver Nuggets,tid_7,119,False,0,False,False,,1-Dec-23,10:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584908,LA Clippers,tid_12,113,Golden State Warriors,tid_9,112,True,0,False,False,,2-Dec-23,04:00 PM EST,"Los Angeles, CA",crypto.com Arena,19068,19370,,,
+gid_401584909,Charlotte Hornets,tid_30,117,Minnesota Timberwolves,tid_16,123,False,0,False,False,,2-Dec-23,05:00 PM EST,"Charlotte, NC",Spectrum Center,19077,17731,,,
+gid_401584910,Brooklyn Nets,tid_17,129,Orlando Magic,tid_19,101,True,0,False,False,,2-Dec-23,07:00 PM EST,"Brooklyn, NY",Barclays Center,17732,17966,,,
+gid_401584911,Detroit Pistons,tid_8,101,Cleveland Cavaliers,tid_5,110,False,0,False,False,,2-Dec-23,07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,18924,,,
+gid_401584912,Miami Heat,tid_14,129,Indiana Pacers,tid_11,144,False,0,False,False,,2-Dec-23,08:00 PM EST,"Miami, FL",Kaseya Center,19600,19650,,,
+gid_401584913,Chicago Bulls,tid_4,124,New Orleans Pelicans,tid_3,118,True,0,False,False,,2-Dec-23,08:00 PM EST,"Chicago, IL",United Center,20917,20511,,,
+gid_401584914,Milwaukee Bucks,tid_15,132,Atlanta Hawks,tid_1,121,True,0,False,False,,2-Dec-23,08:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17866,,,
+gid_401584915,Dallas Mavericks,tid_6,120,Oklahoma City Thunder,tid_25,126,False,0,False,False,,2-Dec-23,09:00 PM EST,"Dallas, TX",American Airlines Center,19200,20277,,,
+gid_401584916,Phoenix Suns,tid_21,116,Memphis Grizzlies,tid_29,109,True,0,False,False,,2-Dec-23,09:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584917,Utah Jazz,tid_26,118,Portland Trail Blazers,tid_22,113,True,1,False,False,,2-Dec-23,09:30 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401584918,Sacramento Kings,tid_23,123,Denver Nuggets,tid_7,117,True,0,False,False,,2-Dec-23,10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17829,,,
+gid_401584919,Los Angeles Lakers,tid_13,107,Houston Rockets,tid_10,97,True,0,False,False,,2-Dec-23,10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18997,,,
+gid_401607491,Indiana Pacers,tid_11,122,Boston Celtics,tid_2,112,True,0,False,False,,4-Dec-23,07:30 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,16693,,,
+gid_401607492,Sacramento Kings,tid_23,117,New Orleans Pelicans,tid_3,127,False,0,False,False,,4-Dec-23,10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,18048,,,
+gid_401607489,Milwaukee Bucks,tid_15,146,New York Knicks,tid_18,122,True,0,False,False,,5-Dec-23,07:30 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17448,,,
+gid_401607490,Los Angeles Lakers,tid_13,106,Phoenix Suns,tid_21,103,True,0,False,False,,5-Dec-23,10:00 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18664,,,
+gid_401616459,Cleveland Cavaliers,tid_5,121,Orlando Magic,tid_19,111,True,0,False,False,,6-Dec-23,07:00 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401616460,Detroit Pistons,tid_8,102,Memphis Grizzlies,tid_29,116,False,0,False,False,,6-Dec-23,07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,12862,,,
+gid_401616462,Washington Wizards,tid_27,126,Philadelphia 76ers,tid_20,131,False,0,False,False,,6-Dec-23,07:00 PM EST,"Washington, DC",Capital One Arena,20600,15568,,,
+gid_401616461,Toronto Raptors,tid_28,103,Miami Heat,tid_14,112,False,0,False,False,,6-Dec-23,07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19084,,,
+gid_401616463,Atlanta Hawks,tid_1,113,Brooklyn Nets,tid_17,114,False,0,False,False,,6-Dec-23,07:30 PM EST,"Atlanta, GA",State Farm Arena,16888,15906,,,
+gid_401616464,Minnesota Timberwolves,tid_16,102,San Antonio Spurs,tid_24,94,True,0,False,False,,6-Dec-23,07:30 PM EST,"Minneapolis, MN",Target Center,18024,18024,,,
+gid_401616465,Chicago Bulls,tid_4,111,Charlotte Hornets,tid_30,100,True,0,False,False,,6-Dec-23,08:00 PM EST,"Chicago, IL",United Center,20917,17689,,,
+gid_401616466,Houston Rockets,tid_10,110,Oklahoma City Thunder,tid_25,101,True,0,False,False,,6-Dec-23,08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,16291,,,
+gid_401616467,Dallas Mavericks,tid_6,147,Utah Jazz,tid_26,97,True,0,False,False,,6-Dec-23,08:30 PM EST,"Dallas, TX",American Airlines Center,19200,19877,,,
+gid_401616468,Golden State Warriors,tid_9,110,Portland Trail Blazers,tid_22,106,True,0,False,False,,6-Dec-23,10:00 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401616469,LA Clippers,tid_12,111,Denver Nuggets,tid_7,102,True,0,False,False,,6-Dec-23,10:00 PM EST,"Los Angeles, CA",crypto.com Arena,19068,16365,,,
+gid_401607494,Milwaukee Bucks,tid_15,119,Indiana Pacers,tid_11,128,False,0,False,False,,7-Dec-23,05:00 PM EST,"Las Vegas, NV",T-Mobile Arena,18800,16837,,,
+gid_401607493,Los Angeles Lakers,tid_13,133,New Orleans Pelicans,tid_3,89,True,0,False,False,,7-Dec-23,09:00 PM EST,"Las Vegas, NV",T-Mobile Arena,18800,18017,,,
+gid_401616470,Charlotte Hornets,tid_30,119,Toronto Raptors,tid_28,116,True,0,False,False,,8-Dec-23,07:00 PM EST,"Charlotte, NC",Spectrum Center,19077,11526,,,
+gid_401616471,Orlando Magic,tid_19,123,Detroit Pistons,tid_8,91,True,0,False,False,,8-Dec-23,07:00 PM EST,"Orlando, FL",Amway Center,18500,18655,,,
+gid_401616472,Philadelphia 76ers,tid_20,125,Atlanta Hawks,tid_1,114,True,0,False,False,,8-Dec-23,07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19746,19746,,,
+gid_401616473,Brooklyn Nets,tid_17,124,Washington Wizards,tid_27,97,True,0,False,False,,8-Dec-23,07:30 PM EST,"Brooklyn, NY",Barclays Center,17732,16587,,,
+gid_401617579,Boston Celtics,tid_2,133,New York Knicks,tid_18,123,True,0,False,False,,8-Dec-23,07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401616474,Miami Heat,tid_14,99,Cleveland Cavaliers,tid_5,111,False,0,False,False,,8-Dec-23,08:00 PM EST,"Miami, FL",Kaseya Center,19600,19600,,,
+gid_401616475,Memphis Grizzlies,tid_29,103,Minnesota Timberwolves,tid_16,127,False,0,False,False,,8-Dec-23,08:00 PM EST,"Memphis, TN",FedExForum,18400,15577,,,
+gid_401616476,Oklahoma City Thunder,tid_25,138,Golden State Warriors,tid_9,136,True,1,False,False,,8-Dec-23,08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,17112,,,
+gid_401616477,San Antonio Spurs,tid_24,112,Chicago Bulls,tid_4,121,False,0,False,False,,8-Dec-23,08:30 PM EST,"San Antonio, TX",Frost Bank Center,18354,18074,,,
+gid_401616478,Denver Nuggets,tid_7,106,Houston Rockets,tid_10,114,False,0,False,False,,8-Dec-23,09:00 PM EST,"Denver, CO",Ball Arena,19520,19544,,,
+gid_401617581,Phoenix Suns,tid_21,106,Sacramento Kings,tid_23,114,False,0,False,False,,8-Dec-23,09:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401616479,Utah Jazz,tid_26,103,LA Clippers,tid_12,117,False,0,False,False,,8-Dec-23,10:00 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401616480,Portland Trail Blazers,tid_22,112,Dallas Mavericks,tid_6,125,False,0,False,False,,8-Dec-23,10:00 PM EST,"Portland, OR",Moda Center,19441,18762,,,
+gid_401607495,Los Angeles Lakers,tid_13,123,Indiana Pacers,tid_11,109,True,0,False,False,,9-Dec-23,08:30 PM EST,"Las Vegas, NV",T-Mobile Arena,18800,19021,,,
+gid_401584920,Charlotte Hornets,tid_30,114,Miami Heat,tid_14,116,False,0,False,False,,11-Dec-23,07:00 PM EST,"Charlotte, NC",Spectrum Center,19077,15543,,,
+gid_401584921,Detroit Pistons,tid_8,123,Indiana Pacers,tid_11,131,False,0,False,False,,11-Dec-23,07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,14988,,,
+gid_401584922,Orlando Magic,tid_19,104,Cleveland Cavaliers,tid_5,94,True,0,False,False,,11-Dec-23,07:00 PM EST,"Orlando, FL",Amway Center,18500,19032,,,
+gid_401584923,Philadelphia 76ers,tid_20,146,Washington Wizards,tid_27,101,True,0,False,False,,11-Dec-23,07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19746,19762,,,
+gid_401584924,Atlanta Hawks,tid_1,122,Denver Nuggets,tid_7,129,False,0,False,False,,11-Dec-23,07:30 PM EST,"Atlanta, GA",State Farm Arena,16888,17531,,,
+gid_401584925,New York Knicks,tid_18,136,Toronto Raptors,tid_28,130,True,0,False,False,,11-Dec-23,07:30 PM EST,"New York, NY",Madison Square Garden,19763,19812,,,
+gid_401584926,Houston Rockets,tid_10,93,San Antonio Spurs,tid_24,82,True,0,False,False,,11-Dec-23,08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,16481,,,
+gid_401584927,Memphis Grizzlies,tid_29,113,Dallas Mavericks,tid_6,120,False,0,False,False,,11-Dec-23,08:00 PM EST,"Memphis, TN",FedExForum,18400,16379,,,
+gid_401584928,Milwaukee Bucks,tid_15,133,Chicago Bulls,tid_4,129,True,1,False,False,,11-Dec-23,08:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17440,,,
+gid_401584929,New Orleans Pelicans,tid_3,121,Minnesota Timberwolves,tid_16,107,True,0,False,False,,11-Dec-23,08:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,16487,,,
+gid_401584930,Oklahoma City Thunder,tid_25,134,Utah Jazz,tid_26,120,True,0,False,False,,11-Dec-23,08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,16631,,,
+gid_401584931,Sacramento Kings,tid_23,131,Brooklyn Nets,tid_17,118,True,0,False,False,,11-Dec-23,10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17794,,,
+gid_401584932,LA Clippers,tid_12,132,Portland Trail Blazers,tid_22,127,True,0,False,False,,11-Dec-23,10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,17102,,,
+gid_401584933,Boston Celtics,tid_2,120,Cleveland Cavaliers,tid_5,113,True,0,False,False,,"December 12, 2023",07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584934,Dallas Mavericks,tid_6,127,Los Angeles Lakers,tid_13,125,True,0,False,False,,"December 12, 2023",07:30 PM EST,"Dallas, TX",American Airlines Center,19200,20377,,,
+gid_401584935,Chicago Bulls,tid_4,106,Denver Nuggets,tid_7,114,False,0,False,False,,"December 12, 2023",08:00 PM EST,"Chicago, IL",United Center,20917,20775,,,
+gid_401584936,Phoenix Suns,tid_21,119,Golden State Warriors,tid_9,116,True,0,False,False,,"December 12, 2023",10:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584937,LA Clippers,tid_12,119,Sacramento Kings,tid_23,99,True,0,False,False,,"December 12, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,17060,,,
+gid_401584938,Detroit Pistons,tid_8,111,Philadelphia 76ers,tid_20,129,False,0,False,False,,"December 13, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,16749,,,
+gid_401584939,Washington Wizards,tid_27,122,New Orleans Pelicans,tid_3,142,False,0,False,False,,"December 13, 2023",07:00 PM EST,"Washington, DC",Capital One Arena,20600,14080,,,
+gid_401584940,Miami Heat,tid_14,115,Charlotte Hornets,tid_30,104,True,0,False,False,,"December 13, 2023",07:30 PM EST,"Miami, FL",Kaseya Center,19600,19600,,,
+gid_401584941,Toronto Raptors,tid_28,135,Atlanta Hawks,tid_1,128,True,0,False,False,,"December 13, 2023",07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19423,,,
+gid_401584942,Houston Rockets,tid_10,117,Memphis Grizzlies,tid_29,104,True,0,False,False,,"December 13, 2023",08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,16813,,,
+gid_401584943,Milwaukee Bucks,tid_15,140,Indiana Pacers,tid_11,126,True,0,False,False,,"December 13, 2023",08:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17431,,,
+gid_401584944,San Antonio Spurs,tid_24,119,Los Angeles Lakers,tid_13,122,False,0,False,False,,"December 13, 2023",08:00 PM EST,"San Antonio, TX",Frost Bank Center,18354,18354,,,
+gid_401584945,Phoenix Suns,tid_21,112,Brooklyn Nets,tid_17,116,False,0,False,False,,"December 13, 2023",09:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584946,Utah Jazz,tid_26,117,New York Knicks,tid_18,113,True,0,False,False,,"December 13, 2023",09:00 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401584947,Boston Celtics,tid_2,116,Cleveland Cavaliers,tid_5,107,True,0,False,False,,"December 14, 2023",07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584948,Miami Heat,tid_14,116,Chicago Bulls,tid_4,124,False,0,False,False,,"December 14, 2023",07:30 PM EST,"Miami, FL",Kaseya Center,19600,19653,,,
+gid_401584949,Dallas Mavericks,tid_6,101,Minnesota Timberwolves,tid_16,119,False,0,False,False,,"December 14, 2023",08:30 PM EST,"Dallas, TX",American Airlines Center,19200,20177,,,
+gid_401584950,Denver Nuggets,tid_7,124,Brooklyn Nets,tid_17,101,True,0,False,False,,"December 14, 2023",09:00 PM EST,"Denver, CO",Ball Arena,19520,19636,,,
+gid_401584951,Portland Trail Blazers,tid_22,114,Utah Jazz,tid_26,122,False,0,False,False,,"December 14, 2023",10:00 PM EST,"Portland, OR",Moda Center,19441,17842,,,
+gid_401584952,Sacramento Kings,tid_23,128,Oklahoma City Thunder,tid_25,123,True,0,False,False,,"December 14, 2023",10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17794,,,
+gid_401584953,LA Clippers,tid_12,121,Golden State Warriors,tid_9,113,True,0,False,False,,"December 14, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,19370,,,
+gid_401584954,Charlotte Hornets,tid_30,107,New Orleans Pelicans,tid_3,112,False,0,False,False,,"December 15, 2023",07:00 PM EST,"Charlotte, NC",Spectrum Center,19077,16080,,,
+gid_401584955,Philadelphia 76ers,tid_20,124,Detroit Pistons,tid_8,92,True,0,False,False,,"December 15, 2023",07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19746,19761,,,
+gid_401584956,Washington Wizards,tid_27,137,Indiana Pacers,tid_11,123,True,0,False,False,,"December 15, 2023",07:00 PM EST,"Washington, DC",Capital One Arena,20600,15208,,,
+gid_401584957,Boston Celtics,tid_2,128,Orlando Magic,tid_19,111,True,0,False,False,,"December 15, 2023",07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584958,Toronto Raptors,tid_28,104,Atlanta Hawks,tid_1,125,False,0,False,False,,"December 15, 2023",07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19800,,,
+gid_401584959,San Antonio Spurs,tid_24,129,Los Angeles Lakers,tid_13,115,True,0,False,False,,"December 15, 2023",07:30 PM EST,"San Antonio, TX",Frost Bank Center,18354,18354,,,
+gid_401584960,Memphis Grizzlies,tid_29,96,Houston Rockets,tid_10,103,False,0,False,False,,"December 15, 2023",08:00 PM EST,"Memphis, TN",FedExForum,18400,16941,,,
+gid_401584961,Phoenix Suns,tid_21,122,New York Knicks,tid_18,139,False,0,False,False,,"December 15, 2023",10:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584962,Milwaukee Bucks,tid_15,146,Detroit Pistons,tid_8,114,True,0,False,False,,"December 16, 2023",06:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17666,,,
+gid_401584963,Charlotte Hornets,tid_30,82,Philadelphia 76ers,tid_20,135,False,0,False,False,,"December 16, 2023",07:00 PM EST,"Charlotte, NC",Spectrum Center,19077,17829,,,
+gid_401584964,Cleveland Cavaliers,tid_5,127,Atlanta Hawks,tid_1,119,True,0,False,False,,"December 16, 2023",07:30 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401584965,Miami Heat,tid_14,118,Chicago Bulls,tid_4,116,True,0,False,False,,"December 16, 2023",08:00 PM EST,"Miami, FL",Kaseya Center,19600,19815,,,
+gid_401584966,Minnesota Timberwolves,tid_16,127,Indiana Pacers,tid_11,109,True,0,False,False,,"December 16, 2023",08:00 PM EST,"Minneapolis, MN",Target Center,18024,18024,,,
+gid_401584967,Golden State Warriors,tid_9,124,Brooklyn Nets,tid_17,120,True,0,False,False,,"December 16, 2023",08:30 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401584968,Denver Nuggets,tid_7,117,Oklahoma City Thunder,tid_25,118,False,0,False,False,,"December 16, 2023",09:00 PM EST,"Denver, CO",Ball Arena,19520,19611,,,
+gid_401584969,Portland Trail Blazers,tid_22,120,Dallas Mavericks,tid_6,131,False,0,False,False,,"December 16, 2023",09:00 PM EST,"Portland, OR",Moda Center,19441,18439,,,
+gid_401584970,Sacramento Kings,tid_23,125,Utah Jazz,tid_26,104,True,0,False,False,,"December 16, 2023",10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17794,,,
+gid_401584971,LA Clippers,tid_12,144,New York Knicks,tid_18,122,True,0,False,False,,"December 16, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,19370,,,
+gid_401584972,Boston Celtics,tid_2,114,Orlando Magic,tid_19,97,True,0,False,False,,"December 17, 2023",03:00 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401584973,San Antonio Spurs,tid_24,110,New Orleans Pelicans,tid_3,146,False,0,False,False,,"December 17, 2023",03:30 PM EST,"San Antonio, TX",Frost Bank Center,18354,18354,,,
+gid_401584974,Milwaukee Bucks,tid_15,128,Houston Rockets,tid_10,119,True,0,False,False,,"December 17, 2023",07:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17341,,,
+gid_401584975,Phoenix Suns,tid_21,112,Washington Wizards,tid_27,108,True,0,False,False,,"December 17, 2023",08:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401584976,Portland Trail Blazers,tid_22,114,Golden State Warriors,tid_9,118,False,0,False,False,,"December 17, 2023",09:00 PM EST,"Portland, OR",Moda Center,19441,18547,,,
+gid_401584977,Cleveland Cavaliers,tid_5,135,Houston Rockets,tid_10,130,True,1,False,False,,"December 18, 2023",07:00 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401584978,Indiana Pacers,tid_11,127,LA Clippers,tid_12,151,False,0,False,False,,"December 18, 2023",07:00 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,16665,,,
+gid_401584979,Philadelphia 76ers,tid_20,104,Chicago Bulls,tid_4,108,False,0,False,False,,"December 18, 2023",07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19746,19773,,,
+gid_401584980,Atlanta Hawks,tid_1,130,Detroit Pistons,tid_8,124,True,0,False,False,,"December 18, 2023",07:30 PM EST,"Atlanta, GA",State Farm Arena,16888,17664,,,
+gid_401584981,Miami Heat,tid_14,108,Minnesota Timberwolves,tid_16,112,False,0,False,False,,"December 18, 2023",07:30 PM EST,"Miami, FL",Kaseya Center,19600,19819,,,
+gid_401584982,Toronto Raptors,tid_28,114,Charlotte Hornets,tid_30,99,True,0,False,False,,"December 18, 2023",07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19288,,,
+gid_401584983,Oklahoma City Thunder,tid_25,116,Memphis Grizzlies,tid_29,97,True,0,False,False,,"December 18, 2023",08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,16409,,,
+gid_401584984,Denver Nuggets,tid_7,130,Dallas Mavericks,tid_6,104,True,0,False,False,,"December 18, 2023",09:00 PM EST,"Denver, CO",Ball Arena,19520,19659,,,
+gid_401584985,Utah Jazz,tid_26,125,Brooklyn Nets,tid_17,108,True,0,False,False,,"December 18, 2023",09:00 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401584986,Sacramento Kings,tid_23,143,Washington Wizards,tid_27,131,True,0,False,False,,"December 18, 2023",10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17794,,,
+gid_401584987,Los Angeles Lakers,tid_13,109,New York Knicks,tid_18,114,False,0,False,False,,"December 18, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18997,,,
+gid_401584988,New Orleans Pelicans,tid_3,113,Memphis Grizzlies,tid_29,115,False,0,False,False,,"December 19, 2023",07:30 PM EST,"New Orleans, LA",Smoothie King Center,16867,18355,,,
+gid_401584989,Milwaukee Bucks,tid_15,132,San Antonio Spurs,tid_24,119,True,0,False,False,,"December 19, 2023",08:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17729,,,
+gid_401584990,Golden State Warriors,tid_9,132,Boston Celtics,tid_2,126,True,1,False,False,,"December 19, 2023",10:00 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401584991,Portland Trail Blazers,tid_22,109,Phoenix Suns,tid_21,104,True,0,False,False,,"December 19, 2023",10:00 PM EST,"Portland, OR",Moda Center,19441,18233,,,
+gid_401584992,Cleveland Cavaliers,tid_5,124,Utah Jazz,tid_26,116,True,0,False,False,,"December 20, 2023",07:00 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401584993,Indiana Pacers,tid_11,144,Charlotte Hornets,tid_30,113,True,0,False,False,,"December 20, 2023",07:00 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,16761,,,
+gid_401584994,Orlando Magic,tid_19,106,Miami Heat,tid_14,115,False,0,False,False,,"December 20, 2023",07:00 PM EST,"Orlando, FL",Kia Center,18500,19129,,,
+gid_401584995,Philadelphia 76ers,tid_20,127,Minnesota Timberwolves,tid_16,113,True,0,False,False,,"December 20, 2023",07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19746,20365,,,
+gid_401584996,Brooklyn Nets,tid_17,102,New York Knicks,tid_18,121,False,0,False,False,,"December 20, 2023",07:30 PM EST,"Brooklyn, NY",Barclays Center,17732,18071,,,
+gid_401584997,Toronto Raptors,tid_28,104,Denver Nuggets,tid_7,113,False,0,False,False,,"December 20, 2023",07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19800,,,
+gid_401584998,Chicago Bulls,tid_4,124,Los Angeles Lakers,tid_13,108,True,0,False,False,,"December 20, 2023",08:00 PM EST,"Chicago, IL",United Center,20917,21234,,,
+gid_401584999,Houston Rockets,tid_10,127,Atlanta Hawks,tid_1,134,False,0,False,False,,"December 20, 2023",08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,18055,,,
+gid_401585000,Dallas Mavericks,tid_6,111,LA Clippers,tid_12,120,False,0,False,False,,"December 20, 2023",08:30 PM EST,"Dallas, TX",American Airlines Center,19200,20310,,,
+gid_401585001,Sacramento Kings,tid_23,119,Boston Celtics,tid_2,144,False,0,False,False,,"December 20, 2023",10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17874,,,
+gid_401585002,Detroit Pistons,tid_8,111,Utah Jazz,tid_26,119,False,0,False,False,,"December 21, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,18122,,,
+gid_401585003,Cleveland Cavaliers,tid_5,104,New Orleans Pelicans,tid_3,123,False,0,False,False,,"December 21, 2023",07:30 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401585004,Chicago Bulls,tid_4,114,San Antonio Spurs,tid_24,95,True,0,False,False,,"December 21, 2023",08:00 PM EST,"Chicago, IL",United Center,20917,20697,,,
+gid_401585005,Memphis Grizzlies,tid_29,116,Indiana Pacers,tid_11,103,True,0,False,False,,"December 21, 2023",08:00 PM EST,"Memphis, TN",FedExForum,18400,18160,,,
+gid_401585006,Milwaukee Bucks,tid_15,118,Orlando Magic,tid_19,114,True,0,False,False,,"December 21, 2023",08:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17928,,,
+gid_401585007,Oklahoma City Thunder,tid_25,134,LA Clippers,tid_12,115,True,0,False,False,,"December 21, 2023",08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,18203,,,
+gid_401585008,Minnesota Timberwolves,tid_16,118,Los Angeles Lakers,tid_13,111,True,0,False,False,,"December 21, 2023",09:00 PM EST,"Minneapolis, MN",Target Center,18024,18024,,,
+gid_401585009,Portland Trail Blazers,tid_22,117,Washington Wizards,tid_27,118,False,0,False,False,,"December 21, 2023",10:00 PM EST,"Portland, OR",Moda Center,19441,18690,,,
+gid_401585010,Philadelphia 76ers,tid_20,121,Toronto Raptors,tid_28,111,True,0,False,False,,"December 22, 2023",07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19746,20230,,,
+gid_401585011,Brooklyn Nets,tid_17,117,Denver Nuggets,tid_7,122,False,0,False,False,,"December 22, 2023",07:30 PM EST,"Brooklyn, NY",Barclays Center,17732,17732,,,
+gid_401585012,Miami Heat,tid_14,122,Atlanta Hawks,tid_1,113,True,0,False,False,,"December 22, 2023",08:00 PM EST,"Miami, FL",Kaseya Center,19600,20029,,,
+gid_401585013,Houston Rockets,tid_10,122,Dallas Mavericks,tid_6,96,True,0,False,False,,"December 22, 2023",08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,18055,,,
+gid_401585015,Sacramento Kings,tid_23,120,Phoenix Suns,tid_21,105,True,0,False,False,,"December 22, 2023",10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17794,,,
+gid_401585014,Golden State Warriors,tid_9,129,Washington Wizards,tid_27,118,True,0,False,False,,"December 22, 2023",10:18 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401585016,New York Knicks,tid_18,111,Milwaukee Bucks,tid_15,130,False,0,False,False,,"December 23, 2023",12:30 PM EST,"New York, NY",Madison Square Garden,19763,19812,,,
+gid_401585017,LA Clippers,tid_12,108,Boston Celtics,tid_2,145,False,0,False,False,,"December 23, 2023",03:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,19370,,,
+gid_401585018,Charlotte Hornets,tid_30,95,Denver Nuggets,tid_7,102,False,0,False,False,,"December 23, 2023",07:00 PM EST,"Charlotte, NC",Spectrum Center,19077,19165,,,
+gid_401585019,Indiana Pacers,tid_11,110,Orlando Magic,tid_19,117,False,0,False,False,,"December 23, 2023",07:00 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,17274,,,
+gid_401585020,New Orleans Pelicans,tid_3,104,Houston Rockets,tid_10,106,False,0,False,False,,"December 23, 2023",07:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,17399,,,
+gid_401585021,Atlanta Hawks,tid_1,119,Memphis Grizzlies,tid_29,125,False,0,False,False,,"December 23, 2023",07:30 PM EST,"Atlanta, GA",State Farm Arena,16888,17632,,,
+gid_401585022,Brooklyn Nets,tid_17,126,Detroit Pistons,tid_8,115,True,0,False,False,,"December 23, 2023",07:30 PM EST,"Brooklyn, NY",Barclays Center,17732,17732,,,
+gid_401585023,Toronto Raptors,tid_28,119,Utah Jazz,tid_26,126,False,0,False,False,,"December 23, 2023",07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19420,,,
+gid_401585024,Chicago Bulls,tid_4,95,Cleveland Cavaliers,tid_5,109,False,0,False,False,,"December 23, 2023",08:00 PM EST,"Chicago, IL",United Center,20917,19583,,,
+gid_401585025,Oklahoma City Thunder,tid_25,120,Los Angeles Lakers,tid_13,129,False,0,False,False,,"December 23, 2023",08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,18203,,,
+gid_401585026,Dallas Mavericks,tid_6,144,San Antonio Spurs,tid_24,119,True,0,False,False,,"December 23, 2023",08:30 PM EST,"Dallas, TX",American Airlines Center,19200,20409,,,
+gid_401585027,Golden State Warriors,tid_9,126,Portland Trail Blazers,tid_22,106,True,0,False,False,,"December 23, 2023",08:30 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401585028,Sacramento Kings,tid_23,98,Minnesota Timberwolves,tid_16,110,False,0,False,False,,"December 23, 2023",10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17983,,,
+gid_401585029,New York Knicks,tid_18,129,Milwaukee Bucks,tid_15,122,True,0,False,False,,"December 25, 2023",12:00 PM EST,"New York, NY",Madison Square Garden,19763,19812,,,
+gid_401585030,Denver Nuggets,tid_7,120,Golden State Warriors,tid_9,114,True,0,False,False,,"December 25, 2023",02:30 PM EST,"Denver, CO",Ball Arena,19520,19811,,,
+gid_401585031,Los Angeles Lakers,tid_13,115,Boston Celtics,tid_2,126,False,0,False,False,,"December 25, 2023",05:00 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18997,,,
+gid_401585032,Miami Heat,tid_14,119,Philadelphia 76ers,tid_20,113,True,0,False,False,,"December 25, 2023",08:00 PM EST,"Miami, FL",Kaseya Center,19600,20162,,,
+gid_401585033,Phoenix Suns,tid_21,114,Dallas Mavericks,tid_6,128,False,0,False,False,,"December 25, 2023",10:43 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401585034,Detroit Pistons,tid_8,112,Brooklyn Nets,tid_17,118,False,0,False,False,,"December 26, 2023",07:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,19811,,,
+gid_401585035,Washington Wizards,tid_27,119,Orlando Magic,tid_19,127,False,0,False,False,,"December 26, 2023",07:00 PM EST,"Washington, DC",Capital One Arena,20600,16293,,,
+gid_401585036,Chicago Bulls,tid_4,118,Atlanta Hawks,tid_1,113,True,0,False,False,,"December 26, 2023",08:00 PM EST,"Chicago, IL",United Center,20917,21420,,,
+gid_401585037,Houston Rockets,tid_10,117,Indiana Pacers,tid_11,123,False,0,False,False,,"December 26, 2023",08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,18055,,,
+gid_401585038,New Orleans Pelicans,tid_3,115,Memphis Grizzlies,tid_29,116,False,1,False,False,,"December 26, 2023",08:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,18538,,,
+gid_401585039,Oklahoma City Thunder,tid_25,129,Minnesota Timberwolves,tid_16,106,True,0,False,False,,"December 26, 2023",08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,18203,,,
+gid_401585040,San Antonio Spurs,tid_24,118,Utah Jazz,tid_26,130,False,0,False,False,,"December 26, 2023",08:00 PM EST,"San Antonio, TX",Frost Bank Center,18354,18579,,,
+gid_401585041,Portland Trail Blazers,tid_22,130,Sacramento Kings,tid_23,113,True,0,False,False,,"December 26, 2023",10:00 PM EST,"Portland, OR",Moda Center,19441,18585,,,
+gid_401585042,LA Clippers,tid_12,113,Charlotte Hornets,tid_30,104,True,0,False,False,,"December 26, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,19370,,,
+gid_401585043,Orlando Magic,tid_19,92,Philadelphia 76ers,tid_20,112,False,0,False,False,,"December 27, 2023",07:00 PM EST,"Orlando, FL",Kia Center,18500,19179,,,
+gid_401585044,Washington Wizards,tid_27,102,Toronto Raptors,tid_28,132,False,0,False,False,,"December 27, 2023",07:00 PM EST,"Washington, DC",Capital One Arena,20600,15437,,,
+gid_401585045,Brooklyn Nets,tid_17,122,Milwaukee Bucks,tid_15,144,False,0,False,False,,"December 27, 2023",07:30 PM EST,"Brooklyn, NY",Barclays Center,17732,18199,,,
+gid_401585046,Houston Rockets,tid_10,113,Phoenix Suns,tid_21,129,False,0,False,False,,"December 27, 2023",08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,18055,,,
+gid_401585047,Oklahoma City Thunder,tid_25,129,New York Knicks,tid_18,120,True,0,False,False,,"December 27, 2023",08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,18203,,,
+gid_401585048,Dallas Mavericks,tid_6,110,Cleveland Cavaliers,tid_5,113,False,0,False,False,,"December 27, 2023",08:30 PM EST,"Dallas, TX",American Airlines Center,19200,20377,,,
+gid_401585049,Boston Celtics,tid_2,128,Detroit Pistons,tid_8,122,True,1,False,False,,"December 28, 2023",07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401585050,Chicago Bulls,tid_4,104,Indiana Pacers,tid_11,120,False,0,False,False,,"December 28, 2023",08:00 PM EST,"Chicago, IL",United Center,20917,21568,,,
+gid_401585051,Minnesota Timberwolves,tid_16,118,Dallas Mavericks,tid_6,110,True,0,False,False,,"December 28, 2023",08:00 PM EST,"Minneapolis, MN",Target Center,18024,18024,,,
+gid_401585052,New Orleans Pelicans,tid_3,112,Utah Jazz,tid_26,105,True,0,False,False,,"December 28, 2023",08:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,17753,,,
+gid_401585053,Denver Nuggets,tid_7,142,Memphis Grizzlies,tid_29,105,True,0,False,False,,"December 28, 2023",09:00 PM EST,"Denver, CO",Ball Arena,19520,19733,,,
+gid_401585054,Golden State Warriors,tid_9,102,Miami Heat,tid_14,114,False,0,False,False,,"December 28, 2023",10:00 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401585055,Portland Trail Blazers,tid_22,105,San Antonio Spurs,tid_24,118,False,0,False,False,,"December 28, 2023",10:00 PM EST,"Portland, OR",Moda Center,19441,19335,,,
+gid_401585056,Los Angeles Lakers,tid_13,133,Charlotte Hornets,tid_30,112,True,0,False,False,,"December 28, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,18997,,,
+gid_401585057,Orlando Magic,tid_19,117,New York Knicks,tid_18,108,True,0,False,False,,"December 29, 2023",07:00 PM EST,"Orlando, FL",Kia Center,18500,19587,,,
+gid_401585058,Washington Wizards,tid_27,110,Brooklyn Nets,tid_17,104,True,0,False,False,,"December 29, 2023",07:00 PM EST,"Washington, DC",Capital One Arena,20600,16825,,,
+gid_401585059,Atlanta Hawks,tid_1,110,Sacramento Kings,tid_23,117,False,0,False,False,,"December 29, 2023",07:30 PM EST,"Atlanta, GA",State Farm Arena,16888,18305,,,
+gid_401585060,Boston Celtics,tid_2,120,Toronto Raptors,tid_28,118,True,0,False,False,,"December 29, 2023",07:30 PM EST,"Boston, MA",TD Garden,19156,19156,,,
+gid_401585061,Cleveland Cavaliers,tid_5,111,Milwaukee Bucks,tid_15,119,False,0,False,False,,"December 29, 2023",07:30 PM EST,"Cleveland, OH",Rocket Mortgage FieldHouse,19432,19432,,,
+gid_401585062,Houston Rockets,tid_10,127,Philadelphia 76ers,tid_20,131,False,0,False,False,,"December 29, 2023",08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,18055,,,
+gid_401585063,Denver Nuggets,tid_7,93,Oklahoma City Thunder,tid_25,119,False,0,False,False,,"December 29, 2023",09:00 PM EST,"Denver, CO",Ball Arena,19520,19808,,,
+gid_401585064,Phoenix Suns,tid_21,133,Charlotte Hornets,tid_30,119,True,0,False,False,,"December 29, 2023",09:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401585065,Portland Trail Blazers,tid_22,134,San Antonio Spurs,tid_24,128,True,0,False,False,,"December 29, 2023",10:00 PM EST,"Portland, OR",Moda Center,19441,18861,,,
+gid_401585066,LA Clippers,tid_12,117,Memphis Grizzlies,tid_29,106,True,0,False,False,,"December 29, 2023",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,19370,,,
+gid_401585067,Utah Jazz,tid_26,117,Miami Heat,tid_14,109,True,0,False,False,,"December 30, 2023",05:00 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401585068,Detroit Pistons,tid_8,129,Toronto Raptors,tid_28,127,True,0,False,False,,"December 30, 2023",06:00 PM EST,"Detroit, MI",Little Caesars Arena,20332,18411,,,
+gid_401585069,Indiana Pacers,tid_11,140,New York Knicks,tid_18,126,True,0,False,False,,"December 30, 2023",07:00 PM EST,"Indianapolis, IN",Gainbridge Fieldhouse,17923,17274,,,
+gid_401585070,Chicago Bulls,tid_4,105,Philadelphia 76ers,tid_20,92,True,0,False,False,,"December 30, 2023",08:00 PM EST,"Chicago, IL",United Center,20917,21648,,,
+gid_401585071,Minnesota Timberwolves,tid_16,108,Los Angeles Lakers,tid_13,106,True,0,False,False,,"December 30, 2023",08:00 PM EST,"Minneapolis, MN",Target Center,18024,18024,,,
+gid_401585072,Golden State Warriors,tid_9,122,Dallas Mavericks,tid_6,132,False,0,False,False,,"December 30, 2023",08:30 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401585073,Washington Wizards,tid_27,126,Atlanta Hawks,tid_1,130,False,0,False,False,,"December 31, 2023",03:00 PM EST,"Washington, DC",Capital One Arena,20600,17042,,,
+gid_401585074,New Orleans Pelicans,tid_3,129,Los Angeles Lakers,tid_13,109,True,0,False,False,,"December 31, 2023",07:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,18434,,,
+gid_401585075,Oklahoma City Thunder,tid_25,124,Brooklyn Nets,tid_17,108,True,0,False,False,,"December 31, 2023",07:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,18203,,,
+gid_401585076,San Antonio Spurs,tid_24,101,Boston Celtics,tid_2,134,False,0,False,False,,"December 31, 2023",07:00 PM EST,"San Antonio, TX",Frost Bank Center,18354,18886,,,
+gid_401585077,Memphis Grizzlies,tid_29,92,Sacramento Kings,tid_23,123,False,0,False,False,,"December 31, 2023",08:00 PM EST,"Memphis, TN",FedExForum,18400,17794,,,
+gid_401585078,Phoenix Suns,tid_21,112,Orlando Magic,tid_19,107,True,0,False,False,,"December 31, 2023",08:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401585079,New York Knicks,tid_18,112,Minnesota Timberwolves,tid_16,106,True,0,False,False,,"January 01, 2024",03:00 PM EST,"New York, NY",Madison Square Garden,19763,19812,,,
+gid_401585080,Toronto Raptors,tid_28,124,Cleveland Cavaliers,tid_5,121,True,0,False,False,,"January 01, 2024",07:30 PM EST,"Toronto, ON",Scotiabank Arena,19800,19800,,,
+gid_401585081,Houston Rockets,tid_10,136,Detroit Pistons,tid_8,113,True,0,False,False,,"January 01, 2024",08:00 PM EST,"Houston, TX",Toyota Center (Houston),18055,18055,,,
+gid_401585082,Milwaukee Bucks,tid_15,113,Indiana Pacers,tid_11,122,False,0,False,False,,"January 01, 2024",08:00 PM EST,"Milwaukee, WI",Fiserv Forum,17341,17922,,,
+gid_401585083,Denver Nuggets,tid_7,111,Charlotte Hornets,tid_30,93,True,0,False,False,,"January 01, 2024",09:00 PM EST,"Denver, CO",Ball Arena,19520,19625,,,
+gid_401585084,Phoenix Suns,tid_21,109,Portland Trail Blazers,tid_22,88,True,0,False,False,,"January 01, 2024",09:00 PM EST,"Phoenix, AZ",Footprint Center,17071,17071,,,
+gid_401585085,Utah Jazz,tid_26,127,Dallas Mavericks,tid_6,90,True,0,False,False,,"January 01, 2024",09:00 PM EST,"Salt Lake City, UT",Delta Center,18206,18206,,,
+gid_401585086,LA Clippers,tid_12,121,Miami Heat,tid_14,104,True,0,False,False,,"January 01, 2024",10:30 PM EST,"Los Angeles, CA",crypto.com Arena,19068,19370,,,
+gid_401585087,Philadelphia 76ers,tid_20,110,Chicago Bulls,tid_4,97,True,0,False,False,,"January 02, 2024",07:00 PM EST,"Philadelphia, PA",Wells Fargo Center,19746,19772,,,
+gid_401585088,Memphis Grizzlies,tid_29,106,San Antonio Spurs,tid_24,98,True,0,False,False,,"January 02, 2024",08:00 PM EST,"Memphis, TN",FedExForum,18400,17794,,,
+gid_401585089,New Orleans Pelicans,tid_3,112,Brooklyn Nets,tid_17,85,True,0,False,False,,"January 02, 2024",08:00 PM EST,"New Orleans, LA",Smoothie King Center,16867,16253,,,
+gid_401585090,Oklahoma City Thunder,tid_25,127,Boston Celtics,tid_2,123,True,0,False,False,,"January 02, 2024",08:00 PM EST,"Oklahoma City, OK",Paycom Center,18203,18203,,,
+gid_401585091,Golden State Warriors,tid_9,121,Orlando Magic,tid_19,115,True,0,False,False,,"January 02, 2024",10:00 PM EST,"San Francisco, CA",Chase Center,18064,18064,,,
+gid_401585092,Sacramento Kings,tid_23,104,Charlotte Hornets,tid_30,111,False,0,False,False,,"January 02, 2024",10:00 PM EST,"Sacramento, CA",Golden 1 Center,17611,17983,,,
