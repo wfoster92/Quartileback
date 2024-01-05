@@ -37,7 +37,6 @@ const GameView = () => {
     allNCAABGames,
     setAllNCAABGames,
   } = useContext(GamesContext)
-  console.log(allNHLGames)
 
   const { authToken, isTokenValid } = useAuth()
 
@@ -301,7 +300,6 @@ const GameView = () => {
     let newGame = event.target.value
     let [away, home] = newGame.split(' ')
     let k = `${away}_${home}_NHL`
-    console.log(`new nhl game ${newGame}`)
     const homeTeamParam = encodeURIComponent(away)
     const awayTeamParam = encodeURIComponent(home)
     const sportParam = encodeURIComponent('NHL')
