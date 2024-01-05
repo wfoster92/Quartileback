@@ -37,6 +37,7 @@ const GameView = () => {
     allNCAABGames,
     setAllNCAABGames,
   } = useContext(GamesContext)
+  console.log(allNHLGames)
 
   const { authToken, isTokenValid } = useAuth()
 
@@ -157,13 +158,14 @@ const GameView = () => {
   const getAllGameData = async () => {
     try {
       const response = await fetch(`/sports/getAllDatasets`)
-      const [gameData, cfbGames, ncaabGames, nbaGames, nflGames] =
+      const [gameData, cfbGames, ncaabGames, nbaGames, nflGames, nhlGames] =
         await response.json()
       console.log(`ncaab games ${ncaabGames}`)
       setAllCFBGames(cfbGames)
       setAllNCAABGames(ncaabGames)
       setAllNBAGames(nbaGames)
       setAllNFLGames(nflGames)
+      setAllNHLGames(nhlGames)
       setGamesObj(gameData)
     } catch (error) {
       setError(error)
@@ -408,6 +410,7 @@ const GameView = () => {
                 onChange={handleGameChangeNHL}
               >
                 {allNHLGames.map((game) => {
+                  console.log(`game ${game}`)
                   return <MenuItem value={game}>{game}</MenuItem>
                 })}
               </Select>
