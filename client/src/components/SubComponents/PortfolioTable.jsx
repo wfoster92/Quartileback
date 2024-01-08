@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect, useContext, useCallback } from 'react'
+import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import { alpha } from '@mui/material/styles'
 import Box from '@mui/material/Box'
@@ -32,6 +33,21 @@ const formatter = new Intl.NumberFormat('en-US', {
   //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
   //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
 })
+
+const StyledInput = styled.input`
+  type: number;
+  step: 1;
+  min: 0;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin: 4px;
+  ${(props) =>
+    props.isSelected &&
+    `
+    border: 2px solid blue;
+    outline: none;
+  `}
+`
 
 let columnArr = [
   {
@@ -230,6 +246,7 @@ const BetLegsTable = (props) => {
   const [page, setPage] = useState(0)
   const [dense, setDense] = useState(false)
   const [rowsPerPage, setRowsPerPage] = useState(10)
+  const [selectedCell, setSelectedCell] = useState(null)
 
   const { betLegsTable, setBetLegsTable } = useContext(GamesContext)
 
@@ -251,6 +268,15 @@ const BetLegsTable = (props) => {
 
   const handleChangeDense = (event) => {
     setDense(event.target.checked)
+  }
+
+  // const handleFocus = (e) => {
+  //   e.target.select()
+  //   setSelectedCell(currentCol.id)
+  // }
+
+  const handleBlur = () => {
+    setSelectedCell(null)
   }
 
   // const isSelected = (id) => selected.indexOf(id) !== -1
@@ -354,7 +380,7 @@ const BetLegsTable = (props) => {
                           </TableCell>
                         ) : currentCol.id === 'wager' ? (
                           <TableCell style={{ textAlign: currentCol.align }}>
-                            <input
+                            {/* <input
                               type='number'
                               step='1'
                               min='0'
@@ -380,6 +406,39 @@ const BetLegsTable = (props) => {
                                   })
                                 }
                               }}
+                            /> */}
+                            <StyledInput
+                              type='number'
+                              step='1'
+                              min='0'
+                              value={row[currentCol.id]}
+                              onChange={(e) => {
+                                const newValue = parseFloat(e.target.value)
+                                // let newRow = {...row, wager: newValue}
+                                if (!isNaN(newValue)) {
+                                  setBetLegsTable((prevState) => {
+                                    const updatedTable = prevState.map(
+                                      (elem) => {
+                                        if (elem === row) {
+                                          return {
+                                            ...elem,
+                                            [currentCol.id]: newValue,
+                                          }
+                                        } else {
+                                          return elem
+                                        }
+                                      }
+                                    )
+                                    return updatedTable
+                                  })
+                                }
+                              }}
+                              onFocus={(e) => {
+                                e.target.select()
+                                setSelectedCell(row[currentCol.id])
+                              }}
+                              onBlur={handleBlur}
+                              isSelected={selectedCell === currentCol.id}
                             />
                           </TableCell>
                         ) : (
