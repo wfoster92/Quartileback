@@ -20,7 +20,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-dateStr = '1_8_2024'
+dateStr = '1_9_2024'
 
 app.use(express.static('../client/build'))
 app.use(
@@ -206,7 +206,7 @@ app.get('/sports/getRankingsTable/:sport', async (req, res) => {
       let fname = path.join(rankingsDir, files[0])
       // get the date of the file
       let fNameDate = fname
-        .split(`comprehensive_rankings_${sport}_`)[1]
+        .split(`_comprehensive_rankings_${sport}_`)[1]
         .split('.')[0]
         .replaceAll('_', '/')
 

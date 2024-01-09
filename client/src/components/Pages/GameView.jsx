@@ -47,6 +47,8 @@ const GameView = () => {
     spread: 0,
     spreadIsInt: true,
     fractionalSpread: false,
+    homeTeam: '',
+    awayTeam: '',
   }
   const [spreadObj, setSpreadObj] = useState(tempSpreadObj)
 
@@ -55,6 +57,8 @@ const GameView = () => {
     OU: 0,
     ouIsInt: true,
     fractionalOU: false,
+    homeTeam: '',
+    awayTeam: '',
   }
   const [overUnderObj, setOverUnderObj] = useState(tempOverUnderObj)
   const [gamesObj, setGamesObj] = useState(null)
@@ -86,6 +90,8 @@ const GameView = () => {
             ouIsInt: true,
             fractionalOU: false,
             currentOverUnder: tempCurrentOverUnder,
+            homeTeam: home,
+            awayTeam: away,
           })
         } else {
           setOverUnderObj({
@@ -93,6 +99,8 @@ const GameView = () => {
             ouIsInt: false,
             fractionalOU: true,
             currentOverUnder: tempCurrentOverUnder,
+            homeTeam: home,
+            awayTeam: away,
           })
         }
         let tempCurrentSpread = gamesObj?.[k]?.spread
@@ -102,6 +110,8 @@ const GameView = () => {
             spreadIsInt: true,
             fractionalSpread: false,
             currentSpread: tempCurrentSpread,
+            homeTeam: home,
+            awayTeam: away,
           })
         } else {
           setSpreadObj({
@@ -109,6 +119,8 @@ const GameView = () => {
             spreadIsInt: false,
             fractionalSpread: true,
             currentSpread: tempCurrentSpread,
+            homeTeam: home,
+            awayTeam: away,
           })
         }
         // setOU(Math.floor(tempOU))
@@ -349,7 +361,7 @@ const GameView = () => {
               </Select>
             </FormControl>
           </Box>
-          <Box style={{ width: '24vh', margin: '0' }}>
+          {/* <Box style={{ width: '24vh', margin: '0' }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>CFB</InputLabel>
               <Select
@@ -364,7 +376,7 @@ const GameView = () => {
                 })}
               </Select>
             </FormControl>
-          </Box>
+          </Box> */}
           <Box style={{ width: '24vh', margin: '0' }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>NBA</InputLabel>
