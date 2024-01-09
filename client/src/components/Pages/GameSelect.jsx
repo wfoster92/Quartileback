@@ -224,7 +224,7 @@ const GameSelect = () => {
               </Select>
             </FormControl>
           </Box>
-          <Box style={{ width: '24vh', margin: '0' }}>
+          {/* <Box style={{ width: '24vh', margin: '0' }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>CFB</InputLabel>
               <Select
@@ -239,7 +239,7 @@ const GameSelect = () => {
                 })}
               </Select>
             </FormControl>
-          </Box>
+          </Box> */}
           <Box style={{ width: '24vh', margin: '0' }}>
             <FormControl fullWidth>
               <InputLabel id='demo-simple-select-label'>NBA</InputLabel>
