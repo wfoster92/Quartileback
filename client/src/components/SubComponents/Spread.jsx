@@ -146,7 +146,7 @@ const Spread = (props) => {
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        {/* <div>
+        <div>
           {spread > 0
             ? `${spreadObj.homeTeam} wins by more than ${
                 spreadIsInt && !fractionalSpread
@@ -160,15 +160,15 @@ const Spread = (props) => {
                   : Math.abs(spread + 0.5)
               }: ${overSpreadProb.toFixed(1)}%`
             : ``}
-        </div> */}
-        <span>
+        </div>
+        {/* <span>
           Over {spreadIsInt && !fractionalSpread ? spread : spread + 0.5}:{' '}
           {overSpreadProb.toFixed(1)}%{'  |  '}
         </span>
         <span>
           Under {spreadIsInt && !fractionalSpread ? spread : spread + 0.5}:{' '}
           {underSpreadProb.toFixed(1)}%
-        </span>
+        </span> */}
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div
