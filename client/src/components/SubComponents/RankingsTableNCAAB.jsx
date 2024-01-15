@@ -338,7 +338,6 @@ const RankingsTable = () => {
                 .sort((a, b) => {
                   return comparator(a[orderBy], b[orderBy], order, orderBy)
                 })
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, rowIdx) => {
                   {
                     /* const isItemSelected = isSelected(row.index) */
@@ -399,7 +398,7 @@ const RankingsTable = () => {
             </TableBody>
           </Table>
         </TableContainer>
-        <TablePagination
+        {/* <TablePagination
           rowsPerPageOptions={[10, 25, 100]}
           component='div'
           count={
@@ -423,7 +422,7 @@ const RankingsTable = () => {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
-        />
+        /> */}
       </Paper>
       <FormControlLabel
         control={<Switch checked={dense} onChange={handleChangeDense} />}
