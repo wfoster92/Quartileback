@@ -252,8 +252,8 @@ const Heatmap = (props) => {
       .attr('y', function (d) {
         return y(Number(d.awayScore))
       })
-      .attr('rx', 2)
-      .attr('ry', 2)
+      // .attr('rx', 2)
+      // .attr('ry', 2)
       .attr('width', rectWidth)
       .attr('height', rectHeight)
       .style('fill', function (d) {
@@ -281,8 +281,8 @@ const Heatmap = (props) => {
       .attr('y', function (d) {
         return y(Number(d.awayScore))
       })
-      .attr('rx', 1)
-      .attr('ry', 1)
+      // .attr('rx', 1)
+      // .attr('ry', 1)
       .attr('width', rectWidth)
       .attr('height', rectHeight)
       .style('fill', function (d) {

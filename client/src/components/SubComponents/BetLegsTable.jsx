@@ -52,7 +52,7 @@ let columnArr = [
     searchable: true,
   },
   {
-    id: 'index',
+    id: 'betType',
     label: 'Bet',
     disablePadding: false,
     dataType: 'string',
@@ -71,7 +71,16 @@ let columnArr = [
   },
   {
     id: 'probability',
-    label: 'Probability',
+    label: 'QB Probability',
+    disablePadding: false,
+    dataType: 'percent',
+    align: 'right',
+    editable: false,
+    searchable: false,
+  },
+  {
+    id: 'vegasProbability',
+    label: 'Vegas Probability',
     disablePadding: false,
     dataType: 'percent',
     align: 'right',
@@ -83,15 +92,6 @@ let columnArr = [
     label: 'Odds',
     disablePadding: false,
     dataType: 'int',
-    align: 'right',
-    editable: false,
-    searchable: false,
-  },
-  {
-    id: 'kelly',
-    label: 'Kelly',
-    disablePadding: false,
-    dataType: 'kelly',
     align: 'right',
     editable: false,
     searchable: false,
@@ -398,14 +398,6 @@ const BetLegsTable = (props) => {
                           <TableCell style={{ textAlign: currentCol.align }}>
                             {['float', 'percent'].includes(currentCol.dataType)
                               ? Number(row[currentCol.id]).toFixed(4)
-                              : ['kelly'].includes(currentCol.dataType)
-                              ? `(${Number(
-                                  row[currentCol.id].split(', ')[0].slice(1)
-                                ).toFixed(4)}, ${Number(
-                                  row[currentCol.id]
-                                    .split(', ')[1]
-                                    .replace(')', '')
-                                ).toFixed(4)})`
                               : ['int'].includes(currentCol.dataType)
                               ? Math.round(row[currentCol.id])
                               : row[currentCol.id]}
@@ -464,3 +456,12 @@ const BetLegsTable = (props) => {
 }
 
 export default BetLegsTable
+
+// : ['kelly'].includes(currentCol.dataType)
+// ? `(${Number(
+//     row[currentCol.id].split(', ')[0].slice(1)
+//   ).toFixed(4)}, ${Number(
+//     row[currentCol.id]
+//       .split(', ')[1]
+//       .replace(')', '')
+//   ).toFixed(4)})`
