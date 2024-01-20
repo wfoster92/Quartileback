@@ -45,7 +45,7 @@ const PortfolioScatterplot = () => {
         .style('top', `${event.pageY}px`).html(`
         <h4>Sport: ${d.sport}</h4>
         <h4>Game: ${d.awayTeamAbbrev} at ${d.homeTeamAbbrev}</h4>
-        <h4>Bet: ${d.index}</h4>
+        <h4>Bet: ${d.betType}</h4>
         <h4>Odds: ${Math.round(Number(d.odds))}</h4>
         <h4>Probability: ${Number(d.probability).toFixed(3)}</h4>
         <h4>Wager: ${formatter.format(d.wager)}</h4>
