@@ -98,7 +98,7 @@ const Portfolio = () => {
                 inParlay: false,
                 dataType: 'float',
                 align: 'right',
-                kelly: '(0, 1)',
+                // kelly: '(0, 1)',
                 wager: 0,
               }
               console.log('parlay', JSON.stringify(parlay))

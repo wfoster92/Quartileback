@@ -20,7 +20,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-dateStr = '1_18_2024'
+dateStr = '1_19_2024'
 
 app.use(express.static('../client/build'))
 app.use(
@@ -127,13 +127,15 @@ app.get('/sports/bets/:away/:home', async (req, res) => {
       if (fs.existsSync(fname)) {
         // console.log('hello')
         let result = await csv().fromFile(fname)
-        let row = result.filter((row) => {
-          // console.log(row.homeTeamAbbrev, row.awayTeamAbbrev, away, home)
-          return (
-            [away, home].includes(row.homeTeamAbbrev) &&
-            [away, home].includes(row.awayTeamAbbrev)
-          )
-        })
+        let row = result
+          .filter((row) => row.bookie === 'DraftKings')
+          .filter((row) => {
+            // console.log(row.homeTeamAbbrev, row.awayTeamAbbrev, away, home)
+            return (
+              [away, home].includes(row.homeTeamAbbrev) &&
+              [away, home].includes(row.awayTeamAbbrev)
+            )
+          })
         if (row.length === 1) {
           row = row[0]
         }
