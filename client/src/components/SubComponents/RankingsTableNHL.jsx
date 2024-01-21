@@ -59,7 +59,15 @@ let columnArr = [
     searchable: false,
     hidden: false,
   },
-
+  {
+    id: 'observedRecord',
+    label: 'Record',
+    disablePadding: true,
+    dataType: 'record',
+    align: 'right',
+    searchable: false,
+    hidden: false,
+  },
   {
     id: 'scheduleStrength',
     label: 'Strength of Schedule',
@@ -117,16 +125,16 @@ let columnArr = [
   },
   {
     id: 'win',
-    label: 'Win',
+    label: 'Home Advantage',
     disablePadding: true,
-    dataType: 'int',
+    dataType: 'percent3',
     align: 'right',
     searchable: false,
     hidden: false,
   },
   {
     id: 'winRank',
-    label: 'Win Rank',
+    label: 'Home Advantage Rank',
     disablePadding: true,
     dataType: 'int',
     align: 'right',
@@ -172,6 +180,12 @@ const comparator = (a, b, order, orderBy) => {
     output = Boolean(a) - Boolean(b)
   } else if (['string'].includes(dataType)) {
     output = a.localeCompare(b)
+  } else if (['record'].includes(dataType)) {
+    let recordA = a.split(' - ').map((num) => Math.round(num))
+    let percentA = recordA[1] === 0 ? 1 : recordA[0] / recordA[1]
+    let recordB = b.split(' - ').map((num) => Math.round(num))
+    let percentB = recordB[1] === 0 ? 1 : recordB[0] / recordB[1]
+    output = percentA - percentB
   }
 
   return order === 'desc' ? output : -output
@@ -290,6 +304,13 @@ const RankingsTable = () => {
       return Math.round(Number(elem))
     } else if (dataType === 'string') {
       return elem
+    } else if (dataType === 'record') {
+      return !elem
+        ? ''
+        : elem
+            .split(' - ')
+            .map((num) => Math.round(num))
+            .join('-')
     }
   }
 
