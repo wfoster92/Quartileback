@@ -20,7 +20,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-dateStr = '1_20_2024'
+dateStr = '1_21_2024'
 
 app.use(express.static('../client/build'))
 app.use(
@@ -171,7 +171,7 @@ app.get('/sports/getBetLegsTable', async (req, res) => {
         }
         return row
       })
-      console.log(JSON.stringify(output, null, 2))
+      // console.log(JSON.stringify(output, null, 2))
       res.json([output]) // Send the JSON data as the response
     } else {
       throw new Error(`CSV file not found: ${fname}`)
@@ -215,7 +215,7 @@ app.get('/sports/getRankingsTable/:sport', async (req, res) => {
       try {
         if (fs.existsSync(fname)) {
           const result = await csv().fromFile(fname)
-          console.log(JSON.stringify(result[0]))
+          // console.log(JSON.stringify(result[0]))
           res.json([result, fNameDate]) // Send the JSON data as the response
         } else {
           throw new Error(`CSV file not found: ${fname}`)
