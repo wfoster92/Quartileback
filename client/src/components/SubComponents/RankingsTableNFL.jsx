@@ -125,7 +125,7 @@ let columnArr = [
   },
   {
     id: 'win',
-    label: 'Home Advantage',
+    label: 'Favored',
     disablePadding: true,
     dataType: 'percent3',
     align: 'right',
@@ -134,7 +134,7 @@ let columnArr = [
   },
   {
     id: 'winRank',
-    label: 'Home Advantage Rank',
+    label: 'Favored Rank',
     disablePadding: true,
     dataType: 'int',
     align: 'right',
