@@ -66,7 +66,7 @@ let columnArr = [
     dataType: 'record',
     align: 'right',
     searchable: false,
-    hidden: true,
+    hidden: false,
   },
   {
     id: 'scheduleStrength',
