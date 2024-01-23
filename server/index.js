@@ -20,7 +20,7 @@ let year = now.getFullYear()
 let dateStr = `${month}_${day}_${year}`
 console.log(`today's date is ${dateStr}`)
 // hardcoded for the moment
-dateStr = '1_21_2024'
+dateStr = '1_22_2024'
 
 app.use(express.static('../client/build'))
 app.use(
@@ -160,17 +160,19 @@ app.get('/sports/getBetLegsTable', async (req, res) => {
   try {
     if (fs.existsSync(fname)) {
       let result = await csv().fromFile(fname)
-      let output = result.map((row) => {
-        row = {
-          ...row,
-          inPortfolio: false,
-          inParlay: false,
-          wager: 0,
-          // wager: Math.round(Math.random() * 100),
-          expectedReturn: 0,
-        }
-        return row
-      })
+      let output = result
+        .filter((elem) => elem.bookie === 'DraftKings')
+        .map((row) => {
+          row = {
+            ...row,
+            inPortfolio: false,
+            inParlay: false,
+            wager: 0,
+            // wager: Math.round(Math.random() * 100),
+            expectedReturn: 0,
+          }
+          return row
+        })
       // console.log(JSON.stringify(output, null, 2))
       res.json([output]) // Send the JSON data as the response
     } else {
