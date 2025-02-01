@@ -1,3 +1,3 @@
-# degeneracy
+# Quartileback
 
-An app for gambling and sports analytics
+An app for sports analytics
